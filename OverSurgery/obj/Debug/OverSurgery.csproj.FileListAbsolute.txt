@@ -1,0 +1,216 @@
+H:\OverSurgery\OverSurgery\bin\Debug\OverSurgery.exe.config
+C:\Users\Cos209\Dropbox\Over Surgery Project\Dimitris Programming\OverSurgery\OverSurgery\bin\Debug\OverSurgery.exe.config
+C:\Users\Cos209\Dropbox\Over Surgery Project\Dimitris Programming\OverSurgery\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+C:\Users\Cos209\Dropbox\Over Surgery Project\Dimitris Programming\OverSurgery\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+C:\Users\Cos209\Dropbox\Over Surgery Project\Dimitris Programming\OverSurgery\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+C:\Users\Cos209\Dropbox\Over Surgery Project\Dimitris Programming\OverSurgery\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+C:\Users\Cos209\Dropbox\Over Surgery Project\Dimitris Programming\OverSurgery\OverSurgery\bin\Debug\OverSurgery.exe
+C:\Users\Cos209\Dropbox\Over Surgery Project\Dimitris Programming\OverSurgery\OverSurgery\bin\Debug\OverSurgery.pdb
+C:\Users\Cos209\Dropbox\Over Surgery Project\Dimitris Programming\OverSurgery\OverSurgery\obj\Debug\OverSurgery.exe
+C:\Users\Cos209\Dropbox\Over Surgery Project\Dimitris Programming\OverSurgery\OverSurgery\obj\Debug\OverSurgery.pdb
+C:\Users\Ademola\Desktop\SOFTWARE ENGINEERING\OverSurgery\bin\Debug\OverSurgery.exe.config
+C:\Users\Ademola\Desktop\SOFTWARE ENGINEERING\OverSurgery\obj\Debug\OverSurgery.exe
+C:\Users\Ademola\Desktop\SOFTWARE ENGINEERING\OverSurgery\obj\Debug\OverSurgery.pdb
+C:\Users\Ademola\Desktop\SOFTWARE ENGINEERING\OverSurgery\bin\Debug\OverSurgery.exe
+C:\Users\Ademola\Desktop\SOFTWARE ENGINEERING\OverSurgery\bin\Debug\OverSurgery.pdb
+C:\Users\Ademola\Desktop\SOFTWARE ENGINEERING\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+C:\Users\Ademola\Desktop\SOFTWARE ENGINEERING\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+C:\Users\Ademola\Desktop\SOFTWARE ENGINEERING\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+C:\Users\Ademola\Desktop\SOFTWARE ENGINEERING\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+E:\SOFTWARE ENGINEERING\OverSurgery\bin\Debug\OverSurgery.exe.config
+E:\SOFTWARE ENGINEERING\OverSurgery\obj\Debug\OverSurgery.exe
+E:\SOFTWARE ENGINEERING\OverSurgery\obj\Debug\OverSurgery.pdb
+E:\SOFTWARE ENGINEERING\OverSurgery\bin\Debug\OverSugerydbase.mdf
+E:\SOFTWARE ENGINEERING\OverSurgery\bin\Debug\OverSugerydbase_log.ldf
+E:\SOFTWARE ENGINEERING\OverSurgery\bin\Debug\OverSurgery.exe
+E:\SOFTWARE ENGINEERING\OverSurgery\bin\Debug\OverSurgery.pdb
+E:\SOFTWARE ENGINEERING\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+E:\SOFTWARE ENGINEERING\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+E:\SOFTWARE ENGINEERING\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+E:\SOFTWARE ENGINEERING\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+I:\SOFTWARE ENGINEERING\OverSurgery\bin\Debug\OverSurgery.exe.config
+I:\SOFTWARE ENGINEERING\OverSurgery\obj\Debug\OverSurgery.exe
+I:\SOFTWARE ENGINEERING\OverSurgery\obj\Debug\OverSurgery.pdb
+I:\SOFTWARE ENGINEERING\OverSurgery\bin\Debug\OverSugerydbase.mdf
+I:\SOFTWARE ENGINEERING\OverSurgery\bin\Debug\OverSugerydbase_log.ldf
+I:\SOFTWARE ENGINEERING\OverSurgery\bin\Debug\OverSurgery.exe
+I:\SOFTWARE ENGINEERING\OverSurgery\bin\Debug\OverSurgery.pdb
+I:\SOFTWARE ENGINEERING\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+I:\SOFTWARE ENGINEERING\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+I:\SOFTWARE ENGINEERING\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+I:\SOFTWARE ENGINEERING\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+C:\Users\Ademola\Desktop\OverSurgery\bin\Debug\OverSurgery.exe.config
+C:\Users\Ademola\Desktop\OverSurgery\obj\Debug\OverSurgery.exe
+C:\Users\Ademola\Desktop\OverSurgery\obj\Debug\OverSurgery.pdb
+C:\Users\Ademola\Desktop\OverSurgery\bin\Debug\OverSugerydbase.mdf
+C:\Users\Ademola\Desktop\OverSurgery\bin\Debug\OverSugerydbase_log.ldf
+C:\Users\Ademola\Desktop\OverSurgery\bin\Debug\OverSurgery.exe
+C:\Users\Ademola\Desktop\OverSurgery\bin\Debug\OverSurgery.pdb
+C:\Users\Ademola\Desktop\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+C:\Users\Ademola\Desktop\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+C:\Users\Ademola\Desktop\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+C:\Users\Ademola\Desktop\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+C:\Users\Cos209\Desktop\OverSurgery\bin\Debug\OverSurgery.exe.config
+C:\Users\Cos209\Desktop\OverSurgery\obj\Debug\OverSurgery.exe
+C:\Users\Cos209\Desktop\OverSurgery\obj\Debug\OverSurgery.pdb
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy\bin\Debug\OverSurgery.exe.config
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy\obj\Debug\OverSurgery.exe
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy\obj\Debug\OverSurgery.pdb
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy\bin\Debug\OverSugerydbase.mdf
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy\bin\Debug\OverSugerydbase_log.ldf
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy\bin\Debug\OverSurgery.exe
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy\bin\Debug\OverSurgery.pdb
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy\obj\Debug\OverSurgery.MainBackGround.resources
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy\obj\Debug\OverSurgery.Properties.Resources.resources
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy - Copy - Copy\bin\Debug\OverSurgery.exe.config
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy - Copy - Copy\obj\Debug\OverSurgery.exe
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy - Copy - Copy\obj\Debug\OverSurgery.pdb
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy - Copy - Copy\bin\Debug\OverSugerydbase.mdf
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy - Copy - Copy\bin\Debug\OverSugerydbase_log.ldf
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy - Copy - Copy\bin\Debug\OverSurgery.exe
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy - Copy - Copy\bin\Debug\OverSurgery.pdb
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy - Copy - Copy\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy - Copy - Copy\obj\Debug\OverSurgery.MainBackGround.resources
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy - Copy - Copy\obj\Debug\OverSurgery.Properties.Resources.resources
+C:\Users\Cos209\Desktop\OverSurgery - Copy (2) - Copy - Copy - Copy\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+C:\Users\Cos209\Desktop\OverSurgery\bin\Debug\OverSugerydbase.mdf
+C:\Users\Cos209\Desktop\OverSurgery\bin\Debug\OverSugerydbase_log.ldf
+C:\Users\Cos209\Desktop\OverSurgery\bin\Debug\OverSurgery.exe
+C:\Users\Cos209\Desktop\OverSurgery\bin\Debug\OverSurgery.pdb
+C:\Users\Cos209\Desktop\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+C:\Users\Cos209\Desktop\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+C:\Users\Cos209\Desktop\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+C:\Users\Cos209\Desktop\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+C:\Users\dk205\Desktop\OverSurgery\bin\Debug\OverSurgery.exe.config
+C:\Users\dk205\Desktop\OverSurgery\obj\Debug\OverSurgery.exe
+C:\Users\dk205\Desktop\OverSurgery\obj\Debug\OverSurgery.pdb
+C:\Users\dk205\Desktop\OverSurgery\bin\Debug\OverSugerydbase.mdf
+C:\Users\dk205\Desktop\OverSurgery\bin\Debug\OverSugerydbase_log.ldf
+C:\Users\dk205\Desktop\OverSurgery\bin\Debug\OverSurgery.exe
+C:\Users\dk205\Desktop\OverSurgery\bin\Debug\OverSurgery.pdb
+C:\Users\dk205\Desktop\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+C:\Users\dk205\Desktop\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+C:\Users\dk205\Desktop\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+C:\Users\dk205\Desktop\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+C:\Users\dk205\Desktop\New folder1\OverSurgery\bin\Debug\OverSurgery.exe.config
+C:\Users\dk205\Desktop\New folder1\OverSurgery\obj\Debug\OverSurgery.exe
+C:\Users\dk205\Desktop\New folder1\OverSurgery\obj\Debug\OverSurgery.pdb
+C:\Users\dk205\Desktop\New folder1\OverSurgery\bin\Debug\OverSugerydbase.mdf
+C:\Users\dk205\Desktop\New folder1\OverSurgery\bin\Debug\OverSugerydbase_log.ldf
+C:\Users\dk205\Desktop\New folder1\OverSurgery\bin\Debug\OverSurgery.exe
+C:\Users\dk205\Desktop\New folder1\OverSurgery\bin\Debug\OverSurgery.pdb
+C:\Users\dk205\Desktop\New folder1\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+C:\Users\dk205\Desktop\New folder1\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+C:\Users\dk205\Desktop\New folder1\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+C:\Users\dk205\Desktop\New folder1\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+C:\Users\Cos209\Desktop\MyWork\OverSurgery\bin\Debug\OverSurgery.exe.config
+C:\Users\Cos209\Desktop\MyWork\OverSurgery\obj\Debug\OverSurgery.exe
+C:\Users\Cos209\Desktop\MyWork\OverSurgery\obj\Debug\OverSurgery.pdb
+C:\Users\Cos209\Desktop\MyWork\OverSurgery\bin\Debug\OverSugerydbase.mdf
+C:\Users\Cos209\Desktop\MyWork\OverSurgery\bin\Debug\OverSugerydbase_log.ldf
+C:\Users\Cos209\Desktop\MyWork\OverSurgery\bin\Debug\OverSurgery.exe
+C:\Users\Cos209\Desktop\MyWork\OverSurgery\bin\Debug\OverSurgery.pdb
+C:\Users\Cos209\Desktop\MyWork\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+C:\Users\Cos209\Desktop\MyWork\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+C:\Users\Cos209\Desktop\MyWork\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+C:\Users\Cos209\Desktop\MyWork\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+H:\My Documents\My Desktop\My work\OverSurgery\bin\Debug\OverSurgery.exe.config
+H:\My Documents\My Desktop\My work\OverSurgery\obj\Debug\OverSurgery.exe
+H:\My Documents\My Desktop\My work\OverSurgery\obj\Debug\OverSurgery.pdb
+H:\My Documents\My Desktop\My work\OverSurgery\bin\Debug\OverSugerydbase.mdf
+H:\My Documents\My Desktop\My work\OverSurgery\bin\Debug\OverSugerydbase_log.ldf
+H:\My Documents\My Desktop\My work\OverSurgery\bin\Debug\OverSurgery.exe
+H:\My Documents\My Desktop\My work\OverSurgery\bin\Debug\OverSurgery.pdb
+H:\My Documents\My Desktop\My work\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+H:\My Documents\My Desktop\My work\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+H:\My Documents\My Desktop\My work\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+H:\My Documents\My Desktop\My work\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+H:\My Documents\Year 2\Software\gitprogram\OverSurgery\bin\Debug\OverSurgery.exe.config
+H:\My Documents\Year 2\Software\gitprogram\OverSurgery\obj\Debug\OverSurgery.exe
+H:\My Documents\Year 2\Software\gitprogram\OverSurgery\obj\Debug\OverSurgery.pdb
+H:\My Documents\Year 2\Software\gitprogram\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+H:\My Documents\Year 2\Software\gitprogram\OverSurgery\obj\Debug\OverSurgery.LogIn.resources
+H:\My Documents\Year 2\Software\gitprogram\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+H:\My Documents\Year 2\Software\gitprogram\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+H:\My Documents\Year 2\Software\gitprogram\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+H:\My Documents\Year 2\Software\gitprogram\OverSurgery\bin\Debug\OverSugerydbase.mdf
+H:\My Documents\Year 2\Software\gitprogram\OverSurgery\bin\Debug\OverSugerydbase_log.ldf
+H:\My Documents\Year 2\Software\gitprogram\OverSurgery\bin\Debug\OverSurgery.exe
+H:\My Documents\Year 2\Software\gitprogram\OverSurgery\bin\Debug\OverSurgery.pdb
+C:\Users\Cos209\Desktop\Login1\OverSurgery\bin\Debug\OverSurgery.exe.config
+C:\Users\Cos209\Desktop\Login1\OverSurgery\obj\Debug\OverSurgery.exe
+C:\Users\Cos209\Desktop\Login1\OverSurgery\obj\Debug\OverSurgery.pdb
+C:\Users\Cos209\Desktop\Login1\OverSurgery\bin\Debug\OverSugerydbase.mdf
+C:\Users\Cos209\Desktop\Login1\OverSurgery\bin\Debug\OverSugerydbase_log.ldf
+C:\Users\Cos209\Desktop\Login1\OverSurgery\bin\Debug\OverSurgery.exe
+C:\Users\Cos209\Desktop\Login1\OverSurgery\bin\Debug\OverSurgery.pdb
+C:\Users\Cos209\Desktop\Login1\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+C:\Users\Cos209\Desktop\Login1\OverSurgery\obj\Debug\OverSurgery.LogIn.resources
+C:\Users\Cos209\Desktop\Login1\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+C:\Users\Cos209\Desktop\Login1\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+C:\Users\Cos209\Desktop\Login1\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+E:\My work\OverSurgery\bin\Debug\OverSurgery.exe.config
+E:\My work\OverSurgery\obj\Debug\OverSurgery.exe
+E:\My work\OverSurgery\obj\Debug\OverSurgery.pdb
+E:\My work\OverSurgery\bin\Debug\OverSugerydbase.mdf
+E:\My work\OverSurgery\bin\Debug\OverSugerydbase_log.ldf
+E:\My work\OverSurgery\bin\Debug\OverSurgery.exe
+E:\My work\OverSurgery\bin\Debug\OverSurgery.pdb
+E:\My work\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+E:\My work\OverSurgery\obj\Debug\OverSurgery.LogIn.resources
+E:\My work\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+E:\My work\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+E:\My work\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+C:\Users\Cos209\Desktop\Mywork3\OverSurgery\bin\Debug\OverSurgery.exe.config
+C:\Users\Cos209\Desktop\Mywork3\OverSurgery\obj\Debug\OverSurgery.exe
+C:\Users\Cos209\Desktop\Mywork3\OverSurgery\obj\Debug\OverSurgery.pdb
+C:\Users\Cos209\Desktop\Mywork3\OverSurgery\bin\Debug\OverSugerydbase.mdf
+C:\Users\Cos209\Desktop\Mywork3\OverSurgery\bin\Debug\OverSugerydbase_log.ldf
+C:\Users\Cos209\Desktop\Mywork3\OverSurgery\bin\Debug\OverSurgery.exe
+C:\Users\Cos209\Desktop\Mywork3\OverSurgery\bin\Debug\OverSurgery.pdb
+C:\Users\Cos209\Desktop\Mywork3\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+C:\Users\Cos209\Desktop\Mywork3\OverSurgery\obj\Debug\OverSurgery.LogIn.resources
+C:\Users\Cos209\Desktop\Mywork3\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+C:\Users\Cos209\Desktop\Mywork3\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+C:\Users\Cos209\Desktop\Mywork3\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+H:\My Documents\SoftwareEngineeringxx\OverSurgery\bin\Debug\OverSurgery.exe.config
+H:\My Documents\SoftwareEngineeringxx\OverSurgery\obj\Debug\OverSurgery.exe
+H:\My Documents\SoftwareEngineeringxx\OverSurgery\obj\Debug\OverSurgery.pdb
+C:\Users\Cos209\Desktop\work 5\OverSurgery\bin\Debug\OverSurgery.exe.config
+C:\Users\Cos209\Desktop\work 5\OverSurgery\obj\Debug\OverSurgery.exe
+C:\Users\Cos209\Desktop\work 5\OverSurgery\obj\Debug\OverSurgery.pdb
+C:\Users\Cos209\Desktop\work 5\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+C:\Users\Cos209\Desktop\work 5\OverSurgery\obj\Debug\OverSurgery.LogIn.resources
+C:\Users\Cos209\Desktop\work 5\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+C:\Users\Cos209\Desktop\work 5\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+C:\Users\Cos209\Desktop\work 5\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+C:\Users\Cos209\Desktop\work 5\OverSurgery\bin\Debug\OverSugerydbase.mdf
+C:\Users\Cos209\Desktop\work 5\OverSurgery\bin\Debug\OverSugerydbase_log.ldf
+C:\Users\Cos209\Desktop\work 5\OverSurgery\bin\Debug\OverSurgery.exe
+C:\Users\Cos209\Desktop\work 5\OverSurgery\bin\Debug\OverSurgery.pdb
+C:\Users\Cos209\Desktop\work 6\OverSurgery\bin\Debug\OverSurgery.exe.config
+C:\Users\Cos209\Desktop\work 6\OverSurgery\obj\Debug\OverSurgery.exe
+C:\Users\Cos209\Desktop\work 6\OverSurgery\obj\Debug\OverSurgery.pdb
+C:\Users\Cos209\Desktop\work 6\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+C:\Users\Cos209\Desktop\work 6\OverSurgery\obj\Debug\OverSurgery.LogIn.resources
+C:\Users\Cos209\Desktop\work 6\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+C:\Users\Cos209\Desktop\work 6\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+C:\Users\Cos209\Desktop\work 6\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+C:\Users\Cos209\Desktop\work 6\OverSurgery\bin\Debug\OverSugerydbase.mdf
+C:\Users\Cos209\Desktop\work 6\OverSurgery\bin\Debug\OverSugerydbase_log.ldf
+C:\Users\Cos209\Desktop\work 6\OverSurgery\bin\Debug\OverSurgery.exe
+C:\Users\Cos209\Desktop\work 6\OverSurgery\bin\Debug\OverSurgery.pdb
+H:\My Documents\My Desktop\Mywork7\OverSurgery\bin\Debug\OverSurgery.exe.config
+H:\My Documents\My Desktop\Mywork7\OverSurgery\obj\Debug\OverSurgery.exe
+H:\My Documents\My Desktop\Mywork7\OverSurgery\obj\Debug\OverSurgery.pdb
+H:\My Documents\My Desktop\Mywork7\OverSurgery\bin\Debug\OverSugerydbase.mdf
+H:\My Documents\My Desktop\Mywork7\OverSurgery\bin\Debug\OverSugerydbase_log.ldf
+H:\My Documents\My Desktop\Mywork7\OverSurgery\bin\Debug\OverSurgery.exe
+H:\My Documents\My Desktop\Mywork7\OverSurgery\bin\Debug\OverSurgery.pdb
+H:\My Documents\My Desktop\Mywork7\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+H:\My Documents\My Desktop\Mywork7\OverSurgery\obj\Debug\OverSurgery.LogIn.resources
+H:\My Documents\My Desktop\Mywork7\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+H:\My Documents\My Desktop\Mywork7\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+H:\My Documents\My Desktop\Mywork7\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
