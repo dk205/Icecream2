@@ -2807,9 +2807,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(981, 716);
+            this.ControlBox = false;
             this.Controls.Add(this.ButtonLogOut);
             this.Controls.Add(this.tabControl1);
             this.Name = "MainBackGround";
+            this.Text = "Main Back Round";
             this.Load += new System.EventHandler(this.MainBackGround_Load);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);

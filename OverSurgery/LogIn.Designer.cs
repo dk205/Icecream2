@@ -46,6 +46,7 @@
             this.labUsername.Size = new System.Drawing.Size(58, 13);
             this.labUsername.TabIndex = 0;
             this.labUsername.Text = "Username:";
+            this.labUsername.Visible = false;
             // 
             // labPassword
             // 
@@ -55,6 +56,7 @@
             this.labPassword.Size = new System.Drawing.Size(56, 13);
             this.labPassword.TabIndex = 1;
             this.labPassword.Text = "Password:";
+            this.labPassword.Visible = false;
             // 
             // txtUser
             // 
@@ -62,6 +64,7 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(162, 20);
             this.txtUser.TabIndex = 2;
+            this.txtUser.Visible = false;
             // 
             // txtPassword
             // 
@@ -70,9 +73,11 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(162, 20);
             this.txtPassword.TabIndex = 3;
+            this.txtPassword.Visible = false;
             // 
             // richTextBox1
             // 
+            this.richTextBox1.Font = new System.Drawing.Font("Arial Narrow", 26.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBox1.Location = new System.Drawing.Point(33, 27);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(791, 307);
@@ -87,7 +92,7 @@
             this.btnLogin.TabIndex = 5;
             this.btnLogin.Text = "Log In";
             this.btnLogin.UseVisualStyleBackColor = true;
-            //this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
             // 
             // btnOK
             // 
@@ -97,6 +102,7 @@
             this.btnOK.TabIndex = 6;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
+            this.btnOK.Visible = false;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // btnExit
@@ -107,6 +113,8 @@
             this.btnExit.TabIndex = 7;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.Visible = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // LogIn
             // 
@@ -114,6 +122,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(862, 518);
+            this.ControlBox = false;
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnOK);
             this.Controls.Add(this.btnLogin);
@@ -124,6 +133,7 @@
             this.Controls.Add(this.richTextBox1);
             this.Name = "LogIn";
             this.Text = "LongIncs";
+            this.Load += new System.EventHandler(this.LogIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
