@@ -25,6 +25,7 @@ namespace OverSurgery
         }
 
         public string PreviousName="Free";
+        public bool PreSelectedValue =false;
 
         void FillStaffMenu()
         {
@@ -495,13 +496,14 @@ namespace OverSurgery
                 }
                 if (IdExists)
                 {
+                    
                     MessageBox.Show("found someone here already");
                     int numberofWorkingStaff = Rotas.Rows.Count;
                     MessageBox.Show(String.Format(" there are {0} entries found", numberofWorkingStaff));
                     for (int i = 0; i < numberofWorkingStaff; i++)
                     {
                         var control = Controls.Find("cbStaffMenu" + (i + 1), true).FirstOrDefault();
-
+                        PreSelectedValue = true;  //this is used so once the name is loaded it is not reset to "free" because I am setting a value that already is recorded (for display purposes) 
                         object a = Rotas.Rows[i]["Surname"];
                         control.Text = Convert.ToString(a);   ///cbStaffMenu1
 
@@ -519,57 +521,8 @@ namespace OverSurgery
             }
         }
 
-        private void btSaveRota_Click(object sender, EventArgs e)   //saves the drop down menus to the rota.
-        {
-             
-            for (int i = 0; i <5; i++)    //do 5 times for the 5 drop down menus
-            {
-                Boolean IdExists = true;                
-                var control = Controls.Find("cbStaffMenu" +(i+1), true).FirstOrDefault();
-                // control.Refresh();
-                
-                if (control.Text !="Free") // if cbStaffMenu1,2,3,4,5 has a value
-                {
-                    MessageBox.Show("found a value  about to copy"+i );
-
-                    
-
-                    OverSugerydbaseDataSet.StaffDataTable StaffSearched = this.staffTableAdapter.SearchStaffbySurname(control.Text);  //cbStaffMenu1 Search to find the selected staff's other details
-                    
-                    object a = StaffSearched.Rows[0]["StaffID"]; 
-                    int TempStaffID = Convert.ToInt32(a);   //store the id
-                    object b = StaffSearched.Rows[0]["Surname"];
-                    string TempSurname = Convert.ToString(b);  //store the Surname
-                    string TempDate = dateTimePicker2.Value.Date.ToString();   //store the date
-
-
-                    //create a table from the rota that contaigns the same name and date. It means we have a dublicate entry and we do not want to copy it.
-                    OverSugerydbaseDataSet.RotaDataTable Rotas = this.rotaTableAdapter.SearchbyIDandDate(TempStaffID, dateTimePicker2.Value.Date.ToString());
-                    try
-                    {
-                        object c = Rotas.Rows[0]["StaffID"]; //If the table does not exist (the we are good to copy the entry) then it will create an error
-
-                    }
-                    catch (Exception)
-                    {
-                        MessageBox.Show(String.Format("{0} is going to be   added to this shift", TempSurname)); //all is good
-                        IdExists = false; //so we set the ID exists to false so we can copy
-                    }
-
-                    if (IdExists) //if the id exists already 
-                    {
-                        MessageBox.Show("already added");  //just tell us its added and do nothing
-                    }
-                    else
-                    {
-                        this.rotaTableAdapter.AddRota(TempStaffID, TempSurname, TempDate); // store the values
-                        this.rotaTableAdapter.Fill(this.overSugerydbaseDataSet.Rota); //reload for us to see.
-                    }
-                }
-            }
-        }
-
-        private void cbStaffMenu1_SelectedIndexChanged(object sender, EventArgs e)
+  
+        private void cbStaffMenu1_SelectedIndexChanged(object sender, EventArgs e)   //when one of the five comboboxes value changes
         {
             Boolean IdExists = true;
             // var control = Controls.Find("cbStaffMenu" + (i + 1), true).FirstOrDefault();
@@ -587,6 +540,10 @@ namespace OverSurgery
                 int TempStaffID = Convert.ToInt32(a);   //store the id
                 object b = StaffSearched.Rows[0]["Surname"];
                 string TempSurname = Convert.ToString(b);  //store the Surname
+                object c = StaffSearched.Rows[0]["Sex"];
+                string TempSex = Convert.ToString(c);  //store the Sex
+                object d = StaffSearched.Rows[0]["Staff Role/Title"];
+                string TempRole = Convert.ToString(d);  //store the Surname
                 string TempDate = dateTimePicker2.Value.Date.ToString();   //store the date
 
 
@@ -594,7 +551,7 @@ namespace OverSurgery
                 OverSugerydbaseDataSet.RotaDataTable Rotas = this.rotaTableAdapter.SearchbyIDandDate(TempStaffID, dateTimePicker2.Value.Date.ToString());
                 try
                 {
-                    object c = Rotas.Rows[0]["StaffID"]; //If the table does not exist (the we are good to copy the entry) then it will create an error
+                    object t = Rotas.Rows[0]["StaffID"]; //If the table does not exist (the we are good to copy the entry) then it will create an error
 
                 }
                 catch (Exception)
@@ -606,6 +563,11 @@ namespace OverSurgery
                 if (IdExists) //if the id exists already 
                 {
                     MessageBox.Show("already added");  //just tell us its added and do nothing
+                    if(PreSelectedValue==false)
+                    {
+                    CB.SelectedIndex = 0;
+                    }
+                    PreSelectedValue = false;
                 }
                 else
                 {
@@ -616,7 +578,7 @@ namespace OverSurgery
                         MessageBox.Show(" old entry Deleted");
                     }
                     
-                    this.rotaTableAdapter.AddRota(TempStaffID, TempSurname, TempDate); // store the values
+                    this.rotaTableAdapter.AddRotaV3(TempStaffID, TempSurname, TempDate,TempSex,TempRole); // store the values
                     this.rotaTableAdapter.Fill(this.overSugerydbaseDataSet.Rota); //reload for us to see.
                 }
             }
@@ -635,12 +597,18 @@ namespace OverSurgery
             }
             dateTimePicker2.Focus();
         }
-        private void ValueAboutToChange(object sender, EventArgs e)
+        
+        
+        private void ValueAboutToChange(object sender, EventArgs e)  //catch the previous value of the menu 
         {
              ComboBox CB = sender as ComboBox;
              PreviousName = CB.Text;
          
         }
+
+       
+
+     
 
     }
 }

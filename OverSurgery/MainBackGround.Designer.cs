@@ -225,8 +225,9 @@
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.btSaveRota = new System.Windows.Forms.Button();
             this.tbBadBox = new System.Windows.Forms.TextBox();
             this.cbStaffMenu4 = new System.Windows.Forms.ComboBox();
             this.cbStaffMenu1 = new System.Windows.Forms.ComboBox();
@@ -300,6 +301,7 @@
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(980, 697);
             this.tabControl1.TabIndex = 1;
+            this.tabControl1.Click += new System.EventHandler(this.dateTimePicker2_CloseUp);
             // 
             // tabPage1
             // 
@@ -2236,7 +2238,6 @@
             // 
             this.PageRota.BackColor = System.Drawing.Color.LightGray;
             this.PageRota.Controls.Add(this.rotaDataGridView);
-            this.PageRota.Controls.Add(this.btSaveRota);
             this.PageRota.Controls.Add(this.tbBadBox);
             this.PageRota.Controls.Add(this.cbStaffMenu4);
             this.PageRota.Controls.Add(this.cbStaffMenu1);
@@ -2250,7 +2251,7 @@
             this.PageRota.Controls.Add(this.label58);
             this.PageRota.Location = new System.Drawing.Point(49, 172);
             this.PageRota.Name = "PageRota";
-            this.PageRota.Size = new System.Drawing.Size(676, 346);
+            this.PageRota.Size = new System.Drawing.Size(847, 346);
             this.PageRota.TabIndex = 10;
             // 
             // rotaDataGridView
@@ -2260,12 +2261,14 @@
             this.rotaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn17,
             this.dataGridViewTextBoxColumn18,
-            this.dataGridViewTextBoxColumn19});
+            this.dataGridViewTextBoxColumn19,
+            this.dataGridViewTextBoxColumn20,
+            this.dataGridViewTextBoxColumn21});
             this.rotaDataGridView.DataSource = this.rotaBindingSource;
-            this.rotaDataGridView.Location = new System.Drawing.Point(244, 27);
+            this.rotaDataGridView.Location = new System.Drawing.Point(246, 15);
             this.rotaDataGridView.Name = "rotaDataGridView";
-            this.rotaDataGridView.Size = new System.Drawing.Size(390, 220);
-            this.rotaDataGridView.TabIndex = 12;
+            this.rotaDataGridView.Size = new System.Drawing.Size(565, 220);
+            this.rotaDataGridView.TabIndex = 11;
             // 
             // dataGridViewTextBoxColumn17
             // 
@@ -2285,20 +2288,22 @@
             this.dataGridViewTextBoxColumn19.HeaderText = "Date";
             this.dataGridViewTextBoxColumn19.Name = "dataGridViewTextBoxColumn19";
             // 
+            // dataGridViewTextBoxColumn20
+            // 
+            this.dataGridViewTextBoxColumn20.DataPropertyName = "Sex";
+            this.dataGridViewTextBoxColumn20.HeaderText = "Sex";
+            this.dataGridViewTextBoxColumn20.Name = "dataGridViewTextBoxColumn20";
+            // 
+            // dataGridViewTextBoxColumn21
+            // 
+            this.dataGridViewTextBoxColumn21.DataPropertyName = "Staff Role/Title";
+            this.dataGridViewTextBoxColumn21.HeaderText = "Staff Role/Title";
+            this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
+            // 
             // rotaBindingSource
             // 
             this.rotaBindingSource.DataMember = "Rota";
             this.rotaBindingSource.DataSource = this.overSugerydbaseDataSet;
-            // 
-            // btSaveRota
-            // 
-            this.btSaveRota.Location = new System.Drawing.Point(90, 211);
-            this.btSaveRota.Name = "btSaveRota";
-            this.btSaveRota.Size = new System.Drawing.Size(75, 23);
-            this.btSaveRota.TabIndex = 12;
-            this.btSaveRota.Text = "Save";
-            this.btSaveRota.UseVisualStyleBackColor = true;
-            this.btSaveRota.Click += new System.EventHandler(this.btSaveRota_Click);
             // 
             // tbBadBox
             // 
@@ -2432,11 +2437,11 @@
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker2.Location = new System.Drawing.Point(139, 90);
-            this.dateTimePicker2.MinDate = new System.DateTime(2013, 12, 17, 0, 0, 0, 0);
+            this.dateTimePicker2.MinDate = new System.DateTime(2013, 12, 18, 10, 53, 56, 332);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker2.TabIndex = 1;
-            this.dateTimePicker2.Value = new System.DateTime(2013, 12, 17, 11, 14, 39, 0);
+            this.dateTimePicker2.Value = new System.DateTime(2013, 12, 18, 10, 53, 56, 333);
             this.dateTimePicker2.CloseUp += new System.EventHandler(this.dateTimePicker2_CloseUp);
             // 
             // ButtonLogOut
@@ -2765,13 +2770,14 @@
         private System.Windows.Forms.ComboBox cbStaffMenu2;
         private System.Windows.Forms.Panel PageRota;
         private System.Windows.Forms.TextBox tbBadBox;
-        private System.Windows.Forms.Button btSaveRota;
         private System.Windows.Forms.BindingSource rotaBindingSource;
         private OverSugerydbaseDataSetTableAdapters.RotaTableAdapter rotaTableAdapter;
         private System.Windows.Forms.DataGridView rotaDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn17;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn18;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn19;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn20;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn21;
     }
 }
 
