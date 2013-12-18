@@ -289,6 +289,8 @@ namespace OverSurgery
 
         private void MainBackGround_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'overSugerydbaseDataSet.TwoActiveWeeks' table. You can move, or remove it, as needed.
+            this.twoActiveWeeksTableAdapter.Fill(this.overSugerydbaseDataSet.TwoActiveWeeks);
             // TODO: This line of code loads data into the 'overSugerydbaseDataSet.Medication' table. You can move, or remove it, as needed.
             this.medicationTableAdapter.Fill(this.overSugerydbaseDataSet.Medication);
             // TODO: This line of code loads data into the 'overSugerydbaseDataSet.Rota' table. You can move, or remove it, as needed.
@@ -447,24 +449,30 @@ namespace OverSurgery
 
         private void btnCheckAppointments_Click(object sender, EventArgs e)
         {
-            //            this.week52TableAdapter.Fill(this.overSugerydbaseDataSet.Week52);
+            this.twoActiveWeeksTableAdapter.Fill(this.overSugerydbaseDataSet.TwoActiveWeeks); //TEMPORARY
+            this.rotaTableAdapter.Fill(this.overSugerydbaseDataSet.Rota);           //TEMPORARY
 
             if (RBAllDoctors.Checked)
             {
-                string StaffID=string.Empty;
+                string StaffID = string.Empty;
                 MessageBox.Show("all doctors selected");
-                OverSugerydbaseDataSet.Week52DataTable StaffFound = this.week52TableAdapter.GetAllAvailable();
-                foreach(OverSugerydbaseDataSet.Week52Row row in StaffFound)
+                OverSugerydbaseDataSet.RotaDataTable StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());
+                int i = 0;
+                foreach (OverSugerydbaseDataSet.RotaRow row in StaffFound)
                 {
+                    var control = Controls.Find("labelStaff" + (i), true).FirstOrDefault();
+                    // control.Refresh();
+
                     MessageBox.Show("in the Foreach");
-                 object StaffIDObject = StaffFound.Rows[0]["StaffID"];
-                   StaffID = Convert.ToString(StaffIDObject); 
-                 
+                    //object StaffIDObject = StaffFound.Rows[i]["Surname"];
+                    control.Text = row.Surname;
+                    i++;
+
                 }
 
             }
             TimetableM.Visible = true;
-            
+
         }
 
         private void dateTimePicker2_CloseUp(object sender, EventArgs e)
@@ -498,7 +506,7 @@ namespace OverSurgery
                 }
                 if (IdExists)
                 {
-                    
+
                     MessageBox.Show("found someone here already");
                     int numberofWorkingStaff = Rotas.Rows.Count;
                     MessageBox.Show(String.Format(" there are {0} entries found", numberofWorkingStaff));
@@ -515,7 +523,7 @@ namespace OverSurgery
                 {
                     DestroyMenus();
                     FillStaffMenu();
-                   // cbStaffMenu1.SelectedIndex=3;
+                    // cbStaffMenu1.SelectedIndex=3;
                 }
                 PageRota.Visible = true;
 
@@ -523,7 +531,7 @@ namespace OverSurgery
             }
         }
 
-  
+
         private void cbStaffMenu1_SelectedIndexChanged(object sender, EventArgs e)   //when one of the five comboboxes value changes
         {
             Boolean IdExists = true;
@@ -531,9 +539,11 @@ namespace OverSurgery
             // control.Refresh();
             ComboBox CB = sender as ComboBox;
 
+
+
             if (CB.Text != "Free") //current entry a name
             {
-                
+
                 this.rotaTableAdapter.DeleteStaffFromRota(PreviousName, dateTimePicker2.Value.Date.ToString()); //delete old entry
                 OverSugerydbaseDataSet.StaffDataTable StaffSearched = this.staffTableAdapter.SearchStaffbySurname(CB.Text);  // cbStaffMenu1 Search to find the
                 // selected staff's other details
@@ -565,28 +575,29 @@ namespace OverSurgery
                 if (IdExists) //if the id exists already 
                 {
                     MessageBox.Show("already added");  //just tell us its added and do nothing
-                    if(PreSelectedValue==false)
+                    if (PreSelectedValue == false)
                     {
-                    CB.SelectedIndex = 0;
+                        CB.SelectedIndex = 0;
                     }
                     PreSelectedValue = false;
                 }
                 else
                 {
                     //MessageBox.Show("about to delete old entry2");
-                    if (PreviousName != "Free" && PreviousName!=String.Empty) //and  the previous value was not free
+                    if (PreviousName != "Free" && PreviousName != String.Empty) //and  the previous value was not free
                     {
                         this.rotaTableAdapter.DeleteStaffFromRota(PreviousName, TempDate);//delete old entry
                         MessageBox.Show(" old entry Deleted");
                     }
-                    
-                    this.rotaTableAdapter.AddRotaV3(TempStaffID, TempSurname, TempDate,TempSex,TempRole); // store the values
+
+                    this.rotaTableAdapter.AddRotaV3(TempStaffID, TempSurname, TempDate, TempSex, TempRole); // store the values
                     this.rotaTableAdapter.Fill(this.overSugerydbaseDataSet.Rota); //reload for us to see.
                 }
             }
+
             else //Current entry is set to free
             {
-               // MessageBox.Show(String.Format("the value of Previousname is {0}", PreviousName));
+                // MessageBox.Show(String.Format("the value of Previousname is {0}", PreviousName));
                 if (PreviousName != "Free" && PreviousName != String.Empty)
                     try
                     {
@@ -599,14 +610,27 @@ namespace OverSurgery
             }
             dateTimePicker2.Focus();
         }
-        
-        
+
+
         private void ValueAboutToChange(object sender, EventArgs e)  //catch the previous value of the menu 
         {
-             ComboBox CB = sender as ComboBox;
-             PreviousName = CB.Text;
-         
+            ComboBox CB = sender as ComboBox;
+            PreviousName = CB.Text;
+
         }
+
+        private void WhenTabSelected(object sender, EventArgs e)
+        {
+            TabControl Tab = sender as TabControl;
+            // MessageBox.Show(String.Format(" the tabcontrol1.selectedTab is: {0}",tabControl1.SelectedTab.ToString()));
+            if (tabControl1.SelectedTab.ToString() == "TabPage: {Timetable}")
+            {
+                dateTimePicker2.Location = new Point(139, 91);
+            }
+
+        }
+
+        //toms stuff
 
         private void btnMedAdd_Click(object sender, EventArgs e)
         {
