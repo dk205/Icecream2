@@ -630,7 +630,7 @@ namespace OverSurgery
 
         }
 
-        //toms stuff
+        //Toms stuff
 
         private void btnMedAdd_Click(object sender, EventArgs e)
         {
