@@ -289,6 +289,8 @@ namespace OverSurgery
 
         private void MainBackGround_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'overSugerydbaseDataSet.Medication' table. You can move, or remove it, as needed.
+            this.medicationTableAdapter.Fill(this.overSugerydbaseDataSet.Medication);
             // TODO: This line of code loads data into the 'overSugerydbaseDataSet.Rota' table. You can move, or remove it, as needed.
             this.rotaTableAdapter.Fill(this.overSugerydbaseDataSet.Rota);
             // TODO: This line of code loads data into the 'overSugerydbaseDataSet.Week52' table. You can move, or remove it, as needed.
@@ -604,6 +606,27 @@ namespace OverSurgery
              ComboBox CB = sender as ComboBox;
              PreviousName = CB.Text;
          
+        }
+
+        private void btnMedAdd_Click(object sender, EventArgs e)
+        {
+            DataRow newMedicationRow = overSugerydbaseDataSet.Tables["Medication"].NewRow();
+            overSugerydbaseDataSet.Tables["Medication"].Rows.Add(newMedicationRow);
+            medicationBindingSource.MoveLast();
+            
+        }
+
+        private void btnMedSub_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.medicationBindingSource.EndEdit();
+            this.medicationTableAdapter.Update(this.overSugerydbaseDataSet);
+            /*
+            this.medicationTableAdapter.update //(txtNRPatientsName.Text, txtNRDOB.Text, txtNRSex.Text, txtNRPC.Text, txtNRAddress1.Text, txtNRAddress2.Text, txtNRMobile.Text, txtNRLandLine.Text, txtNREmail.Text); //store the data from the textboxes to the database
+            this.patientsTableAdapter.Fill(this.overSugerydbaseDataSet.Patients); //*TEMP this will be removed after testing
+
+            OverSugerydbaseDataSet.PatientsDataTable Monkey = this.patientsTableAdapter.GetActivePatientQuery(); //creates a table with 1 row which is the last row just entered (our active patient)
+             */ 
         }
 
        

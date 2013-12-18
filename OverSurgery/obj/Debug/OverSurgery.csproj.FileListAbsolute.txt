@@ -226,3 +226,15 @@ C:\Users\Cos209\Desktop\New folder44\OverSurgery\obj\Debug\OverSurgery.LogIn.res
 C:\Users\Cos209\Desktop\New folder44\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
 C:\Users\Cos209\Desktop\New folder44\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
 C:\Users\Cos209\Desktop\New folder44\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+H:\My Documents\Year 2\Software\gitprog3\OverSurgery\bin\Debug\OverSurgery.exe.config
+H:\My Documents\Year 2\Software\gitprog3\OverSurgery\obj\Debug\OverSurgery.exe
+H:\My Documents\Year 2\Software\gitprog3\OverSurgery\obj\Debug\OverSurgery.pdb
+H:\My Documents\Year 2\Software\gitprog3\OverSurgery\bin\Debug\OverSugerydbase.mdf
+H:\My Documents\Year 2\Software\gitprog3\OverSurgery\bin\Debug\OverSugerydbase_log.ldf
+H:\My Documents\Year 2\Software\gitprog3\OverSurgery\bin\Debug\OverSurgery.exe
+H:\My Documents\Year 2\Software\gitprog3\OverSurgery\bin\Debug\OverSurgery.pdb
+H:\My Documents\Year 2\Software\gitprog3\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+H:\My Documents\Year 2\Software\gitprog3\OverSurgery\obj\Debug\OverSurgery.LogIn.resources
+H:\My Documents\Year 2\Software\gitprog3\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+H:\My Documents\Year 2\Software\gitprog3\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+H:\My Documents\Year 2\Software\gitprog3\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
