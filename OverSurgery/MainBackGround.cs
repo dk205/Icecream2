@@ -461,14 +461,17 @@ namespace OverSurgery
                 int i = 0;
                 foreach (OverSugerydbaseDataSet.RotaRow row in StaffFound)
                 {
-                    var control = Controls.Find("labelStaff" + (i), true).FirstOrDefault();
-                    // control.Refresh();
+                  
+
+
+                     Label Amorphos = this.Controls.Find("labelStaff" + i, true).FirstOrDefault() as Label ;
+                     Amorphos.Refresh();
 
                     MessageBox.Show("in the Foreach");
-                    //object StaffIDObject = StaffFound.Rows[i]["Surname"];
-                    control.Text = row.Surname;
-                    i++;
-
+                  
+                        Amorphos.Text = row.Surname;
+                        i++;
+                
                 }
 
             }

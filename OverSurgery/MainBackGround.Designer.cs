@@ -64,11 +64,11 @@
             this.cbStaffList = new System.Windows.Forms.ComboBox();
             this.TimetableM = new System.Windows.Forms.TableLayoutPanel();
             this.label43 = new System.Windows.Forms.Label();
+            this.labelStaff0 = new System.Windows.Forms.Label();
             this.labelStaff1 = new System.Windows.Forms.Label();
             this.labelStaff2 = new System.Windows.Forms.Label();
             this.labelStaff3 = new System.Windows.Forms.Label();
             this.labelStaff4 = new System.Windows.Forms.Label();
-            this.labelStaff5 = new System.Windows.Forms.Label();
             this.label44 = new System.Windows.Forms.Label();
             this.label45 = new System.Windows.Forms.Label();
             this.label46 = new System.Windows.Forms.Label();
@@ -654,11 +654,11 @@
             this.TimetableM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
             this.TimetableM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
             this.TimetableM.Controls.Add(this.label43, 0, 0);
-            this.TimetableM.Controls.Add(this.labelStaff1, 0, 1);
-            this.TimetableM.Controls.Add(this.labelStaff2, 0, 2);
-            this.TimetableM.Controls.Add(this.labelStaff3, 0, 3);
-            this.TimetableM.Controls.Add(this.labelStaff4, 0, 4);
-            this.TimetableM.Controls.Add(this.labelStaff5, 0, 5);
+            this.TimetableM.Controls.Add(this.labelStaff0, 0, 1);
+            this.TimetableM.Controls.Add(this.labelStaff1, 0, 2);
+            this.TimetableM.Controls.Add(this.labelStaff2, 0, 3);
+            this.TimetableM.Controls.Add(this.labelStaff3, 0, 4);
+            this.TimetableM.Controls.Add(this.labelStaff4, 0, 5);
             this.TimetableM.Controls.Add(this.label44, 1, 0);
             this.TimetableM.Controls.Add(this.label45, 2, 0);
             this.TimetableM.Controls.Add(this.label46, 3, 0);
@@ -699,13 +699,26 @@
             this.label43.Text = "Time/\r\nStaff";
             this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // labelStaff0
+            // 
+            this.labelStaff0.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelStaff0.AutoSize = true;
+            this.labelStaff0.Location = new System.Drawing.Point(4, 36);
+            this.labelStaff0.Name = "labelStaff0";
+            this.labelStaff0.Size = new System.Drawing.Size(60, 34);
+            this.labelStaff0.TabIndex = 1;
+            this.labelStaff0.Text = "Blank";
+            this.labelStaff0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // labelStaff1
             // 
             this.labelStaff1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelStaff1.AutoSize = true;
-            this.labelStaff1.Location = new System.Drawing.Point(4, 36);
+            this.labelStaff1.Location = new System.Drawing.Point(4, 71);
             this.labelStaff1.Name = "labelStaff1";
             this.labelStaff1.Size = new System.Drawing.Size(60, 34);
             this.labelStaff1.TabIndex = 1;
@@ -718,11 +731,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelStaff2.AutoSize = true;
-            this.labelStaff2.Location = new System.Drawing.Point(4, 71);
+            this.labelStaff2.Location = new System.Drawing.Point(4, 106);
             this.labelStaff2.Name = "labelStaff2";
             this.labelStaff2.Size = new System.Drawing.Size(60, 34);
             this.labelStaff2.TabIndex = 1;
-            this.labelStaff2.Text = "Blank";
+            this.labelStaff2.Text = "blank";
             this.labelStaff2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelStaff3
@@ -731,11 +744,11 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelStaff3.AutoSize = true;
-            this.labelStaff3.Location = new System.Drawing.Point(4, 106);
+            this.labelStaff3.Location = new System.Drawing.Point(4, 141);
             this.labelStaff3.Name = "labelStaff3";
             this.labelStaff3.Size = new System.Drawing.Size(60, 34);
             this.labelStaff3.TabIndex = 1;
-            this.labelStaff3.Text = "blank";
+            this.labelStaff3.Text = "Blank";
             this.labelStaff3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // labelStaff4
@@ -744,25 +757,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelStaff4.AutoSize = true;
-            this.labelStaff4.Location = new System.Drawing.Point(4, 141);
+            this.labelStaff4.Location = new System.Drawing.Point(4, 176);
             this.labelStaff4.Name = "labelStaff4";
-            this.labelStaff4.Size = new System.Drawing.Size(60, 34);
+            this.labelStaff4.Size = new System.Drawing.Size(60, 39);
             this.labelStaff4.TabIndex = 1;
             this.labelStaff4.Text = "Blank";
             this.labelStaff4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelStaff5
-            // 
-            this.labelStaff5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelStaff5.AutoSize = true;
-            this.labelStaff5.Location = new System.Drawing.Point(4, 176);
-            this.labelStaff5.Name = "labelStaff5";
-            this.labelStaff5.Size = new System.Drawing.Size(60, 39);
-            this.labelStaff5.TabIndex = 1;
-            this.labelStaff5.Text = "Blank";
-            this.labelStaff5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label44
             // 
@@ -3043,11 +3043,11 @@
         private System.Windows.Forms.Button btnCheckAppointments;
         private System.Windows.Forms.Button btnMorning;
         private System.Windows.Forms.Button btnAfternoon;
+        private System.Windows.Forms.Label labelStaff0;
         private System.Windows.Forms.Label labelStaff1;
         private System.Windows.Forms.Label labelStaff2;
         private System.Windows.Forms.Label labelStaff3;
         private System.Windows.Forms.Label labelStaff4;
-        private System.Windows.Forms.Label labelStaff5;
         private System.Windows.Forms.Label label44;
         private System.Windows.Forms.Label label45;
         private System.Windows.Forms.Label label46;
