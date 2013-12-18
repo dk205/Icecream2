@@ -332,6 +332,7 @@ namespace OverSurgery
                 object b = Monkey.Rows[0]["Id"];
                 txtActiveUserName.Text = Convert.ToString(a);
                 txtActiveUserID.Text = Convert.ToString(b);
+                ActiveUserID = Convert.ToInt32(b);
                 setMeVisible("PageSelectedPatient");
                 btnClearActivePatient.Visible = true;
                 

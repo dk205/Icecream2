@@ -262,3 +262,15 @@ H:\My Documents\My Desktop\ New\OverSurgery\obj\Debug\OverSurgery.LogIn.resource
 H:\My Documents\My Desktop\ New\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
 H:\My Documents\My Desktop\ New\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
 H:\My Documents\My Desktop\ New\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+H:\My Documents\My Desktop\New folderlatest\OverSurgery\bin\Debug\OverSurgery.exe.config
+H:\My Documents\My Desktop\New folderlatest\OverSurgery\obj\Debug\OverSurgery.exe
+H:\My Documents\My Desktop\New folderlatest\OverSurgery\obj\Debug\OverSurgery.pdb
+H:\My Documents\My Desktop\New folderlatest\OverSurgery\bin\Debug\OverSugerydbase.mdf
+H:\My Documents\My Desktop\New folderlatest\OverSurgery\bin\Debug\OverSugerydbase_log.ldf
+H:\My Documents\My Desktop\New folderlatest\OverSurgery\bin\Debug\OverSurgery.exe
+H:\My Documents\My Desktop\New folderlatest\OverSurgery\bin\Debug\OverSurgery.pdb
+H:\My Documents\My Desktop\New folderlatest\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+H:\My Documents\My Desktop\New folderlatest\OverSurgery\obj\Debug\OverSurgery.LogIn.resources
+H:\My Documents\My Desktop\New folderlatest\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+H:\My Documents\My Desktop\New folderlatest\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+H:\My Documents\My Desktop\New folderlatest\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
