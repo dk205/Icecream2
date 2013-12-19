@@ -64,6 +64,7 @@
             this.txtUser.Name = "txtUser";
             this.txtUser.Size = new System.Drawing.Size(162, 20);
             this.txtUser.TabIndex = 2;
+            this.txtUser.Text = "user";
             this.txtUser.Visible = false;
             // 
             // txtPassword
@@ -73,6 +74,7 @@
             this.txtPassword.PasswordChar = '*';
             this.txtPassword.Size = new System.Drawing.Size(162, 20);
             this.txtPassword.TabIndex = 3;
+            this.txtPassword.Text = "user";
             this.txtPassword.Visible = false;
             // 
             // richTextBox1

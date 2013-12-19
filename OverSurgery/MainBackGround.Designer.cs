@@ -431,9 +431,9 @@
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.LightGray;
             this.splitContainer1.Panel2.Controls.Add(this.PageMakeAppointment);
+            this.splitContainer1.Panel2.Controls.Add(this.PageMainScreen);
             this.splitContainer1.Panel2.Controls.Add(this.PageAddViewExtendMedication);
             this.splitContainer1.Panel2.Controls.Add(this.PageSelectedPatient);
-            this.splitContainer1.Panel2.Controls.Add(this.PageMainScreen);
             this.splitContainer1.Panel2.Controls.Add(this.PageNewRegistration);
             this.splitContainer1.Panel2.Controls.Add(this.PageEditPatientDetails);
             this.splitContainer1.Panel2.Controls.Add(this.PageEnterTestResults);
@@ -637,7 +637,7 @@
             // 
             // TimetableM
             // 
-            this.TimetableM.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.Single;
+            this.TimetableM.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
             this.TimetableM.ColumnCount = 14;
             this.TimetableM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
             this.TimetableM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
@@ -692,9 +692,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label43.AutoSize = true;
             this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(4, 1);
+            this.label43.Location = new System.Drawing.Point(6, 3);
             this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(60, 34);
+            this.label43.Size = new System.Drawing.Size(58, 32);
             this.label43.TabIndex = 0;
             this.label43.Text = "Time/\r\nStaff";
             this.label43.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -705,9 +705,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelStaff0.AutoSize = true;
-            this.labelStaff0.Location = new System.Drawing.Point(4, 36);
+            this.labelStaff0.Location = new System.Drawing.Point(6, 38);
             this.labelStaff0.Name = "labelStaff0";
-            this.labelStaff0.Size = new System.Drawing.Size(60, 34);
+            this.labelStaff0.Size = new System.Drawing.Size(58, 32);
             this.labelStaff0.TabIndex = 1;
             this.labelStaff0.Text = "Blank";
             this.labelStaff0.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -718,9 +718,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelStaff1.AutoSize = true;
-            this.labelStaff1.Location = new System.Drawing.Point(4, 71);
+            this.labelStaff1.Location = new System.Drawing.Point(6, 73);
             this.labelStaff1.Name = "labelStaff1";
-            this.labelStaff1.Size = new System.Drawing.Size(60, 34);
+            this.labelStaff1.Size = new System.Drawing.Size(58, 32);
             this.labelStaff1.TabIndex = 1;
             this.labelStaff1.Text = "Blank";
             this.labelStaff1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -731,9 +731,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelStaff2.AutoSize = true;
-            this.labelStaff2.Location = new System.Drawing.Point(4, 106);
+            this.labelStaff2.Location = new System.Drawing.Point(6, 108);
             this.labelStaff2.Name = "labelStaff2";
-            this.labelStaff2.Size = new System.Drawing.Size(60, 34);
+            this.labelStaff2.Size = new System.Drawing.Size(58, 32);
             this.labelStaff2.TabIndex = 1;
             this.labelStaff2.Text = "blank";
             this.labelStaff2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -744,9 +744,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelStaff3.AutoSize = true;
-            this.labelStaff3.Location = new System.Drawing.Point(4, 141);
+            this.labelStaff3.Location = new System.Drawing.Point(6, 143);
             this.labelStaff3.Name = "labelStaff3";
-            this.labelStaff3.Size = new System.Drawing.Size(60, 34);
+            this.labelStaff3.Size = new System.Drawing.Size(58, 32);
             this.labelStaff3.TabIndex = 1;
             this.labelStaff3.Text = "Blank";
             this.labelStaff3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -757,9 +757,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labelStaff4.AutoSize = true;
-            this.labelStaff4.Location = new System.Drawing.Point(4, 176);
+            this.labelStaff4.Location = new System.Drawing.Point(6, 178);
             this.labelStaff4.Name = "labelStaff4";
-            this.labelStaff4.Size = new System.Drawing.Size(60, 39);
+            this.labelStaff4.Size = new System.Drawing.Size(58, 35);
             this.labelStaff4.TabIndex = 1;
             this.labelStaff4.Text = "Blank";
             this.labelStaff4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -770,9 +770,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label44.AutoSize = true;
-            this.label44.Location = new System.Drawing.Point(71, 1);
+            this.label44.Location = new System.Drawing.Point(73, 3);
             this.label44.Name = "label44";
-            this.label44.Size = new System.Drawing.Size(60, 34);
+            this.label44.Size = new System.Drawing.Size(58, 32);
             this.label44.TabIndex = 1;
             this.label44.Text = "8:00";
             this.label44.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -783,9 +783,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label45.AutoSize = true;
-            this.label45.Location = new System.Drawing.Point(138, 1);
+            this.label45.Location = new System.Drawing.Point(140, 3);
             this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(60, 34);
+            this.label45.Size = new System.Drawing.Size(58, 32);
             this.label45.TabIndex = 1;
             this.label45.Text = "8:20";
             this.label45.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -796,9 +796,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label46.AutoSize = true;
-            this.label46.Location = new System.Drawing.Point(205, 1);
+            this.label46.Location = new System.Drawing.Point(207, 3);
             this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(60, 34);
+            this.label46.Size = new System.Drawing.Size(58, 32);
             this.label46.TabIndex = 1;
             this.label46.Text = "8:40";
             this.label46.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -809,9 +809,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label47.AutoSize = true;
-            this.label47.Location = new System.Drawing.Point(272, 1);
+            this.label47.Location = new System.Drawing.Point(274, 3);
             this.label47.Name = "label47";
-            this.label47.Size = new System.Drawing.Size(60, 34);
+            this.label47.Size = new System.Drawing.Size(58, 32);
             this.label47.TabIndex = 1;
             this.label47.Text = "9:00";
             this.label47.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -822,9 +822,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label48.AutoSize = true;
-            this.label48.Location = new System.Drawing.Point(339, 1);
+            this.label48.Location = new System.Drawing.Point(341, 3);
             this.label48.Name = "label48";
-            this.label48.Size = new System.Drawing.Size(60, 34);
+            this.label48.Size = new System.Drawing.Size(58, 32);
             this.label48.TabIndex = 1;
             this.label48.Text = "9:20";
             this.label48.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -835,9 +835,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label49.AutoSize = true;
-            this.label49.Location = new System.Drawing.Point(406, 1);
+            this.label49.Location = new System.Drawing.Point(408, 3);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(60, 34);
+            this.label49.Size = new System.Drawing.Size(58, 32);
             this.label49.TabIndex = 1;
             this.label49.Text = "9:40";
             this.label49.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -848,9 +848,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(473, 1);
+            this.label50.Location = new System.Drawing.Point(475, 3);
             this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(60, 34);
+            this.label50.Size = new System.Drawing.Size(58, 32);
             this.label50.TabIndex = 1;
             this.label50.Text = "10:00";
             this.label50.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -861,9 +861,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(540, 1);
+            this.label51.Location = new System.Drawing.Point(542, 3);
             this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(60, 34);
+            this.label51.Size = new System.Drawing.Size(58, 32);
             this.label51.TabIndex = 1;
             this.label51.Text = "10:20";
             this.label51.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -874,9 +874,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label52.AutoSize = true;
-            this.label52.Location = new System.Drawing.Point(607, 1);
+            this.label52.Location = new System.Drawing.Point(609, 3);
             this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(60, 34);
+            this.label52.Size = new System.Drawing.Size(58, 32);
             this.label52.TabIndex = 1;
             this.label52.Text = "10:40";
             this.label52.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -887,9 +887,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(674, 1);
+            this.label53.Location = new System.Drawing.Point(676, 3);
             this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(60, 34);
+            this.label53.Size = new System.Drawing.Size(58, 32);
             this.label53.TabIndex = 1;
             this.label53.Text = "11:00";
             this.label53.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -900,9 +900,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label54.AutoSize = true;
-            this.label54.Location = new System.Drawing.Point(741, 1);
+            this.label54.Location = new System.Drawing.Point(743, 3);
             this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(60, 34);
+            this.label54.Size = new System.Drawing.Size(58, 32);
             this.label54.TabIndex = 1;
             this.label54.Text = "11:20";
             this.label54.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -913,9 +913,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(808, 1);
+            this.label55.Location = new System.Drawing.Point(810, 3);
             this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(60, 34);
+            this.label55.Size = new System.Drawing.Size(58, 32);
             this.label55.TabIndex = 1;
             this.label55.Text = "11:40";
             this.label55.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -926,9 +926,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(875, 1);
+            this.label56.Location = new System.Drawing.Point(877, 3);
             this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(66, 34);
+            this.label56.Size = new System.Drawing.Size(62, 32);
             this.label56.TabIndex = 1;
             this.label56.Text = "12:00";
             this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1316,6 +1316,7 @@
             this.txtBoxID.Name = "txtBoxID";
             this.txtBoxID.Size = new System.Drawing.Size(147, 22);
             this.txtBoxID.TabIndex = 4;
+            this.txtBoxID.Text = "1";
             // 
             // label3
             // 

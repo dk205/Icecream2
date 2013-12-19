@@ -450,6 +450,7 @@ namespace OverSurgery
 
         private void btnCheckAppointments_Click(object sender, EventArgs e)
         {
+            Label[,] SlotLabel = new Label[13, 13];
             this.twoActiveWeeksTableAdapter.Fill(this.overSugerydbaseDataSet.TwoActiveWeeks); //TEMPORARY
             this.rotaTableAdapter.Fill(this.overSugerydbaseDataSet.Rota);           //TEMPORARY
 
@@ -461,22 +462,65 @@ namespace OverSurgery
                 int i = 0;
                 foreach (OverSugerydbaseDataSet.RotaRow row in StaffFound)
                 {
-                  
-
-
                      Label Amorphos = this.Controls.Find("labelStaff" + i, true).FirstOrDefault() as Label ;
                      Amorphos.Refresh();
+                     MessageBox.Show("in the Foreach rota row");
+                     Amorphos.Text = row.Surname;
+    
+                    //search the two active weeks for that name and date
+                    OverSugerydbaseDataSet.TwoActiveWeeksDataTable IDandSlots = this.twoActiveWeeksTableAdapter.SearchTwoActiveWeeksByIDandDate(row.StaffID, dateTimePicker1.Value.Date.ToString());
+                    //make new int array int[] Appointments= new int[13]
+                     int[] Appointments= new int[26];
+                    //int c=0;
+                    foreach(OverSugerydbaseDataSet.TwoActiveWeeksRow row1 in IDandSlots)
+                      {
+                          MessageBox.Show("in the Foreach Twoactive weeks  row");
+                        //store the timeslot x=row.slot Appointments[x]=row.id
+                         Appointments[row1.TimeSlot]=row1.Id;
+                         for (int c = 0; c < 13; c++)  //13 is max
+                         {
+                             MessageBox.Show(String.Format("Appointments Value={0}", Appointments[c].ToString()));
+                             if (Appointments[c] == 0)
+                             {
+                            //Make SlotButton(c,i)
+                            MessageBox.Show(" i would if i could make a button");
+                             }
+                             else
+                             {
+                                 MessageBox.Show("going to make a label!");
+                              // Make TimeLabel(c,i)
+                              SlotLabel[c, i] = new Label();
+                              SlotLabel[c, i].Text = "Hi";
+                              SlotLabel[c, i].AutoSize = true;
+                              SlotLabel[c, i].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                              SlotLabel[c, i].Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                              | System.Windows.Forms.AnchorStyles.Left)
+                              | System.Windows.Forms.AnchorStyles.Right)));
+                              try
+                              {
+                                TimetableM.Controls.Add(SlotLabel[c, i], (c + 1), (i + 1));
+                               }
+                              catch (Exception bs)
+                              {
+                                MessageBox.Show(bs.Message);
+                               }     
+                              }
+                            } //end of for c
+                    i++;
+                }//end of foreach in IDandDate
 
-                    MessageBox.Show("in the Foreach");
-                  
-                        Amorphos.Text = row.Surname;
-                        i++;
+            }  //end of foreach Stafffound
+           
+           
+            //Label timeLabel[][]= new Label;
+         //   for (int k = 0; k <5; k++)  //5 is max
+          //      for (int i = 0; i < 13; i++)  //13 is max
+            
+          //  {   if(i>11)
+          //      MessageBox.Show(String.Format("in i={0} and k={1}", i.ToString(), k.ToString()));
                 
-                }
-
-            }
-            TimetableM.Visible = true;
-
+                TimetableM.Visible = true;
+            }// end of if all doctors selected
         }
 
         private void dateTimePicker2_CloseUp(object sender, EventArgs e)
