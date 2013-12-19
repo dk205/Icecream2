@@ -562,7 +562,11 @@ namespace OverSurgery
             string TempRole = Convert.ToString(d);  //store the Surname
             string TempDate = dateTimePicker1.Value.Date.ToString();
 
-            this.twoActiveWeeksTableAdapter.RecordBooking(TempStaffID, TempSurname, TempDate, TempSex, TempRole, colx, ActiveUserID); 
+            this.twoActiveWeeksTableAdapter.RecordBooking(TempStaffID, TempSurname, TempDate, TempSex, TempRole, colx, ActiveUserID);
+            this.Controls.Remove(bt);
+            this.twoActiveWeeksTableAdapter.Fill(this.overSugerydbaseDataSet.TwoActiveWeeks);
+            this.rotaTableAdapter.Fill(this.overSugerydbaseDataSet.Rota);
+        
         }
         private void dateTimePicker2_CloseUp(object sender, EventArgs e)
         {

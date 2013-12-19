@@ -45,21 +45,8 @@
             this.Label100 = new System.Windows.Forms.Label();
             this.Label200 = new System.Windows.Forms.Label();
             this.PageMakeAppointment = new System.Windows.Forms.Panel();
-            this.twoActiveWeeksDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.twoActiveWeeksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.overSugerydbaseDataSet = new OverSurgery.OverSugerydbaseDataSet();
-            this.rotaDataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbStaffList = new System.Windows.Forms.ComboBox();
             this.TimetableM = new System.Windows.Forms.TableLayoutPanel();
@@ -282,6 +269,14 @@
             this.rotaTableAdapter = new OverSurgery.OverSugerydbaseDataSetTableAdapters.RotaTableAdapter();
             this.medicationTableAdapter = new OverSurgery.OverSugerydbaseDataSetTableAdapters.MedicationTableAdapter();
             this.twoActiveWeeksTableAdapter = new OverSurgery.OverSugerydbaseDataSetTableAdapters.TwoActiveWeeksTableAdapter();
+            this.twoActiveWeeksDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             medNameLabel = new System.Windows.Forms.Label();
             doseLabel = new System.Windows.Forms.Label();
             start_DateLabel = new System.Windows.Forms.Label();
@@ -295,10 +290,8 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.PageMakeAppointment.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotaBindingSource)).BeginInit();
             this.TimetableM.SuspendLayout();
             this.PageMainScreen.SuspendLayout();
@@ -326,6 +319,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.week52BindingSource)).BeginInit();
             this.DDMenuStaff.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // medNameLabel
@@ -493,7 +487,6 @@
             // 
             this.PageMakeAppointment.AutoScroll = true;
             this.PageMakeAppointment.Controls.Add(this.twoActiveWeeksDataGridView);
-            this.PageMakeAppointment.Controls.Add(this.rotaDataGridView1);
             this.PageMakeAppointment.Controls.Add(this.cbStaffList);
             this.PageMakeAppointment.Controls.Add(this.TimetableM);
             this.PageMakeAppointment.Controls.Add(this.btnCheckAppointments);
@@ -513,59 +506,6 @@
             this.PageMakeAppointment.TabIndex = 6;
             this.PageMakeAppointment.Visible = false;
             // 
-            // twoActiveWeeksDataGridView
-            // 
-            this.twoActiveWeeksDataGridView.AutoGenerateColumns = false;
-            this.twoActiveWeeksDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.twoActiveWeeksDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29,
-            this.dataGridViewTextBoxColumn30,
-            this.dataGridViewTextBoxColumn31});
-            this.twoActiveWeeksDataGridView.DataSource = this.twoActiveWeeksBindingSource;
-            this.twoActiveWeeksDataGridView.Location = new System.Drawing.Point(324, 409);
-            this.twoActiveWeeksDataGridView.Name = "twoActiveWeeksDataGridView";
-            this.twoActiveWeeksDataGridView.Size = new System.Drawing.Size(611, 151);
-            this.twoActiveWeeksDataGridView.TabIndex = 13;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "StaffID";
-            this.dataGridViewTextBoxColumn16.HeaderText = "StaffID";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "Surname";
-            this.dataGridViewTextBoxColumn22.HeaderText = "Surname";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            // 
-            // dataGridViewTextBoxColumn28
-            // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "Date";
-            this.dataGridViewTextBoxColumn28.HeaderText = "Date";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            // 
-            // dataGridViewTextBoxColumn29
-            // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "Sex";
-            this.dataGridViewTextBoxColumn29.HeaderText = "Sex";
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-            // 
-            // dataGridViewTextBoxColumn30
-            // 
-            this.dataGridViewTextBoxColumn30.DataPropertyName = "Staff Role/Title";
-            this.dataGridViewTextBoxColumn30.HeaderText = "Staff Role/Title";
-            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
-            // 
-            // dataGridViewTextBoxColumn31
-            // 
-            this.dataGridViewTextBoxColumn31.DataPropertyName = "TimeSlot";
-            this.dataGridViewTextBoxColumn31.HeaderText = "TimeSlot";
-            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
-            // 
             // twoActiveWeeksBindingSource
             // 
             this.twoActiveWeeksBindingSource.DataMember = "TwoActiveWeeks";
@@ -575,52 +515,6 @@
             // 
             this.overSugerydbaseDataSet.DataSetName = "OverSugerydbaseDataSet";
             this.overSugerydbaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // rotaDataGridView1
-            // 
-            this.rotaDataGridView1.AutoGenerateColumns = false;
-            this.rotaDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rotaDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15});
-            this.rotaDataGridView1.DataSource = this.rotaBindingSource;
-            this.rotaDataGridView1.Location = new System.Drawing.Point(13, 413);
-            this.rotaDataGridView1.Name = "rotaDataGridView1";
-            this.rotaDataGridView1.Size = new System.Drawing.Size(294, 177);
-            this.rotaDataGridView1.TabIndex = 12;
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "StaffID";
-            this.dataGridViewTextBoxColumn11.HeaderText = "StaffID";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Surname";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Surname";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Date";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Date";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Sex";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Sex";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "Staff Role/Title";
-            this.dataGridViewTextBoxColumn15.HeaderText = "Staff Role/Title";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
             // 
             // rotaBindingSource
             // 
@@ -2803,6 +2697,66 @@
             // 
             this.twoActiveWeeksTableAdapter.ClearBeforeFill = true;
             // 
+            // twoActiveWeeksDataGridView
+            // 
+            this.twoActiveWeeksDataGridView.AutoGenerateColumns = false;
+            this.twoActiveWeeksDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.twoActiveWeeksDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn28,
+            this.dataGridViewTextBoxColumn29,
+            this.dataGridViewTextBoxColumn30,
+            this.dataGridViewTextBoxColumn31,
+            this.dataGridViewTextBoxColumn32});
+            this.twoActiveWeeksDataGridView.DataSource = this.twoActiveWeeksBindingSource;
+            this.twoActiveWeeksDataGridView.Location = new System.Drawing.Point(22, 413);
+            this.twoActiveWeeksDataGridView.Name = "twoActiveWeeksDataGridView";
+            this.twoActiveWeeksDataGridView.Size = new System.Drawing.Size(749, 141);
+            this.twoActiveWeeksDataGridView.TabIndex = 13;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "StaffID";
+            this.dataGridViewTextBoxColumn16.HeaderText = "StaffID";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "Surname";
+            this.dataGridViewTextBoxColumn22.HeaderText = "Surname";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "Date";
+            this.dataGridViewTextBoxColumn28.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "Sex";
+            this.dataGridViewTextBoxColumn29.HeaderText = "Sex";
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            // 
+            // dataGridViewTextBoxColumn30
+            // 
+            this.dataGridViewTextBoxColumn30.DataPropertyName = "Staff Role/Title";
+            this.dataGridViewTextBoxColumn30.HeaderText = "Staff Role/Title";
+            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            // 
+            // dataGridViewTextBoxColumn31
+            // 
+            this.dataGridViewTextBoxColumn31.DataPropertyName = "TimeSlot";
+            this.dataGridViewTextBoxColumn31.HeaderText = "TimeSlot";
+            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            // 
+            // dataGridViewTextBoxColumn32
+            // 
+            this.dataGridViewTextBoxColumn32.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn32.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            // 
             // MainBackGround
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2823,10 +2777,8 @@
             this.splitContainer1.ResumeLayout(false);
             this.PageMakeAppointment.ResumeLayout(false);
             this.PageMakeAppointment.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotaBindingSource)).EndInit();
             this.TimetableM.ResumeLayout(false);
             this.TimetableM.PerformLayout();
@@ -2869,6 +2821,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.week52BindingSource)).EndInit();
             this.DDMenuStaff.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3106,12 +3059,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn26;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn27;
         private System.Windows.Forms.DataGridViewTextBoxColumn PatientID;
-        private System.Windows.Forms.DataGridView rotaDataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.BindingSource twoActiveWeeksBindingSource;
         private OverSugerydbaseDataSetTableAdapters.TwoActiveWeeksTableAdapter twoActiveWeeksTableAdapter;
         private System.Windows.Forms.DataGridView twoActiveWeeksDataGridView;
@@ -3121,6 +3068,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
     }
 }
 
