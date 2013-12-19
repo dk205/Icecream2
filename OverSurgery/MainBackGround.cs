@@ -451,6 +451,7 @@ namespace OverSurgery
         private void btnCheckAppointments_Click(object sender, EventArgs e)
         {
             Label[,] SlotLabel = new Label[13, 13];
+            Button[,] BookButton = new Button[13, 13];
             this.twoActiveWeeksTableAdapter.Fill(this.overSugerydbaseDataSet.TwoActiveWeeks); //TEMPORARY
             this.rotaTableAdapter.Fill(this.overSugerydbaseDataSet.Rota);           //TEMPORARY
 
@@ -479,18 +480,34 @@ namespace OverSurgery
                          Appointments[row1.TimeSlot]=row1.Id;
                          for (int c = 0; c < 13; c++)  //13 is max
                          {
-                             MessageBox.Show(String.Format("Appointments Value={0}", Appointments[c].ToString()));
+                       //      MessageBox.Show(String.Format("Appointments Value={0}", Appointments[c].ToString()));
                              if (Appointments[c] == 0)
                              {
                             //Make SlotButton(c,i)
-                            MessageBox.Show(" i would if i could make a button");
+                            //MessageBox.Show(" i would if i could make a button");
+                                 BookButton[c, i] = new Button();
+                                 BookButton[c, i].Text = "Book";
+                                 BookButton[c, i].AutoSize = true;
+                                 BookButton[c, i].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                                 BookButton[c, i].Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                                 | System.Windows.Forms.AnchorStyles.Left)
+                                 | System.Windows.Forms.AnchorStyles.Right)));
+                                 BookButton[c, i].Click += new System.EventHandler(BookButton_Click);
+                                 try
+                                 {
+                                     TimetableM.Controls.Add(BookButton[c, i], (c + 1), (i + 1));
+                                 }
+                                 catch (Exception bs)
+                                 {
+                                     MessageBox.Show(bs.Message);
+                                 }     
                              }
                              else
                              {
                                  MessageBox.Show("going to make a label!");
                               // Make TimeLabel(c,i)
                               SlotLabel[c, i] = new Label();
-                              SlotLabel[c, i].Text = "Hi";
+                              SlotLabel[c, i].Text = "N/A";
                               SlotLabel[c, i].AutoSize = true;
                               SlotLabel[c, i].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
                               SlotLabel[c, i].Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
@@ -523,6 +540,30 @@ namespace OverSurgery
             }// end of if all doctors selected
         }
 
+
+        private void BookButton_Click(object sender, EventArgs e)
+        {
+            Button bt = sender as Button;
+            var rowx = TimetableM.GetRow(bt);
+            var colx = TimetableM.GetColumn(bt);
+           // Control control= this.Controls.Find("labelStaff["+0+"]["+rowx+"]", true).FirstOrDefault() as Label ;
+            Control control = this.Controls.Find("labelStaff"+ (rowx-1)  , true).FirstOrDefault() as Label;
+
+           OverSugerydbaseDataSet.StaffDataTable StaffInfo= this.staffTableAdapter.SearchStaffbySurname(control.Text);  //search by name and date
+           // MessageBox.Show(String.Format("the row is:{0},  the column:{1}", rowx.ToString(), colx.ToString()));
+         //  MessageBox.Show(String.Format("the label name is : {0}", control.Name));
+            object a = StaffInfo.Rows[0]["StaffID"];
+            int TempStaffID = Convert.ToInt32(a);   //store the id
+            object b = StaffInfo.Rows[0]["Surname"];
+            string TempSurname = Convert.ToString(b);  //store the Surname
+            object c = StaffInfo.Rows[0]["Sex"];
+            string TempSex = Convert.ToString(c);  //store the Sex
+            object d = StaffInfo.Rows[0]["Staff Role/Title"];
+            string TempRole = Convert.ToString(d);  //store the Surname
+            string TempDate = dateTimePicker1.Value.Date.ToString();
+
+            this.twoActiveWeeksTableAdapter.RecordBooking(TempStaffID, TempSurname, TempDate, TempSex, TempRole, colx, ActiveUserID); 
+        }
         private void dateTimePicker2_CloseUp(object sender, EventArgs e)
         {
             cbStaffMenu1.Enabled = true;

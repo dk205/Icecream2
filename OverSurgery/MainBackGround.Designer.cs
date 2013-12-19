@@ -92,6 +92,13 @@
             this.radioButton2 = new System.Windows.Forms.RadioButton();
             this.RBAllDoctors = new System.Windows.Forms.RadioButton();
             this.label24 = new System.Windows.Forms.Label();
+            this.PageMainScreen = new System.Windows.Forms.Panel();
+            this.txtBoxID = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ButtonGoToNewRegistration = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ButtonSearchID = new System.Windows.Forms.Button();
             this.PageAddViewExtendMedication = new System.Windows.Forms.Panel();
             this.btnMedSub = new System.Windows.Forms.Button();
             this.btnMedAdd = new System.Windows.Forms.Button();
@@ -120,13 +127,6 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
-            this.PageMainScreen = new System.Windows.Forms.Panel();
-            this.txtBoxID = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.ButtonGoToNewRegistration = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.ButtonSearchID = new System.Windows.Forms.Button();
             this.PageNewRegistration = new System.Windows.Forms.Panel();
             this.patientsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -301,11 +301,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotaBindingSource)).BeginInit();
             this.TimetableM.SuspendLayout();
+            this.PageMainScreen.SuspendLayout();
             this.PageAddViewExtendMedication.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medicationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicationDataGridView)).BeginInit();
             this.PageSelectedPatient.SuspendLayout();
-            this.PageMainScreen.SuspendLayout();
             this.PageNewRegistration.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).BeginInit();
@@ -525,9 +525,9 @@
             this.dataGridViewTextBoxColumn30,
             this.dataGridViewTextBoxColumn31});
             this.twoActiveWeeksDataGridView.DataSource = this.twoActiveWeeksBindingSource;
-            this.twoActiveWeeksDataGridView.Location = new System.Drawing.Point(326, 409);
+            this.twoActiveWeeksDataGridView.Location = new System.Drawing.Point(324, 409);
             this.twoActiveWeeksDataGridView.Name = "twoActiveWeeksDataGridView";
-            this.twoActiveWeeksDataGridView.Size = new System.Drawing.Size(326, 160);
+            this.twoActiveWeeksDataGridView.Size = new System.Drawing.Size(611, 151);
             this.twoActiveWeeksDataGridView.TabIndex = 13;
             // 
             // dataGridViewTextBoxColumn16
@@ -587,9 +587,9 @@
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewTextBoxColumn15});
             this.rotaDataGridView1.DataSource = this.rotaBindingSource;
-            this.rotaDataGridView1.Location = new System.Drawing.Point(32, 413);
+            this.rotaDataGridView1.Location = new System.Drawing.Point(13, 413);
             this.rotaDataGridView1.Name = "rotaDataGridView1";
-            this.rotaDataGridView1.Size = new System.Drawing.Size(246, 177);
+            this.rotaDataGridView1.Size = new System.Drawing.Size(294, 177);
             this.rotaDataGridView1.TabIndex = 12;
             // 
             // dataGridViewTextBoxColumn11
@@ -1029,6 +1029,80 @@
             this.label24.TabIndex = 0;
             this.label24.Text = "Make an Appointment";
             // 
+            // PageMainScreen
+            // 
+            this.PageMainScreen.Controls.Add(this.txtBoxID);
+            this.PageMainScreen.Controls.Add(this.label3);
+            this.PageMainScreen.Controls.Add(this.label2);
+            this.PageMainScreen.Controls.Add(this.ButtonGoToNewRegistration);
+            this.PageMainScreen.Controls.Add(this.label4);
+            this.PageMainScreen.Controls.Add(this.ButtonSearchID);
+            this.PageMainScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PageMainScreen.Location = new System.Drawing.Point(0, 0);
+            this.PageMainScreen.Name = "PageMainScreen";
+            this.PageMainScreen.Size = new System.Drawing.Size(966, 600);
+            this.PageMainScreen.TabIndex = 2;
+            // 
+            // txtBoxID
+            // 
+            this.txtBoxID.Location = new System.Drawing.Point(125, 176);
+            this.txtBoxID.Name = "txtBoxID";
+            this.txtBoxID.Size = new System.Drawing.Size(147, 22);
+            this.txtBoxID.TabIndex = 4;
+            this.txtBoxID.Text = "1";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(9, 117);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(145, 24);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Search Patient";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(9, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(237, 24);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "New Patient Registration";
+            // 
+            // ButtonGoToNewRegistration
+            // 
+            this.ButtonGoToNewRegistration.Location = new System.Drawing.Point(86, 50);
+            this.ButtonGoToNewRegistration.Name = "ButtonGoToNewRegistration";
+            this.ButtonGoToNewRegistration.Size = new System.Drawing.Size(252, 35);
+            this.ButtonGoToNewRegistration.TabIndex = 2;
+            this.ButtonGoToNewRegistration.Text = "Create New Registration";
+            this.ButtonGoToNewRegistration.UseVisualStyleBackColor = true;
+            this.ButtonGoToNewRegistration.Click += new System.EventHandler(this.NewRegButton_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(9, 178);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 20);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "By patient ID";
+            this.label4.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // ButtonSearchID
+            // 
+            this.ButtonSearchID.Location = new System.Drawing.Point(296, 166);
+            this.ButtonSearchID.Name = "ButtonSearchID";
+            this.ButtonSearchID.Size = new System.Drawing.Size(96, 32);
+            this.ButtonSearchID.TabIndex = 0;
+            this.ButtonSearchID.Text = "Search";
+            this.ButtonSearchID.UseVisualStyleBackColor = true;
+            this.ButtonSearchID.Click += new System.EventHandler(this.SearchIDButton_Click);
+            // 
             // PageAddViewExtendMedication
             // 
             this.PageAddViewExtendMedication.AutoScroll = true;
@@ -1295,80 +1369,6 @@
             this.label13.Size = new System.Drawing.Size(79, 24);
             this.label13.TabIndex = 0;
             this.label13.Text = "Actions";
-            // 
-            // PageMainScreen
-            // 
-            this.PageMainScreen.Controls.Add(this.txtBoxID);
-            this.PageMainScreen.Controls.Add(this.label3);
-            this.PageMainScreen.Controls.Add(this.label2);
-            this.PageMainScreen.Controls.Add(this.ButtonGoToNewRegistration);
-            this.PageMainScreen.Controls.Add(this.label4);
-            this.PageMainScreen.Controls.Add(this.ButtonSearchID);
-            this.PageMainScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PageMainScreen.Location = new System.Drawing.Point(0, 0);
-            this.PageMainScreen.Name = "PageMainScreen";
-            this.PageMainScreen.Size = new System.Drawing.Size(966, 600);
-            this.PageMainScreen.TabIndex = 2;
-            // 
-            // txtBoxID
-            // 
-            this.txtBoxID.Location = new System.Drawing.Point(125, 176);
-            this.txtBoxID.Name = "txtBoxID";
-            this.txtBoxID.Size = new System.Drawing.Size(147, 22);
-            this.txtBoxID.TabIndex = 4;
-            this.txtBoxID.Text = "1";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 117);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 24);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Search Patient";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(237, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "New Patient Registration";
-            // 
-            // ButtonGoToNewRegistration
-            // 
-            this.ButtonGoToNewRegistration.Location = new System.Drawing.Point(86, 50);
-            this.ButtonGoToNewRegistration.Name = "ButtonGoToNewRegistration";
-            this.ButtonGoToNewRegistration.Size = new System.Drawing.Size(252, 35);
-            this.ButtonGoToNewRegistration.TabIndex = 2;
-            this.ButtonGoToNewRegistration.Text = "Create New Registration";
-            this.ButtonGoToNewRegistration.UseVisualStyleBackColor = true;
-            this.ButtonGoToNewRegistration.Click += new System.EventHandler(this.NewRegButton_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(9, 178);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "By patient ID";
-            this.label4.Click += new System.EventHandler(this.label3_Click);
-            // 
-            // ButtonSearchID
-            // 
-            this.ButtonSearchID.Location = new System.Drawing.Point(296, 166);
-            this.ButtonSearchID.Name = "ButtonSearchID";
-            this.ButtonSearchID.Size = new System.Drawing.Size(96, 32);
-            this.ButtonSearchID.TabIndex = 0;
-            this.ButtonSearchID.Text = "Search";
-            this.ButtonSearchID.UseVisualStyleBackColor = true;
-            this.ButtonSearchID.Click += new System.EventHandler(this.SearchIDButton_Click);
             // 
             // PageNewRegistration
             // 
@@ -2830,14 +2830,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.rotaBindingSource)).EndInit();
             this.TimetableM.ResumeLayout(false);
             this.TimetableM.PerformLayout();
+            this.PageMainScreen.ResumeLayout(false);
+            this.PageMainScreen.PerformLayout();
             this.PageAddViewExtendMedication.ResumeLayout(false);
             this.PageAddViewExtendMedication.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medicationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicationDataGridView)).EndInit();
             this.PageSelectedPatient.ResumeLayout(false);
             this.PageSelectedPatient.PerformLayout();
-            this.PageMainScreen.ResumeLayout(false);
-            this.PageMainScreen.PerformLayout();
             this.PageNewRegistration.ResumeLayout(false);
             this.PageNewRegistration.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientsDataGridView)).EndInit();
