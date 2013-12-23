@@ -891,6 +891,7 @@
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 3;
+            this.dateTimePicker1.MinDate = System.DateTime.Now;
             // 
             // radioButton2
             // 
@@ -2626,11 +2627,11 @@
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker2.Location = new System.Drawing.Point(139, 90);
-            this.dateTimePicker2.MinDate = new System.DateTime(2013, 12, 18, 10, 53, 56, 332);
+             this.dateTimePicker2.MinDate = System.DateTime.Now;
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker2.TabIndex = 1;
-            this.dateTimePicker2.Value = new System.DateTime(2013, 12, 18, 10, 53, 56, 333);
+           // this.dateTimePicker2.Value = new System.DateTime(2013, 12, 18, 10, 53, 56, 333);
             this.dateTimePicker2.CloseUp += new System.EventHandler(this.dateTimePicker2_CloseUp);
             this.dateTimePicker2.LocationChanged += new System.EventHandler(this.dateTimePicker2_CloseUp);
             // 

@@ -459,11 +459,15 @@ namespace OverSurgery
             {
                 string StaffID = string.Empty;
                 MessageBox.Show("all doctors selected");
+                //make a table  with all doctors that day.
                 OverSugerydbaseDataSet.RotaDataTable StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());
                 int i = 0;
+                //do as many as the staff is in that table
                 foreach (OverSugerydbaseDataSet.RotaRow row in StaffFound)
                 {
-                     Label Amorphos = this.Controls.Find("labelStaff" + i, true).FirstOrDefault() as Label ;
+                    MessageBox.Show((String.Format("number i= {0}", i.ToString())));
+                    //create the names in the labels
+                    Label Amorphos = this.Controls.Find("labelStaff" + i, true).FirstOrDefault() as Label ;
                      Amorphos.Refresh();
                      MessageBox.Show("in the Foreach rota row");
                      Amorphos.Text = row.Surname;
@@ -475,57 +479,59 @@ namespace OverSurgery
                     //int c=0;
                     foreach(OverSugerydbaseDataSet.TwoActiveWeeksRow row1 in IDandSlots)
                       {
-                          MessageBox.Show("in the Foreach Twoactive weeks  row");
+                          MessageBox.Show("in the Foreach Two active weeks  row");
                         //store the timeslot x=row.slot Appointments[x]=row.id
                          Appointments[row1.TimeSlot]=row1.Id;
-                         for (int c = 0; c < 13; c++)  //13 is max
-                         {
-                       //      MessageBox.Show(String.Format("Appointments Value={0}", Appointments[c].ToString()));
-                             if (Appointments[c] == 0)
-                             {
-                            //Make SlotButton(c,i)
-                            //MessageBox.Show(" i would if i could make a button");
-                                 BookButton[c, i] = new Button();
-                                 BookButton[c, i].Text = "Book";
-                                 BookButton[c, i].AutoSize = true;
-                                 BookButton[c, i].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-                                 BookButton[c, i].Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                                 | System.Windows.Forms.AnchorStyles.Left)
-                                 | System.Windows.Forms.AnchorStyles.Right)));
-                                 BookButton[c, i].Click += new System.EventHandler(BookButton_Click);
-                                 try
-                                 {
-                                     TimetableM.Controls.Add(BookButton[c, i], (c + 1), (i + 1));
-                                 }
-                                 catch (Exception bs)
-                                 {
-                                     MessageBox.Show(bs.Message);
-                                 }     
-                             }
-                             else
-                             {
-                                 MessageBox.Show("going to make a label!");
-                              // Make TimeLabel(c,i)
-                              SlotLabel[c, i] = new Label();
-                              SlotLabel[c, i].Text = "N/A";
-                              SlotLabel[c, i].AutoSize = true;
-                              SlotLabel[c, i].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-                              SlotLabel[c, i].Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                              | System.Windows.Forms.AnchorStyles.Left)
-                              | System.Windows.Forms.AnchorStyles.Right)));
-                              try
-                              {
-                                TimetableM.Controls.Add(SlotLabel[c, i], (c + 1), (i + 1));
-                               }
-                              catch (Exception bs)
-                              {
-                                MessageBox.Show(bs.Message);
-                               }     
-                              }
-                            } //end of for c
-                    i++;
+                        
+                    //i++;
                 }//end of foreach in IDandDate
 
+                    for (int c = 0; c < 13; c++)  //13 is max
+                    {
+                        //      MessageBox.Show(String.Format("Appointments Value={0}", Appointments[c].ToString()));
+                        if (Appointments[c] == 0)
+                        {
+                            //Make SlotButton(c,i)
+                            MessageBox.Show(" i would if i could make a button");
+                            BookButton[c, i] = new Button();
+                            BookButton[c, i].Text = "Book";
+                            BookButton[c, i].AutoSize = true;
+                            BookButton[c, i].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                            BookButton[c, i].Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                            | System.Windows.Forms.AnchorStyles.Left)
+                            | System.Windows.Forms.AnchorStyles.Right)));
+                            BookButton[c, i].Click += new System.EventHandler(BookButton_Click);
+                            try
+                            {
+                                TimetableM.Controls.Add(BookButton[c, i], (c + 1), (i + 1));
+                            }
+                            catch (Exception bs)
+                            {
+                                MessageBox.Show(bs.Message);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("going to make a label!");
+                            //  ????Make TimeLabel(c,i)
+                            SlotLabel[c, i] = new Label();
+                            SlotLabel[c, i].Text = "N/A";
+                            SlotLabel[c, i].AutoSize = true;
+                            SlotLabel[c, i].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                            SlotLabel[c, i].Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                            | System.Windows.Forms.AnchorStyles.Left)
+                            | System.Windows.Forms.AnchorStyles.Right)));
+                            try
+                            {
+                                TimetableM.Controls.Add(SlotLabel[c, i], (c + 1), (i + 1));
+                            }
+                            catch (Exception bs)
+                            {
+                                MessageBox.Show(bs.Message);
+                            }
+                        }
+                    } //end of for c
+                    i++;
             }  //end of foreach Stafffound
            
            
@@ -543,6 +549,7 @@ namespace OverSurgery
 
         private void BookButton_Click(object sender, EventArgs e)
         {
+            Label[,] SlotLabelS = new Label[13, 13];
             Button bt = sender as Button;
             var rowx = TimetableM.GetRow(bt);
             var colx = TimetableM.GetColumn(bt);
@@ -563,7 +570,18 @@ namespace OverSurgery
             string TempDate = dateTimePicker1.Value.Date.ToString();
 
             this.twoActiveWeeksTableAdapter.RecordBooking(TempStaffID, TempSurname, TempDate, TempSex, TempRole, colx, ActiveUserID);
-            this.Controls.Remove(bt);
+            //this.Controls.Remove(bt);
+            this.TimetableM.Controls.Remove(bt);
+            
+            // make a label
+            SlotLabelS[rowx, colx] = new Label();
+            SlotLabelS[rowx, colx].Text = "Booked";
+            SlotLabelS[rowx, colx].AutoSize = true;
+            SlotLabelS[rowx, colx].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            SlotLabelS[rowx, colx].Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+            | System.Windows.Forms.AnchorStyles.Left)
+            | System.Windows.Forms.AnchorStyles.Right)));
+
             this.twoActiveWeeksTableAdapter.Fill(this.overSugerydbaseDataSet.TwoActiveWeeks);
             this.rotaTableAdapter.Fill(this.overSugerydbaseDataSet.Rota);
         
