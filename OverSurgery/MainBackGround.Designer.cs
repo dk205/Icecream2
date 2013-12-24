@@ -45,9 +45,16 @@
             this.Label100 = new System.Windows.Forms.Label();
             this.Label200 = new System.Windows.Forms.Label();
             this.PageMakeAppointment = new System.Windows.Forms.Panel();
+            this.twoActiveWeeksDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.twoActiveWeeksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.overSugerydbaseDataSet = new OverSurgery.OverSugerydbaseDataSet();
-            this.rotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cbStaffList = new System.Windows.Forms.ComboBox();
             this.TimetableM = new System.Windows.Forms.TableLayoutPanel();
             this.label43 = new System.Windows.Forms.Label();
@@ -73,11 +80,8 @@
             this.btnMorning = new System.Windows.Forms.Button();
             this.btnAfternoon = new System.Windows.Forms.Button();
             this.button12 = new System.Windows.Forms.Button();
-            this.DDButtonDoctor = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.RBAllDoctors = new System.Windows.Forms.RadioButton();
             this.label24 = new System.Windows.Forms.Label();
             this.PageMainScreen = new System.Windows.Forms.Panel();
             this.txtBoxID = new System.Windows.Forms.TextBox();
@@ -244,6 +248,7 @@
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbBadBox = new System.Windows.Forms.TextBox();
             this.cbStaffMenu4 = new System.Windows.Forms.ComboBox();
             this.cbStaffMenu1 = new System.Windows.Forms.ComboBox();
@@ -260,8 +265,6 @@
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.week52BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ButtonLogOut = new System.Windows.Forms.Button();
-            this.DDMenuStaff = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.drWhoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.staffTableAdapter = new OverSurgery.OverSugerydbaseDataSetTableAdapters.StaffTableAdapter();
             this.tableAdapterManager = new OverSurgery.OverSugerydbaseDataSetTableAdapters.TableAdapterManager();
             this.patientsTableAdapter = new OverSurgery.OverSugerydbaseDataSetTableAdapters.PatientsTableAdapter();
@@ -269,14 +272,7 @@
             this.rotaTableAdapter = new OverSurgery.OverSugerydbaseDataSetTableAdapters.RotaTableAdapter();
             this.medicationTableAdapter = new OverSurgery.OverSugerydbaseDataSetTableAdapters.MedicationTableAdapter();
             this.twoActiveWeeksTableAdapter = new OverSurgery.OverSugerydbaseDataSetTableAdapters.TwoActiveWeeksTableAdapter();
-            this.twoActiveWeeksDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cbStaff = new System.Windows.Forms.ComboBox();
             medNameLabel = new System.Windows.Forms.Label();
             doseLabel = new System.Windows.Forms.Label();
             start_DateLabel = new System.Windows.Forms.Label();
@@ -290,9 +286,9 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.PageMakeAppointment.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rotaBindingSource)).BeginInit();
             this.TimetableM.SuspendLayout();
             this.PageMainScreen.SuspendLayout();
             this.PageAddViewExtendMedication.SuspendLayout();
@@ -317,9 +313,8 @@
             this.tabTimetable.SuspendLayout();
             this.PageRota.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rotaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.week52BindingSource)).BeginInit();
-            this.DDMenuStaff.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // medNameLabel
@@ -486,6 +481,7 @@
             // PageMakeAppointment
             // 
             this.PageMakeAppointment.AutoScroll = true;
+            this.PageMakeAppointment.Controls.Add(this.cbStaff);
             this.PageMakeAppointment.Controls.Add(this.twoActiveWeeksDataGridView);
             this.PageMakeAppointment.Controls.Add(this.cbStaffList);
             this.PageMakeAppointment.Controls.Add(this.TimetableM);
@@ -493,11 +489,8 @@
             this.PageMakeAppointment.Controls.Add(this.btnMorning);
             this.PageMakeAppointment.Controls.Add(this.btnAfternoon);
             this.PageMakeAppointment.Controls.Add(this.button12);
-            this.PageMakeAppointment.Controls.Add(this.DDButtonDoctor);
             this.PageMakeAppointment.Controls.Add(this.label25);
             this.PageMakeAppointment.Controls.Add(this.dateTimePicker1);
-            this.PageMakeAppointment.Controls.Add(this.radioButton2);
-            this.PageMakeAppointment.Controls.Add(this.RBAllDoctors);
             this.PageMakeAppointment.Controls.Add(this.label24);
             this.PageMakeAppointment.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PageMakeAppointment.Location = new System.Drawing.Point(0, 0);
@@ -505,6 +498,67 @@
             this.PageMakeAppointment.Size = new System.Drawing.Size(966, 600);
             this.PageMakeAppointment.TabIndex = 6;
             this.PageMakeAppointment.Visible = false;
+            this.PageMakeAppointment.VisibleChanged += new System.EventHandler(this.LoadComboboxStaff);
+            // 
+            // twoActiveWeeksDataGridView
+            // 
+            this.twoActiveWeeksDataGridView.AutoGenerateColumns = false;
+            this.twoActiveWeeksDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.twoActiveWeeksDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn28,
+            this.dataGridViewTextBoxColumn29,
+            this.dataGridViewTextBoxColumn30,
+            this.dataGridViewTextBoxColumn31,
+            this.dataGridViewTextBoxColumn32});
+            this.twoActiveWeeksDataGridView.DataSource = this.twoActiveWeeksBindingSource;
+            this.twoActiveWeeksDataGridView.Location = new System.Drawing.Point(22, 413);
+            this.twoActiveWeeksDataGridView.Name = "twoActiveWeeksDataGridView";
+            this.twoActiveWeeksDataGridView.Size = new System.Drawing.Size(749, 141);
+            this.twoActiveWeeksDataGridView.TabIndex = 13;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "StaffID";
+            this.dataGridViewTextBoxColumn16.HeaderText = "StaffID";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "Surname";
+            this.dataGridViewTextBoxColumn22.HeaderText = "Surname";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "Date";
+            this.dataGridViewTextBoxColumn28.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "Sex";
+            this.dataGridViewTextBoxColumn29.HeaderText = "Sex";
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            // 
+            // dataGridViewTextBoxColumn30
+            // 
+            this.dataGridViewTextBoxColumn30.DataPropertyName = "Staff Role/Title";
+            this.dataGridViewTextBoxColumn30.HeaderText = "Staff Role/Title";
+            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            // 
+            // dataGridViewTextBoxColumn31
+            // 
+            this.dataGridViewTextBoxColumn31.DataPropertyName = "TimeSlot";
+            this.dataGridViewTextBoxColumn31.HeaderText = "TimeSlot";
+            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            // 
+            // dataGridViewTextBoxColumn32
+            // 
+            this.dataGridViewTextBoxColumn32.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn32.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
             // 
             // twoActiveWeeksBindingSource
             // 
@@ -515,11 +569,6 @@
             // 
             this.overSugerydbaseDataSet.DataSetName = "OverSugerydbaseDataSet";
             this.overSugerydbaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // rotaBindingSource
-            // 
-            this.rotaBindingSource.DataMember = "Rota";
-            this.rotaBindingSource.DataSource = this.overSugerydbaseDataSet;
             // 
             // cbStaffList
             // 
@@ -864,18 +913,6 @@
             this.button12.Text = "Back";
             this.button12.UseVisualStyleBackColor = true;
             // 
-            // DDButtonDoctor
-            // 
-            this.DDButtonDoctor.Image = ((System.Drawing.Image)(resources.GetObject("DDButtonDoctor.Image")));
-            this.DDButtonDoctor.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.DDButtonDoctor.Location = new System.Drawing.Point(383, 102);
-            this.DDButtonDoctor.Name = "DDButtonDoctor";
-            this.DDButtonDoctor.Size = new System.Drawing.Size(123, 23);
-            this.DDButtonDoctor.TabIndex = 5;
-            this.DDButtonDoctor.Text = "Select Doctor   ";
-            this.DDButtonDoctor.UseVisualStyleBackColor = true;
-            this.DDButtonDoctor.Click += new System.EventHandler(this.button9_Click);
-            // 
             // label25
             // 
             this.label25.AutoSize = true;
@@ -888,31 +925,11 @@
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(78, 91);
+            this.dateTimePicker1.MinDate = new System.DateTime(2013, 12, 24, 9, 48, 56, 107);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker1.TabIndex = 3;
-            this.dateTimePicker1.MinDate = System.DateTime.Now;
-            // 
-            // radioButton2
-            // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(363, 111);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(14, 13);
-            this.radioButton2.TabIndex = 2;
-            this.radioButton2.TabStop = true;
-            this.radioButton2.UseVisualStyleBackColor = true;
-            // 
-            // RBAllDoctors
-            // 
-            this.RBAllDoctors.AutoSize = true;
-            this.RBAllDoctors.Location = new System.Drawing.Point(363, 76);
-            this.RBAllDoctors.Name = "RBAllDoctors";
-            this.RBAllDoctors.Size = new System.Drawing.Size(102, 20);
-            this.RBAllDoctors.TabIndex = 1;
-            this.RBAllDoctors.TabStop = true;
-            this.RBAllDoctors.Text = "Any Doctor";
-            this.RBAllDoctors.UseVisualStyleBackColor = true;
+            this.dateTimePicker1.Value = new System.DateTime(2013, 12, 24, 9, 48, 56, 107);
             // 
             // label24
             // 
@@ -2495,6 +2512,11 @@
             this.dataGridViewTextBoxColumn21.HeaderText = "Staff Role/Title";
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
             // 
+            // rotaBindingSource
+            // 
+            this.rotaBindingSource.DataMember = "Rota";
+            this.rotaBindingSource.DataSource = this.overSugerydbaseDataSet;
+            // 
             // tbBadBox
             // 
             this.tbBadBox.Enabled = false;
@@ -2627,11 +2649,11 @@
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker2.Location = new System.Drawing.Point(139, 90);
-             this.dateTimePicker2.MinDate = System.DateTime.Now;
+            this.dateTimePicker2.MinDate = new System.DateTime(2013, 12, 24, 9, 48, 56, 672);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker2.TabIndex = 1;
-           // this.dateTimePicker2.Value = new System.DateTime(2013, 12, 18, 10, 53, 56, 333);
+            this.dateTimePicker2.Value = new System.DateTime(2013, 12, 24, 9, 48, 56, 672);
             this.dateTimePicker2.CloseUp += new System.EventHandler(this.dateTimePicker2_CloseUp);
             this.dateTimePicker2.LocationChanged += new System.EventHandler(this.dateTimePicker2_CloseUp);
             // 
@@ -2649,19 +2671,6 @@
             this.ButtonLogOut.Text = "Log Out";
             this.ButtonLogOut.UseVisualStyleBackColor = true;
             this.ButtonLogOut.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // DDMenuStaff
-            // 
-            this.DDMenuStaff.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.drWhoToolStripMenuItem});
-            this.DDMenuStaff.Name = "DDMenuStaff";
-            this.DDMenuStaff.Size = new System.Drawing.Size(115, 26);
-            // 
-            // drWhoToolStripMenuItem
-            // 
-            this.drWhoToolStripMenuItem.Name = "drWhoToolStripMenuItem";
-            this.drWhoToolStripMenuItem.Size = new System.Drawing.Size(114, 22);
-            this.drWhoToolStripMenuItem.Text = "Dr.Who";
             // 
             // staffTableAdapter
             // 
@@ -2698,65 +2707,14 @@
             // 
             this.twoActiveWeeksTableAdapter.ClearBeforeFill = true;
             // 
-            // twoActiveWeeksDataGridView
+            // cbStaff
             // 
-            this.twoActiveWeeksDataGridView.AutoGenerateColumns = false;
-            this.twoActiveWeeksDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.twoActiveWeeksDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29,
-            this.dataGridViewTextBoxColumn30,
-            this.dataGridViewTextBoxColumn31,
-            this.dataGridViewTextBoxColumn32});
-            this.twoActiveWeeksDataGridView.DataSource = this.twoActiveWeeksBindingSource;
-            this.twoActiveWeeksDataGridView.Location = new System.Drawing.Point(22, 413);
-            this.twoActiveWeeksDataGridView.Name = "twoActiveWeeksDataGridView";
-            this.twoActiveWeeksDataGridView.Size = new System.Drawing.Size(749, 141);
-            this.twoActiveWeeksDataGridView.TabIndex = 13;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "StaffID";
-            this.dataGridViewTextBoxColumn16.HeaderText = "StaffID";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "Surname";
-            this.dataGridViewTextBoxColumn22.HeaderText = "Surname";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            // 
-            // dataGridViewTextBoxColumn28
-            // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "Date";
-            this.dataGridViewTextBoxColumn28.HeaderText = "Date";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            // 
-            // dataGridViewTextBoxColumn29
-            // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "Sex";
-            this.dataGridViewTextBoxColumn29.HeaderText = "Sex";
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-            // 
-            // dataGridViewTextBoxColumn30
-            // 
-            this.dataGridViewTextBoxColumn30.DataPropertyName = "Staff Role/Title";
-            this.dataGridViewTextBoxColumn30.HeaderText = "Staff Role/Title";
-            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
-            // 
-            // dataGridViewTextBoxColumn31
-            // 
-            this.dataGridViewTextBoxColumn31.DataPropertyName = "TimeSlot";
-            this.dataGridViewTextBoxColumn31.HeaderText = "TimeSlot";
-            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
-            // 
-            // dataGridViewTextBoxColumn32
-            // 
-            this.dataGridViewTextBoxColumn32.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn32.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            this.cbStaff.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cbStaff.FormattingEnabled = true;
+            this.cbStaff.Location = new System.Drawing.Point(343, 87);
+            this.cbStaff.Name = "cbStaff";
+            this.cbStaff.Size = new System.Drawing.Size(121, 24);
+            this.cbStaff.TabIndex = 14;
             // 
             // MainBackGround
             // 
@@ -2778,9 +2736,9 @@
             this.splitContainer1.ResumeLayout(false);
             this.PageMakeAppointment.ResumeLayout(false);
             this.PageMakeAppointment.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rotaBindingSource)).EndInit();
             this.TimetableM.ResumeLayout(false);
             this.TimetableM.PerformLayout();
             this.PageMainScreen.ResumeLayout(false);
@@ -2820,9 +2778,8 @@
             this.PageRota.ResumeLayout(false);
             this.PageRota.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rotaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.week52BindingSource)).EndInit();
-            this.DDMenuStaff.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2894,12 +2851,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton RBAllDoctors;
         private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.ContextMenuStrip DDMenuStaff;
-        private System.Windows.Forms.ToolStripMenuItem drWhoToolStripMenuItem;
-        private System.Windows.Forms.Button DDButtonDoctor;
         private System.Windows.Forms.Panel PageViewPrintTestResults;
         private System.Windows.Forms.Panel PageAddViewExtendMedication;
         private System.Windows.Forms.Panel PageViewCancelEditAppointment;
@@ -3070,6 +3022,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
+        private System.Windows.Forms.ComboBox cbStaff;
     }
 }
 
