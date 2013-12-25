@@ -80,6 +80,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>OverSugerydbaseDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="OverSugerydbaseDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OverSugerydbaseDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OverSugerydbaseDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OverSugerydbaseDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OverSugerydbaseDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>OverSugerydbaseDataSet3.xsd</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Timetable.cs" />
@@ -109,6 +124,39 @@
     </None>
     <None Include="OverSugerydbaseDataSet.xss">
       <DependentUpon>OverSugerydbaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="OverSugerydbaseDataSet1.xsc">
+      <DependentUpon>OverSugerydbaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="OverSugerydbaseDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OverSugerydbaseDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OverSugerydbaseDataSet1.xss">
+      <DependentUpon>OverSugerydbaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="OverSugerydbaseDataSet2.xsc">
+      <DependentUpon>OverSugerydbaseDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="OverSugerydbaseDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OverSugerydbaseDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OverSugerydbaseDataSet2.xss">
+      <DependentUpon>OverSugerydbaseDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="OverSugerydbaseDataSet3.xsc">
+      <DependentUpon>OverSugerydbaseDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="OverSugerydbaseDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>OverSugerydbaseDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="OverSugerydbaseDataSet3.xss">
+      <DependentUpon>OverSugerydbaseDataSet3.xsd</DependentUpon>
     </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

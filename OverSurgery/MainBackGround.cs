@@ -215,80 +215,17 @@ namespace OverSurgery
         }
 
 
-        private void button17_Click(object sender, EventArgs e)
-        {
-            pageCheckGPNurse.Visible = false;
-            PageGPNurse.Visible = true;
-        }
+       
 
-        private void button20_Click(object sender, EventArgs e)
-        {
-            pageCheckGPNurse.Visible = true;
-        }
-
-        private void button20_Click_1(object sender, EventArgs e)
-        {
-            pageAddNewStaff.Visible = false;
-
-            PageGPNurse.Visible = true;
-
-            //pageCheckGPNurse.Visible = false;
-
-        }
-
-        private void button17_Click_1(object sender, EventArgs e)
-        {
-            pageCheckGPNurse.Visible = false;
-            pageAddNewStaff.Visible = false;
-
-            PageGPNurse.Visible = true;
-
-
-        }
-
-        private void button13_Click(object sender, EventArgs e)
-        {
-            pageCheckGPNurse.Visible = false;
-            PageGPNurse.Visible = false;
-            pageAddNewStaff.Visible = true;
-        }
-
-        private void bntCheckStaffDuty_Click(object sender, EventArgs e)
-        {
-            PageGPNurse.Visible = false;
-            pageCheckGPNurse.Visible = true;
-        }
-
-        private void bntAddNewStaff_Click(object sender, EventArgs e)
-        {
-            pageCheckGPNurse.Visible = false;
-            PageGPNurse.Visible = false;
-            pageAddNewStaff.Visible = true;
-        }
-
-        private void bntDeleteStaff_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void staffBindingNavigatorSaveItem_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.staffBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.overSugerydbaseDataSet);
-
-        }
-
-        private void staffBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.staffBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.overSugerydbaseDataSet);
-
-        }
+       
 
         private void MainBackGround_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'overSugerydbaseDataSet3.Staff' table. You can move, or remove it, as needed.
+            this.staffTableAdapter2.Fill(this.overSugerydbaseDataSet3.Staff);
+            // TODO: This line of code loads data into the 'overSugerydbaseDataSet2.Staff' table. You can move, or remove it, as needed.
+            this.staffTableAdapter1.Fill(this.overSugerydbaseDataSet2.Staff);
+           
             // TODO: This line of code loads data into the 'overSugerydbaseDataSet.TwoActiveWeeks' table. You can move, or remove it, as needed.
             this.twoActiveWeeksTableAdapter.Fill(this.overSugerydbaseDataSet.TwoActiveWeeks);
             // TODO: This line of code loads data into the 'overSugerydbaseDataSet.Medication' table. You can move, or remove it, as needed.
@@ -304,18 +241,7 @@ namespace OverSurgery
 
         }
 
-        private void btnShowAllStaff_Click(object sender, EventArgs e)
-        {
-            // string constring="datasource=localhost;port2205;username=root;password=root";
-
-            //mysqlconnection cmd
-        }
-
-        private void btnSearchStaff_Click(object sender, EventArgs e) ///comment
-        {
-
-        }
-
+       
         private void CreateReg_Click(object sender, EventArgs e)
         {
             OverSurgery.Utility Utilities = new Utility(); //creat a link for the class utility
@@ -914,8 +840,228 @@ namespace OverSurgery
              */ 
         }
 
-      
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        ///////////////////////////////////             S T A F F     S E C T I O N         /////////////////////////////////////////////////////////////////// 
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        private void staffBindingNavigatorSaveItem_Click(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.staffBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.overSugerydbaseDataSet);
+
+        }
+
+        private void staffBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.staffBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.overSugerydbaseDataSet);
+
+        }
+
+
+        private void bntCheckStaffDuty_Click(object sender, EventArgs e)
+        {
+            groupBoxSearch.Visible = false;
+            groupBoxStaff.Visible = false;
+            groupBoxAddStaff.Visible = false;
+            groupBoxDeleteStaff.Visible = false;
+        }
+
+        private void bntAddNewStaff_Click(object sender, EventArgs e)
+        {
+            groupBoxSearch.Visible = false;
+            groupBoxStaff.Visible = false;
+            groupBoxAddStaff.Visible = true;
+            groupBoxDeleteStaff.Visible = false;
+
+            /*txtNewStaffID.Text = "Generated automatically";
+            txtNewSurname.Text = "";
+            txtContactNum.Text = "";
+            txtNewFName.Text = "";
+            //txtNew */
+
+
+
+        }
+        private void bntDeleteStaff_Click(object sender, EventArgs e)
+        {
+            groupBoxSearch.Visible = false;
+            groupBoxStaff.Visible = false;
+            groupBoxAddStaff.Visible = false;
+            groupBoxDeleteStaff.Visible = true;
+        }
+        private void btnSearchStaff_Click(object sender, EventArgs e) ///comment
+        {
+            groupBoxSearch.Visible = true;
+            groupBoxDeleteStaff.Visible = false;
+            groupBoxSearch.Visible = true;
+            groupBoxStaff.Visible = false;
+            groupBoxAddStaff.Visible = false;
+            
+        }
+        private void btnShowAllStaff_Click(object sender, EventArgs e)
+        {
+            groupBoxSearch.Visible = false;
+            groupBoxStaff.Visible = false;
+            groupBoxAddStaff.Visible = false;
+            groupBoxDeleteStaff.Visible = false;
+                      
+            this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);   //refresh, or refill the content of the table
+        }
+ private void txtSearch_Click(object sender, EventArgs e)
+        {
+            string SearchByValue = comboBoxSearchBy.SelectedItem.ToString();
+
+            switch (SearchByValue)
+            {
+
+                case "Staff ID":
+
+                    break;
+
+
+                case "Surname":
+                    try
+                    {
+                        this.staffTableAdapter.FillBySurname(this.overSugerydbaseDataSet.Staff, txtSearchBy.Text);
+                    }
+                    catch (System.Exception ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show(ex.Message);
+                    }
+                    break;
+
+
+                case "First Name":
+
+                    break;
+
+
+                case "Sex":
+                    try
+                    {
+                        this.staffTableAdapter.FillBySex(this.overSugerydbaseDataSet.Staff, txtSearchBy.Text);
+                    }
+                    catch (System.Exception ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show(ex.Message);
+                    }
+
+                    break;
+
+
+                case "Role/Title":
+
+
+                    break;
+
+                default:
+
+
+                    break;
+            }
+        }
        
+
+ private void btnSerchByID_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+
+        private void btnAddNewStaff_Click(object sender, EventArgs e)
+        {
+            decimal new_Cnum;
+            string newSex, new_Role;
+            /*             
+            staffTableAdapter.RegisterPatient(firstname_txt.Text, lastname_txt.Text, dateofbirth_txt.Text, address_txt.Text, email_txt.Text);
+          
+　
+           
+           
+             */
+            
+            newSex = comboBoxNewSex.SelectedItem.ToString();
+            new_Role = comboBoxNewRole.SelectedItem.ToString();
+
+            try
+            {
+                 new_Cnum = Convert.ToDecimal(txtNewCNum.Text);
+                 staffTableAdapter.InsertQueryAddNewStaff(txtNewSurname.Text, txtNewFName.Text, newSex, new_Role, new_Cnum);
+            }
+            catch (System.Exception ex)
+            {
+                System.Windows.Forms.MessageBox.Show(ex.Message);
+            }
+           
+            this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);
+
+            //saving the new row to the database
+            this.staffTableAdapter.Update(this.overSugerydbaseDataSet.Staff);
+            overSugerydbaseDataSet.Staff.AcceptChanges();
+            overSugerydbaseDataSet.Staff.GetChanges();
+   
+        }
+
+        private void btnReset_Click(object sender, EventArgs e)
+        {
+            txtNewSurname.Text = String.Empty;
+            txtNewFName.Text = String.Empty;
+            comboBoxNewSex.SelectedIndex = 0;
+            comboBoxNewRole.SelectedIndex = 0;
+            txtNewCNum.Text = String.Empty;
+        }
+
+        private void btnAddStaffCancel_Click(object sender, EventArgs e)
+        {
+            txtNewSurname.Text = String.Empty;
+            txtNewFName.Text = String.Empty;
+            comboBoxNewSex.SelectedIndex = 0;
+            comboBoxNewRole.SelectedIndex = 0;
+            txtNewCNum.Text = String.Empty;
+
+            groupBoxSearch.Visible = false;
+            groupBoxStaff.Visible = false;
+            groupBoxAddStaff.Visible = false;
+            groupBoxDeleteStaff.Visible = false;
+
+            this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);   //refresh, or refill the content of the table
+        }
+
+        private void btnRefreshStaffTable_Click(object sender, EventArgs e)
+        {
+            this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);   //refresh, or refill the content of the table
+        }
+
+        private void button14_Click(object sender, EventArgs e)
+        {
+
+        }
+
+       
+
+      
+
+       
+        
 
      
 

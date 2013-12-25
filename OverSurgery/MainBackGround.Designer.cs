@@ -35,6 +35,18 @@
             System.Windows.Forms.Label end_DateLabel;
             System.Windows.Forms.Label prescribing_GPLabel;
             System.Windows.Forms.Label patientIDLabel;
+            System.Windows.Forms.Label contact_NumberLabel;
+            System.Windows.Forms.Label staff_Role_TitleLabel;
+            System.Windows.Forms.Label sexLabel;
+            System.Windows.Forms.Label first_NameLabel;
+            System.Windows.Forms.Label surnameLabel;
+            System.Windows.Forms.Label staffIDLabel;
+            System.Windows.Forms.Label label69;
+            System.Windows.Forms.Label label68;
+            System.Windows.Forms.Label label67;
+            System.Windows.Forms.Label label66;
+            System.Windows.Forms.Label label65;
+            System.Windows.Forms.Label label64;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainBackGround));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -45,6 +57,7 @@
             this.Label100 = new System.Windows.Forms.Label();
             this.Label200 = new System.Windows.Forms.Label();
             this.PageMakeAppointment = new System.Windows.Forms.Panel();
+            this.cbStaff = new System.Windows.Forms.ComboBox();
             this.twoActiveWeeksDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -187,14 +200,42 @@
             this.label26 = new System.Windows.Forms.Label();
             this.tabGPNurse = new System.Windows.Forms.TabPage();
             this.PageGPNurse = new System.Windows.Forms.Panel();
-            this.button13 = new System.Windows.Forms.Button();
-            this.label39 = new System.Windows.Forms.Label();
+            this.groupBoxSearch = new System.Windows.Forms.GroupBox();
+            this.btnSerchByID = new System.Windows.Forms.Button();
+            this.label32 = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.staffBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.overSugerydbaseDataSet3 = new OverSurgery.OverSugerydbaseDataSet3();
+            this.comboBoxSearchBy = new System.Windows.Forms.ComboBox();
             this.label30 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.txtSearchBy = new System.Windows.Forms.TextBox();
+            this.groupBoxAddStaff = new System.Windows.Forms.GroupBox();
+            this.txtNewCNum = new System.Windows.Forms.TextBox();
+            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtNewFName = new System.Windows.Forms.TextBox();
+            this.btnReset = new System.Windows.Forms.Button();
+            this.txtNewSurname = new System.Windows.Forms.TextBox();
+            this.comboBoxNewRole = new System.Windows.Forms.ComboBox();
+            this.comboBoxNewSex = new System.Windows.Forms.ComboBox();
+            this.btnAddNewStaff = new System.Windows.Forms.Button();
+            this.btnAddStaffCancel = new System.Windows.Forms.Button();
+            this.btnRefreshStaffTable = new System.Windows.Forms.Button();
+            this.groupBoxDeleteStaff = new System.Windows.Forms.GroupBox();
+            this.label31 = new System.Windows.Forms.Label();
+            this.button7 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox5 = new System.Windows.Forms.ComboBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.groupBoxStaff = new System.Windows.Forms.GroupBox();
+            this.staffIDTextBox = new System.Windows.Forms.TextBox();
+            this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.surnameTextBox = new System.Windows.Forms.TextBox();
+            this.first_NameTextBox = new System.Windows.Forms.TextBox();
+            this.sexTextBox = new System.Windows.Forms.TextBox();
+            this.staff_Role_TitleTextBox = new System.Windows.Forms.TextBox();
+            this.contact_NumberTextBox = new System.Windows.Forms.TextBox();
             this.bindingNavigator1 = new System.Windows.Forms.BindingNavigator(this.components);
             this.bindingNavigatorSeparator1 = new System.Windows.Forms.ToolStripSeparator();
-            this.staffBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
@@ -218,28 +259,6 @@
             this.bntDeleteStaff = new System.Windows.Forms.Button();
             this.bntAddNewStaff = new System.Windows.Forms.Button();
             this.bntCheckStaffDuty = new System.Windows.Forms.Button();
-            this.pageAddNewStaff = new System.Windows.Forms.Panel();
-            this.button22 = new System.Windows.Forms.Button();
-            this.button21 = new System.Windows.Forms.Button();
-            this.button20 = new System.Windows.Forms.Button();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.label38 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.label37 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
-            this.label35 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.label34 = new System.Windows.Forms.Label();
-            this.pageCheckGPNurse = new System.Windows.Forms.Panel();
-            this.button18 = new System.Windows.Forms.Button();
-            this.button17 = new System.Windows.Forms.Button();
-            this.button16 = new System.Windows.Forms.Button();
-            this.label33 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label31 = new System.Windows.Forms.Label();
             this.tabTimetable = new System.Windows.Forms.TabPage();
             this.PageRota = new System.Windows.Forms.Panel();
             this.rotaDataGridView = new System.Windows.Forms.DataGridView();
@@ -263,8 +282,10 @@
             this.label63 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.week52BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.staffBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.overSugerydbaseDataSet2 = new OverSurgery.OverSugerydbaseDataSet2();
             this.ButtonLogOut = new System.Windows.Forms.Button();
+            this.week52BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.staffTableAdapter = new OverSurgery.OverSugerydbaseDataSetTableAdapters.StaffTableAdapter();
             this.tableAdapterManager = new OverSurgery.OverSugerydbaseDataSetTableAdapters.TableAdapterManager();
             this.patientsTableAdapter = new OverSurgery.OverSugerydbaseDataSetTableAdapters.PatientsTableAdapter();
@@ -272,13 +293,28 @@
             this.rotaTableAdapter = new OverSurgery.OverSugerydbaseDataSetTableAdapters.RotaTableAdapter();
             this.medicationTableAdapter = new OverSurgery.OverSugerydbaseDataSetTableAdapters.MedicationTableAdapter();
             this.twoActiveWeeksTableAdapter = new OverSurgery.OverSugerydbaseDataSetTableAdapters.TwoActiveWeeksTableAdapter();
-            this.cbStaff = new System.Windows.Forms.ComboBox();
+            this.overSugerydbaseDataSet1 = new OverSurgery.OverSugerydbaseDataSet1();
+            this.staffTableAdapter1 = new OverSurgery.OverSugerydbaseDataSet2TableAdapters.StaffTableAdapter();
+            this.staffTableAdapter2 = new OverSurgery.OverSugerydbaseDataSet3TableAdapters.StaffTableAdapter();
+            this.txtSearch = new System.Windows.Forms.Button();
             medNameLabel = new System.Windows.Forms.Label();
             doseLabel = new System.Windows.Forms.Label();
             start_DateLabel = new System.Windows.Forms.Label();
             end_DateLabel = new System.Windows.Forms.Label();
             prescribing_GPLabel = new System.Windows.Forms.Label();
             patientIDLabel = new System.Windows.Forms.Label();
+            contact_NumberLabel = new System.Windows.Forms.Label();
+            staff_Role_TitleLabel = new System.Windows.Forms.Label();
+            sexLabel = new System.Windows.Forms.Label();
+            first_NameLabel = new System.Windows.Forms.Label();
+            surnameLabel = new System.Windows.Forms.Label();
+            staffIDLabel = new System.Windows.Forms.Label();
+            label69 = new System.Windows.Forms.Label();
+            label68 = new System.Windows.Forms.Label();
+            label67 = new System.Windows.Forms.Label();
+            label66 = new System.Windows.Forms.Label();
+            label65 = new System.Windows.Forms.Label();
+            label64 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
@@ -304,17 +340,24 @@
             this.PageViewCancelEditAppointment.SuspendLayout();
             this.tabGPNurse.SuspendLayout();
             this.PageGPNurse.SuspendLayout();
+            this.groupBoxSearch.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet3)).BeginInit();
+            this.groupBoxAddStaff.SuspendLayout();
+            this.groupBoxDeleteStaff.SuspendLayout();
+            this.groupBoxStaff.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaff)).BeginInit();
-            this.pageAddNewStaff.SuspendLayout();
-            this.pageCheckGPNurse.SuspendLayout();
             this.tabTimetable.SuspendLayout();
             this.PageRota.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.week52BindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // medNameLabel
@@ -370,6 +413,114 @@
             patientIDLabel.Size = new System.Drawing.Size(122, 25);
             patientIDLabel.TabIndex = 15;
             patientIDLabel.Text = "Patient ID:";
+            // 
+            // contact_NumberLabel
+            // 
+            contact_NumberLabel.AutoSize = true;
+            contact_NumberLabel.Location = new System.Drawing.Point(26, 178);
+            contact_NumberLabel.Name = "contact_NumberLabel";
+            contact_NumberLabel.Size = new System.Drawing.Size(107, 16);
+            contact_NumberLabel.TabIndex = 40;
+            contact_NumberLabel.Text = "Contact Number:";
+            // 
+            // staff_Role_TitleLabel
+            // 
+            staff_Role_TitleLabel.AutoSize = true;
+            staff_Role_TitleLabel.Location = new System.Drawing.Point(26, 150);
+            staff_Role_TitleLabel.Name = "staff_Role_TitleLabel";
+            staff_Role_TitleLabel.Size = new System.Drawing.Size(99, 16);
+            staff_Role_TitleLabel.TabIndex = 38;
+            staff_Role_TitleLabel.Text = "Staff Role/Title:";
+            // 
+            // sexLabel
+            // 
+            sexLabel.AutoSize = true;
+            sexLabel.Location = new System.Drawing.Point(26, 122);
+            sexLabel.Name = "sexLabel";
+            sexLabel.Size = new System.Drawing.Size(34, 16);
+            sexLabel.TabIndex = 36;
+            sexLabel.Text = "Sex:";
+            // 
+            // first_NameLabel
+            // 
+            first_NameLabel.AutoSize = true;
+            first_NameLabel.Location = new System.Drawing.Point(26, 94);
+            first_NameLabel.Name = "first_NameLabel";
+            first_NameLabel.Size = new System.Drawing.Size(76, 16);
+            first_NameLabel.TabIndex = 34;
+            first_NameLabel.Text = "First Name:";
+            // 
+            // surnameLabel
+            // 
+            surnameLabel.AutoSize = true;
+            surnameLabel.Location = new System.Drawing.Point(26, 66);
+            surnameLabel.Name = "surnameLabel";
+            surnameLabel.Size = new System.Drawing.Size(65, 16);
+            surnameLabel.TabIndex = 32;
+            surnameLabel.Text = "Surname:";
+            // 
+            // staffIDLabel
+            // 
+            staffIDLabel.AutoSize = true;
+            staffIDLabel.Location = new System.Drawing.Point(26, 38);
+            staffIDLabel.Name = "staffIDLabel";
+            staffIDLabel.Size = new System.Drawing.Size(53, 16);
+            staffIDLabel.TabIndex = 30;
+            staffIDLabel.Text = "Staff ID:";
+            // 
+            // label69
+            // 
+            label69.AutoSize = true;
+            label69.Location = new System.Drawing.Point(30, 167);
+            label69.Name = "label69";
+            label69.Size = new System.Drawing.Size(107, 16);
+            label69.TabIndex = 52;
+            label69.Text = "Contact Number:";
+            // 
+            // label68
+            // 
+            label68.AutoSize = true;
+            label68.Location = new System.Drawing.Point(30, 139);
+            label68.Name = "label68";
+            label68.Size = new System.Drawing.Size(99, 16);
+            label68.TabIndex = 50;
+            label68.Text = "Staff Role/Title:";
+            // 
+            // label67
+            // 
+            label67.AutoSize = true;
+            label67.Location = new System.Drawing.Point(32, 108);
+            label67.Name = "label67";
+            label67.Size = new System.Drawing.Size(34, 16);
+            label67.TabIndex = 48;
+            label67.Text = "Sex:";
+            // 
+            // label66
+            // 
+            label66.AutoSize = true;
+            label66.Location = new System.Drawing.Point(30, 80);
+            label66.Name = "label66";
+            label66.Size = new System.Drawing.Size(76, 16);
+            label66.TabIndex = 46;
+            label66.Text = "First Name:";
+            // 
+            // label65
+            // 
+            label65.AutoSize = true;
+            label65.Location = new System.Drawing.Point(30, 52);
+            label65.Name = "label65";
+            label65.Size = new System.Drawing.Size(65, 16);
+            label65.TabIndex = 44;
+            label65.Text = "Surname:";
+            // 
+            // label64
+            // 
+            label64.AutoSize = true;
+            label64.Location = new System.Drawing.Point(30, 24);
+            label64.Name = "label64";
+            label64.Size = new System.Drawing.Size(53, 16);
+            label64.TabIndex = 42;
+            label64.Text = "Staff ID:";
             // 
             // tabControl1
             // 
@@ -499,6 +650,15 @@
             this.PageMakeAppointment.TabIndex = 6;
             this.PageMakeAppointment.Visible = false;
             this.PageMakeAppointment.VisibleChanged += new System.EventHandler(this.LoadComboboxStaff);
+            // 
+            // cbStaff
+            // 
+            this.cbStaff.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cbStaff.FormattingEnabled = true;
+            this.cbStaff.Location = new System.Drawing.Point(343, 87);
+            this.cbStaff.Name = "cbStaff";
+            this.cbStaff.Size = new System.Drawing.Size(121, 24);
+            this.cbStaff.TabIndex = 14;
             // 
             // twoActiveWeeksDataGridView
             // 
@@ -1894,8 +2054,6 @@
             // tabGPNurse
             // 
             this.tabGPNurse.Controls.Add(this.PageGPNurse);
-            this.tabGPNurse.Controls.Add(this.pageAddNewStaff);
-            this.tabGPNurse.Controls.Add(this.pageCheckGPNurse);
             this.tabGPNurse.Location = new System.Drawing.Point(4, 34);
             this.tabGPNurse.Name = "tabGPNurse";
             this.tabGPNurse.Padding = new System.Windows.Forms.Padding(3);
@@ -1906,11 +2064,11 @@
             // 
             // PageGPNurse
             // 
-            this.PageGPNurse.Controls.Add(this.button13);
-            this.PageGPNurse.Controls.Add(this.label39);
-            this.PageGPNurse.Controls.Add(this.label30);
-            this.PageGPNurse.Controls.Add(this.textBox1);
-            this.PageGPNurse.Controls.Add(this.comboBox5);
+            this.PageGPNurse.Controls.Add(this.groupBoxSearch);
+            this.PageGPNurse.Controls.Add(this.groupBoxAddStaff);
+            this.PageGPNurse.Controls.Add(this.btnRefreshStaffTable);
+            this.PageGPNurse.Controls.Add(this.groupBoxDeleteStaff);
+            this.PageGPNurse.Controls.Add(this.groupBoxStaff);
             this.PageGPNurse.Controls.Add(this.bindingNavigator1);
             this.PageGPNurse.Controls.Add(this.dataGridViewStaff);
             this.PageGPNurse.Controls.Add(this.btnShowAllStaff);
@@ -1925,51 +2083,357 @@
             this.PageGPNurse.Size = new System.Drawing.Size(966, 653);
             this.PageGPNurse.TabIndex = 0;
             // 
-            // button13
+            // groupBoxSearch
             // 
-            this.button13.Location = new System.Drawing.Point(441, 139);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(75, 23);
-            this.button13.TabIndex = 17;
-            this.button13.Text = "Search";
-            this.button13.UseVisualStyleBackColor = true;
+            this.groupBoxSearch.Controls.Add(this.txtSearch);
+            this.groupBoxSearch.Controls.Add(this.btnSerchByID);
+            this.groupBoxSearch.Controls.Add(this.label32);
+            this.groupBoxSearch.Controls.Add(this.comboBox2);
+            this.groupBoxSearch.Controls.Add(this.comboBoxSearchBy);
+            this.groupBoxSearch.Controls.Add(this.label30);
+            this.groupBoxSearch.Controls.Add(this.label39);
+            this.groupBoxSearch.Controls.Add(this.txtSearchBy);
+            this.groupBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxSearch.Location = new System.Drawing.Point(206, 26);
+            this.groupBoxSearch.Name = "groupBoxSearch";
+            this.groupBoxSearch.Size = new System.Drawing.Size(465, 141);
+            this.groupBoxSearch.TabIndex = 35;
+            this.groupBoxSearch.TabStop = false;
+            this.groupBoxSearch.Text = "Search for Staff";
+            this.groupBoxSearch.Visible = false;
             // 
-            // label39
+            // btnSerchByID
             // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(502, 94);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(92, 16);
-            this.label39.TabIndex = 16;
-            this.label39.Text = "Enter Value:";
+            this.btnSerchByID.Location = new System.Drawing.Point(326, 97);
+            this.btnSerchByID.Name = "btnSerchByID";
+            this.btnSerchByID.Size = new System.Drawing.Size(108, 23);
+            this.btnSerchByID.TabIndex = 21;
+            this.btnSerchByID.Text = "Search By ID";
+            this.btnSerchByID.UseVisualStyleBackColor = true;
+            this.btnSerchByID.Click += new System.EventHandler(this.btnSerchByID_Click);
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Location = new System.Drawing.Point(293, 35);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(153, 16);
+            this.label32.TabIndex = 20;
+            this.label32.Text = "OR:     Search By Staff ID";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DataSource = this.staffBindingSource2;
+            this.comboBox2.DisplayMember = "StaffID";
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Location = new System.Drawing.Point(338, 55);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(96, 24);
+            this.comboBox2.TabIndex = 17;
+            this.comboBox2.ValueMember = "StaffID";
+            // 
+            // staffBindingSource2
+            // 
+            this.staffBindingSource2.DataMember = "Staff";
+            this.staffBindingSource2.DataSource = this.overSugerydbaseDataSet3;
+            // 
+            // overSugerydbaseDataSet3
+            // 
+            this.overSugerydbaseDataSet3.DataSetName = "OverSugerydbaseDataSet3";
+            this.overSugerydbaseDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // comboBoxSearchBy
+            // 
+            this.comboBoxSearchBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSearchBy.FormattingEnabled = true;
+            this.comboBoxSearchBy.Items.AddRange(new object[] {
+            "Staff ID",
+            "Surname",
+            "First Name",
+            "Role/Title",
+            "Sex"});
+            this.comboBoxSearchBy.Location = new System.Drawing.Point(130, 32);
+            this.comboBoxSearchBy.Name = "comboBoxSearchBy";
+            this.comboBoxSearchBy.Size = new System.Drawing.Size(124, 24);
+            this.comboBoxSearchBy.TabIndex = 13;
             // 
             // label30
             // 
             this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(213, 94);
+            this.label30.Location = new System.Drawing.Point(6, 35);
             this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(118, 16);
+            this.label30.Size = new System.Drawing.Size(102, 16);
             this.label30.TabIndex = 15;
             this.label30.Text = "Search Staff By:";
             // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(6, 62);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(94, 32);
+            this.label39.TabIndex = 16;
+            this.label39.Text = "Enter Value to \r\nSearch For:";
+            // 
+            // txtSearchBy
+            // 
+            this.txtSearchBy.Location = new System.Drawing.Point(130, 62);
+            this.txtSearchBy.Name = "txtSearchBy";
+            this.txtSearchBy.Size = new System.Drawing.Size(124, 22);
+            this.txtSearchBy.TabIndex = 14;
+            // 
+            // groupBoxAddStaff
+            // 
+            this.groupBoxAddStaff.Controls.Add(this.txtNewCNum);
+            this.groupBoxAddStaff.Controls.Add(this.textBox2);
+            this.groupBoxAddStaff.Controls.Add(this.txtNewFName);
+            this.groupBoxAddStaff.Controls.Add(this.btnReset);
+            this.groupBoxAddStaff.Controls.Add(this.txtNewSurname);
+            this.groupBoxAddStaff.Controls.Add(this.comboBoxNewRole);
+            this.groupBoxAddStaff.Controls.Add(this.comboBoxNewSex);
+            this.groupBoxAddStaff.Controls.Add(label64);
+            this.groupBoxAddStaff.Controls.Add(label65);
+            this.groupBoxAddStaff.Controls.Add(label66);
+            this.groupBoxAddStaff.Controls.Add(label67);
+            this.groupBoxAddStaff.Controls.Add(label68);
+            this.groupBoxAddStaff.Controls.Add(label69);
+            this.groupBoxAddStaff.Controls.Add(this.btnAddNewStaff);
+            this.groupBoxAddStaff.Controls.Add(this.btnAddStaffCancel);
+            this.groupBoxAddStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxAddStaff.Location = new System.Drawing.Point(206, 26);
+            this.groupBoxAddStaff.Name = "groupBoxAddStaff";
+            this.groupBoxAddStaff.Size = new System.Drawing.Size(364, 235);
+            this.groupBoxAddStaff.TabIndex = 31;
+            this.groupBoxAddStaff.TabStop = false;
+            this.groupBoxAddStaff.Text = "Add Staff";
+            this.groupBoxAddStaff.Visible = false;
+            // 
+            // txtNewCNum
+            // 
+            this.txtNewCNum.Location = new System.Drawing.Point(164, 164);
+            this.txtNewCNum.Name = "txtNewCNum";
+            this.txtNewCNum.Size = new System.Drawing.Size(168, 22);
+            this.txtNewCNum.TabIndex = 37;
+            // 
+            // textBox2
+            // 
+            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox2.Location = new System.Drawing.Point(164, 21);
+            this.textBox2.Name = "textBox2";
+            this.textBox2.ReadOnly = true;
+            this.textBox2.Size = new System.Drawing.Size(168, 21);
+            this.textBox2.TabIndex = 57;
+            this.textBox2.Text = "Generated Automatically";
+            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // txtNewFName
+            // 
+            this.txtNewFName.Location = new System.Drawing.Point(164, 76);
+            this.txtNewFName.Name = "txtNewFName";
+            this.txtNewFName.Size = new System.Drawing.Size(168, 22);
+            this.txtNewFName.TabIndex = 36;
+            // 
+            // btnReset
+            // 
+            this.btnReset.Location = new System.Drawing.Point(128, 197);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(75, 23);
+            this.btnReset.TabIndex = 56;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
+            // 
+            // txtNewSurname
+            // 
+            this.txtNewSurname.Location = new System.Drawing.Point(164, 48);
+            this.txtNewSurname.Name = "txtNewSurname";
+            this.txtNewSurname.Size = new System.Drawing.Size(168, 22);
+            this.txtNewSurname.TabIndex = 35;
+            // 
+            // comboBoxNewRole
+            // 
+            this.comboBoxNewRole.FormattingEnabled = true;
+            this.comboBoxNewRole.Items.AddRange(new object[] {
+            "--Select Role/Title--",
+            "GP",
+            "Nurse",
+            "Other (Specify Please)"});
+            this.comboBoxNewRole.Location = new System.Drawing.Point(164, 134);
+            this.comboBoxNewRole.Name = "comboBoxNewRole";
+            this.comboBoxNewRole.Size = new System.Drawing.Size(168, 24);
+            this.comboBoxNewRole.TabIndex = 55;
+            // 
+            // comboBoxNewSex
+            // 
+            this.comboBoxNewSex.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxNewSex.FormattingEnabled = true;
+            this.comboBoxNewSex.Items.AddRange(new object[] {
+            "--Select Sex--",
+            "Male",
+            "Female"});
+            this.comboBoxNewSex.Location = new System.Drawing.Point(164, 104);
+            this.comboBoxNewSex.Name = "comboBoxNewSex";
+            this.comboBoxNewSex.Size = new System.Drawing.Size(168, 24);
+            this.comboBoxNewSex.TabIndex = 54;
+            // 
+            // btnAddNewStaff
+            // 
+            this.btnAddNewStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddNewStaff.Location = new System.Drawing.Point(217, 197);
+            this.btnAddNewStaff.Name = "btnAddNewStaff";
+            this.btnAddNewStaff.Size = new System.Drawing.Size(123, 23);
+            this.btnAddNewStaff.TabIndex = 26;
+            this.btnAddNewStaff.Text = "Create New Staff";
+            this.btnAddNewStaff.UseVisualStyleBackColor = true;
+            this.btnAddNewStaff.Click += new System.EventHandler(this.btnAddNewStaff_Click);
+            // 
+            // btnAddStaffCancel
+            // 
+            this.btnAddStaffCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddStaffCancel.Location = new System.Drawing.Point(33, 197);
+            this.btnAddStaffCancel.Name = "btnAddStaffCancel";
+            this.btnAddStaffCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnAddStaffCancel.TabIndex = 25;
+            this.btnAddStaffCancel.Text = "Cancel";
+            this.btnAddStaffCancel.UseVisualStyleBackColor = true;
+            this.btnAddStaffCancel.Click += new System.EventHandler(this.btnAddStaffCancel_Click);
+            // 
+            // btnRefreshStaffTable
+            // 
+            this.btnRefreshStaffTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRefreshStaffTable.Location = new System.Drawing.Point(778, 272);
+            this.btnRefreshStaffTable.Name = "btnRefreshStaffTable";
+            this.btnRefreshStaffTable.Size = new System.Drawing.Size(148, 31);
+            this.btnRefreshStaffTable.TabIndex = 34;
+            this.btnRefreshStaffTable.Text = "Refresh Table";
+            this.btnRefreshStaffTable.UseVisualStyleBackColor = true;
+            this.btnRefreshStaffTable.Click += new System.EventHandler(this.btnRefreshStaffTable_Click);
+            // 
+            // groupBoxDeleteStaff
+            // 
+            this.groupBoxDeleteStaff.Controls.Add(this.label31);
+            this.groupBoxDeleteStaff.Controls.Add(this.button7);
+            this.groupBoxDeleteStaff.Controls.Add(this.textBox1);
+            this.groupBoxDeleteStaff.Controls.Add(this.comboBox1);
+            this.groupBoxDeleteStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxDeleteStaff.Location = new System.Drawing.Point(206, 32);
+            this.groupBoxDeleteStaff.Name = "groupBoxDeleteStaff";
+            this.groupBoxDeleteStaff.Size = new System.Drawing.Size(282, 127);
+            this.groupBoxDeleteStaff.TabIndex = 36;
+            this.groupBoxDeleteStaff.TabStop = false;
+            this.groupBoxDeleteStaff.Text = "Delete a Staff";
+            this.groupBoxDeleteStaff.Visible = false;
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Location = new System.Drawing.Point(10, 29);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(133, 32);
+            this.label31.TabIndex = 3;
+            this.label31.Text = "Please Enter Staff ID \r\nto Delete";
+            // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(112, 94);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(130, 23);
+            this.button7.TabIndex = 2;
+            this.button7.Text = "Delete Staff";
+            this.button7.UseVisualStyleBackColor = true;
+            // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(600, 91);
+            this.textBox1.Location = new System.Drawing.Point(167, 51);
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 14;
+            this.textBox1.Size = new System.Drawing.Size(75, 22);
+            this.textBox1.TabIndex = 1;
             // 
-            // comboBox5
+            // comboBox1
             // 
-            this.comboBox5.FormattingEnabled = true;
-            this.comboBox5.Items.AddRange(new object[] {
-            "Staff ID",
-            "Name",
-            "Role/Title"});
-            this.comboBox5.Location = new System.Drawing.Point(337, 91);
-            this.comboBox5.Name = "comboBox5";
-            this.comboBox5.Size = new System.Drawing.Size(104, 24);
-            this.comboBox5.TabIndex = 13;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(167, 21);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(75, 24);
+            this.comboBox1.TabIndex = 0;
+            // 
+            // groupBoxStaff
+            // 
+            this.groupBoxStaff.Controls.Add(staffIDLabel);
+            this.groupBoxStaff.Controls.Add(this.staffIDTextBox);
+            this.groupBoxStaff.Controls.Add(surnameLabel);
+            this.groupBoxStaff.Controls.Add(this.surnameTextBox);
+            this.groupBoxStaff.Controls.Add(first_NameLabel);
+            this.groupBoxStaff.Controls.Add(this.first_NameTextBox);
+            this.groupBoxStaff.Controls.Add(sexLabel);
+            this.groupBoxStaff.Controls.Add(this.sexTextBox);
+            this.groupBoxStaff.Controls.Add(staff_Role_TitleLabel);
+            this.groupBoxStaff.Controls.Add(this.staff_Role_TitleTextBox);
+            this.groupBoxStaff.Controls.Add(contact_NumberLabel);
+            this.groupBoxStaff.Controls.Add(this.contact_NumberTextBox);
+            this.groupBoxStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxStaff.Location = new System.Drawing.Point(592, 26);
+            this.groupBoxStaff.Name = "groupBoxStaff";
+            this.groupBoxStaff.Size = new System.Drawing.Size(327, 235);
+            this.groupBoxStaff.TabIndex = 30;
+            this.groupBoxStaff.TabStop = false;
+            this.groupBoxStaff.Text = "Staff Detail Information";
+            this.groupBoxStaff.Visible = false;
+            // 
+            // staffIDTextBox
+            // 
+            this.staffIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.staffBindingSource, "StaffID", true));
+            this.staffIDTextBox.Location = new System.Drawing.Point(154, 35);
+            this.staffIDTextBox.Name = "staffIDTextBox";
+            this.staffIDTextBox.ReadOnly = true;
+            this.staffIDTextBox.Size = new System.Drawing.Size(100, 22);
+            this.staffIDTextBox.TabIndex = 31;
+            // 
+            // staffBindingSource
+            // 
+            this.staffBindingSource.DataMember = "Staff";
+            this.staffBindingSource.DataSource = this.overSugerydbaseDataSet;
+            // 
+            // surnameTextBox
+            // 
+            this.surnameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.staffBindingSource, "Surname", true));
+            this.surnameTextBox.Location = new System.Drawing.Point(154, 63);
+            this.surnameTextBox.Name = "surnameTextBox";
+            this.surnameTextBox.Size = new System.Drawing.Size(100, 22);
+            this.surnameTextBox.TabIndex = 33;
+            // 
+            // first_NameTextBox
+            // 
+            this.first_NameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.staffBindingSource, "First Name", true));
+            this.first_NameTextBox.Location = new System.Drawing.Point(154, 91);
+            this.first_NameTextBox.Name = "first_NameTextBox";
+            this.first_NameTextBox.Size = new System.Drawing.Size(100, 22);
+            this.first_NameTextBox.TabIndex = 35;
+            // 
+            // sexTextBox
+            // 
+            this.sexTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.staffBindingSource, "Sex", true));
+            this.sexTextBox.Location = new System.Drawing.Point(154, 119);
+            this.sexTextBox.Name = "sexTextBox";
+            this.sexTextBox.Size = new System.Drawing.Size(100, 22);
+            this.sexTextBox.TabIndex = 37;
+            // 
+            // staff_Role_TitleTextBox
+            // 
+            this.staff_Role_TitleTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.staffBindingSource, "Staff Role/Title", true));
+            this.staff_Role_TitleTextBox.Location = new System.Drawing.Point(154, 147);
+            this.staff_Role_TitleTextBox.Name = "staff_Role_TitleTextBox";
+            this.staff_Role_TitleTextBox.Size = new System.Drawing.Size(100, 22);
+            this.staff_Role_TitleTextBox.TabIndex = 39;
+            // 
+            // contact_NumberTextBox
+            // 
+            this.contact_NumberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.staffBindingSource, "Contact Number", true));
+            this.contact_NumberTextBox.Location = new System.Drawing.Point(154, 175);
+            this.contact_NumberTextBox.Name = "contact_NumberTextBox";
+            this.contact_NumberTextBox.Size = new System.Drawing.Size(100, 22);
+            this.contact_NumberTextBox.TabIndex = 41;
             // 
             // bindingNavigator1
             // 
@@ -1990,7 +2454,7 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem});
-            this.bindingNavigator1.Location = new System.Drawing.Point(231, 309);
+            this.bindingNavigator1.Location = new System.Drawing.Point(231, 264);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -2005,11 +2469,6 @@
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
             this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 25);
-            // 
-            // staffBindingSource
-            // 
-            this.staffBindingSource.DataMember = "Staff";
-            this.staffBindingSource.DataSource = this.overSugerydbaseDataSet;
             // 
             // bindingNavigatorCountItem
             // 
@@ -2147,9 +2606,10 @@
             // 
             // btnShowAllStaff
             // 
-            this.btnShowAllStaff.Location = new System.Drawing.Point(13, 240);
+            this.btnShowAllStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowAllStaff.Location = new System.Drawing.Point(13, 194);
             this.btnShowAllStaff.Name = "btnShowAllStaff";
-            this.btnShowAllStaff.Size = new System.Drawing.Size(177, 25);
+            this.btnShowAllStaff.Size = new System.Drawing.Size(148, 31);
             this.btnShowAllStaff.TabIndex = 10;
             this.btnShowAllStaff.Text = "Show All GP/Nurse";
             this.btnShowAllStaff.UseVisualStyleBackColor = true;
@@ -2157,10 +2617,10 @@
             // 
             // btnSearchStaff
             // 
-            this.btnSearchStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchStaff.Location = new System.Drawing.Point(13, 86);
+            this.btnSearchStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchStaff.Location = new System.Drawing.Point(13, 47);
             this.btnSearchStaff.Name = "btnSearchStaff";
-            this.btnSearchStaff.Size = new System.Drawing.Size(177, 31);
+            this.btnSearchStaff.Size = new System.Drawing.Size(148, 31);
             this.btnSearchStaff.TabIndex = 9;
             this.btnSearchStaff.Text = "Search for a Nurse/GP";
             this.btnSearchStaff.UseVisualStyleBackColor = true;
@@ -2169,19 +2629,19 @@
             // label29
             // 
             this.label29.AutoSize = true;
-            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(18, 17);
+            this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label29.Location = new System.Drawing.Point(11, 6);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(201, 25);
+            this.label29.Size = new System.Drawing.Size(162, 24);
             this.label29.TabIndex = 8;
             this.label29.Text = "GP/Nurse Options";
             // 
             // bntDeleteStaff
             // 
-            this.bntDeleteStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntDeleteStaff.Location = new System.Drawing.Point(13, 191);
+            this.bntDeleteStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntDeleteStaff.Location = new System.Drawing.Point(13, 145);
             this.bntDeleteStaff.Name = "bntDeleteStaff";
-            this.bntDeleteStaff.Size = new System.Drawing.Size(177, 31);
+            this.bntDeleteStaff.Size = new System.Drawing.Size(148, 31);
             this.bntDeleteStaff.TabIndex = 7;
             this.bntDeleteStaff.Text = "Delete Nurse/GP";
             this.bntDeleteStaff.UseVisualStyleBackColor = true;
@@ -2189,10 +2649,10 @@
             // 
             // bntAddNewStaff
             // 
-            this.bntAddNewStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntAddNewStaff.Location = new System.Drawing.Point(13, 138);
+            this.bntAddNewStaff.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntAddNewStaff.Location = new System.Drawing.Point(13, 96);
             this.bntAddNewStaff.Name = "bntAddNewStaff";
-            this.bntAddNewStaff.Size = new System.Drawing.Size(177, 31);
+            this.bntAddNewStaff.Size = new System.Drawing.Size(148, 31);
             this.bntAddNewStaff.TabIndex = 6;
             this.bntAddNewStaff.Text = "Add New Nurse/GP";
             this.bntAddNewStaff.UseVisualStyleBackColor = true;
@@ -2200,237 +2660,14 @@
             // 
             // bntCheckStaffDuty
             // 
-            this.bntCheckStaffDuty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.bntCheckStaffDuty.Location = new System.Drawing.Point(13, 284);
+            this.bntCheckStaffDuty.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.bntCheckStaffDuty.Location = new System.Drawing.Point(13, 243);
             this.bntCheckStaffDuty.Name = "bntCheckStaffDuty";
-            this.bntCheckStaffDuty.Size = new System.Drawing.Size(177, 31);
+            this.bntCheckStaffDuty.Size = new System.Drawing.Size(148, 31);
             this.bntCheckStaffDuty.TabIndex = 5;
-            this.bntCheckStaffDuty.Text = "Check Nurse/GP on Duty";
+            this.bntCheckStaffDuty.Text = "Check Staff on Duty";
             this.bntCheckStaffDuty.UseVisualStyleBackColor = true;
             this.bntCheckStaffDuty.Click += new System.EventHandler(this.bntCheckStaffDuty_Click);
-            // 
-            // pageAddNewStaff
-            // 
-            this.pageAddNewStaff.Controls.Add(this.button22);
-            this.pageAddNewStaff.Controls.Add(this.button21);
-            this.pageAddNewStaff.Controls.Add(this.button20);
-            this.pageAddNewStaff.Controls.Add(this.comboBox4);
-            this.pageAddNewStaff.Controls.Add(this.textBox9);
-            this.pageAddNewStaff.Controls.Add(this.label38);
-            this.pageAddNewStaff.Controls.Add(this.comboBox3);
-            this.pageAddNewStaff.Controls.Add(this.label37);
-            this.pageAddNewStaff.Controls.Add(this.label36);
-            this.pageAddNewStaff.Controls.Add(this.label35);
-            this.pageAddNewStaff.Controls.Add(this.textBox8);
-            this.pageAddNewStaff.Controls.Add(this.label34);
-            this.pageAddNewStaff.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pageAddNewStaff.Location = new System.Drawing.Point(3, 3);
-            this.pageAddNewStaff.Name = "pageAddNewStaff";
-            this.pageAddNewStaff.Size = new System.Drawing.Size(966, 653);
-            this.pageAddNewStaff.TabIndex = 8;
-            this.pageAddNewStaff.Visible = false;
-            // 
-            // button22
-            // 
-            this.button22.Location = new System.Drawing.Point(167, 292);
-            this.button22.Name = "button22";
-            this.button22.Size = new System.Drawing.Size(151, 23);
-            this.button22.TabIndex = 16;
-            this.button22.Text = "Create New Staff";
-            this.button22.UseVisualStyleBackColor = true;
-            // 
-            // button21
-            // 
-            this.button21.Location = new System.Drawing.Point(67, 292);
-            this.button21.Name = "button21";
-            this.button21.Size = new System.Drawing.Size(75, 23);
-            this.button21.TabIndex = 15;
-            this.button21.Text = "Cancel";
-            this.button21.UseVisualStyleBackColor = true;
-            // 
-            // button20
-            // 
-            this.button20.Location = new System.Drawing.Point(346, 292);
-            this.button20.Name = "button20";
-            this.button20.Size = new System.Drawing.Size(170, 23);
-            this.button20.TabIndex = 14;
-            this.button20.Text = "Back to GP/Nurse";
-            this.button20.UseVisualStyleBackColor = true;
-            this.button20.Click += new System.EventHandler(this.button20_Click_1);
-            // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Items.AddRange(new object[] {
-            "GP",
-            "Nurse",
-            "Others"});
-            this.comboBox4.Location = new System.Drawing.Point(120, 213);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(198, 24);
-            this.comboBox4.TabIndex = 12;
-            this.comboBox4.Text = "       - -select staff role- - ";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Location = new System.Drawing.Point(120, 128);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(198, 22);
-            this.textBox9.TabIndex = 11;
-            // 
-            // label38
-            // 
-            this.label38.AutoSize = true;
-            this.label38.Location = new System.Drawing.Point(20, 131);
-            this.label38.Name = "label38";
-            this.label38.Size = new System.Drawing.Size(86, 16);
-            this.label38.TabIndex = 10;
-            this.label38.Text = "Last Name:";
-            // 
-            // comboBox3
-            // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
-            "Male",
-            "Female"});
-            this.comboBox3.Location = new System.Drawing.Point(120, 169);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(198, 24);
-            this.comboBox3.TabIndex = 9;
-            this.comboBox3.Text = "       - -select Sex- -";
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(20, 94);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(87, 16);
-            this.label37.TabIndex = 7;
-            this.label37.Text = "First Name:";
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(20, 172);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(38, 16);
-            this.label36.TabIndex = 6;
-            this.label36.Text = "Sex:";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(20, 221);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(80, 16);
-            this.label35.TabIndex = 5;
-            this.label35.Text = "Staff Role:";
-            // 
-            // textBox8
-            // 
-            this.textBox8.Location = new System.Drawing.Point(120, 88);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(198, 22);
-            this.textBox8.TabIndex = 4;
-            // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(31, 27);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(364, 25);
-            this.label34.TabIndex = 2;
-            this.label34.Text = "New Staff(GP/Nurse) Registration";
-            // 
-            // pageCheckGPNurse
-            // 
-            this.pageCheckGPNurse.Controls.Add(this.button18);
-            this.pageCheckGPNurse.Controls.Add(this.button17);
-            this.pageCheckGPNurse.Controls.Add(this.button16);
-            this.pageCheckGPNurse.Controls.Add(this.label33);
-            this.pageCheckGPNurse.Controls.Add(this.dateTimePicker3);
-            this.pageCheckGPNurse.Controls.Add(this.comboBox1);
-            this.pageCheckGPNurse.Controls.Add(this.label32);
-            this.pageCheckGPNurse.Controls.Add(this.label31);
-            this.pageCheckGPNurse.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pageCheckGPNurse.Location = new System.Drawing.Point(3, 3);
-            this.pageCheckGPNurse.Name = "pageCheckGPNurse";
-            this.pageCheckGPNurse.Size = new System.Drawing.Size(966, 653);
-            this.pageCheckGPNurse.TabIndex = 8;
-            this.pageCheckGPNurse.Visible = false;
-            // 
-            // button18
-            // 
-            this.button18.Location = new System.Drawing.Point(231, 177);
-            this.button18.Name = "button18";
-            this.button18.Size = new System.Drawing.Size(136, 32);
-            this.button18.TabIndex = 13;
-            this.button18.Text = "Check Duty";
-            this.button18.UseVisualStyleBackColor = true;
-            // 
-            // button17
-            // 
-            this.button17.Location = new System.Drawing.Point(297, 541);
-            this.button17.Name = "button17";
-            this.button17.Size = new System.Drawing.Size(181, 29);
-            this.button17.TabIndex = 12;
-            this.button17.Text = "Go Back to GP/Nurse";
-            this.button17.UseVisualStyleBackColor = true;
-            this.button17.Click += new System.EventHandler(this.button17_Click_1);
-            // 
-            // button16
-            // 
-            this.button16.Location = new System.Drawing.Point(231, 429);
-            this.button16.Name = "button16";
-            this.button16.Size = new System.Drawing.Size(75, 23);
-            this.button16.TabIndex = 11;
-            this.button16.Text = "button16";
-            this.button16.UseVisualStyleBackColor = true;
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Location = new System.Drawing.Point(68, 139);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(68, 16);
-            this.label33.TabIndex = 6;
-            this.label33.Text = "On Date:";
-            // 
-            // dateTimePicker3
-            // 
-            this.dateTimePicker3.Location = new System.Drawing.Point(167, 134);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePicker3.TabIndex = 10;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(167, 91);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(200, 24);
-            this.comboBox1.TabIndex = 4;
-            this.comboBox1.Text = "select GP/Nurse";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(68, 94);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(83, 16);
-            this.label32.TabIndex = 3;
-            this.label32.Text = "Search for:";
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(50, 42);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(274, 25);
-            this.label31.TabIndex = 2;
-            this.label31.Text = "Check Nurse/GP on Duty";
             // 
             // tabTimetable
             // 
@@ -2657,10 +2894,15 @@
             this.dateTimePicker2.CloseUp += new System.EventHandler(this.dateTimePicker2_CloseUp);
             this.dateTimePicker2.LocationChanged += new System.EventHandler(this.dateTimePicker2_CloseUp);
             // 
-            // week52BindingSource
+            // staffBindingSource1
             // 
-            this.week52BindingSource.DataMember = "Week52";
-            this.week52BindingSource.DataSource = this.overSugerydbaseDataSet;
+            this.staffBindingSource1.DataMember = "Staff";
+            this.staffBindingSource1.DataSource = this.overSugerydbaseDataSet2;
+            // 
+            // overSugerydbaseDataSet2
+            // 
+            this.overSugerydbaseDataSet2.DataSetName = "OverSugerydbaseDataSet2";
+            this.overSugerydbaseDataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ButtonLogOut
             // 
@@ -2671,6 +2913,11 @@
             this.ButtonLogOut.Text = "Log Out";
             this.ButtonLogOut.UseVisualStyleBackColor = true;
             this.ButtonLogOut.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // week52BindingSource
+            // 
+            this.week52BindingSource.DataMember = "Week52";
+            this.week52BindingSource.DataSource = this.overSugerydbaseDataSet;
             // 
             // staffTableAdapter
             // 
@@ -2707,20 +2954,34 @@
             // 
             this.twoActiveWeeksTableAdapter.ClearBeforeFill = true;
             // 
-            // cbStaff
+            // overSugerydbaseDataSet1
             // 
-            this.cbStaff.Cursor = System.Windows.Forms.Cursors.Default;
-            this.cbStaff.FormattingEnabled = true;
-            this.cbStaff.Location = new System.Drawing.Point(343, 87);
-            this.cbStaff.Name = "cbStaff";
-            this.cbStaff.Size = new System.Drawing.Size(121, 24);
-            this.cbStaff.TabIndex = 14;
+            this.overSugerydbaseDataSet1.DataSetName = "OverSugerydbaseDataSet1";
+            this.overSugerydbaseDataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // staffTableAdapter1
+            // 
+            this.staffTableAdapter1.ClearBeforeFill = true;
+            // 
+            // staffTableAdapter2
+            // 
+            this.staffTableAdapter2.ClearBeforeFill = true;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(139, 104);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(115, 23);
+            this.txtSearch.TabIndex = 22;
+            this.txtSearch.Text = "Search";
+            this.txtSearch.UseVisualStyleBackColor = true;
+            this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
             // 
             // MainBackGround
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(981, 716);
+            this.ClientSize = new System.Drawing.Size(1001, 724);
             this.ControlBox = false;
             this.Controls.Add(this.ButtonLogOut);
             this.Controls.Add(this.tabControl1);
@@ -2764,22 +3025,31 @@
             this.tabGPNurse.ResumeLayout(false);
             this.PageGPNurse.ResumeLayout(false);
             this.PageGPNurse.PerformLayout();
+            this.groupBoxSearch.ResumeLayout(false);
+            this.groupBoxSearch.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet3)).EndInit();
+            this.groupBoxAddStaff.ResumeLayout(false);
+            this.groupBoxAddStaff.PerformLayout();
+            this.groupBoxDeleteStaff.ResumeLayout(false);
+            this.groupBoxDeleteStaff.PerformLayout();
+            this.groupBoxStaff.ResumeLayout(false);
+            this.groupBoxStaff.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).EndInit();
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaff)).EndInit();
-            this.pageAddNewStaff.ResumeLayout(false);
-            this.pageAddNewStaff.PerformLayout();
-            this.pageCheckGPNurse.ResumeLayout(false);
-            this.pageCheckGPNurse.PerformLayout();
             this.tabTimetable.ResumeLayout(false);
             this.tabTimetable.PerformLayout();
             this.PageRota.ResumeLayout(false);
             this.PageRota.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.week52BindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -2863,28 +3133,6 @@
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label label28;
         private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Panel pageAddNewStaff;
-        private System.Windows.Forms.Button button22;
-        private System.Windows.Forms.Button button21;
-        private System.Windows.Forms.Button button20;
-        private System.Windows.Forms.ComboBox comboBox4;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Panel pageCheckGPNurse;
-        private System.Windows.Forms.Button button18;
-        private System.Windows.Forms.Button button17;
-        private System.Windows.Forms.Button button16;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Panel PageGPNurse;
         private System.Windows.Forms.Button bntCheckStaffDuty;
         private System.Windows.Forms.Button bntDeleteStaff;
@@ -2894,32 +3142,8 @@
         private System.Windows.Forms.BindingSource staffBindingSource;
         private OverSugerydbaseDataSetTableAdapters.StaffTableAdapter staffTableAdapter;
         private OverSugerydbaseDataSetTableAdapters.TableAdapterManager tableAdapterManager;
-        private System.Windows.Forms.DataGridView dataGridViewStaff;
         private System.Windows.Forms.Button btnShowAllStaff;
         private System.Windows.Forms.Button btnSearchStaff;
-        private System.Windows.Forms.DataGridViewTextBoxColumn staffIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn sexDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn staffRoleTitleDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn contactNumberDataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingNavigator bindingNavigator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
-        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
-        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
-        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.TextBox txtNRSex;
         private System.Windows.Forms.Label label40;
@@ -3023,6 +3247,64 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
         private System.Windows.Forms.ComboBox cbStaff;
+        private System.Windows.Forms.GroupBox groupBoxStaff;
+        private System.Windows.Forms.TextBox staffIDTextBox;
+        private System.Windows.Forms.TextBox surnameTextBox;
+        private System.Windows.Forms.TextBox first_NameTextBox;
+        private System.Windows.Forms.TextBox sexTextBox;
+        private System.Windows.Forms.TextBox staff_Role_TitleTextBox;
+        private System.Windows.Forms.TextBox contact_NumberTextBox;
+        private System.Windows.Forms.BindingNavigator bindingNavigator1;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator1;
+        private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
+        private System.Windows.Forms.ToolStripTextBox bindingNavigatorPositionItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveNextItem;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
+        private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
+        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
+        private System.Windows.Forms.DataGridView dataGridViewStaff;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staffIDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn surnameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn sexDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn staffRoleTitleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn contactNumberDataGridViewTextBoxColumn;
+        private System.Windows.Forms.GroupBox groupBoxAddStaff;
+        private System.Windows.Forms.Button btnReset;
+        private System.Windows.Forms.ComboBox comboBoxNewRole;
+        private System.Windows.Forms.ComboBox comboBoxNewSex;
+        private System.Windows.Forms.Button btnAddNewStaff;
+        private System.Windows.Forms.Button btnAddStaffCancel;
+        private System.Windows.Forms.Button btnRefreshStaffTable;
+        private System.Windows.Forms.GroupBox groupBoxDeleteStaff;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtNewCNum;
+        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtNewFName;
+        private System.Windows.Forms.TextBox txtNewSurname;
+        private OverSugerydbaseDataSet1 overSugerydbaseDataSet1;
+        private OverSugerydbaseDataSet2 overSugerydbaseDataSet2;
+        private System.Windows.Forms.BindingSource staffBindingSource1;
+        private OverSugerydbaseDataSet2TableAdapters.StaffTableAdapter staffTableAdapter1;
+        private OverSugerydbaseDataSet3 overSugerydbaseDataSet3;
+        private System.Windows.Forms.BindingSource staffBindingSource2;
+        private OverSugerydbaseDataSet3TableAdapters.StaffTableAdapter staffTableAdapter2;
+        private System.Windows.Forms.GroupBox groupBoxSearch;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBoxSearchBy;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.TextBox txtSearchBy;
+        private System.Windows.Forms.Button btnSerchByID;
+        private System.Windows.Forms.Button txtSearch;
     }
 }
 
