@@ -42,7 +42,7 @@ namespace OverSurgery
                // var OneofMany = Controls.Find(MenuName, true).FirstOrDefault();
              //   OneofMany.Refresh();
              
-              cbStaffList.Items.Insert(i,row.Surname);
+            
               cbStaffMenu1.Items.Insert(i,row.Surname);
               cbStaffMenu2.Items.Insert(i,row.Surname);
               cbStaffMenu3.Items.Insert(i,row.Surname);
@@ -202,7 +202,7 @@ namespace OverSurgery
             this.cbStaff.Name = "cbStaff";
             this.cbStaff.Size = new System.Drawing.Size(121, 21);
             this.cbStaff.TabIndex = 14;
-            cbStaffList.Items.Insert(0, "Free");
+        
               int i = 0;
             
             OverSugerydbaseDataSet.StaffDataTable StaffMenuTable = this.staffTableAdapter.GetData();
@@ -505,7 +505,7 @@ namespace OverSurgery
                            BookButton[c, i].Click += new System.EventHandler(BookButton_Click);
                            try
                            {
-                               TimetableM.Controls.Add(BookButton[c, i], (c + 1), (i + 1));
+                               TableMorning.Controls.Add(BookButton[c, i], (c + 1), (i + 1));
                            }
                            catch (Exception bs)
                            {
@@ -525,7 +525,7 @@ namespace OverSurgery
                            | System.Windows.Forms.AnchorStyles.Right)));
                            try
                            {
-                               TimetableM.Controls.Add(SlotLabel[c, i], (c + 1), (i + 1));
+                               TableMorning.Controls.Add(SlotLabel[c, i], (c + 1), (i + 1));
                            }
                            catch (Exception bs)
                            {
@@ -535,10 +535,10 @@ namespace OverSurgery
                    } //end of for c
                    i++;
            }  //end of foreach Stafffound
-           
-           
-       
-               TimetableM.Visible = true;
+
+
+              // panelMorningAppointments.Visible = true;
+               TableMorning.Visible = true;
          
    
 
@@ -639,8 +639,8 @@ namespace OverSurgery
         {
             Label[,] SlotLabelS = new Label[13, 13];
             Button bt = sender as Button;
-            var rowx = TimetableM.GetRow(bt);
-            var colx = TimetableM.GetColumn(bt);
+            var rowx = TableMorning.GetRow(bt);
+            var colx = TableMorning.GetColumn(bt);
            // Control control= this.Controls.Find("labelStaff["+0+"]["+rowx+"]", true).FirstOrDefault() as Label ;
             Control control = this.Controls.Find("labelStaff"+ (rowx-1)  , true).FirstOrDefault() as Label;
 
@@ -659,7 +659,7 @@ namespace OverSurgery
 
             this.twoActiveWeeksTableAdapter.RecordBooking(TempStaffID, TempSurname, TempDate, TempSex, TempRole, colx, ActiveUserID);
             //this.Controls.Remove(bt);
-            this.TimetableM.Controls.Remove(bt);
+            this.TableMorning.Controls.Remove(bt);
             
             // make a label
             SlotLabelS[rowx, colx] = new Label();
@@ -1093,9 +1093,28 @@ namespace OverSurgery
             setMeVisible("PageSelectedPatient");
         }
 
-     
+        private void btnMorning_Click(object sender, EventArgs e)
+        {
+            TableMorning.Visible = true;
+            TableAfternoun.Visible = false;
+            btnAfternoon.Visible = true;
+            btnMorning.Visible = false;
+        }
 
-       
+        private void btnAfternoon_Click(object sender, EventArgs e)
+        {
+           TableMorning.Visible=false;
+            TableAfternoun.Visible=true;
+            btnAfternoon.Visible = false;
+            btnMorning.Visible = true;
+            
+            
+           // panelMorningAppointments.Visible = false;
+            //panelAfternounAppointments.Visible = true;
+        }
+
+     
+      
 
       
 

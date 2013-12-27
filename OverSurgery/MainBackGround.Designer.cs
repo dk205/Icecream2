@@ -57,18 +57,27 @@
             this.Label100 = new System.Windows.Forms.Label();
             this.Label200 = new System.Windows.Forms.Label();
             this.PageMakeAppointment = new System.Windows.Forms.Panel();
-            this.twoActiveWeeksDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.twoActiveWeeksBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.overSugerydbaseDataSet = new OverSurgery.OverSugerydbaseDataSet();
-            this.cbStaffList = new System.Windows.Forms.ComboBox();
-            this.TimetableM = new System.Windows.Forms.TableLayoutPanel();
+            this.TableAfternoun = new System.Windows.Forms.TableLayoutPanel();
+            this.label33 = new System.Windows.Forms.Label();
+            this.labelStaff5 = new System.Windows.Forms.Label();
+            this.labelStaff6 = new System.Windows.Forms.Label();
+            this.labelStaff7 = new System.Windows.Forms.Label();
+            this.labelStaff8 = new System.Windows.Forms.Label();
+            this.labelStaff9 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
+            this.label76 = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
+            this.label81 = new System.Windows.Forms.Label();
+            this.label82 = new System.Windows.Forms.Label();
+            this.TableMorning = new System.Windows.Forms.TableLayoutPanel();
             this.label43 = new System.Windows.Forms.Label();
             this.labelStaff0 = new System.Windows.Forms.Label();
             this.labelStaff1 = new System.Windows.Forms.Label();
@@ -88,9 +97,19 @@
             this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
+            this.btnAfternoon = new System.Windows.Forms.Button();
+            this.twoActiveWeeksDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.twoActiveWeeksBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.overSugerydbaseDataSet = new OverSurgery.OverSugerydbaseDataSet();
             this.btnCheckAppointments = new System.Windows.Forms.Button();
             this.btnMorning = new System.Windows.Forms.Button();
-            this.btnAfternoon = new System.Windows.Forms.Button();
             this.btnBackfromAp = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -322,10 +341,11 @@
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
             this.PageMakeAppointment.SuspendLayout();
+            this.TableAfternoun.SuspendLayout();
+            this.TableMorning.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet)).BeginInit();
-            this.TimetableM.SuspendLayout();
             this.PageSelectedPatient.SuspendLayout();
             this.PageMainScreen.SuspendLayout();
             this.PageAddViewExtendMedication.SuspendLayout();
@@ -632,12 +652,12 @@
             // PageMakeAppointment
             // 
             this.PageMakeAppointment.AutoScroll = true;
-            this.PageMakeAppointment.Controls.Add(this.twoActiveWeeksDataGridView);
-            this.PageMakeAppointment.Controls.Add(this.cbStaffList);
-            this.PageMakeAppointment.Controls.Add(this.TimetableM);
-            this.PageMakeAppointment.Controls.Add(this.btnCheckAppointments);
-            this.PageMakeAppointment.Controls.Add(this.btnMorning);
             this.PageMakeAppointment.Controls.Add(this.btnAfternoon);
+            this.PageMakeAppointment.Controls.Add(this.btnMorning);
+            this.PageMakeAppointment.Controls.Add(this.TableMorning);
+            this.PageMakeAppointment.Controls.Add(this.TableAfternoun);
+            this.PageMakeAppointment.Controls.Add(this.twoActiveWeeksDataGridView);
+            this.PageMakeAppointment.Controls.Add(this.btnCheckAppointments);
             this.PageMakeAppointment.Controls.Add(this.btnBackfromAp);
             this.PageMakeAppointment.Controls.Add(this.label25);
             this.PageMakeAppointment.Controls.Add(this.dateTimePicker1);
@@ -649,133 +669,353 @@
             this.PageMakeAppointment.TabIndex = 6;
             this.PageMakeAppointment.Visible = false;
             // 
-            // twoActiveWeeksDataGridView
+            // TableAfternoun
             // 
-            this.twoActiveWeeksDataGridView.AutoGenerateColumns = false;
-            this.twoActiveWeeksDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.twoActiveWeeksDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29,
-            this.dataGridViewTextBoxColumn30,
-            this.dataGridViewTextBoxColumn31,
-            this.dataGridViewTextBoxColumn32});
-            this.twoActiveWeeksDataGridView.DataSource = this.twoActiveWeeksBindingSource;
-            this.twoActiveWeeksDataGridView.Location = new System.Drawing.Point(22, 413);
-            this.twoActiveWeeksDataGridView.Name = "twoActiveWeeksDataGridView";
-            this.twoActiveWeeksDataGridView.Size = new System.Drawing.Size(749, 141);
-            this.twoActiveWeeksDataGridView.TabIndex = 13;
+            this.TableAfternoun.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
+            this.TableAfternoun.ColumnCount = 14;
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.Controls.Add(this.label33, 0, 0);
+            this.TableAfternoun.Controls.Add(this.labelStaff5, 0, 1);
+            this.TableAfternoun.Controls.Add(this.labelStaff6, 0, 2);
+            this.TableAfternoun.Controls.Add(this.labelStaff7, 0, 3);
+            this.TableAfternoun.Controls.Add(this.labelStaff8, 0, 4);
+            this.TableAfternoun.Controls.Add(this.labelStaff9, 0, 5);
+            this.TableAfternoun.Controls.Add(this.label70, 1, 0);
+            this.TableAfternoun.Controls.Add(this.label71, 2, 0);
+            this.TableAfternoun.Controls.Add(this.label72, 3, 0);
+            this.TableAfternoun.Controls.Add(this.label73, 4, 0);
+            this.TableAfternoun.Controls.Add(this.label74, 5, 0);
+            this.TableAfternoun.Controls.Add(this.label75, 6, 0);
+            this.TableAfternoun.Controls.Add(this.label76, 7, 0);
+            this.TableAfternoun.Controls.Add(this.label77, 8, 0);
+            this.TableAfternoun.Controls.Add(this.label78, 9, 0);
+            this.TableAfternoun.Controls.Add(this.label79, 10, 0);
+            this.TableAfternoun.Controls.Add(this.label80, 11, 0);
+            this.TableAfternoun.Controls.Add(this.label81, 12, 0);
+            this.TableAfternoun.Controls.Add(this.label82, 13, 0);
+            this.TableAfternoun.Location = new System.Drawing.Point(13, 314);
+            this.TableAfternoun.Name = "TableAfternoun";
+            this.TableAfternoun.RowCount = 6;
+            this.TableAfternoun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.TableAfternoun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.TableAfternoun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.TableAfternoun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.TableAfternoun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.TableAfternoun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.TableAfternoun.Size = new System.Drawing.Size(945, 216);
+            this.TableAfternoun.TabIndex = 8;
+            this.TableAfternoun.Visible = false;
             // 
-            // dataGridViewTextBoxColumn16
+            // label33
             // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "StaffID";
-            this.dataGridViewTextBoxColumn16.HeaderText = "StaffID";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(6, 3);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(58, 32);
+            this.label33.TabIndex = 0;
+            this.label33.Text = "Time/\r\nStaff";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridViewTextBoxColumn22
+            // labelStaff5
             // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "Surname";
-            this.dataGridViewTextBoxColumn22.HeaderText = "Surname";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            this.labelStaff5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelStaff5.AutoSize = true;
+            this.labelStaff5.Location = new System.Drawing.Point(6, 38);
+            this.labelStaff5.Name = "labelStaff5";
+            this.labelStaff5.Size = new System.Drawing.Size(58, 32);
+            this.labelStaff5.TabIndex = 1;
+            this.labelStaff5.Text = "Blank";
+            this.labelStaff5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridViewTextBoxColumn28
+            // labelStaff6
             // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "Date";
-            this.dataGridViewTextBoxColumn28.HeaderText = "Date";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            this.labelStaff6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelStaff6.AutoSize = true;
+            this.labelStaff6.Location = new System.Drawing.Point(6, 73);
+            this.labelStaff6.Name = "labelStaff6";
+            this.labelStaff6.Size = new System.Drawing.Size(58, 32);
+            this.labelStaff6.TabIndex = 1;
+            this.labelStaff6.Text = "Blank";
+            this.labelStaff6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridViewTextBoxColumn29
+            // labelStaff7
             // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "Sex";
-            this.dataGridViewTextBoxColumn29.HeaderText = "Sex";
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            this.labelStaff7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelStaff7.AutoSize = true;
+            this.labelStaff7.Location = new System.Drawing.Point(6, 108);
+            this.labelStaff7.Name = "labelStaff7";
+            this.labelStaff7.Size = new System.Drawing.Size(58, 32);
+            this.labelStaff7.TabIndex = 1;
+            this.labelStaff7.Text = "blank";
+            this.labelStaff7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridViewTextBoxColumn30
+            // labelStaff8
             // 
-            this.dataGridViewTextBoxColumn30.DataPropertyName = "Staff Role/Title";
-            this.dataGridViewTextBoxColumn30.HeaderText = "Staff Role/Title";
-            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            this.labelStaff8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelStaff8.AutoSize = true;
+            this.labelStaff8.Location = new System.Drawing.Point(6, 143);
+            this.labelStaff8.Name = "labelStaff8";
+            this.labelStaff8.Size = new System.Drawing.Size(58, 32);
+            this.labelStaff8.TabIndex = 1;
+            this.labelStaff8.Text = "Blank";
+            this.labelStaff8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridViewTextBoxColumn31
+            // labelStaff9
             // 
-            this.dataGridViewTextBoxColumn31.DataPropertyName = "TimeSlot";
-            this.dataGridViewTextBoxColumn31.HeaderText = "TimeSlot";
-            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            this.labelStaff9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelStaff9.AutoSize = true;
+            this.labelStaff9.Location = new System.Drawing.Point(6, 178);
+            this.labelStaff9.Name = "labelStaff9";
+            this.labelStaff9.Size = new System.Drawing.Size(58, 35);
+            this.labelStaff9.TabIndex = 1;
+            this.labelStaff9.Text = "Blank";
+            this.labelStaff9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridViewTextBoxColumn32
+            // label70
             // 
-            this.dataGridViewTextBoxColumn32.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn32.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            this.label70.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(73, 3);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(58, 32);
+            this.label70.TabIndex = 1;
+            this.label70.Text = "12:20";
+            this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // twoActiveWeeksBindingSource
+            // label71
             // 
-            this.twoActiveWeeksBindingSource.DataMember = "TwoActiveWeeks";
-            this.twoActiveWeeksBindingSource.DataSource = this.overSugerydbaseDataSet;
+            this.label71.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(140, 3);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(58, 32);
+            this.label71.TabIndex = 1;
+            this.label71.Text = "12:40";
+            this.label71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // overSugerydbaseDataSet
+            // label72
             // 
-            this.overSugerydbaseDataSet.DataSetName = "OverSugerydbaseDataSet";
-            this.overSugerydbaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.label72.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(207, 3);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(58, 32);
+            this.label72.TabIndex = 1;
+            this.label72.Text = "13:00";
+            this.label72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // cbStaffList
+            // label73
             // 
-            this.cbStaffList.FormattingEnabled = true;
-            this.cbStaffList.Location = new System.Drawing.Point(541, 24);
-            this.cbStaffList.Name = "cbStaffList";
-            this.cbStaffList.Size = new System.Drawing.Size(121, 24);
-            this.cbStaffList.TabIndex = 12;
+            this.label73.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(274, 3);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(58, 32);
+            this.label73.TabIndex = 1;
+            this.label73.Text = "13:20";
+            this.label73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // TimetableM
+            // label74
             // 
-            this.TimetableM.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
-            this.TimetableM.ColumnCount = 14;
-            this.TimetableM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TimetableM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TimetableM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TimetableM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TimetableM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TimetableM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TimetableM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TimetableM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TimetableM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TimetableM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TimetableM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TimetableM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TimetableM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TimetableM.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TimetableM.Controls.Add(this.label43, 0, 0);
-            this.TimetableM.Controls.Add(this.labelStaff0, 0, 1);
-            this.TimetableM.Controls.Add(this.labelStaff1, 0, 2);
-            this.TimetableM.Controls.Add(this.labelStaff2, 0, 3);
-            this.TimetableM.Controls.Add(this.labelStaff3, 0, 4);
-            this.TimetableM.Controls.Add(this.labelStaff4, 0, 5);
-            this.TimetableM.Controls.Add(this.label44, 1, 0);
-            this.TimetableM.Controls.Add(this.label45, 2, 0);
-            this.TimetableM.Controls.Add(this.label46, 3, 0);
-            this.TimetableM.Controls.Add(this.label47, 4, 0);
-            this.TimetableM.Controls.Add(this.label48, 5, 0);
-            this.TimetableM.Controls.Add(this.label49, 6, 0);
-            this.TimetableM.Controls.Add(this.label50, 7, 0);
-            this.TimetableM.Controls.Add(this.label51, 8, 0);
-            this.TimetableM.Controls.Add(this.label52, 9, 0);
-            this.TimetableM.Controls.Add(this.label53, 10, 0);
-            this.TimetableM.Controls.Add(this.label54, 11, 0);
-            this.TimetableM.Controls.Add(this.label55, 12, 0);
-            this.TimetableM.Controls.Add(this.label56, 13, 0);
-            this.TimetableM.Location = new System.Drawing.Point(13, 187);
-            this.TimetableM.Name = "TimetableM";
-            this.TimetableM.RowCount = 6;
-            this.TimetableM.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.TimetableM.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.TimetableM.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.TimetableM.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.TimetableM.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.TimetableM.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.TimetableM.Size = new System.Drawing.Size(945, 216);
-            this.TimetableM.TabIndex = 8;
-            this.TimetableM.Visible = false;
+            this.label74.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label74.AutoSize = true;
+            this.label74.Location = new System.Drawing.Point(341, 3);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(58, 32);
+            this.label74.TabIndex = 1;
+            this.label74.Text = "13:40";
+            this.label74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label75
+            // 
+            this.label75.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label75.AutoSize = true;
+            this.label75.Location = new System.Drawing.Point(408, 3);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(58, 32);
+            this.label75.TabIndex = 1;
+            this.label75.Text = "14:00";
+            this.label75.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label76
+            // 
+            this.label76.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label76.AutoSize = true;
+            this.label76.Location = new System.Drawing.Point(475, 3);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(58, 32);
+            this.label76.TabIndex = 1;
+            this.label76.Text = "14:20";
+            this.label76.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label77
+            // 
+            this.label77.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label77.AutoSize = true;
+            this.label77.Location = new System.Drawing.Point(542, 3);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(58, 32);
+            this.label77.TabIndex = 1;
+            this.label77.Text = "14:40";
+            this.label77.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label78
+            // 
+            this.label78.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label78.AutoSize = true;
+            this.label78.Location = new System.Drawing.Point(609, 3);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(58, 32);
+            this.label78.TabIndex = 1;
+            this.label78.Text = "15:00";
+            this.label78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label79
+            // 
+            this.label79.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label79.AutoSize = true;
+            this.label79.Location = new System.Drawing.Point(676, 3);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(58, 32);
+            this.label79.TabIndex = 1;
+            this.label79.Text = "15:20";
+            this.label79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label80
+            // 
+            this.label80.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label80.AutoSize = true;
+            this.label80.Location = new System.Drawing.Point(743, 3);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(58, 32);
+            this.label80.TabIndex = 1;
+            this.label80.Text = "15:40";
+            this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label81
+            // 
+            this.label81.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(810, 3);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(58, 32);
+            this.label81.TabIndex = 1;
+            this.label81.Text = "16:00";
+            this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label82
+            // 
+            this.label82.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(877, 3);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(62, 32);
+            this.label82.TabIndex = 1;
+            this.label82.Text = "16:20";
+            this.label82.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // TableMorning
+            // 
+            this.TableMorning.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
+            this.TableMorning.ColumnCount = 14;
+            this.TableMorning.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableMorning.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableMorning.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableMorning.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableMorning.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableMorning.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableMorning.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableMorning.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableMorning.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableMorning.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableMorning.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableMorning.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableMorning.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableMorning.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableMorning.Controls.Add(this.label43, 0, 0);
+            this.TableMorning.Controls.Add(this.labelStaff0, 0, 1);
+            this.TableMorning.Controls.Add(this.labelStaff1, 0, 2);
+            this.TableMorning.Controls.Add(this.labelStaff2, 0, 3);
+            this.TableMorning.Controls.Add(this.labelStaff3, 0, 4);
+            this.TableMorning.Controls.Add(this.labelStaff4, 0, 5);
+            this.TableMorning.Controls.Add(this.label44, 1, 0);
+            this.TableMorning.Controls.Add(this.label45, 2, 0);
+            this.TableMorning.Controls.Add(this.label46, 3, 0);
+            this.TableMorning.Controls.Add(this.label47, 4, 0);
+            this.TableMorning.Controls.Add(this.label48, 5, 0);
+            this.TableMorning.Controls.Add(this.label49, 6, 0);
+            this.TableMorning.Controls.Add(this.label50, 7, 0);
+            this.TableMorning.Controls.Add(this.label51, 8, 0);
+            this.TableMorning.Controls.Add(this.label52, 9, 0);
+            this.TableMorning.Controls.Add(this.label53, 10, 0);
+            this.TableMorning.Controls.Add(this.label54, 11, 0);
+            this.TableMorning.Controls.Add(this.label55, 12, 0);
+            this.TableMorning.Controls.Add(this.label56, 13, 0);
+            this.TableMorning.Location = new System.Drawing.Point(13, 314);
+            this.TableMorning.Name = "TableMorning";
+            this.TableMorning.RowCount = 6;
+            this.TableMorning.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.TableMorning.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.TableMorning.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.TableMorning.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.TableMorning.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.TableMorning.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.TableMorning.Size = new System.Drawing.Size(945, 216);
+            this.TableMorning.TabIndex = 8;
+            this.TableMorning.Visible = false;
             // 
             // label43
             // 
@@ -1025,9 +1265,89 @@
             this.label56.Text = "12:00";
             this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
+            // btnAfternoon
+            // 
+            this.btnAfternoon.Location = new System.Drawing.Point(867, 536);
+            this.btnAfternoon.Name = "btnAfternoon";
+            this.btnAfternoon.Size = new System.Drawing.Size(91, 23);
+            this.btnAfternoon.TabIndex = 6;
+            this.btnAfternoon.Text = "Afternoon";
+            this.btnAfternoon.UseVisualStyleBackColor = true;
+            this.btnAfternoon.Click += new System.EventHandler(this.btnAfternoon_Click);
+            // 
+            // twoActiveWeeksDataGridView
+            // 
+            this.twoActiveWeeksDataGridView.AutoGenerateColumns = false;
+            this.twoActiveWeeksDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.twoActiveWeeksDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn28,
+            this.dataGridViewTextBoxColumn29,
+            this.dataGridViewTextBoxColumn30,
+            this.dataGridViewTextBoxColumn31,
+            this.dataGridViewTextBoxColumn32});
+            this.twoActiveWeeksDataGridView.DataSource = this.twoActiveWeeksBindingSource;
+            this.twoActiveWeeksDataGridView.Location = new System.Drawing.Point(659, 18);
+            this.twoActiveWeeksDataGridView.Name = "twoActiveWeeksDataGridView";
+            this.twoActiveWeeksDataGridView.Size = new System.Drawing.Size(287, 141);
+            this.twoActiveWeeksDataGridView.TabIndex = 13;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "StaffID";
+            this.dataGridViewTextBoxColumn16.HeaderText = "StaffID";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "Surname";
+            this.dataGridViewTextBoxColumn22.HeaderText = "Surname";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "Date";
+            this.dataGridViewTextBoxColumn28.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "Sex";
+            this.dataGridViewTextBoxColumn29.HeaderText = "Sex";
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            // 
+            // dataGridViewTextBoxColumn30
+            // 
+            this.dataGridViewTextBoxColumn30.DataPropertyName = "Staff Role/Title";
+            this.dataGridViewTextBoxColumn30.HeaderText = "Staff Role/Title";
+            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            // 
+            // dataGridViewTextBoxColumn31
+            // 
+            this.dataGridViewTextBoxColumn31.DataPropertyName = "TimeSlot";
+            this.dataGridViewTextBoxColumn31.HeaderText = "TimeSlot";
+            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            // 
+            // dataGridViewTextBoxColumn32
+            // 
+            this.dataGridViewTextBoxColumn32.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn32.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            // 
+            // twoActiveWeeksBindingSource
+            // 
+            this.twoActiveWeeksBindingSource.DataMember = "TwoActiveWeeks";
+            this.twoActiveWeeksBindingSource.DataSource = this.overSugerydbaseDataSet;
+            // 
+            // overSugerydbaseDataSet
+            // 
+            this.overSugerydbaseDataSet.DataSetName = "OverSugerydbaseDataSet";
+            this.overSugerydbaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // btnCheckAppointments
             // 
-            this.btnCheckAppointments.Location = new System.Drawing.Point(590, 101);
+            this.btnCheckAppointments.Location = new System.Drawing.Point(491, 97);
             this.btnCheckAppointments.Name = "btnCheckAppointments";
             this.btnCheckAppointments.Size = new System.Drawing.Size(143, 41);
             this.btnCheckAppointments.TabIndex = 7;
@@ -1037,25 +1357,17 @@
             // 
             // btnMorning
             // 
-            this.btnMorning.Location = new System.Drawing.Point(871, 567);
+            this.btnMorning.Location = new System.Drawing.Point(867, 537);
             this.btnMorning.Name = "btnMorning";
-            this.btnMorning.Size = new System.Drawing.Size(75, 23);
+            this.btnMorning.Size = new System.Drawing.Size(91, 23);
             this.btnMorning.TabIndex = 6;
             this.btnMorning.Text = "Morning";
             this.btnMorning.UseVisualStyleBackColor = true;
-            // 
-            // btnAfternoon
-            // 
-            this.btnAfternoon.Location = new System.Drawing.Point(771, 567);
-            this.btnAfternoon.Name = "btnAfternoon";
-            this.btnAfternoon.Size = new System.Drawing.Size(75, 23);
-            this.btnAfternoon.TabIndex = 6;
-            this.btnAfternoon.Text = "Afternoon";
-            this.btnAfternoon.UseVisualStyleBackColor = true;
+            this.btnMorning.Click += new System.EventHandler(this.btnMorning_Click);
             // 
             // btnBackfromAp
             // 
-            this.btnBackfromAp.Location = new System.Drawing.Point(590, 72);
+            this.btnBackfromAp.Location = new System.Drawing.Point(491, 68);
             this.btnBackfromAp.Name = "btnBackfromAp";
             this.btnBackfromAp.Size = new System.Drawing.Size(75, 23);
             this.btnBackfromAp.TabIndex = 6;
@@ -1074,7 +1386,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(78, 91);
+            this.dateTimePicker1.Location = new System.Drawing.Point(424, 40);
             this.dateTimePicker1.MinDate = new System.DateTime(2013, 12, 24, 9, 48, 56, 107);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
@@ -2994,11 +3306,13 @@
             this.splitContainer1.ResumeLayout(false);
             this.PageMakeAppointment.ResumeLayout(false);
             this.PageMakeAppointment.PerformLayout();
+            this.TableAfternoun.ResumeLayout(false);
+            this.TableAfternoun.PerformLayout();
+            this.TableMorning.ResumeLayout(false);
+            this.TableMorning.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet)).EndInit();
-            this.TimetableM.ResumeLayout(false);
-            this.TimetableM.PerformLayout();
             this.PageSelectedPatient.ResumeLayout(false);
             this.PageSelectedPatient.PerformLayout();
             this.PageMainScreen.ResumeLayout(false);
@@ -3166,32 +3480,11 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbSexEdit;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.TableLayoutPanel TimetableM;
-        private System.Windows.Forms.Label label43;
         private System.Windows.Forms.Button btnCheckAppointments;
         private System.Windows.Forms.Button btnMorning;
         private System.Windows.Forms.Button btnAfternoon;
-        private System.Windows.Forms.Label labelStaff0;
-        private System.Windows.Forms.Label labelStaff1;
-        private System.Windows.Forms.Label labelStaff2;
-        private System.Windows.Forms.Label labelStaff3;
-        private System.Windows.Forms.Label labelStaff4;
-        private System.Windows.Forms.Label label44;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label47;
-        private System.Windows.Forms.Label label48;
-        private System.Windows.Forms.Label label49;
-        private System.Windows.Forms.Label label50;
-        private System.Windows.Forms.Label label51;
-        private System.Windows.Forms.Label label52;
-        private System.Windows.Forms.Label label53;
-        private System.Windows.Forms.Label label54;
-        private System.Windows.Forms.Label label55;
-        private System.Windows.Forms.Label label56;
         private System.Windows.Forms.BindingSource week52BindingSource;
         private OverSugerydbaseDataSetTableAdapters.Week52TableAdapter week52TableAdapter;
-        private System.Windows.Forms.ComboBox cbStaffList;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.ComboBox cbStaffMenu1;
         private System.Windows.Forms.Label label63;
@@ -3302,6 +3595,46 @@
         private System.Windows.Forms.TextBox txtSearchBy;
         private System.Windows.Forms.Button btnSerchByID;
         private System.Windows.Forms.Button txtSearch;
+        private System.Windows.Forms.TableLayoutPanel TableAfternoun;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label labelStaff5;
+        private System.Windows.Forms.Label labelStaff6;
+        private System.Windows.Forms.Label labelStaff7;
+        private System.Windows.Forms.Label labelStaff8;
+        private System.Windows.Forms.Label labelStaff9;
+        private System.Windows.Forms.Label label70;
+        private System.Windows.Forms.Label label71;
+        private System.Windows.Forms.Label label72;
+        private System.Windows.Forms.Label label73;
+        private System.Windows.Forms.Label label74;
+        private System.Windows.Forms.Label label75;
+        private System.Windows.Forms.Label label76;
+        private System.Windows.Forms.Label label77;
+        private System.Windows.Forms.Label label78;
+        private System.Windows.Forms.Label label79;
+        private System.Windows.Forms.Label label80;
+        private System.Windows.Forms.Label label81;
+        private System.Windows.Forms.Label label82;
+        private System.Windows.Forms.TableLayoutPanel TableMorning;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label labelStaff0;
+        private System.Windows.Forms.Label labelStaff1;
+        private System.Windows.Forms.Label labelStaff2;
+        private System.Windows.Forms.Label labelStaff3;
+        private System.Windows.Forms.Label labelStaff4;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.Label label50;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label56;
     }
 }
 
