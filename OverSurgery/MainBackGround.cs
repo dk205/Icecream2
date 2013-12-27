@@ -30,7 +30,7 @@ namespace OverSurgery
         void FillStaffMenu()
         {
             int i = 1;
-            cbStaffList.Items.Insert(0,"Free");
+            
             cbStaffMenu1.Items.Insert(0,"Free");
             cbStaffMenu2.Items.Insert(0, "Free");
             cbStaffMenu3.Items.Insert(0, "Free");
@@ -41,7 +41,7 @@ namespace OverSurgery
             {
                // var OneofMany = Controls.Find(MenuName, true).FirstOrDefault();
              //   OneofMany.Refresh();
-               
+             
               cbStaffList.Items.Insert(i,row.Surname);
               cbStaffMenu1.Items.Insert(i,row.Surname);
               cbStaffMenu2.Items.Insert(i,row.Surname);
@@ -194,9 +194,42 @@ namespace OverSurgery
 
         private void button1_Click_1(object sender, EventArgs e) //takes you to the make appointment page
         {
-            FillStaffMenu();
-            setMeVisible("PageMakeAppointment");
+            cbStaff.Items.Clear();
+            this.PageMakeAppointment.Controls.Add(this.cbStaff);
+            this.cbStaff.Cursor = System.Windows.Forms.Cursors.Default;
+            this.cbStaff.FormattingEnabled = true;
+            this.cbStaff.Location = new System.Drawing.Point(343, 87);
+            this.cbStaff.Name = "cbStaff";
+            this.cbStaff.Size = new System.Drawing.Size(121, 21);
+            this.cbStaff.TabIndex = 14;
+            cbStaffList.Items.Insert(0, "Free");
+              int i = 0;
             
+            OverSugerydbaseDataSet.StaffDataTable StaffMenuTable = this.staffTableAdapter.GetData();
+            foreach (OverSugerydbaseDataSet.StaffRow row in StaffMenuTable)
+            {
+               
+
+                cbStaff.Items.Insert(i, row.Surname);
+                
+                i++;
+
+            }
+            cbStaff.Items.Insert(0, "Any GP/Nurse");
+            cbStaff.Items.Insert(1, "Any GP");
+            cbStaff.Items.Insert(2, "Any Nurse");
+            cbStaff.Items.Insert(3, "Any Male GP");
+            cbStaff.Items.Insert(4, "Any Female GP");
+            cbStaff.SelectedIndex = 0;
+        
+            
+            
+            
+           
+        
+    
+            setMeVisible("PageMakeAppointment");
+         
         }
 
         private void button2_Click(object sender, EventArgs e) //takes you to the edit cancel delete  appointment page
@@ -376,6 +409,9 @@ namespace OverSurgery
 
         private void btnCheckAppointments_Click(object sender, EventArgs e)
         {
+            
+            
+            
             //declare the table StaffFound
             OverSugerydbaseDataSet.RotaDataTable StaffFound = new OverSugerydbaseDataSet.RotaDataTable();
           
@@ -386,25 +422,26 @@ namespace OverSurgery
                         MessageBox.Show("Selected all staff");
                         //make a table  with all doctors that day.
                         
-                       // StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());
+                        StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());
                         break;
                     
                 case 1:
                     MessageBox.Show("All GP");
                     //make a table with only staff role=GP
-                 //   OverSugerydbaseDataSet.RotaDataTable StaffFound= new OverSugerydbaseDataSet.RotaDataTable();
-                 //   OverSugerydbaseDataSet.RotaDataTable    StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());
+                //  StaffFound= new OverSugerydbaseDataSet.RotaDataTable();
+                  StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());
             break;
                 case 2:
                     MessageBox.Show(" selected all Nurses");
                     //make a table with only staff role=Nurse
-                 //   OverSugerydbaseDataSet.RotaDataTable StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());
+              // StaffFound= new OverSugerydbaseDataSet.RotaDataTable();
+                  StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());
                     break;
                 case 3:
                     MessageBox.Show(" selected all male gp");
                     //make a table with only staff role=GP nad sex =Male
-                //    OverSugerydbaseDataSet.RotaDataTable StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());
-                    break;
+                 // StaffFound= new OverSugerydbaseDataSet.RotaDataTable();
+                  StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());                    break;
                 case 4:
                     MessageBox.Show(" selected all female gp");
                     //make a table with only staff role=GP and Sex =Female
@@ -413,7 +450,7 @@ namespace OverSurgery
                 default:
                      MessageBox.Show(" somedoctor");
                     //make a table with the doctors name that date
-             //        OverSugerydbaseDataSet.RotaDataTable StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());
+                     StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());    
                     break;
             }
 
@@ -794,7 +831,7 @@ namespace OverSurgery
 
 
 
-        private void LoadComboboxStaff(object sender, EventArgs e)
+      /*  private void LoadComboboxStaff(object sender, EventArgs e)
         {
             int i = 0;
             
@@ -815,8 +852,8 @@ namespace OverSurgery
             cbStaff.Items.Insert(3, "Any Male GP");
             cbStaff.Items.Insert(4, "Any Female GP");
             cbStaff.SelectedIndex = 0;
-        }
-
+       }
+*/ 
         //Toms stuff
 
         private void btnMedAdd_Click(object sender, EventArgs e)
@@ -1051,10 +1088,12 @@ namespace OverSurgery
             this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);   //refresh, or refill the content of the table
         }
 
-        private void button14_Click(object sender, EventArgs e)
+        private void btnBackfromAp_Click(object sender, EventArgs e)
         {
-
+            setMeVisible("PageSelectedPatient");
         }
+
+     
 
        
 

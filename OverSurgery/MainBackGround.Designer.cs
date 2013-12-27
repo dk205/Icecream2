@@ -57,7 +57,6 @@
             this.Label100 = new System.Windows.Forms.Label();
             this.Label200 = new System.Windows.Forms.Label();
             this.PageMakeAppointment = new System.Windows.Forms.Panel();
-            this.cbStaff = new System.Windows.Forms.ComboBox();
             this.twoActiveWeeksDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -92,10 +91,18 @@
             this.btnCheckAppointments = new System.Windows.Forms.Button();
             this.btnMorning = new System.Windows.Forms.Button();
             this.btnAfternoon = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
+            this.btnBackfromAp = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label24 = new System.Windows.Forms.Label();
+            this.PageSelectedPatient = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.PageMainScreen = new System.Windows.Forms.Panel();
             this.txtBoxID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -123,14 +130,6 @@
             this.PatientID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button11 = new System.Windows.Forms.Button();
             this.label28 = new System.Windows.Forms.Label();
-            this.PageSelectedPatient = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
             this.PageNewRegistration = new System.Windows.Forms.Panel();
             this.patientsDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -201,6 +200,7 @@
             this.tabGPNurse = new System.Windows.Forms.TabPage();
             this.PageGPNurse = new System.Windows.Forms.Panel();
             this.groupBoxSearch = new System.Windows.Forms.GroupBox();
+            this.txtSearch = new System.Windows.Forms.Button();
             this.btnSerchByID = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
@@ -282,6 +282,7 @@
             this.label63 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.cbStaff = new System.Windows.Forms.ComboBox();
             this.staffBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.overSugerydbaseDataSet2 = new OverSurgery.OverSugerydbaseDataSet2();
             this.ButtonLogOut = new System.Windows.Forms.Button();
@@ -296,7 +297,6 @@
             this.overSugerydbaseDataSet1 = new OverSurgery.OverSugerydbaseDataSet1();
             this.staffTableAdapter1 = new OverSurgery.OverSugerydbaseDataSet2TableAdapters.StaffTableAdapter();
             this.staffTableAdapter2 = new OverSurgery.OverSugerydbaseDataSet3TableAdapters.StaffTableAdapter();
-            this.txtSearch = new System.Windows.Forms.Button();
             medNameLabel = new System.Windows.Forms.Label();
             doseLabel = new System.Windows.Forms.Label();
             start_DateLabel = new System.Windows.Forms.Label();
@@ -326,11 +326,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet)).BeginInit();
             this.TimetableM.SuspendLayout();
+            this.PageSelectedPatient.SuspendLayout();
             this.PageMainScreen.SuspendLayout();
             this.PageAddViewExtendMedication.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medicationBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicationDataGridView)).BeginInit();
-            this.PageSelectedPatient.SuspendLayout();
             this.PageNewRegistration.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).BeginInit();
@@ -571,9 +571,9 @@
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.LightGray;
             this.splitContainer1.Panel2.Controls.Add(this.PageMakeAppointment);
+            this.splitContainer1.Panel2.Controls.Add(this.PageSelectedPatient);
             this.splitContainer1.Panel2.Controls.Add(this.PageMainScreen);
             this.splitContainer1.Panel2.Controls.Add(this.PageAddViewExtendMedication);
-            this.splitContainer1.Panel2.Controls.Add(this.PageSelectedPatient);
             this.splitContainer1.Panel2.Controls.Add(this.PageNewRegistration);
             this.splitContainer1.Panel2.Controls.Add(this.PageEditPatientDetails);
             this.splitContainer1.Panel2.Controls.Add(this.PageEnterTestResults);
@@ -632,14 +632,13 @@
             // PageMakeAppointment
             // 
             this.PageMakeAppointment.AutoScroll = true;
-            this.PageMakeAppointment.Controls.Add(this.cbStaff);
             this.PageMakeAppointment.Controls.Add(this.twoActiveWeeksDataGridView);
             this.PageMakeAppointment.Controls.Add(this.cbStaffList);
             this.PageMakeAppointment.Controls.Add(this.TimetableM);
             this.PageMakeAppointment.Controls.Add(this.btnCheckAppointments);
             this.PageMakeAppointment.Controls.Add(this.btnMorning);
             this.PageMakeAppointment.Controls.Add(this.btnAfternoon);
-            this.PageMakeAppointment.Controls.Add(this.button12);
+            this.PageMakeAppointment.Controls.Add(this.btnBackfromAp);
             this.PageMakeAppointment.Controls.Add(this.label25);
             this.PageMakeAppointment.Controls.Add(this.dateTimePicker1);
             this.PageMakeAppointment.Controls.Add(this.label24);
@@ -649,16 +648,6 @@
             this.PageMakeAppointment.Size = new System.Drawing.Size(966, 600);
             this.PageMakeAppointment.TabIndex = 6;
             this.PageMakeAppointment.Visible = false;
-            this.PageMakeAppointment.VisibleChanged += new System.EventHandler(this.LoadComboboxStaff);
-            // 
-            // cbStaff
-            // 
-            this.cbStaff.Cursor = System.Windows.Forms.Cursors.Default;
-            this.cbStaff.FormattingEnabled = true;
-            this.cbStaff.Location = new System.Drawing.Point(343, 87);
-            this.cbStaff.Name = "cbStaff";
-            this.cbStaff.Size = new System.Drawing.Size(121, 24);
-            this.cbStaff.TabIndex = 14;
             // 
             // twoActiveWeeksDataGridView
             // 
@@ -1064,14 +1053,15 @@
             this.btnAfternoon.Text = "Afternoon";
             this.btnAfternoon.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // btnBackfromAp
             // 
-            this.button12.Location = new System.Drawing.Point(590, 72);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(75, 23);
-            this.button12.TabIndex = 6;
-            this.button12.Text = "Back";
-            this.button12.UseVisualStyleBackColor = true;
+            this.btnBackfromAp.Location = new System.Drawing.Point(590, 72);
+            this.btnBackfromAp.Name = "btnBackfromAp";
+            this.btnBackfromAp.Size = new System.Drawing.Size(75, 23);
+            this.btnBackfromAp.TabIndex = 6;
+            this.btnBackfromAp.Text = "Back";
+            this.btnBackfromAp.UseVisualStyleBackColor = true;
+            this.btnBackfromAp.Click += new System.EventHandler(this.btnBackfromAp_Click);
             // 
             // label25
             // 
@@ -1100,6 +1090,91 @@
             this.label24.Size = new System.Drawing.Size(240, 25);
             this.label24.TabIndex = 0;
             this.label24.Text = "Make an Appointment";
+            // 
+            // PageSelectedPatient
+            // 
+            this.PageSelectedPatient.Controls.Add(this.button6);
+            this.PageSelectedPatient.Controls.Add(this.button5);
+            this.PageSelectedPatient.Controls.Add(this.button4);
+            this.PageSelectedPatient.Controls.Add(this.button3);
+            this.PageSelectedPatient.Controls.Add(this.button2);
+            this.PageSelectedPatient.Controls.Add(this.button1);
+            this.PageSelectedPatient.Controls.Add(this.label13);
+            this.PageSelectedPatient.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PageSelectedPatient.Location = new System.Drawing.Point(0, 0);
+            this.PageSelectedPatient.Name = "PageSelectedPatient";
+            this.PageSelectedPatient.Size = new System.Drawing.Size(966, 600);
+            this.PageSelectedPatient.TabIndex = 6;
+            this.PageSelectedPatient.Visible = false;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(50, 328);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(211, 35);
+            this.button6.TabIndex = 1;
+            this.button6.Text = "Edit Patient Details";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.goToEditPatient_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(50, 277);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(211, 35);
+            this.button5.TabIndex = 1;
+            this.button5.Text = "Enter Test Results";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(50, 230);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(211, 35);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "View/Print Test Results";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(50, 179);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(303, 35);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Add/View/Extend Medication";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(50, 127);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(303, 35);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "View/Change/ Cancel an Appointment";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(50, 76);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(211, 35);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Make an Appointment";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(29, 19);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(79, 24);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Actions";
             // 
             // PageMainScreen
             // 
@@ -1356,91 +1431,6 @@
             this.label28.Size = new System.Drawing.Size(312, 25);
             this.label28.TabIndex = 0;
             this.label28.Text = "Add View Extend Medication";
-            // 
-            // PageSelectedPatient
-            // 
-            this.PageSelectedPatient.Controls.Add(this.button6);
-            this.PageSelectedPatient.Controls.Add(this.button5);
-            this.PageSelectedPatient.Controls.Add(this.button4);
-            this.PageSelectedPatient.Controls.Add(this.button3);
-            this.PageSelectedPatient.Controls.Add(this.button2);
-            this.PageSelectedPatient.Controls.Add(this.button1);
-            this.PageSelectedPatient.Controls.Add(this.label13);
-            this.PageSelectedPatient.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PageSelectedPatient.Location = new System.Drawing.Point(0, 0);
-            this.PageSelectedPatient.Name = "PageSelectedPatient";
-            this.PageSelectedPatient.Size = new System.Drawing.Size(966, 600);
-            this.PageSelectedPatient.TabIndex = 6;
-            this.PageSelectedPatient.Visible = false;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(50, 328);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(211, 35);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "Edit Patient Details";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.goToEditPatient_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(50, 277);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(211, 35);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Enter Test Results";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(50, 230);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(211, 35);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "View/Print Test Results";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(50, 179);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(303, 35);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Add/View/Extend Medication";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(50, 127);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(303, 35);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "View/Change/ Cancel an Appointment";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(50, 76);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(211, 35);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Make an Appointment";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(29, 19);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(79, 24);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Actions";
             // 
             // PageNewRegistration
             // 
@@ -2101,6 +2091,16 @@
             this.groupBoxSearch.TabStop = false;
             this.groupBoxSearch.Text = "Search for Staff";
             this.groupBoxSearch.Visible = false;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(139, 104);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(115, 23);
+            this.txtSearch.TabIndex = 22;
+            this.txtSearch.Text = "Search";
+            this.txtSearch.UseVisualStyleBackColor = true;
+            this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
             // 
             // btnSerchByID
             // 
@@ -2894,6 +2894,13 @@
             this.dateTimePicker2.CloseUp += new System.EventHandler(this.dateTimePicker2_CloseUp);
             this.dateTimePicker2.LocationChanged += new System.EventHandler(this.dateTimePicker2_CloseUp);
             // 
+            // cbStaff
+            // 
+            this.cbStaff.Location = new System.Drawing.Point(0, 0);
+            this.cbStaff.Name = "cbStaff";
+            this.cbStaff.Size = new System.Drawing.Size(121, 21);
+            this.cbStaff.TabIndex = 0;
+            // 
             // staffBindingSource1
             // 
             this.staffBindingSource1.DataMember = "Staff";
@@ -2967,16 +2974,6 @@
             // 
             this.staffTableAdapter2.ClearBeforeFill = true;
             // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(139, 104);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(115, 23);
-            this.txtSearch.TabIndex = 22;
-            this.txtSearch.Text = "Search";
-            this.txtSearch.UseVisualStyleBackColor = true;
-            this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
-            // 
             // MainBackGround
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3002,14 +2999,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet)).EndInit();
             this.TimetableM.ResumeLayout(false);
             this.TimetableM.PerformLayout();
+            this.PageSelectedPatient.ResumeLayout(false);
+            this.PageSelectedPatient.PerformLayout();
             this.PageMainScreen.ResumeLayout(false);
             this.PageMainScreen.PerformLayout();
             this.PageAddViewExtendMedication.ResumeLayout(false);
             this.PageAddViewExtendMedication.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medicationBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicationDataGridView)).EndInit();
-            this.PageSelectedPatient.ResumeLayout(false);
-            this.PageSelectedPatient.PerformLayout();
             this.PageNewRegistration.ResumeLayout(false);
             this.PageNewRegistration.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientsDataGridView)).EndInit();
@@ -3132,7 +3129,7 @@
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Button button11;
         private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button btnBackfromAp;
         private System.Windows.Forms.Panel PageGPNurse;
         private System.Windows.Forms.Button bntCheckStaffDuty;
         private System.Windows.Forms.Button bntDeleteStaff;

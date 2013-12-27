@@ -322,3 +322,15 @@ C:\Users\Ademola\Desktop\ggg\OverSurgery\bin\Debug\OverSurgery.pdb
 C:\Users\Ademola\Desktop\ggg\OverSurgery\obj\Debug\OverSurgery.exe
 C:\Users\Ademola\Desktop\ggg\OverSurgery\obj\Debug\OverSurgery.pdb
 C:\Users\Ademola\Desktop\ggg\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+E:\boxxing day\OverSurgery\bin\Debug\OverSurgery.exe.config
+E:\boxxing day\OverSurgery\obj\Debug\OverSurgery.exe
+E:\boxxing day\OverSurgery\obj\Debug\OverSurgery.pdb
+E:\boxxing day\OverSurgery\bin\Debug\OverSugerydbase.mdf
+E:\boxxing day\OverSurgery\bin\Debug\OverSugerydbase_log.ldf
+E:\boxxing day\OverSurgery\bin\Debug\OverSurgery.exe
+E:\boxxing day\OverSurgery\bin\Debug\OverSurgery.pdb
+E:\boxxing day\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+E:\boxxing day\OverSurgery\obj\Debug\OverSurgery.LogIn.resources
+E:\boxxing day\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+E:\boxxing day\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+E:\boxxing day\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
