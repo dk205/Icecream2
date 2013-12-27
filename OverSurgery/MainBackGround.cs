@@ -87,7 +87,9 @@ namespace OverSurgery
             PageSelectedPatient.Visible = false;
             PageEditPatientDetails.Visible = false;
             PageEnterTestResults.Visible = false;
-            
+            PageMakeAppointment.Visible = false;
+            PageAddViewExtendMedication.Visible = false;
+            PageViewCancelEditAppointment.Visible = false;
             
             var control = Controls.Find(PanelName, true).FirstOrDefault();
             control.Refresh();
@@ -173,16 +175,16 @@ namespace OverSurgery
                 txtActiveUserName.Text = Convert.ToString(a); //place the id and the name on the area above the option, so you always know the patient you are handeling
                 txtActiveUserID.Text = Convert.ToString(b);
                 btnClearActivePatient.Visible = true;  // now that there is an active patient, make the clear_active_patient button available
-                
+                 ActiveUserID = Convert.ToInt32(txtActiveUserID.Text );  //a global variable to store the active patients id.
             }
             catch (Exception) //if there are no values (caused if the id is not found in the database) catch it
             {
                 MessageBox.Show("The Id entered does not belong \n to a registered patient", "Patient not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-            finally
-            {
-                ActiveUserID = Convert.ToInt32(txtActiveUserID.Text );  //a global variable to store the active patients id.
-            }
+    //        finally
+      //      {
+               
+      //      }
          }
 
        
@@ -494,7 +496,7 @@ namespace OverSurgery
                        if (Appointments[c] == 0)
                        {
                            //Make SlotButton(c,i)
-                           MessageBox.Show(" i would if i could make a button");
+                          // MessageBox.Show(" i would if i could make a button");
                            BookButton[c, i] = new Button();
                            BookButton[c, i].Text = "Book";
                            BookButton[c, i].AutoSize = true;
@@ -514,7 +516,7 @@ namespace OverSurgery
                        }
                        else
                        {
-                           MessageBox.Show("going to make a label!");
+                          // MessageBox.Show("going to make a label!");
                            //  ????Make TimeLabel(c,i)
                            SlotLabel[c, i] = new Label();
                            SlotLabel[c, i].Text = "N/A";
@@ -537,7 +539,7 @@ namespace OverSurgery
            }  //end of foreach Stafffound
 
 
-              // panelMorningAppointments.Visible = true;
+             
                TableMorning.Visible = true;
          
    
@@ -641,38 +643,53 @@ namespace OverSurgery
             Button bt = sender as Button;
             var rowx = TableMorning.GetRow(bt);
             var colx = TableMorning.GetColumn(bt);
-           // Control control= this.Controls.Find("labelStaff["+0+"]["+rowx+"]", true).FirstOrDefault() as Label ;
-            Control control = this.Controls.Find("labelStaff"+ (rowx-1)  , true).FirstOrDefault() as Label;
+            // Control control= this.Controls.Find("labelStaff["+0+"]["+rowx+"]", true).FirstOrDefault() as Label ;
+            Control control = this.Controls.Find("labelStaff" + (rowx - 1), true).FirstOrDefault() as Label;
 
-           OverSugerydbaseDataSet.StaffDataTable StaffInfo= this.staffTableAdapter.SearchStaffbySurname(control.Text);  //search by name and date
-           // MessageBox.Show(String.Format("the row is:{0},  the column:{1}", rowx.ToString(), colx.ToString()));
-         //  MessageBox.Show(String.Format("the label name is : {0}", control.Name));
-            object a = StaffInfo.Rows[0]["StaffID"];
-            int TempStaffID = Convert.ToInt32(a);   //store the id
-            object b = StaffInfo.Rows[0]["Surname"];
-            string TempSurname = Convert.ToString(b);  //store the Surname
-            object c = StaffInfo.Rows[0]["Sex"];
-            string TempSex = Convert.ToString(c);  //store the Sex
-            object d = StaffInfo.Rows[0]["Staff Role/Title"];
-            string TempRole = Convert.ToString(d);  //store the Surname
-            string TempDate = dateTimePicker1.Value.Date.ToString();
+            //search if the user has already made a booking (max 1 per 2 weeks)
+            //OverSugerydbaseDataSet.TwoActiveWeeksDataTable DoubleBooking = 
 
-            this.twoActiveWeeksTableAdapter.RecordBooking(TempStaffID, TempSurname, TempDate, TempSex, TempRole, colx, ActiveUserID);
-            //this.Controls.Remove(bt);
-            this.TableMorning.Controls.Remove(bt);
-            
-            // make a label
-            SlotLabelS[rowx, colx] = new Label();
-            SlotLabelS[rowx, colx].Text = "Booked";
-            SlotLabelS[rowx, colx].AutoSize = true;
-            SlotLabelS[rowx, colx].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            SlotLabelS[rowx, colx].Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-            | System.Windows.Forms.AnchorStyles.Left)
-            | System.Windows.Forms.AnchorStyles.Right)));
+            Int32 count = (Int32)this.twoActiveWeeksTableAdapter.DoubleBooking(ActiveUserID);
+            if ((Int32)this.twoActiveWeeksTableAdapter.DoubleBooking(ActiveUserID) > 0)
+            {
+                MessageBox.Show(String.Format(" Sorry you already have as booking {0}", count.ToString()));
+            }
+            else
+            {
+                MessageBox.Show("all ok not booked before");
 
-            this.twoActiveWeeksTableAdapter.Fill(this.overSugerydbaseDataSet.TwoActiveWeeks);
-            this.rotaTableAdapter.Fill(this.overSugerydbaseDataSet.Rota);
-        
+                OverSugerydbaseDataSet.StaffDataTable StaffInfo = this.staffTableAdapter.SearchStaffbySurname(control.Text);  //search by name and date
+                // MessageBox.Show(String.Format("the row is:{0},  the column:{1}", rowx.ToString(), colx.ToString()));
+                //  MessageBox.Show(String.Format("the label name is : {0}", control.Name));
+                object a = StaffInfo.Rows[0]["StaffID"];
+                int TempStaffID = Convert.ToInt32(a);   //store the id
+                object b = StaffInfo.Rows[0]["Surname"];
+                string TempSurname = Convert.ToString(b);  //store the Surname
+                object c = StaffInfo.Rows[0]["Sex"];
+                string TempSex = Convert.ToString(c);  //store the Sex
+                object d = StaffInfo.Rows[0]["Staff Role/Title"];
+                string TempRole = Convert.ToString(d);  //store the Surname
+                string TempDate = dateTimePicker1.Value.Date.ToString();
+
+                this.twoActiveWeeksTableAdapter.RecordBooking(TempStaffID, TempSurname, TempDate, TempSex, TempRole, colx, ActiveUserID);
+                //this.Controls.Remove(bt);
+                this.TableMorning.Controls.Remove(bt);
+
+                // make a label
+                SlotLabelS[rowx, colx] = new Label();
+                SlotLabelS[rowx, colx].Text = "Booked";
+                SlotLabelS[rowx, colx].AutoSize = true;
+                SlotLabelS[rowx, colx].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+                SlotLabelS[rowx, colx].Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
+                | System.Windows.Forms.AnchorStyles.Left)
+                | System.Windows.Forms.AnchorStyles.Right)));
+
+                this.twoActiveWeeksTableAdapter.Fill(this.overSugerydbaseDataSet.TwoActiveWeeks);
+                this.rotaTableAdapter.Fill(this.overSugerydbaseDataSet.Rota);
+
+            }//end of else Doublebooking
+            setMeVisible("PageViewCancelEditAppointment");
+
         }
         private void dateTimePicker2_CloseUp(object sender, EventArgs e)
         {
@@ -1111,6 +1128,145 @@ namespace OverSurgery
             
            // panelMorningAppointments.Visible = false;
             //panelAfternounAppointments.Visible = true;
+        }
+
+        private void btnCancelAppointment_Click(object sender, EventArgs e)
+        {
+
+            if (this.twoActiveWeeksTableAdapter.DoubleBooking(ActiveUserID) <= 0)
+            {
+                MessageBox.Show("There is no booking to Cancel");
+            }
+            else
+            {
+
+                if (MessageBox.Show("Are you sure you wish to delete this appointment", "Canceling an Appointment", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        this.twoActiveWeeksTableAdapter.DeleteBooking(ActiveUserID);
+                        MessageBox.Show("Your Booking has been Deleted");
+                        labelAppointmentDetails.Text = String.Empty;
+                        labelAppointmentDetails.Text = "No booking has been made";
+                    }
+
+                    catch (Exception NoEntry)
+                    {
+                        MessageBox.Show(NoEntry.Message);
+                    }
+                }
+            }//end of else doublebooking
+
+        }
+
+        private void buttonBacktoSelectedPatient_Click(object sender, EventArgs e)
+        {
+            setMeVisible("PageSelectedPatient");
+        }
+
+        private void Fill_Appointment_Label(object sender, EventArgs e)
+        {
+            if(this.twoActiveWeeksTableAdapter.DoubleBooking(ActiveUserID)>0)
+            {
+            OverSugerydbaseDataSet.TwoActiveWeeksDataTable StaffSearched = this.twoActiveWeeksTableAdapter.SearchbyId(ActiveUserID);
+                // selected staff's other details
+
+                String  Time;
+                object a = StaffSearched.Rows[0]["Surname"];
+                string Surname = Convert.ToString(a);  //store the Surname
+                object b = StaffSearched.Rows[0]["Date"];
+                DateTime Date = Convert.ToDateTime(b);  //store the Sex
+                object c = StaffSearched.Rows[0]["TimeSlot"];
+               Int32 TimeSlot = Convert.ToInt32(c);  //store the Surname
+                switch(TimeSlot)
+                {
+                    case 1:
+                        Time="8:00";
+                        break;
+                    case 2:
+                        Time = "8:20";
+                        break;
+                    case 3:
+                        Time = "8:40";
+                        break;
+                    case 4:
+                        Time = "9:00";
+                        break;
+                    case 5:
+                        Time = "9:20";
+                        break;
+                    case 6:
+                        Time = "9:40";
+                        break;
+                    case 7:
+                        Time = "10:00";
+                        break;
+                    case 8:
+                        Time = "10:20";
+                        break;
+                    case 9:
+                        Time = "10:40";
+                        break;
+                    case 10:
+                        Time = "11:00";
+                        break;
+                    case 11:
+                        Time = "11:20";
+                        break;
+                    case 12:
+                        Time = "11:40";
+                        break;
+                    case 13:
+                        Time = "12:00";
+                        break;
+                    case 14:
+                        Time = "12:20";
+                        break;
+                    case 15:
+                        Time = "12:40";
+                        break;
+                    case 16:
+                        Time = "13:00";
+                        break;
+                    case 17:
+                        Time = "13:20";
+                        break;
+                    case 18:
+                        Time = "13:40";
+                        break;
+                    case 19:
+                        Time = "14:00";
+                        break;
+                    case 20:
+                        Time = "14:20";
+                        break;
+                    case 21:
+                        Time = "14:40";
+                        break;
+                    case 22:
+                        Time = "15:00";
+                        break;
+                    case 23:
+                        Time = "15:20";
+                        break;
+                    case 24:
+                        Time = "15:40";
+                        break;
+                        
+                    default:
+                        Time="lol";
+                        break;
+                }
+
+            labelAppointmentDetails.Text= String.Empty;
+            labelAppointmentDetails.Text = Date.ToShortDateString() + " at " + Time + " with " + Surname;
+        }//End of if Doublebooking
+            else
+            {
+             labelAppointmentDetails.Text= String.Empty;
+              labelAppointmentDetails.Text = "No booking has been made";
+            }
+
         }
 
      

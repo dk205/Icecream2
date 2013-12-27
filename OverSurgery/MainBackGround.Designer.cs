@@ -56,27 +56,16 @@
             this.btnClearActivePatient = new System.Windows.Forms.Button();
             this.Label100 = new System.Windows.Forms.Label();
             this.Label200 = new System.Windows.Forms.Label();
+            this.PageViewCancelEditAppointment = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.label34 = new System.Windows.Forms.Label();
+            this.btnChangeAppointment = new System.Windows.Forms.Button();
+            this.btnCancelAppointment = new System.Windows.Forms.Button();
+            this.buttonBacktoSelectedPatient = new System.Windows.Forms.Button();
+            this.label26 = new System.Windows.Forms.Label();
             this.PageMakeAppointment = new System.Windows.Forms.Panel();
-            this.TableAfternoun = new System.Windows.Forms.TableLayoutPanel();
-            this.label33 = new System.Windows.Forms.Label();
-            this.labelStaff5 = new System.Windows.Forms.Label();
-            this.labelStaff6 = new System.Windows.Forms.Label();
-            this.labelStaff7 = new System.Windows.Forms.Label();
-            this.labelStaff8 = new System.Windows.Forms.Label();
-            this.labelStaff9 = new System.Windows.Forms.Label();
-            this.label70 = new System.Windows.Forms.Label();
-            this.label71 = new System.Windows.Forms.Label();
-            this.label72 = new System.Windows.Forms.Label();
-            this.label73 = new System.Windows.Forms.Label();
-            this.label74 = new System.Windows.Forms.Label();
-            this.label75 = new System.Windows.Forms.Label();
-            this.label76 = new System.Windows.Forms.Label();
-            this.label77 = new System.Windows.Forms.Label();
-            this.label78 = new System.Windows.Forms.Label();
-            this.label79 = new System.Windows.Forms.Label();
-            this.label80 = new System.Windows.Forms.Label();
-            this.label81 = new System.Windows.Forms.Label();
-            this.label82 = new System.Windows.Forms.Label();
+            this.btnAfternoon = new System.Windows.Forms.Button();
+            this.btnMorning = new System.Windows.Forms.Button();
             this.TableMorning = new System.Windows.Forms.TableLayoutPanel();
             this.label43 = new System.Windows.Forms.Label();
             this.labelStaff0 = new System.Windows.Forms.Label();
@@ -97,7 +86,26 @@
             this.label54 = new System.Windows.Forms.Label();
             this.label55 = new System.Windows.Forms.Label();
             this.label56 = new System.Windows.Forms.Label();
-            this.btnAfternoon = new System.Windows.Forms.Button();
+            this.TableAfternoun = new System.Windows.Forms.TableLayoutPanel();
+            this.label33 = new System.Windows.Forms.Label();
+            this.labelStaff5 = new System.Windows.Forms.Label();
+            this.labelStaff6 = new System.Windows.Forms.Label();
+            this.labelStaff7 = new System.Windows.Forms.Label();
+            this.labelStaff8 = new System.Windows.Forms.Label();
+            this.labelStaff9 = new System.Windows.Forms.Label();
+            this.label70 = new System.Windows.Forms.Label();
+            this.label71 = new System.Windows.Forms.Label();
+            this.label72 = new System.Windows.Forms.Label();
+            this.label73 = new System.Windows.Forms.Label();
+            this.label74 = new System.Windows.Forms.Label();
+            this.label75 = new System.Windows.Forms.Label();
+            this.label76 = new System.Windows.Forms.Label();
+            this.label77 = new System.Windows.Forms.Label();
+            this.label78 = new System.Windows.Forms.Label();
+            this.label79 = new System.Windows.Forms.Label();
+            this.label80 = new System.Windows.Forms.Label();
+            this.label81 = new System.Windows.Forms.Label();
+            this.label82 = new System.Windows.Forms.Label();
             this.twoActiveWeeksDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -109,7 +117,6 @@
             this.twoActiveWeeksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.overSugerydbaseDataSet = new OverSurgery.OverSugerydbaseDataSet();
             this.btnCheckAppointments = new System.Windows.Forms.Button();
-            this.btnMorning = new System.Windows.Forms.Button();
             this.btnBackfromAp = new System.Windows.Forms.Button();
             this.label25 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
@@ -213,9 +220,6 @@
             this.PageViewPrintTestResults = new System.Windows.Forms.Panel();
             this.label27 = new System.Windows.Forms.Label();
             this.button9 = new System.Windows.Forms.Button();
-            this.PageViewCancelEditAppointment = new System.Windows.Forms.Panel();
-            this.buttonBacktoSelectedPatient = new System.Windows.Forms.Button();
-            this.label26 = new System.Windows.Forms.Label();
             this.tabGPNurse = new System.Windows.Forms.TabPage();
             this.PageGPNurse = new System.Windows.Forms.Panel();
             this.groupBoxSearch = new System.Windows.Forms.GroupBox();
@@ -316,6 +320,8 @@
             this.overSugerydbaseDataSet1 = new OverSurgery.OverSugerydbaseDataSet1();
             this.staffTableAdapter1 = new OverSurgery.OverSugerydbaseDataSet2TableAdapters.StaffTableAdapter();
             this.staffTableAdapter2 = new OverSurgery.OverSugerydbaseDataSet3TableAdapters.StaffTableAdapter();
+            this.labelAppointmentDetails = new System.Windows.Forms.Label();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             medNameLabel = new System.Windows.Forms.Label();
             doseLabel = new System.Windows.Forms.Label();
             start_DateLabel = new System.Windows.Forms.Label();
@@ -340,9 +346,11 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.PageViewCancelEditAppointment.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
             this.PageMakeAppointment.SuspendLayout();
-            this.TableAfternoun.SuspendLayout();
             this.TableMorning.SuspendLayout();
+            this.TableAfternoun.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet)).BeginInit();
@@ -357,7 +365,6 @@
             this.PageEditPatientDetails.SuspendLayout();
             this.PageEnterTestResults.SuspendLayout();
             this.PageViewPrintTestResults.SuspendLayout();
-            this.PageViewCancelEditAppointment.SuspendLayout();
             this.tabGPNurse.SuspendLayout();
             this.PageGPNurse.SuspendLayout();
             this.groupBoxSearch.SuspendLayout();
@@ -378,6 +385,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.week52BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet1)).BeginInit();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // medNameLabel
@@ -590,6 +598,7 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.LightGray;
+            this.splitContainer1.Panel2.Controls.Add(this.PageViewCancelEditAppointment);
             this.splitContainer1.Panel2.Controls.Add(this.PageMakeAppointment);
             this.splitContainer1.Panel2.Controls.Add(this.PageSelectedPatient);
             this.splitContainer1.Panel2.Controls.Add(this.PageMainScreen);
@@ -598,7 +607,6 @@
             this.splitContainer1.Panel2.Controls.Add(this.PageEditPatientDetails);
             this.splitContainer1.Panel2.Controls.Add(this.PageEnterTestResults);
             this.splitContainer1.Panel2.Controls.Add(this.PageViewPrintTestResults);
-            this.splitContainer1.Panel2.Controls.Add(this.PageViewCancelEditAppointment);
             this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(966, 653);
             this.splitContainer1.SplitterDistance = 49;
@@ -649,6 +657,91 @@
             this.Label200.TabIndex = 2;
             this.Label200.Text = "Patient ID: ";
             // 
+            // PageViewCancelEditAppointment
+            // 
+            this.PageViewCancelEditAppointment.Controls.Add(this.tableLayoutPanel1);
+            this.PageViewCancelEditAppointment.Controls.Add(this.buttonBacktoSelectedPatient);
+            this.PageViewCancelEditAppointment.Controls.Add(this.label26);
+            this.PageViewCancelEditAppointment.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PageViewCancelEditAppointment.Location = new System.Drawing.Point(0, 0);
+            this.PageViewCancelEditAppointment.Name = "PageViewCancelEditAppointment";
+            this.PageViewCancelEditAppointment.Size = new System.Drawing.Size(966, 600);
+            this.PageViewCancelEditAppointment.TabIndex = 2;
+            this.PageViewCancelEditAppointment.Visible = false;
+            this.PageViewCancelEditAppointment.VisibleChanged += new System.EventHandler(this.Fill_Appointment_Label);
+            // 
+            // tableLayoutPanel1
+            // 
+            this.tableLayoutPanel1.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.InsetDouble;
+            this.tableLayoutPanel1.ColumnCount = 3;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 33.33333F));
+            this.tableLayoutPanel1.Controls.Add(this.btnChangeAppointment, 1, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnCancelAppointment, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 0);
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(116, 184);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 1;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(650, 100);
+            this.tableLayoutPanel1.TabIndex = 2;
+            // 
+            // label34
+            // 
+            this.label34.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(4, 14);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(197, 16);
+            this.label34.TabIndex = 0;
+            this.label34.Text = "Your Appointment is set for:";
+            // 
+            // btnChangeAppointment
+            // 
+            this.btnChangeAppointment.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnChangeAppointment.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.btnChangeAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnChangeAppointment.Location = new System.Drawing.Point(231, 8);
+            this.btnChangeAppointment.Name = "btnChangeAppointment";
+            this.btnChangeAppointment.Size = new System.Drawing.Size(186, 84);
+            this.btnChangeAppointment.TabIndex = 1;
+            this.btnChangeAppointment.Text = "Change Appointment";
+            this.btnChangeAppointment.UseVisualStyleBackColor = false;
+            // 
+            // btnCancelAppointment
+            // 
+            this.btnCancelAppointment.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.btnCancelAppointment.BackColor = System.Drawing.Color.Crimson;
+            this.btnCancelAppointment.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelAppointment.Location = new System.Drawing.Point(448, 9);
+            this.btnCancelAppointment.Name = "btnCancelAppointment";
+            this.btnCancelAppointment.Size = new System.Drawing.Size(183, 81);
+            this.btnCancelAppointment.TabIndex = 2;
+            this.btnCancelAppointment.Text = "Cancel Appointment";
+            this.btnCancelAppointment.UseVisualStyleBackColor = false;
+            this.btnCancelAppointment.Click += new System.EventHandler(this.btnCancelAppointment_Click);
+            // 
+            // buttonBacktoSelectedPatient
+            // 
+            this.buttonBacktoSelectedPatient.Location = new System.Drawing.Point(469, 395);
+            this.buttonBacktoSelectedPatient.Name = "buttonBacktoSelectedPatient";
+            this.buttonBacktoSelectedPatient.Size = new System.Drawing.Size(75, 23);
+            this.buttonBacktoSelectedPatient.TabIndex = 1;
+            this.buttonBacktoSelectedPatient.Text = "Back";
+            this.buttonBacktoSelectedPatient.UseVisualStyleBackColor = true;
+            this.buttonBacktoSelectedPatient.Click += new System.EventHandler(this.buttonBacktoSelectedPatient_Click);
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label26.Location = new System.Drawing.Point(17, 12);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(375, 25);
+            this.label26.TabIndex = 0;
+            this.label26.Text = "View/Change/Cancel  Appointment";
+            // 
             // PageMakeAppointment
             // 
             this.PageMakeAppointment.AutoScroll = true;
@@ -669,303 +762,25 @@
             this.PageMakeAppointment.TabIndex = 6;
             this.PageMakeAppointment.Visible = false;
             // 
-            // TableAfternoun
+            // btnAfternoon
             // 
-            this.TableAfternoun.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
-            this.TableAfternoun.ColumnCount = 14;
-            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
-            this.TableAfternoun.Controls.Add(this.label33, 0, 0);
-            this.TableAfternoun.Controls.Add(this.labelStaff5, 0, 1);
-            this.TableAfternoun.Controls.Add(this.labelStaff6, 0, 2);
-            this.TableAfternoun.Controls.Add(this.labelStaff7, 0, 3);
-            this.TableAfternoun.Controls.Add(this.labelStaff8, 0, 4);
-            this.TableAfternoun.Controls.Add(this.labelStaff9, 0, 5);
-            this.TableAfternoun.Controls.Add(this.label70, 1, 0);
-            this.TableAfternoun.Controls.Add(this.label71, 2, 0);
-            this.TableAfternoun.Controls.Add(this.label72, 3, 0);
-            this.TableAfternoun.Controls.Add(this.label73, 4, 0);
-            this.TableAfternoun.Controls.Add(this.label74, 5, 0);
-            this.TableAfternoun.Controls.Add(this.label75, 6, 0);
-            this.TableAfternoun.Controls.Add(this.label76, 7, 0);
-            this.TableAfternoun.Controls.Add(this.label77, 8, 0);
-            this.TableAfternoun.Controls.Add(this.label78, 9, 0);
-            this.TableAfternoun.Controls.Add(this.label79, 10, 0);
-            this.TableAfternoun.Controls.Add(this.label80, 11, 0);
-            this.TableAfternoun.Controls.Add(this.label81, 12, 0);
-            this.TableAfternoun.Controls.Add(this.label82, 13, 0);
-            this.TableAfternoun.Location = new System.Drawing.Point(13, 314);
-            this.TableAfternoun.Name = "TableAfternoun";
-            this.TableAfternoun.RowCount = 6;
-            this.TableAfternoun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.TableAfternoun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.TableAfternoun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.TableAfternoun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.TableAfternoun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.TableAfternoun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
-            this.TableAfternoun.Size = new System.Drawing.Size(945, 216);
-            this.TableAfternoun.TabIndex = 8;
-            this.TableAfternoun.Visible = false;
+            this.btnAfternoon.Location = new System.Drawing.Point(867, 536);
+            this.btnAfternoon.Name = "btnAfternoon";
+            this.btnAfternoon.Size = new System.Drawing.Size(91, 23);
+            this.btnAfternoon.TabIndex = 6;
+            this.btnAfternoon.Text = "Afternoon";
+            this.btnAfternoon.UseVisualStyleBackColor = true;
+            this.btnAfternoon.Click += new System.EventHandler(this.btnAfternoon_Click);
             // 
-            // label33
+            // btnMorning
             // 
-            this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(6, 3);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(58, 32);
-            this.label33.TabIndex = 0;
-            this.label33.Text = "Time/\r\nStaff";
-            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelStaff5
-            // 
-            this.labelStaff5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelStaff5.AutoSize = true;
-            this.labelStaff5.Location = new System.Drawing.Point(6, 38);
-            this.labelStaff5.Name = "labelStaff5";
-            this.labelStaff5.Size = new System.Drawing.Size(58, 32);
-            this.labelStaff5.TabIndex = 1;
-            this.labelStaff5.Text = "Blank";
-            this.labelStaff5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelStaff6
-            // 
-            this.labelStaff6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelStaff6.AutoSize = true;
-            this.labelStaff6.Location = new System.Drawing.Point(6, 73);
-            this.labelStaff6.Name = "labelStaff6";
-            this.labelStaff6.Size = new System.Drawing.Size(58, 32);
-            this.labelStaff6.TabIndex = 1;
-            this.labelStaff6.Text = "Blank";
-            this.labelStaff6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelStaff7
-            // 
-            this.labelStaff7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelStaff7.AutoSize = true;
-            this.labelStaff7.Location = new System.Drawing.Point(6, 108);
-            this.labelStaff7.Name = "labelStaff7";
-            this.labelStaff7.Size = new System.Drawing.Size(58, 32);
-            this.labelStaff7.TabIndex = 1;
-            this.labelStaff7.Text = "blank";
-            this.labelStaff7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelStaff8
-            // 
-            this.labelStaff8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelStaff8.AutoSize = true;
-            this.labelStaff8.Location = new System.Drawing.Point(6, 143);
-            this.labelStaff8.Name = "labelStaff8";
-            this.labelStaff8.Size = new System.Drawing.Size(58, 32);
-            this.labelStaff8.TabIndex = 1;
-            this.labelStaff8.Text = "Blank";
-            this.labelStaff8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelStaff9
-            // 
-            this.labelStaff9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelStaff9.AutoSize = true;
-            this.labelStaff9.Location = new System.Drawing.Point(6, 178);
-            this.labelStaff9.Name = "labelStaff9";
-            this.labelStaff9.Size = new System.Drawing.Size(58, 35);
-            this.labelStaff9.TabIndex = 1;
-            this.labelStaff9.Text = "Blank";
-            this.labelStaff9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label70
-            // 
-            this.label70.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label70.AutoSize = true;
-            this.label70.Location = new System.Drawing.Point(73, 3);
-            this.label70.Name = "label70";
-            this.label70.Size = new System.Drawing.Size(58, 32);
-            this.label70.TabIndex = 1;
-            this.label70.Text = "12:20";
-            this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label71
-            // 
-            this.label71.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label71.AutoSize = true;
-            this.label71.Location = new System.Drawing.Point(140, 3);
-            this.label71.Name = "label71";
-            this.label71.Size = new System.Drawing.Size(58, 32);
-            this.label71.TabIndex = 1;
-            this.label71.Text = "12:40";
-            this.label71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label72
-            // 
-            this.label72.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label72.AutoSize = true;
-            this.label72.Location = new System.Drawing.Point(207, 3);
-            this.label72.Name = "label72";
-            this.label72.Size = new System.Drawing.Size(58, 32);
-            this.label72.TabIndex = 1;
-            this.label72.Text = "13:00";
-            this.label72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label73
-            // 
-            this.label73.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label73.AutoSize = true;
-            this.label73.Location = new System.Drawing.Point(274, 3);
-            this.label73.Name = "label73";
-            this.label73.Size = new System.Drawing.Size(58, 32);
-            this.label73.TabIndex = 1;
-            this.label73.Text = "13:20";
-            this.label73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label74
-            // 
-            this.label74.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label74.AutoSize = true;
-            this.label74.Location = new System.Drawing.Point(341, 3);
-            this.label74.Name = "label74";
-            this.label74.Size = new System.Drawing.Size(58, 32);
-            this.label74.TabIndex = 1;
-            this.label74.Text = "13:40";
-            this.label74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label75
-            // 
-            this.label75.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label75.AutoSize = true;
-            this.label75.Location = new System.Drawing.Point(408, 3);
-            this.label75.Name = "label75";
-            this.label75.Size = new System.Drawing.Size(58, 32);
-            this.label75.TabIndex = 1;
-            this.label75.Text = "14:00";
-            this.label75.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label76
-            // 
-            this.label76.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label76.AutoSize = true;
-            this.label76.Location = new System.Drawing.Point(475, 3);
-            this.label76.Name = "label76";
-            this.label76.Size = new System.Drawing.Size(58, 32);
-            this.label76.TabIndex = 1;
-            this.label76.Text = "14:20";
-            this.label76.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label77
-            // 
-            this.label77.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label77.AutoSize = true;
-            this.label77.Location = new System.Drawing.Point(542, 3);
-            this.label77.Name = "label77";
-            this.label77.Size = new System.Drawing.Size(58, 32);
-            this.label77.TabIndex = 1;
-            this.label77.Text = "14:40";
-            this.label77.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label78
-            // 
-            this.label78.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label78.AutoSize = true;
-            this.label78.Location = new System.Drawing.Point(609, 3);
-            this.label78.Name = "label78";
-            this.label78.Size = new System.Drawing.Size(58, 32);
-            this.label78.TabIndex = 1;
-            this.label78.Text = "15:00";
-            this.label78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label79
-            // 
-            this.label79.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label79.AutoSize = true;
-            this.label79.Location = new System.Drawing.Point(676, 3);
-            this.label79.Name = "label79";
-            this.label79.Size = new System.Drawing.Size(58, 32);
-            this.label79.TabIndex = 1;
-            this.label79.Text = "15:20";
-            this.label79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label80
-            // 
-            this.label80.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label80.AutoSize = true;
-            this.label80.Location = new System.Drawing.Point(743, 3);
-            this.label80.Name = "label80";
-            this.label80.Size = new System.Drawing.Size(58, 32);
-            this.label80.TabIndex = 1;
-            this.label80.Text = "15:40";
-            this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label81
-            // 
-            this.label81.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label81.AutoSize = true;
-            this.label81.Location = new System.Drawing.Point(810, 3);
-            this.label81.Name = "label81";
-            this.label81.Size = new System.Drawing.Size(58, 32);
-            this.label81.TabIndex = 1;
-            this.label81.Text = "16:00";
-            this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label82
-            // 
-            this.label82.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.label82.AutoSize = true;
-            this.label82.Location = new System.Drawing.Point(877, 3);
-            this.label82.Name = "label82";
-            this.label82.Size = new System.Drawing.Size(62, 32);
-            this.label82.TabIndex = 1;
-            this.label82.Text = "16:20";
-            this.label82.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.btnMorning.Location = new System.Drawing.Point(867, 537);
+            this.btnMorning.Name = "btnMorning";
+            this.btnMorning.Size = new System.Drawing.Size(91, 23);
+            this.btnMorning.TabIndex = 6;
+            this.btnMorning.Text = "Morning";
+            this.btnMorning.UseVisualStyleBackColor = true;
+            this.btnMorning.Click += new System.EventHandler(this.btnMorning_Click);
             // 
             // TableMorning
             // 
@@ -1265,15 +1080,303 @@
             this.label56.Text = "12:00";
             this.label56.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnAfternoon
+            // TableAfternoun
             // 
-            this.btnAfternoon.Location = new System.Drawing.Point(867, 536);
-            this.btnAfternoon.Name = "btnAfternoon";
-            this.btnAfternoon.Size = new System.Drawing.Size(91, 23);
-            this.btnAfternoon.TabIndex = 6;
-            this.btnAfternoon.Text = "Afternoon";
-            this.btnAfternoon.UseVisualStyleBackColor = true;
-            this.btnAfternoon.Click += new System.EventHandler(this.btnAfternoon_Click);
+            this.TableAfternoun.CellBorderStyle = System.Windows.Forms.TableLayoutPanelCellBorderStyle.OutsetDouble;
+            this.TableAfternoun.ColumnCount = 14;
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 7.142857F));
+            this.TableAfternoun.Controls.Add(this.label33, 0, 0);
+            this.TableAfternoun.Controls.Add(this.labelStaff5, 0, 1);
+            this.TableAfternoun.Controls.Add(this.labelStaff6, 0, 2);
+            this.TableAfternoun.Controls.Add(this.labelStaff7, 0, 3);
+            this.TableAfternoun.Controls.Add(this.labelStaff8, 0, 4);
+            this.TableAfternoun.Controls.Add(this.labelStaff9, 0, 5);
+            this.TableAfternoun.Controls.Add(this.label70, 1, 0);
+            this.TableAfternoun.Controls.Add(this.label71, 2, 0);
+            this.TableAfternoun.Controls.Add(this.label72, 3, 0);
+            this.TableAfternoun.Controls.Add(this.label73, 4, 0);
+            this.TableAfternoun.Controls.Add(this.label74, 5, 0);
+            this.TableAfternoun.Controls.Add(this.label75, 6, 0);
+            this.TableAfternoun.Controls.Add(this.label76, 7, 0);
+            this.TableAfternoun.Controls.Add(this.label77, 8, 0);
+            this.TableAfternoun.Controls.Add(this.label78, 9, 0);
+            this.TableAfternoun.Controls.Add(this.label79, 10, 0);
+            this.TableAfternoun.Controls.Add(this.label80, 11, 0);
+            this.TableAfternoun.Controls.Add(this.label81, 12, 0);
+            this.TableAfternoun.Controls.Add(this.label82, 13, 0);
+            this.TableAfternoun.Location = new System.Drawing.Point(13, 314);
+            this.TableAfternoun.Name = "TableAfternoun";
+            this.TableAfternoun.RowCount = 6;
+            this.TableAfternoun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.TableAfternoun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.TableAfternoun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.TableAfternoun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.TableAfternoun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.TableAfternoun.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 16.66667F));
+            this.TableAfternoun.Size = new System.Drawing.Size(945, 216);
+            this.TableAfternoun.TabIndex = 8;
+            this.TableAfternoun.Visible = false;
+            // 
+            // label33
+            // 
+            this.label33.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label33.Location = new System.Drawing.Point(6, 3);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(58, 32);
+            this.label33.TabIndex = 0;
+            this.label33.Text = "Time/\r\nStaff";
+            this.label33.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelStaff5
+            // 
+            this.labelStaff5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelStaff5.AutoSize = true;
+            this.labelStaff5.Location = new System.Drawing.Point(6, 38);
+            this.labelStaff5.Name = "labelStaff5";
+            this.labelStaff5.Size = new System.Drawing.Size(58, 32);
+            this.labelStaff5.TabIndex = 1;
+            this.labelStaff5.Text = "Blank";
+            this.labelStaff5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelStaff6
+            // 
+            this.labelStaff6.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelStaff6.AutoSize = true;
+            this.labelStaff6.Location = new System.Drawing.Point(6, 73);
+            this.labelStaff6.Name = "labelStaff6";
+            this.labelStaff6.Size = new System.Drawing.Size(58, 32);
+            this.labelStaff6.TabIndex = 1;
+            this.labelStaff6.Text = "Blank";
+            this.labelStaff6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelStaff7
+            // 
+            this.labelStaff7.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelStaff7.AutoSize = true;
+            this.labelStaff7.Location = new System.Drawing.Point(6, 108);
+            this.labelStaff7.Name = "labelStaff7";
+            this.labelStaff7.Size = new System.Drawing.Size(58, 32);
+            this.labelStaff7.TabIndex = 1;
+            this.labelStaff7.Text = "blank";
+            this.labelStaff7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelStaff8
+            // 
+            this.labelStaff8.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelStaff8.AutoSize = true;
+            this.labelStaff8.Location = new System.Drawing.Point(6, 143);
+            this.labelStaff8.Name = "labelStaff8";
+            this.labelStaff8.Size = new System.Drawing.Size(58, 32);
+            this.labelStaff8.TabIndex = 1;
+            this.labelStaff8.Text = "Blank";
+            this.labelStaff8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelStaff9
+            // 
+            this.labelStaff9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.labelStaff9.AutoSize = true;
+            this.labelStaff9.Location = new System.Drawing.Point(6, 178);
+            this.labelStaff9.Name = "labelStaff9";
+            this.labelStaff9.Size = new System.Drawing.Size(58, 35);
+            this.labelStaff9.TabIndex = 1;
+            this.labelStaff9.Text = "Blank";
+            this.labelStaff9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label70
+            // 
+            this.label70.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label70.AutoSize = true;
+            this.label70.Location = new System.Drawing.Point(73, 3);
+            this.label70.Name = "label70";
+            this.label70.Size = new System.Drawing.Size(58, 32);
+            this.label70.TabIndex = 1;
+            this.label70.Text = "12:20";
+            this.label70.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label71
+            // 
+            this.label71.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label71.AutoSize = true;
+            this.label71.Location = new System.Drawing.Point(140, 3);
+            this.label71.Name = "label71";
+            this.label71.Size = new System.Drawing.Size(58, 32);
+            this.label71.TabIndex = 1;
+            this.label71.Text = "12:40";
+            this.label71.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label72
+            // 
+            this.label72.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label72.AutoSize = true;
+            this.label72.Location = new System.Drawing.Point(207, 3);
+            this.label72.Name = "label72";
+            this.label72.Size = new System.Drawing.Size(58, 32);
+            this.label72.TabIndex = 1;
+            this.label72.Text = "13:00";
+            this.label72.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label73
+            // 
+            this.label73.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label73.AutoSize = true;
+            this.label73.Location = new System.Drawing.Point(274, 3);
+            this.label73.Name = "label73";
+            this.label73.Size = new System.Drawing.Size(58, 32);
+            this.label73.TabIndex = 1;
+            this.label73.Text = "13:20";
+            this.label73.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label74
+            // 
+            this.label74.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label74.AutoSize = true;
+            this.label74.Location = new System.Drawing.Point(341, 3);
+            this.label74.Name = "label74";
+            this.label74.Size = new System.Drawing.Size(58, 32);
+            this.label74.TabIndex = 1;
+            this.label74.Text = "13:40";
+            this.label74.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label75
+            // 
+            this.label75.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label75.AutoSize = true;
+            this.label75.Location = new System.Drawing.Point(408, 3);
+            this.label75.Name = "label75";
+            this.label75.Size = new System.Drawing.Size(58, 32);
+            this.label75.TabIndex = 1;
+            this.label75.Text = "14:00";
+            this.label75.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label76
+            // 
+            this.label76.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label76.AutoSize = true;
+            this.label76.Location = new System.Drawing.Point(475, 3);
+            this.label76.Name = "label76";
+            this.label76.Size = new System.Drawing.Size(58, 32);
+            this.label76.TabIndex = 1;
+            this.label76.Text = "14:20";
+            this.label76.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label77
+            // 
+            this.label77.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label77.AutoSize = true;
+            this.label77.Location = new System.Drawing.Point(542, 3);
+            this.label77.Name = "label77";
+            this.label77.Size = new System.Drawing.Size(58, 32);
+            this.label77.TabIndex = 1;
+            this.label77.Text = "14:40";
+            this.label77.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label78
+            // 
+            this.label78.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label78.AutoSize = true;
+            this.label78.Location = new System.Drawing.Point(609, 3);
+            this.label78.Name = "label78";
+            this.label78.Size = new System.Drawing.Size(58, 32);
+            this.label78.TabIndex = 1;
+            this.label78.Text = "15:00";
+            this.label78.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label79
+            // 
+            this.label79.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label79.AutoSize = true;
+            this.label79.Location = new System.Drawing.Point(676, 3);
+            this.label79.Name = "label79";
+            this.label79.Size = new System.Drawing.Size(58, 32);
+            this.label79.TabIndex = 1;
+            this.label79.Text = "15:20";
+            this.label79.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label80
+            // 
+            this.label80.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label80.AutoSize = true;
+            this.label80.Location = new System.Drawing.Point(743, 3);
+            this.label80.Name = "label80";
+            this.label80.Size = new System.Drawing.Size(58, 32);
+            this.label80.TabIndex = 1;
+            this.label80.Text = "15:40";
+            this.label80.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label81
+            // 
+            this.label81.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label81.AutoSize = true;
+            this.label81.Location = new System.Drawing.Point(810, 3);
+            this.label81.Name = "label81";
+            this.label81.Size = new System.Drawing.Size(58, 32);
+            this.label81.TabIndex = 1;
+            this.label81.Text = "16:00";
+            this.label81.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label82
+            // 
+            this.label82.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.label82.AutoSize = true;
+            this.label82.Location = new System.Drawing.Point(877, 3);
+            this.label82.Name = "label82";
+            this.label82.Size = new System.Drawing.Size(62, 32);
+            this.label82.TabIndex = 1;
+            this.label82.Text = "16:20";
+            this.label82.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // twoActiveWeeksDataGridView
             // 
@@ -1355,16 +1458,6 @@
             this.btnCheckAppointments.UseVisualStyleBackColor = true;
             this.btnCheckAppointments.Click += new System.EventHandler(this.btnCheckAppointments_Click);
             // 
-            // btnMorning
-            // 
-            this.btnMorning.Location = new System.Drawing.Point(867, 537);
-            this.btnMorning.Name = "btnMorning";
-            this.btnMorning.Size = new System.Drawing.Size(91, 23);
-            this.btnMorning.TabIndex = 6;
-            this.btnMorning.Text = "Morning";
-            this.btnMorning.UseVisualStyleBackColor = true;
-            this.btnMorning.Click += new System.EventHandler(this.btnMorning_Click);
-            // 
             // btnBackfromAp
             // 
             this.btnBackfromAp.Location = new System.Drawing.Point(491, 68);
@@ -1378,7 +1471,7 @@
             // label25
             // 
             this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(78, 71);
+            this.label25.Location = new System.Drawing.Point(36, 68);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(89, 16);
             this.label25.TabIndex = 4;
@@ -1386,7 +1479,7 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(424, 40);
+            this.dateTimePicker1.Location = new System.Drawing.Point(34, 83);
             this.dateTimePicker1.MinDate = new System.DateTime(2013, 12, 24, 9, 48, 56, 107);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
@@ -2323,36 +2416,6 @@
             this.button9.Text = "Cancel";
             this.button9.UseVisualStyleBackColor = true;
             // 
-            // PageViewCancelEditAppointment
-            // 
-            this.PageViewCancelEditAppointment.Controls.Add(this.buttonBacktoSelectedPatient);
-            this.PageViewCancelEditAppointment.Controls.Add(this.label26);
-            this.PageViewCancelEditAppointment.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PageViewCancelEditAppointment.Location = new System.Drawing.Point(0, 0);
-            this.PageViewCancelEditAppointment.Name = "PageViewCancelEditAppointment";
-            this.PageViewCancelEditAppointment.Size = new System.Drawing.Size(966, 600);
-            this.PageViewCancelEditAppointment.TabIndex = 2;
-            this.PageViewCancelEditAppointment.Visible = false;
-            // 
-            // buttonBacktoSelectedPatient
-            // 
-            this.buttonBacktoSelectedPatient.Location = new System.Drawing.Point(469, 395);
-            this.buttonBacktoSelectedPatient.Name = "buttonBacktoSelectedPatient";
-            this.buttonBacktoSelectedPatient.Size = new System.Drawing.Size(75, 23);
-            this.buttonBacktoSelectedPatient.TabIndex = 1;
-            this.buttonBacktoSelectedPatient.Text = "Cancel";
-            this.buttonBacktoSelectedPatient.UseVisualStyleBackColor = true;
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(17, 12);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(375, 25);
-            this.label26.TabIndex = 0;
-            this.label26.Text = "View/Change/Cancel  Appointment";
-            // 
             // tabGPNurse
             // 
             this.tabGPNurse.Controls.Add(this.PageGPNurse);
@@ -3286,6 +3349,30 @@
             // 
             this.staffTableAdapter2.ClearBeforeFill = true;
             // 
+            // labelAppointmentDetails
+            // 
+            this.labelAppointmentDetails.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelAppointmentDetails.AutoSize = true;
+            this.labelAppointmentDetails.Location = new System.Drawing.Point(15, 58);
+            this.labelAppointmentDetails.Name = "labelAppointmentDetails";
+            this.labelAppointmentDetails.Size = new System.Drawing.Size(175, 16);
+            this.labelAppointmentDetails.TabIndex = 3;
+            this.labelAppointmentDetails.Text = "No Appointment booked";
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.labelAppointmentDetails, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label34, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 6);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(206, 88);
+            this.tableLayoutPanel2.TabIndex = 3;
+            // 
             // MainBackGround
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3304,12 +3391,15 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.PageViewCancelEditAppointment.ResumeLayout(false);
+            this.PageViewCancelEditAppointment.PerformLayout();
+            this.tableLayoutPanel1.ResumeLayout(false);
             this.PageMakeAppointment.ResumeLayout(false);
             this.PageMakeAppointment.PerformLayout();
-            this.TableAfternoun.ResumeLayout(false);
-            this.TableAfternoun.PerformLayout();
             this.TableMorning.ResumeLayout(false);
             this.TableMorning.PerformLayout();
+            this.TableAfternoun.ResumeLayout(false);
+            this.TableAfternoun.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet)).EndInit();
@@ -3331,8 +3421,6 @@
             this.PageEnterTestResults.PerformLayout();
             this.PageViewPrintTestResults.ResumeLayout(false);
             this.PageViewPrintTestResults.PerformLayout();
-            this.PageViewCancelEditAppointment.ResumeLayout(false);
-            this.PageViewCancelEditAppointment.PerformLayout();
             this.tabGPNurse.ResumeLayout(false);
             this.PageGPNurse.ResumeLayout(false);
             this.PageGPNurse.PerformLayout();
@@ -3361,6 +3449,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.week52BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet1)).EndInit();
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -3635,6 +3725,12 @@
         private System.Windows.Forms.Label label54;
         private System.Windows.Forms.Label label55;
         private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Button btnChangeAppointment;
+        private System.Windows.Forms.Button btnCancelAppointment;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private System.Windows.Forms.Label labelAppointmentDetails;
     }
 }
 
