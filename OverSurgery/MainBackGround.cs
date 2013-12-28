@@ -40,10 +40,7 @@ namespace OverSurgery
             OverSugerydbaseDataSet.StaffDataTable StaffMenuTable = this.staffTableAdapter.GetData();
             foreach (OverSugerydbaseDataSet.StaffRow row in StaffMenuTable)
             {
-               // var OneofMany = Controls.Find(MenuName, true).FirstOrDefault();
-             //   OneofMany.Refresh();
-             
-            
+                          
               cbStaffMenu1.Items.Insert(i,row.Surname);
               cbStaffMenu2.Items.Insert(i,row.Surname);
               cbStaffMenu3.Items.Insert(i,row.Surname);
@@ -91,6 +88,7 @@ namespace OverSurgery
             PageMakeAppointment.Visible = false;
             PageAddViewExtendMedication.Visible = false;
             PageViewCancelEditAppointment.Visible = false;
+            PageViewPrintTestResults.Visible = false;
             
             var control = Controls.Find(PanelName, true).FirstOrDefault();
             control.Refresh();
@@ -119,7 +117,7 @@ namespace OverSurgery
 
         }
 
-        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+     /*   private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)  
         {
 
         }
@@ -147,8 +145,8 @@ namespace OverSurgery
         private void NewRegistrationPage_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
+       }
+*/
         private void NewRegButton_Click(object sender, EventArgs e) //go to the new registration page
         {
 
@@ -168,8 +166,6 @@ namespace OverSurgery
             {
                 object a = IDSearched.Rows[0]["Patient Name"]; //To get the data you store each value into an object
                 object b = IDSearched.Rows[0]["Id"];
-                //String IDfound = Convert.ToString(b);  
-               // MessageBox.Show(String.Format("the user was found and his id is {0}", IDfound));
                 setMeVisible("PageSelectedPatient"); // go to the Selected patient page.
                 txtBoxID.Text = string.Empty;   //clear the search id textbox for future use. 
 
@@ -182,18 +178,12 @@ namespace OverSurgery
             {
                 MessageBox.Show("The Id entered does not belong \n to a registered patient", "Patient not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-    //        finally
-      //      {
-               
-      //      }
+   
          }
 
        
 
-      //  private void button9_Click(object sender, EventArgs e)
-     //   {
-     //       DDMenuStaff.Show(DDButtonDoctor, 0, DDButtonDoctor.Height);
-     //   }
+    
 
         private void button1_Click_1(object sender, EventArgs e) //takes you to the make appointment page
         {
@@ -224,27 +214,23 @@ namespace OverSurgery
             cbStaff.Items.Insert(3, "Any Male GP");
             cbStaff.Items.Insert(4, "Any Female GP");
             cbStaff.SelectedIndex = 0;
-        
-            
-            
-            
-           
-        
-    
-            setMeVisible("PageMakeAppointment");
-         
+
+            setMeVisible("PageMakeAppointment");  
         }
 
+        
         private void button2_Click(object sender, EventArgs e) //takes you to the edit cancel delete  appointment page
         {
             setMeVisible("PageViewCancelEditAppointment");
         }
 
+      
         private void button3_Click(object sender, EventArgs e) //takes you to the make add/extend medication page
         {
             setMeVisible("PageAddViewExtendMedication");
         }
 
+      
         private void button4_Click(object sender, EventArgs e)   //takes you to view the Test Results
         {
             setMeVisible("PageViewPrintTestResults");
@@ -269,7 +255,7 @@ namespace OverSurgery
             // TODO: This line of code loads data into the 'overSugerydbaseDataSet.Rota' table. You can move, or remove it, as needed.
             this.rotaTableAdapter.Fill(this.overSugerydbaseDataSet.Rota);
             // TODO: This line of code loads data into the 'overSugerydbaseDataSet.Week52' table. You can move, or remove it, as needed.
-            this.week52TableAdapter.Fill(this.overSugerydbaseDataSet.Week52);
+          //  this.week52TableAdapter.Fill(this.overSugerydbaseDataSet.Week52);
             // TODO: This line of code loads data into the 'overSugerydbaseDataSet.Patients' table. You can move, or remove it, as needed.
             this.patientsTableAdapter.Fill(this.overSugerydbaseDataSet.Patients);
             // TODO: This line of code loads data into the 'overSugerydbaseDataSet.Staff' table. You can move, or remove it, as needed.
@@ -414,7 +400,7 @@ namespace OverSurgery
         private void btnCheckAppointments_Click(object sender, EventArgs e)
         {
             
-            labelStaff0.Text= "Blank";
+            labelStaff0.Text= "Blank";  //set the Labels with the Staff names on the timetable to blank
             labelStaff1.Text = "Blank";
             labelStaff2.Text = "Blank";
             labelStaff3.Text = "Blank";
@@ -425,9 +411,9 @@ namespace OverSurgery
             labelStaff8.Text = "Blank";
             labelStaff9.Text = "Blank";
 
-            for (int k = 1; k < 14; k++)
+            for (int k = 1; k < 14; k++)  //remove all the objects from row 1 & column 1  in the morning and afternoun tables.
                 for (int l = 1; l < 5; l++)
-                { //int k = l = 0;
+                { 
 
                     Control TBM = TableMorning.GetControlFromPosition(k, l);
                     Control TBA = TableAfternoun.GetControlFromPosition(k, l);
@@ -452,25 +438,21 @@ namespace OverSurgery
                     
                 case 1:
                     MessageBox.Show("All GP");
-                    //make a table with only staff role=GP
-                //  StaffFound= new OverSugerydbaseDataSet.RotaDataTable();
+                    //make a table with only staff role=GP   
                   StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());
             break;
                 case 2:
                     MessageBox.Show(" selected all Nurses");
-                    //make a table with only staff role=Nurse
-              // StaffFound= new OverSugerydbaseDataSet.RotaDataTable();
+                    //make a table with only staff role=Nurse           
                   StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());
                     break;
                 case 3:
                     MessageBox.Show(" selected all male gp");
                     //make a table with only staff role=GP nad sex =Male
-                 // StaffFound= new OverSugerydbaseDataSet.RotaDataTable();
                   StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());                    break;
                 case 4:
                     MessageBox.Show(" selected all female gp");
                     //make a table with only staff role=GP and Sex =Female
-              //      OverSugerydbaseDataSet.RotaDataTable StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());
                     break;
                 default:
                      MessageBox.Show(" somedoctor");
@@ -481,8 +463,8 @@ namespace OverSurgery
 
             Label[,] SlotLabel = new Label[26, 13];
            Button[,] BookButton = new Button[26, 13];
-           this.twoActiveWeeksTableAdapter.Fill(this.overSugerydbaseDataSet.TwoActiveWeeks); //TEMPORARY
-           this.rotaTableAdapter.Fill(this.overSugerydbaseDataSet.Rota);           //TEMPORARY
+           this.twoActiveWeeksTableAdapter.Fill(this.overSugerydbaseDataSet.TwoActiveWeeks); //******TEMPORARY
+           this.rotaTableAdapter.Fill(this.overSugerydbaseDataSet.Rota);           //******TEMPORARY
 
           
                string StaffID = string.Empty;
@@ -492,11 +474,10 @@ namespace OverSurgery
                //do as many as the staff is in that table
                foreach (OverSugerydbaseDataSet.RotaRow row in StaffFound)
                {
-                   MessageBox.Show((String.Format("number i= {0}", i.ToString())));
+                  
                    //create the names in the labels
                    Label Amorphos = this.Controls.Find("labelStaff" + i, true).FirstOrDefault() as Label ;
                     Amorphos.Refresh();
-                    MessageBox.Show("in the Foreach rota row");
                     Amorphos.Text = row.Surname;
     
                    //search the two active weeks for that name and date
@@ -505,21 +486,19 @@ namespace OverSurgery
                     int[] Appointments= new int[26];
                    //int c=0;
                    foreach(OverSugerydbaseDataSet.TwoActiveWeeksRow row1 in IDandSlots)
-                     {
-                         MessageBox.Show("in the Foreach Two active weeks  row");
-                       //store the timeslot x=row.slot Appointments[x]=row.id
-                        Appointments[row1.TimeSlot]=row1.Id;
-                        
-                   //i++;
-               }//end of foreach in IDandDate
+                     {               
+                        //store the timeslot x=row.slot Appointments[x]=row.id
+                         Appointments[row1.TimeSlot] = row1.Id;           
+                  
+                      }//end of foreach in IDandDate
 
                    for (int c = 0; c < 26; c++)  //13 is max
                    {
-                       //      MessageBox.Show(String.Format("Appointments Value={0}", Appointments[c].ToString()));
+                       
                        if (Appointments[c] == 0)
                        {
                            //Make SlotButton(c,i)
-                          // MessageBox.Show(" i would if i could make a button");
+                          
                            BookButton[c, i] = new Button();
                            BookButton[c, i].Text = "Book";
                            BookButton[c, i].AutoSize = true;
@@ -528,7 +507,7 @@ namespace OverSurgery
                            | System.Windows.Forms.AnchorStyles.Left)
                            | System.Windows.Forms.AnchorStyles.Right)));
                            BookButton[c, i].Click += new System.EventHandler(BookButton_Click);
-                           if(c<13)
+                           if(c<13) //store in the morning table
                            try
                            {
                                TableMorning.Controls.Add(BookButton[c, i], (c + 1), (i + 1));
@@ -537,7 +516,7 @@ namespace OverSurgery
                            {
                                MessageBox.Show(bs.Message);
                            }
-                           else
+                           else  //store in the afternoun table
                                try
                                {
                                    TableAfternoun.Controls.Add(BookButton[c, i], (c -12), (i +1));
@@ -551,8 +530,7 @@ namespace OverSurgery
                        }
                        else
                        {
-                          // MessageBox.Show("going to make a label!");
-                           //  ????Make TimeLabel(c,i)
+                           //  Make TimeLabel(c,i)
                            SlotLabel[c, i] = new Label();
                            SlotLabel[c, i].Text = "N/A";
                            SlotLabel[c, i].AutoSize = true;
@@ -578,112 +556,19 @@ namespace OverSurgery
              
                TableMorning.Visible = true;
          
-   
+      }  //end of btnCheckAppointments_Click
 
 
-
-            /* Label[,] SlotLabel = new Label[13, 13];
-            Button[,] BookButton = new Button[13, 13];
-            this.twoActiveWeeksTableAdapter.Fill(this.overSugerydbaseDataSet.TwoActiveWeeks); //TEMPORARY
-            this.rotaTableAdapter.Fill(this.overSugerydbaseDataSet.Rota);           //TEMPORARY
-
-            if (RBAllDoctors.Checked)
-            {
-                string StaffID = string.Empty;
-                MessageBox.Show("all doctors selected");
-                //make a table  with all doctors that day.
-                OverSugerydbaseDataSet.RotaDataTable StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());
-                int i = 0;
-                //do as many as the staff is in that table
-                foreach (OverSugerydbaseDataSet.RotaRow row in StaffFound)
-                {
-                    MessageBox.Show((String.Format("number i= {0}", i.ToString())));
-                    //create the names in the labels
-                    Label Amorphos = this.Controls.Find("labelStaff" + i, true).FirstOrDefault() as Label ;
-                     Amorphos.Refresh();
-                     MessageBox.Show("in the Foreach rota row");
-                     Amorphos.Text = row.Surname;
-    
-                    //search the two active weeks for that name and date
-                    OverSugerydbaseDataSet.TwoActiveWeeksDataTable IDandSlots = this.twoActiveWeeksTableAdapter.SearchTwoActiveWeeksByIDandDate(row.StaffID, dateTimePicker1.Value.Date.ToString());
-                    //make new int array int[] Appointments= new int[13]
-                     int[] Appointments= new int[26];
-                    //int c=0;
-                    foreach(OverSugerydbaseDataSet.TwoActiveWeeksRow row1 in IDandSlots)
-                      {
-                          MessageBox.Show("in the Foreach Two active weeks  row");
-                        //store the timeslot x=row.slot Appointments[x]=row.id
-                         Appointments[row1.TimeSlot]=row1.Id;
-                        
-                    //i++;
-                }//end of foreach in IDandDate
-
-                    for (int c = 0; c < 13; c++)  //13 is max
-                    {
-                        //      MessageBox.Show(String.Format("Appointments Value={0}", Appointments[c].ToString()));
-                        if (Appointments[c] == 0)
-                        {
-                            //Make SlotButton(c,i)
-                            MessageBox.Show(" i would if i could make a button");
-                            BookButton[c, i] = new Button();
-                            BookButton[c, i].Text = "Book";
-                            BookButton[c, i].AutoSize = true;
-                            BookButton[c, i].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-                            BookButton[c, i].Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                            | System.Windows.Forms.AnchorStyles.Left)
-                            | System.Windows.Forms.AnchorStyles.Right)));
-                            BookButton[c, i].Click += new System.EventHandler(BookButton_Click);
-                            try
-                            {
-                                TimetableM.Controls.Add(BookButton[c, i], (c + 1), (i + 1));
-                            }
-                            catch (Exception bs)
-                            {
-                                MessageBox.Show(bs.Message);
-                            }
-                        }
-                        else
-                        {
-                            MessageBox.Show("going to make a label!");
-                            //  ????Make TimeLabel(c,i)
-                            SlotLabel[c, i] = new Label();
-                            SlotLabel[c, i].Text = "N/A";
-                            SlotLabel[c, i].AutoSize = true;
-                            SlotLabel[c, i].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-                            SlotLabel[c, i].Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                            | System.Windows.Forms.AnchorStyles.Left)
-                            | System.Windows.Forms.AnchorStyles.Right)));
-                            try
-                            {
-                                TimetableM.Controls.Add(SlotLabel[c, i], (c + 1), (i + 1));
-                            }
-                            catch (Exception bs)
-                            {
-                                MessageBox.Show(bs.Message);
-                            }
-                        }
-                    } //end of for c
-                    i++;
-            }  //end of foreach Stafffound
-           
-           
-       
-                TimetableM.Visible = true;
-           }// end of if all doctors selected
-     */    }
-
-
-        private void BookButton_Click(object sender, EventArgs e)
+        private void BookButton_Click(object sender, EventArgs e) //the code for the code generated "book" button
         {
             Label[,] SlotLabelS = new Label[13, 13];
             Button bt = sender as Button;
             var rowx = TableMorning.GetRow(bt);
             var colx = TableMorning.GetColumn(bt);
-            // Control control= this.Controls.Find("labelStaff["+0+"]["+rowx+"]", true).FirstOrDefault() as Label ;
             Control control = this.Controls.Find("labelStaff" + (rowx - 1), true).FirstOrDefault() as Label;
 
             //search if the user has already made a booking (max 1 per 2 weeks)
-            //OverSugerydbaseDataSet.TwoActiveWeeksDataTable DoubleBooking = 
+            
 
             Int32 count = (Int32)this.twoActiveWeeksTableAdapter.DoubleBooking(ActiveUserID);
             if ((Int32)this.twoActiveWeeksTableAdapter.DoubleBooking(ActiveUserID) == 0 || ChangingAppointment == true)
@@ -693,11 +578,10 @@ namespace OverSurgery
                 if (ChangingAppointment == true)
                     this.twoActiveWeeksTableAdapter.DeleteBooking(ActiveUserID);
 
-                MessageBox.Show("all ok not booked before");
+                MessageBox.Show("Your booking has been recorded.");
 
                 OverSugerydbaseDataSet.StaffDataTable StaffInfo = this.staffTableAdapter.SearchStaffbySurname(control.Text);  //search by name and date
-                // MessageBox.Show(String.Format("the row is:{0},  the column:{1}", rowx.ToString(), colx.ToString()));
-                //  MessageBox.Show(String.Format("the label name is : {0}", control.Name));
+             
                 object a = StaffInfo.Rows[0]["StaffID"];
                 int TempStaffID = Convert.ToInt32(a);   //store the id
                 object b = StaffInfo.Rows[0]["Surname"];
@@ -709,10 +593,9 @@ namespace OverSurgery
                 string TempDate = dateTimePicker1.Value.Date.ToString();
 
                 this.twoActiveWeeksTableAdapter.RecordBooking(TempStaffID, TempSurname, TempDate, TempSex, TempRole, colx, ActiveUserID);
-                //this.Controls.Remove(bt);
-                this.TableMorning.Controls.Remove(bt);
+                this.TableMorning.Controls.Remove(bt);  //remove the button we pressed
 
-                // make a label
+                // make a label in its place
                 SlotLabelS[rowx, colx] = new Label();
                 SlotLabelS[rowx, colx].Text = "Booked";
                 SlotLabelS[rowx, colx].AutoSize = true;
@@ -740,6 +623,9 @@ namespace OverSurgery
            
             setMeVisible("PageViewCancelEditAppointment");
         }
+       
+        
+        
         private void dateTimePicker2_CloseUp(object sender, EventArgs e)
         {
             cbStaffMenu1.Enabled = true;
@@ -788,7 +674,7 @@ namespace OverSurgery
                 {
                     DestroyMenus();
                     FillStaffMenu();
-                    // cbStaffMenu1.SelectedIndex=3;
+                    
                 }
                 PageRota.Visible = true;
 
@@ -800,8 +686,6 @@ namespace OverSurgery
         private void cbStaffMenu1_SelectedIndexChanged(object sender, EventArgs e)   //when one of the five comboboxes value changes
         {
             Boolean IdExists = true;
-            // var control = Controls.Find("cbStaffMenu" + (i + 1), true).FirstOrDefault();
-            // control.Refresh();
             ComboBox CB = sender as ComboBox;
 
 
@@ -848,7 +732,7 @@ namespace OverSurgery
                 }
                 else
                 {
-                    //MessageBox.Show("about to delete old entry2");
+                   
                     if (PreviousName != "Free" && PreviousName != String.Empty) //and  the previous value was not free
                     {
                         this.rotaTableAdapter.DeleteStaffFromRota(PreviousName, TempDate);//delete old entry
@@ -887,7 +771,6 @@ namespace OverSurgery
         private void WhenTabSelected(object sender, EventArgs e)
         {
             TabControl Tab = sender as TabControl;
-            // MessageBox.Show(String.Format(" the tabcontrol1.selectedTab is: {0}",tabControl1.SelectedTab.ToString()));
             if (tabControl1.SelectedTab.ToString() == "TabPage: {Timetable}")
             {
                 dateTimePicker2.Location = new Point(139, 91);
@@ -897,29 +780,178 @@ namespace OverSurgery
 
 
 
-      /*  private void LoadComboboxStaff(object sender, EventArgs e)
+        private void btnBackfromAp_Click(object sender, EventArgs e)
         {
-            int i = 0;
-            
-            OverSugerydbaseDataSet.StaffDataTable StaffMenuTable = this.staffTableAdapter.GetData();
-            foreach (OverSugerydbaseDataSet.StaffRow row in StaffMenuTable)
+            setMeVisible("PageSelectedPatient");
+        }
+
+        private void btnMorning_Click(object sender, EventArgs e)
+        {
+            TableMorning.Visible = true;
+            TableAfternoun.Visible = false;
+            btnAfternoon.Visible = true;
+            btnMorning.Visible = false;
+        }
+
+        private void btnAfternoon_Click(object sender, EventArgs e)
+        {
+            TableMorning.Visible = false;
+            TableAfternoun.Visible = true;
+            btnAfternoon.Visible = false;
+            btnMorning.Visible = true;
+
+
+            // panelMorningAppointments.Visible = false;
+            //panelAfternounAppointments.Visible = true;
+        }
+
+        private void btnCancelAppointment_Click(object sender, EventArgs e)
+        {
+
+            if (this.twoActiveWeeksTableAdapter.DoubleBooking(ActiveUserID) <= 0)
             {
-                // var OneofMany = Controls.Find(MenuName, true).FirstOrDefault();
-                //   OneofMany.Refresh();
-
-                cbStaff.Items.Insert(i, row.Surname);
-                
-                i++;
-
+                MessageBox.Show("There is no booking to Cancel");
             }
-            cbStaff.Items.Insert(0, "Any GP/Nurse");
-            cbStaff.Items.Insert(1, "Any GP");
-            cbStaff.Items.Insert(2, "Any Nurse");
-            cbStaff.Items.Insert(3, "Any Male GP");
-            cbStaff.Items.Insert(4, "Any Female GP");
-            cbStaff.SelectedIndex = 0;
-       }
-*/ 
+            else
+            {
+
+                if (MessageBox.Show("Are you sure you wish to delete this appointment", "Canceling an Appointment", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    try
+                    {
+                        this.twoActiveWeeksTableAdapter.DeleteBooking(ActiveUserID);
+                        MessageBox.Show("Your Booking has been Deleted");
+                        labelAppointmentDetails.Text = String.Empty;
+                        labelAppointmentDetails.Text = "No booking has been made";
+                    }
+
+                    catch (Exception NoEntry)
+                    {
+                        MessageBox.Show(NoEntry.Message);
+                    }
+                }
+            }//end of else doublebooking
+
+        }
+
+        private void buttonBacktoSelectedPatient_Click(object sender, EventArgs e)
+        {
+            setMeVisible("PageSelectedPatient");
+        }
+
+        private void Fill_Appointment_Label(object sender, EventArgs e)
+        {
+            if (this.twoActiveWeeksTableAdapter.DoubleBooking(ActiveUserID) > 0)
+            {
+                OverSugerydbaseDataSet.TwoActiveWeeksDataTable StaffSearched = this.twoActiveWeeksTableAdapter.SearchbyId(ActiveUserID);
+                // selected staff's other details
+
+                String Time;
+                object a = StaffSearched.Rows[0]["Surname"];
+                string Surname = Convert.ToString(a);  //store the Surname
+                object b = StaffSearched.Rows[0]["Date"];
+                DateTime Date = Convert.ToDateTime(b);  //store the Sex
+                object c = StaffSearched.Rows[0]["TimeSlot"];
+                Int32 TimeSlot = Convert.ToInt32(c);  //store the Surname
+                switch (TimeSlot)
+                {
+                    case 1:
+                        Time = "8:00";
+                        break;
+                    case 2:
+                        Time = "8:20";
+                        break;
+                    case 3:
+                        Time = "8:40";
+                        break;
+                    case 4:
+                        Time = "9:00";
+                        break;
+                    case 5:
+                        Time = "9:20";
+                        break;
+                    case 6:
+                        Time = "9:40";
+                        break;
+                    case 7:
+                        Time = "10:00";
+                        break;
+                    case 8:
+                        Time = "10:20";
+                        break;
+                    case 9:
+                        Time = "10:40";
+                        break;
+                    case 10:
+                        Time = "11:00";
+                        break;
+                    case 11:
+                        Time = "11:20";
+                        break;
+                    case 12:
+                        Time = "11:40";
+                        break;
+                    case 13:
+                        Time = "12:00";
+                        break;
+                    case 14:
+                        Time = "12:20";
+                        break;
+                    case 15:
+                        Time = "12:40";
+                        break;
+                    case 16:
+                        Time = "13:00";
+                        break;
+                    case 17:
+                        Time = "13:20";
+                        break;
+                    case 18:
+                        Time = "13:40";
+                        break;
+                    case 19:
+                        Time = "14:00";
+                        break;
+                    case 20:
+                        Time = "14:20";
+                        break;
+                    case 21:
+                        Time = "14:40";
+                        break;
+                    case 22:
+                        Time = "15:00";
+                        break;
+                    case 23:
+                        Time = "15:20";
+                        break;
+                    case 24:
+                        Time = "15:40";
+                        break;
+
+                    default:
+                        Time = "lol";
+                        break;
+                }
+
+                labelAppointmentDetails.Text = String.Empty;
+                labelAppointmentDetails.Text = Date.ToShortDateString() + " at " + Time + " with " + Surname;
+            }//End of if Doublebooking
+            else
+            {
+                labelAppointmentDetails.Text = String.Empty;
+                labelAppointmentDetails.Text = "No booking has been made";
+            }
+
+        }
+
+        private void btnChangeAppointment_Click(object sender, EventArgs e)
+        {
+            ChangingAppointment = true;
+            setMeVisible("PageMakeAppointment");
+        }
+
+
+    
         //Toms stuff
 
         private void btnMedAdd_Click(object sender, EventArgs e)
@@ -1154,175 +1186,7 @@ namespace OverSurgery
             this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);   //refresh, or refill the content of the table
         }
 
-        private void btnBackfromAp_Click(object sender, EventArgs e)
-        {
-            setMeVisible("PageSelectedPatient");
-        }
-
-        private void btnMorning_Click(object sender, EventArgs e)
-        {
-            TableMorning.Visible = true;
-            TableAfternoun.Visible = false;
-            btnAfternoon.Visible = true;
-            btnMorning.Visible = false;
-        }
-
-        private void btnAfternoon_Click(object sender, EventArgs e)
-        {
-           TableMorning.Visible=false;
-            TableAfternoun.Visible=true;
-            btnAfternoon.Visible = false;
-            btnMorning.Visible = true;
-            
-            
-           // panelMorningAppointments.Visible = false;
-            //panelAfternounAppointments.Visible = true;
-        }
-
-        private void btnCancelAppointment_Click(object sender, EventArgs e)
-        {
-
-            if (this.twoActiveWeeksTableAdapter.DoubleBooking(ActiveUserID) <= 0)
-            {
-                MessageBox.Show("There is no booking to Cancel");
-            }
-            else
-            {
-
-                if (MessageBox.Show("Are you sure you wish to delete this appointment", "Canceling an Appointment", MessageBoxButtons.YesNo) == DialogResult.Yes)
-                {
-                    try
-                    {
-                        this.twoActiveWeeksTableAdapter.DeleteBooking(ActiveUserID);
-                        MessageBox.Show("Your Booking has been Deleted");
-                        labelAppointmentDetails.Text = String.Empty;
-                        labelAppointmentDetails.Text = "No booking has been made";
-                    }
-
-                    catch (Exception NoEntry)
-                    {
-                        MessageBox.Show(NoEntry.Message);
-                    }
-                }
-            }//end of else doublebooking
-
-        }
-
-        private void buttonBacktoSelectedPatient_Click(object sender, EventArgs e)
-        {
-            setMeVisible("PageSelectedPatient");
-        }
-
-        private void Fill_Appointment_Label(object sender, EventArgs e)
-        {
-            if(this.twoActiveWeeksTableAdapter.DoubleBooking(ActiveUserID)>0)
-            {
-            OverSugerydbaseDataSet.TwoActiveWeeksDataTable StaffSearched = this.twoActiveWeeksTableAdapter.SearchbyId(ActiveUserID);
-                // selected staff's other details
-
-                String  Time;
-                object a = StaffSearched.Rows[0]["Surname"];
-                string Surname = Convert.ToString(a);  //store the Surname
-                object b = StaffSearched.Rows[0]["Date"];
-                DateTime Date = Convert.ToDateTime(b);  //store the Sex
-                object c = StaffSearched.Rows[0]["TimeSlot"];
-               Int32 TimeSlot = Convert.ToInt32(c);  //store the Surname
-                switch(TimeSlot)
-                {
-                    case 1:
-                        Time="8:00";
-                        break;
-                    case 2:
-                        Time = "8:20";
-                        break;
-                    case 3:
-                        Time = "8:40";
-                        break;
-                    case 4:
-                        Time = "9:00";
-                        break;
-                    case 5:
-                        Time = "9:20";
-                        break;
-                    case 6:
-                        Time = "9:40";
-                        break;
-                    case 7:
-                        Time = "10:00";
-                        break;
-                    case 8:
-                        Time = "10:20";
-                        break;
-                    case 9:
-                        Time = "10:40";
-                        break;
-                    case 10:
-                        Time = "11:00";
-                        break;
-                    case 11:
-                        Time = "11:20";
-                        break;
-                    case 12:
-                        Time = "11:40";
-                        break;
-                    case 13:
-                        Time = "12:00";
-                        break;
-                    case 14:
-                        Time = "12:20";
-                        break;
-                    case 15:
-                        Time = "12:40";
-                        break;
-                    case 16:
-                        Time = "13:00";
-                        break;
-                    case 17:
-                        Time = "13:20";
-                        break;
-                    case 18:
-                        Time = "13:40";
-                        break;
-                    case 19:
-                        Time = "14:00";
-                        break;
-                    case 20:
-                        Time = "14:20";
-                        break;
-                    case 21:
-                        Time = "14:40";
-                        break;
-                    case 22:
-                        Time = "15:00";
-                        break;
-                    case 23:
-                        Time = "15:20";
-                        break;
-                    case 24:
-                        Time = "15:40";
-                        break;
-                        
-                    default:
-                        Time="lol";
-                        break;
-                }
-
-            labelAppointmentDetails.Text= String.Empty;
-            labelAppointmentDetails.Text = Date.ToShortDateString() + " at " + Time + " with " + Surname;
-        }//End of if Doublebooking
-            else
-            {
-             labelAppointmentDetails.Text= String.Empty;
-              labelAppointmentDetails.Text = "No booking has been made";
-            }
-
-        }
-
-        private void btnChangeAppointment_Click(object sender, EventArgs e)
-        {
-            ChangingAppointment = true;
-            setMeVisible("PageMakeAppointment");
-        }
+       
 
       
 

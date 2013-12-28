@@ -593,7 +593,7 @@
             this.splitContainer1.Panel1.Controls.Add(this.btnClearActivePatient);
             this.splitContainer1.Panel1.Controls.Add(this.Label100);
             this.splitContainer1.Panel1.Controls.Add(this.Label200);
-            this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
+         //   this.splitContainer1.Panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel1_Paint);
             // 
             // splitContainer1.Panel2
             // 
@@ -607,7 +607,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.PageEditPatientDetails);
             this.splitContainer1.Panel2.Controls.Add(this.PageEnterTestResults);
             this.splitContainer1.Panel2.Controls.Add(this.PageViewPrintTestResults);
-            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
+           // this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(966, 653);
             this.splitContainer1.SplitterDistance = 49;
             this.splitContainer1.TabIndex = 2;
@@ -1637,7 +1637,7 @@
             this.label3.Size = new System.Drawing.Size(145, 24);
             this.label3.TabIndex = 3;
             this.label3.Text = "Search Patient";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
+          //  this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // label2
             // 
@@ -1668,7 +1668,7 @@
             this.label4.Size = new System.Drawing.Size(101, 20);
             this.label4.TabIndex = 3;
             this.label4.Text = "By patient ID";
-            this.label4.Click += new System.EventHandler(this.label3_Click);
+           // this.label4.Click += new System.EventHandler(this.label3_Click);
             // 
             // ButtonSearchID
             // 
