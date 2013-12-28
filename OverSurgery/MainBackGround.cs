@@ -414,8 +414,29 @@ namespace OverSurgery
         private void btnCheckAppointments_Click(object sender, EventArgs e)
         {
             
-            
-            
+            labelStaff0.Text= "Blank";
+            labelStaff1.Text = "Blank";
+            labelStaff2.Text = "Blank";
+            labelStaff3.Text = "Blank";
+            labelStaff4.Text = "Blank";
+            labelStaff5.Text = "Blank";
+            labelStaff6.Text = "Blank";
+            labelStaff7.Text = "Blank";
+            labelStaff8.Text = "Blank";
+            labelStaff9.Text = "Blank";
+
+            for (int k = 1; k < 14; k++)
+                for (int l = 1; l < 5; l++)
+                { //int k = l = 0;
+
+                    Control TBM = TableMorning.GetControlFromPosition(k, l);
+                    Control TBA = TableAfternoun.GetControlFromPosition(k, l);
+                    this.TableMorning.Controls.Remove(TBM);
+                    this.TableAfternoun.Controls.Remove(TBA);
+
+                }
+         
+
             //declare the table StaffFound
             OverSugerydbaseDataSet.RotaDataTable StaffFound = new OverSugerydbaseDataSet.RotaDataTable();
           
@@ -458,8 +479,8 @@ namespace OverSurgery
                     break;
             }
 
-            Label[,] SlotLabel = new Label[13, 13];
-           Button[,] BookButton = new Button[13, 13];
+            Label[,] SlotLabel = new Label[26, 13];
+           Button[,] BookButton = new Button[26, 13];
            this.twoActiveWeeksTableAdapter.Fill(this.overSugerydbaseDataSet.TwoActiveWeeks); //TEMPORARY
            this.rotaTableAdapter.Fill(this.overSugerydbaseDataSet.Rota);           //TEMPORARY
 
@@ -492,7 +513,7 @@ namespace OverSurgery
                    //i++;
                }//end of foreach in IDandDate
 
-                   for (int c = 0; c < 13; c++)  //13 is max
+                   for (int c = 0; c < 26; c++)  //13 is max
                    {
                        //      MessageBox.Show(String.Format("Appointments Value={0}", Appointments[c].ToString()));
                        if (Appointments[c] == 0)
@@ -507,6 +528,7 @@ namespace OverSurgery
                            | System.Windows.Forms.AnchorStyles.Left)
                            | System.Windows.Forms.AnchorStyles.Right)));
                            BookButton[c, i].Click += new System.EventHandler(BookButton_Click);
+                           if(c<13)
                            try
                            {
                                TableMorning.Controls.Add(BookButton[c, i], (c + 1), (i + 1));
@@ -515,6 +537,17 @@ namespace OverSurgery
                            {
                                MessageBox.Show(bs.Message);
                            }
+                           else
+                               try
+                               {
+                                   TableAfternoun.Controls.Add(BookButton[c, i], (c -12), (i +1));
+                               }
+                               catch (Exception bs)
+                               {
+                                   MessageBox.Show(bs.Message);
+                                   MessageBox.Show(String.Format("in button {0}", c.ToString()));
+                               }
+
                        }
                        else
                        {
@@ -534,6 +567,7 @@ namespace OverSurgery
                            catch (Exception bs)
                            {
                                MessageBox.Show(bs.Message);
+                               MessageBox.Show("in label");
                            }
                        }
                    } //end of for c
@@ -1289,6 +1323,8 @@ namespace OverSurgery
             ChangingAppointment = true;
             setMeVisible("PageMakeAppointment");
         }
+
+      
 
      
       
