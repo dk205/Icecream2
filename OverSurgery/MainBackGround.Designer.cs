@@ -58,9 +58,11 @@
             this.Label200 = new System.Windows.Forms.Label();
             this.PageViewCancelEditAppointment = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.label34 = new System.Windows.Forms.Label();
             this.btnChangeAppointment = new System.Windows.Forms.Button();
             this.btnCancelAppointment = new System.Windows.Forms.Button();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.labelAppointmentDetails = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
             this.buttonBacktoSelectedPatient = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
             this.PageMakeAppointment = new System.Windows.Forms.Panel();
@@ -320,8 +322,6 @@
             this.overSugerydbaseDataSet1 = new OverSurgery.OverSugerydbaseDataSet1();
             this.staffTableAdapter1 = new OverSurgery.OverSugerydbaseDataSet2TableAdapters.StaffTableAdapter();
             this.staffTableAdapter2 = new OverSurgery.OverSugerydbaseDataSet3TableAdapters.StaffTableAdapter();
-            this.labelAppointmentDetails = new System.Windows.Forms.Label();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             medNameLabel = new System.Windows.Forms.Label();
             doseLabel = new System.Windows.Forms.Label();
             start_DateLabel = new System.Windows.Forms.Label();
@@ -348,6 +348,7 @@
             this.splitContainer1.SuspendLayout();
             this.PageViewCancelEditAppointment.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.PageMakeAppointment.SuspendLayout();
             this.TableMorning.SuspendLayout();
             this.TableAfternoun.SuspendLayout();
@@ -385,7 +386,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.week52BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet1)).BeginInit();
-            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // medNameLabel
@@ -598,8 +598,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.LightGray;
-            this.splitContainer1.Panel2.Controls.Add(this.PageViewCancelEditAppointment);
             this.splitContainer1.Panel2.Controls.Add(this.PageMakeAppointment);
+            this.splitContainer1.Panel2.Controls.Add(this.PageViewCancelEditAppointment);
             this.splitContainer1.Panel2.Controls.Add(this.PageSelectedPatient);
             this.splitContainer1.Panel2.Controls.Add(this.PageMainScreen);
             this.splitContainer1.Panel2.Controls.Add(this.PageAddViewExtendMedication);
@@ -687,16 +687,6 @@
             this.tableLayoutPanel1.Size = new System.Drawing.Size(650, 100);
             this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // label34
-            // 
-            this.label34.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label34.AutoSize = true;
-            this.label34.Location = new System.Drawing.Point(4, 14);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(197, 16);
-            this.label34.TabIndex = 0;
-            this.label34.Text = "Your Appointment is set for:";
-            // 
             // btnChangeAppointment
             // 
             this.btnChangeAppointment.Anchor = System.Windows.Forms.AnchorStyles.None;
@@ -708,6 +698,7 @@
             this.btnChangeAppointment.TabIndex = 1;
             this.btnChangeAppointment.Text = "Change Appointment";
             this.btnChangeAppointment.UseVisualStyleBackColor = false;
+            this.btnChangeAppointment.Click += new System.EventHandler(this.btnChangeAppointment_Click);
             // 
             // btnCancelAppointment
             // 
@@ -721,6 +712,40 @@
             this.btnCancelAppointment.Text = "Cancel Appointment";
             this.btnCancelAppointment.UseVisualStyleBackColor = false;
             this.btnCancelAppointment.Click += new System.EventHandler(this.btnCancelAppointment_Click);
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 1;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Controls.Add(this.labelAppointmentDetails, 0, 1);
+            this.tableLayoutPanel2.Controls.Add(this.label34, 0, 0);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 6);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 2;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(206, 88);
+            this.tableLayoutPanel2.TabIndex = 3;
+            // 
+            // labelAppointmentDetails
+            // 
+            this.labelAppointmentDetails.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.labelAppointmentDetails.AutoSize = true;
+            this.labelAppointmentDetails.Location = new System.Drawing.Point(15, 58);
+            this.labelAppointmentDetails.Name = "labelAppointmentDetails";
+            this.labelAppointmentDetails.Size = new System.Drawing.Size(175, 16);
+            this.labelAppointmentDetails.TabIndex = 3;
+            this.labelAppointmentDetails.Text = "No Appointment booked";
+            // 
+            // label34
+            // 
+            this.label34.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(4, 14);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(197, 16);
+            this.label34.TabIndex = 0;
+            this.label34.Text = "Your Appointment is set for:";
             // 
             // buttonBacktoSelectedPatient
             // 
@@ -3349,30 +3374,6 @@
             // 
             this.staffTableAdapter2.ClearBeforeFill = true;
             // 
-            // labelAppointmentDetails
-            // 
-            this.labelAppointmentDetails.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.labelAppointmentDetails.AutoSize = true;
-            this.labelAppointmentDetails.Location = new System.Drawing.Point(15, 58);
-            this.labelAppointmentDetails.Name = "labelAppointmentDetails";
-            this.labelAppointmentDetails.Size = new System.Drawing.Size(175, 16);
-            this.labelAppointmentDetails.TabIndex = 3;
-            this.labelAppointmentDetails.Text = "No Appointment booked";
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Controls.Add(this.labelAppointmentDetails, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.label34, 0, 0);
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(6, 6);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 2;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(206, 88);
-            this.tableLayoutPanel2.TabIndex = 3;
-            // 
             // MainBackGround
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3394,6 +3395,8 @@
             this.PageViewCancelEditAppointment.ResumeLayout(false);
             this.PageViewCancelEditAppointment.PerformLayout();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.tableLayoutPanel2.PerformLayout();
             this.PageMakeAppointment.ResumeLayout(false);
             this.PageMakeAppointment.PerformLayout();
             this.TableMorning.ResumeLayout(false);
@@ -3449,8 +3452,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.week52BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet1)).EndInit();
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel2.PerformLayout();
             this.ResumeLayout(false);
 
         }

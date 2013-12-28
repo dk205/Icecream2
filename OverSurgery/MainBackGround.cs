@@ -16,6 +16,7 @@ namespace OverSurgery
     public partial class MainBackGround : Form
     {
         int ActiveUserID = 0;
+        Boolean ChangingAppointment = false;
         Form formParent = null;
         public MainBackGround(Form par)
         {
@@ -366,7 +367,8 @@ namespace OverSurgery
              setMeVisible("PageMainScreen");  //go to the main screen
             txtActiveUserID.Text = " ";    //clear the two fields above the otions
             txtActiveUserName.Text = " ";
-          
+            ChangingAppointment = false;
+            ActiveUserID = 0;
             btnClearActivePatient.Visible = false; //hide the button
         }
 
@@ -650,12 +652,13 @@ namespace OverSurgery
             //OverSugerydbaseDataSet.TwoActiveWeeksDataTable DoubleBooking = 
 
             Int32 count = (Int32)this.twoActiveWeeksTableAdapter.DoubleBooking(ActiveUserID);
-            if ((Int32)this.twoActiveWeeksTableAdapter.DoubleBooking(ActiveUserID) > 0)
+            if ((Int32)this.twoActiveWeeksTableAdapter.DoubleBooking(ActiveUserID) == 0 || ChangingAppointment == true)
             {
-                MessageBox.Show(String.Format(" Sorry you already have as booking {0}", count.ToString()));
-            }
-            else
-            {
+
+                //remove previous booking
+                if (ChangingAppointment == true)
+                    this.twoActiveWeeksTableAdapter.DeleteBooking(ActiveUserID);
+
                 MessageBox.Show("all ok not booked before");
 
                 OverSugerydbaseDataSet.StaffDataTable StaffInfo = this.staffTableAdapter.SearchStaffbySurname(control.Text);  //search by name and date
@@ -681,15 +684,27 @@ namespace OverSurgery
                 SlotLabelS[rowx, colx].AutoSize = true;
                 SlotLabelS[rowx, colx].TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
                 SlotLabelS[rowx, colx].Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)
-                | System.Windows.Forms.AnchorStyles.Left)
-                | System.Windows.Forms.AnchorStyles.Right)));
+                 | System.Windows.Forms.AnchorStyles.Left)
+                 | System.Windows.Forms.AnchorStyles.Right)));
 
                 this.twoActiveWeeksTableAdapter.Fill(this.overSugerydbaseDataSet.TwoActiveWeeks);
                 this.rotaTableAdapter.Fill(this.overSugerydbaseDataSet.Rota);
 
-            }//end of else Doublebooking
-            setMeVisible("PageViewCancelEditAppointment");
+            }//end of if Doublebooking
+            else
+            {
+                MessageBox.Show(String.Format(" Sorry you already have as booking {0}", count.ToString()));
+            }
 
+
+            if (TableMorning.Visible == true)
+                TableMorning.Visible = false;
+            else
+                TableAfternoun.Visible = false;
+                
+            
+           
+            setMeVisible("PageViewCancelEditAppointment");
         }
         private void dateTimePicker2_CloseUp(object sender, EventArgs e)
         {
@@ -1267,6 +1282,12 @@ namespace OverSurgery
               labelAppointmentDetails.Text = "No booking has been made";
             }
 
+        }
+
+        private void btnChangeAppointment_Click(object sender, EventArgs e)
+        {
+            ChangingAppointment = true;
+            setMeVisible("PageMakeAppointment");
         }
 
      
