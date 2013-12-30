@@ -976,37 +976,43 @@ namespace OverSurgery
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///////////////////////////////////             S T A F F     S E C T I O N         /////////////////////////////////////////////////////////////////// 
+        ///////////////////////////////////             S T A F F   G P / N U R S E   S E C T I O N         /////////////////////////////////////////////////////////////////// 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+        
+        
         private void staffBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
+           // Validate content of row/table to ensure that they are correct by data type and not null as the case may be, 
+           // Table and database are updated ater validation 
             this.Validate();
             this.staffBindingSource.EndEdit();
             this.tableAdapterManager.UpdateAll(this.overSugerydbaseDataSet);
 
         }
 
-        private void staffBindingNavigatorSaveItem_Click_1(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.staffBindingSource.EndEdit();
-            this.tableAdapterManager.UpdateAll(this.overSugerydbaseDataSet);
-
-        }
-
-
+        // Button click for event section for Check staff duty button. COde here is executed when the Check Staff Duty button is clicked
         private void bntCheckStaffDuty_Click(object sender, EventArgs e)
         {
+            
+            // set group box that are not relevant to invisible and show the relevant group box for user to interact with
+            // eg. Search groupBox, Staff Group box Add Staff Group Box and Delete staff Groupbox are not relevant when checking staff on duty 
+            // hence the are made to be invisible
             groupBoxSearch.Visible = false;
             groupBoxStaff.Visible = false;
             groupBoxAddStaff.Visible = false;
             groupBoxDeleteStaff.Visible = false;
-           // bindingNavigator1.Visible = false;
+           
+           //label35 and label 36 show heading for ROTA table and All staff table respectively 
             label35.Visible = true;
             label36.Visible = true;
+            
+            // set the rota Datagrid table to be visible
             rotaDataGridView1.Visible = true;
         }
-
+        
+        // set group box that are not relevant to invisible and show the relevant group box for user to interact with
+        // in this case Add new staff group box is made visible for user to interact with while others like delete staff, search staff
+        // group boxes are set to invisible
         private void bntAddNewStaff_Click(object sender, EventArgs e)
         {
             groupBoxSearch.Visible = false;
@@ -1014,6 +1020,7 @@ namespace OverSurgery
             groupBoxAddStaff.Visible = true;
             groupBoxDeleteStaff.Visible = false;
 
+            // set the rota Datagrid table to be invisible as it is not relevant in this case
             label35.Visible = false;
             label36.Visible = false;
             rotaDataGridView1.Visible = false;
@@ -1059,7 +1066,8 @@ namespace OverSurgery
 
             this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);   //refresh, or refill the content of the table
         }
- private void txtSearch_Click(object sender, EventArgs e)
+        
+        private void txtSearch_Click(object sender, EventArgs e)
         {
             string SearchByValue = comboBoxSearchBy.SelectedItem.ToString();
 
@@ -1132,6 +1140,7 @@ namespace OverSurgery
 
         private void btnAddNewStaff_Click(object sender, EventArgs e)
         {
+            
             decimal new_Cnum;
             string newSex, new_Role;
                        
@@ -1154,7 +1163,7 @@ namespace OverSurgery
             this.staffTableAdapter.Update(this.overSugerydbaseDataSet.Staff);
             overSugerydbaseDataSet.Staff.AcceptChanges();
             overSugerydbaseDataSet.Staff.GetChanges();
-   
+            lblCount.Text = staffBindingSource.Count.ToString();
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -1196,7 +1205,7 @@ namespace OverSurgery
 
         private void btnDeleteS_Click(object sender, EventArgs e)
         {
-            
+            lblCount.Text = staffBindingSource.Count.ToString();
             staffTableAdapter.DeleteQuery(Convert.ToInt32(staffIDTextBox.Text), surnameTextBox.Text, first_NameTextBox.Text, sexTextBox.Text, staff_Role_TitleTextBox.Text, contact_NumberTextBox.Text);
 
 
@@ -1241,8 +1250,13 @@ namespace OverSurgery
         this.Validate();
         this.staffBindingSource.EndEdit();
         this.tableAdapterManager.UpdateAll(this.overSugerydbaseDataSet);
-            
-            
+
+        lblCount.Text = staffBindingSource.Count.ToString();
+        }
+
+        private void PageGPNurse_Paint(object sender, PaintEventArgs e)
+        {
+            lblCount.Text = staffBindingSource.Count.ToString();
         }
 
         

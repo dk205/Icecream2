@@ -224,6 +224,9 @@
             this.button9 = new System.Windows.Forms.Button();
             this.tabGPNurse = new System.Windows.Forms.TabPage();
             this.PageGPNurse = new System.Windows.Forms.Panel();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.btnEdit = new System.Windows.Forms.Button();
             this.groupBoxDeleteStaff = new System.Windows.Forms.GroupBox();
             this.label31 = new System.Windows.Forms.Label();
             this.btnDeleteS = new System.Windows.Forms.Button();
@@ -241,6 +244,7 @@
             this.btnAddStaffCancel = new System.Windows.Forms.Button();
             this.btnRefreshStaffTable = new System.Windows.Forms.Button();
             this.groupBoxStaff = new System.Windows.Forms.GroupBox();
+            this.btnUpdate = new System.Windows.Forms.Button();
             this.staffIDTextBox = new System.Windows.Forms.TextBox();
             this.surnameTextBox = new System.Windows.Forms.TextBox();
             this.first_NameTextBox = new System.Windows.Forms.TextBox();
@@ -283,6 +287,13 @@
             this.label30 = new System.Windows.Forms.Label();
             this.label39 = new System.Windows.Forms.Label();
             this.txtSearchBy = new System.Windows.Forms.TextBox();
+            this.rotaDataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.rotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tabTimetable = new System.Windows.Forms.TabPage();
             this.PageRota = new System.Windows.Forms.Panel();
             this.rotaDataGridView = new System.Windows.Forms.DataGridView();
@@ -291,7 +302,6 @@
             this.dataGridViewTextBoxColumn19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.rotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.tbBadBox = new System.Windows.Forms.TextBox();
             this.cbStaffMenu4 = new System.Windows.Forms.ComboBox();
             this.cbStaffMenu1 = new System.Windows.Forms.ComboBox();
@@ -321,16 +331,8 @@
             this.overSugerydbaseDataSet1 = new OverSurgery.OverSugerydbaseDataSet1();
             this.staffTableAdapter1 = new OverSurgery.OverSugerydbaseDataSet2TableAdapters.StaffTableAdapter();
             this.staffTableAdapter2 = new OverSurgery.OverSugerydbaseDataSet3TableAdapters.StaffTableAdapter();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.rotaDataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label35 = new System.Windows.Forms.Label();
-            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.lblCount = new System.Windows.Forms.Label();
             medNameLabel = new System.Windows.Forms.Label();
             doseLabel = new System.Windows.Forms.Label();
             start_DateLabel = new System.Windows.Forms.Label();
@@ -387,15 +389,15 @@
             this.groupBoxSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rotaBindingSource)).BeginInit();
             this.tabTimetable.SuspendLayout();
             this.PageRota.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rotaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.week52BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // medNameLabel
@@ -2460,6 +2462,8 @@
             // 
             // PageGPNurse
             // 
+            this.PageGPNurse.Controls.Add(this.lblCount);
+            this.PageGPNurse.Controls.Add(this.label37);
             this.PageGPNurse.Controls.Add(this.label36);
             this.PageGPNurse.Controls.Add(this.label35);
             this.PageGPNurse.Controls.Add(this.btnEdit);
@@ -2482,6 +2486,38 @@
             this.PageGPNurse.Name = "PageGPNurse";
             this.PageGPNurse.Size = new System.Drawing.Size(966, 653);
             this.PageGPNurse.TabIndex = 0;
+            this.PageGPNurse.Paint += new System.Windows.Forms.PaintEventHandler(this.PageGPNurse_Paint);
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(430, 21);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(207, 16);
+            this.label36.TabIndex = 39;
+            this.label36.Text = "Staff on Duty and Date Table";
+            this.label36.Visible = false;
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(528, 288);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(106, 16);
+            this.label35.TabIndex = 38;
+            this.label35.Text = "All Staff Table";
+            this.label35.Visible = false;
+            // 
+            // btnEdit
+            // 
+            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEdit.Location = new System.Drawing.Point(13, 139);
+            this.btnEdit.Name = "btnEdit";
+            this.btnEdit.Size = new System.Drawing.Size(148, 31);
+            this.btnEdit.TabIndex = 37;
+            this.btnEdit.Text = "Edit Staff";
+            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
             // 
             // groupBoxDeleteStaff
             // 
@@ -2680,8 +2716,19 @@
             this.groupBoxStaff.Size = new System.Drawing.Size(327, 235);
             this.groupBoxStaff.TabIndex = 30;
             this.groupBoxStaff.TabStop = false;
-            this.groupBoxStaff.Text = "Staff Detail Information";
+            this.groupBoxStaff.Text = "Selected Staff Detail Information";
             this.groupBoxStaff.Visible = false;
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Location = new System.Drawing.Point(113, 208);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(141, 23);
+            this.btnUpdate.TabIndex = 42;
+            this.btnUpdate.Text = "Save to Database";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Visible = false;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // staffIDTextBox
             // 
@@ -2761,7 +2808,7 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem});
-            this.bindingNavigator1.Location = new System.Drawing.Point(231, 264);
+            this.bindingNavigator1.Location = new System.Drawing.Point(231, 270);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -2869,9 +2916,9 @@
             this.staffRoleTitleDataGridViewTextBoxColumn,
             this.contactNumberDataGridViewTextBoxColumn});
             this.dataGridViewStaff.DataSource = this.staffBindingSource;
-            this.dataGridViewStaff.Location = new System.Drawing.Point(231, 309);
+            this.dataGridViewStaff.Location = new System.Drawing.Point(206, 309);
             this.dataGridViewStaff.Name = "dataGridViewStaff";
-            this.dataGridViewStaff.Size = new System.Drawing.Size(695, 323);
+            this.dataGridViewStaff.Size = new System.Drawing.Size(720, 323);
             this.dataGridViewStaff.TabIndex = 11;
             // 
             // staffIDDataGridViewTextBoxColumn
@@ -3085,6 +3132,58 @@
             this.txtSearchBy.Size = new System.Drawing.Size(124, 22);
             this.txtSearchBy.TabIndex = 14;
             // 
+            // rotaDataGridView1
+            // 
+            this.rotaDataGridView1.AutoGenerateColumns = false;
+            this.rotaDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.rotaDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn11,
+            this.dataGridViewTextBoxColumn12,
+            this.dataGridViewTextBoxColumn13,
+            this.dataGridViewTextBoxColumn14,
+            this.dataGridViewTextBoxColumn15});
+            this.rotaDataGridView1.DataSource = this.rotaBindingSource;
+            this.rotaDataGridView1.Location = new System.Drawing.Point(206, 42);
+            this.rotaDataGridView1.Name = "rotaDataGridView1";
+            this.rotaDataGridView1.Size = new System.Drawing.Size(597, 220);
+            this.rotaDataGridView1.TabIndex = 37;
+            this.rotaDataGridView1.Visible = false;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            this.dataGridViewTextBoxColumn11.DataPropertyName = "StaffID";
+            this.dataGridViewTextBoxColumn11.HeaderText = "StaffID";
+            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            this.dataGridViewTextBoxColumn12.DataPropertyName = "Surname";
+            this.dataGridViewTextBoxColumn12.HeaderText = "Surname";
+            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            this.dataGridViewTextBoxColumn13.DataPropertyName = "Date";
+            this.dataGridViewTextBoxColumn13.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            // 
+            // dataGridViewTextBoxColumn14
+            // 
+            this.dataGridViewTextBoxColumn14.DataPropertyName = "Sex";
+            this.dataGridViewTextBoxColumn14.HeaderText = "Sex";
+            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
+            // 
+            // dataGridViewTextBoxColumn15
+            // 
+            this.dataGridViewTextBoxColumn15.DataPropertyName = "Staff Role/Title";
+            this.dataGridViewTextBoxColumn15.HeaderText = "Staff Role/Title";
+            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
+            // 
+            // rotaBindingSource
+            // 
+            this.rotaBindingSource.DataMember = "Rota";
+            this.rotaBindingSource.DataSource = this.overSugerydbaseDataSet;
+            // 
             // tabTimetable
             // 
             this.tabTimetable.Controls.Add(this.PageRota);
@@ -3164,11 +3263,6 @@
             this.dataGridViewTextBoxColumn21.DataPropertyName = "Staff Role/Title";
             this.dataGridViewTextBoxColumn21.HeaderText = "Staff Role/Title";
             this.dataGridViewTextBoxColumn21.Name = "dataGridViewTextBoxColumn21";
-            // 
-            // rotaBindingSource
-            // 
-            this.rotaBindingSource.DataMember = "Rota";
-            this.rotaBindingSource.DataSource = this.overSugerydbaseDataSet;
             // 
             // tbBadBox
             // 
@@ -3390,94 +3484,23 @@
             // 
             this.staffTableAdapter2.ClearBeforeFill = true;
             // 
-            // btnEdit
+            // label37
             // 
-            this.btnEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEdit.Location = new System.Drawing.Point(13, 139);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(148, 31);
-            this.btnEdit.TabIndex = 37;
-            this.btnEdit.Text = "Edit Staff";
-            this.btnEdit.UseVisualStyleBackColor = true;
-            this.btnEdit.Click += new System.EventHandler(this.btnEdit_Click);
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(693, 635);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(138, 16);
+            this.label37.TabIndex = 3;
+            this.label37.Text = "Total Staff Count = ";
             // 
-            // btnUpdate
+            // lblCount
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(113, 208);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(141, 23);
-            this.btnUpdate.TabIndex = 42;
-            this.btnUpdate.Text = "Save to Database";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Visible = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // rotaDataGridView1
-            // 
-            this.rotaDataGridView1.AutoGenerateColumns = false;
-            this.rotaDataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.rotaDataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn11,
-            this.dataGridViewTextBoxColumn12,
-            this.dataGridViewTextBoxColumn13,
-            this.dataGridViewTextBoxColumn14,
-            this.dataGridViewTextBoxColumn15});
-            this.rotaDataGridView1.DataSource = this.rotaBindingSource;
-            this.rotaDataGridView1.Location = new System.Drawing.Point(223, 42);
-            this.rotaDataGridView1.Name = "rotaDataGridView1";
-            this.rotaDataGridView1.Size = new System.Drawing.Size(580, 220);
-            this.rotaDataGridView1.TabIndex = 37;
-            this.rotaDataGridView1.Visible = false;
-            // 
-            // dataGridViewTextBoxColumn15
-            // 
-            this.dataGridViewTextBoxColumn15.DataPropertyName = "Staff Role/Title";
-            this.dataGridViewTextBoxColumn15.HeaderText = "Staff Role/Title";
-            this.dataGridViewTextBoxColumn15.Name = "dataGridViewTextBoxColumn15";
-            // 
-            // dataGridViewTextBoxColumn14
-            // 
-            this.dataGridViewTextBoxColumn14.DataPropertyName = "Sex";
-            this.dataGridViewTextBoxColumn14.HeaderText = "Sex";
-            this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
-            // 
-            // dataGridViewTextBoxColumn13
-            // 
-            this.dataGridViewTextBoxColumn13.DataPropertyName = "Date";
-            this.dataGridViewTextBoxColumn13.HeaderText = "Date";
-            this.dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
-            // 
-            // dataGridViewTextBoxColumn12
-            // 
-            this.dataGridViewTextBoxColumn12.DataPropertyName = "Surname";
-            this.dataGridViewTextBoxColumn12.HeaderText = "Surname";
-            this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
-            // 
-            // dataGridViewTextBoxColumn11
-            // 
-            this.dataGridViewTextBoxColumn11.DataPropertyName = "StaffID";
-            this.dataGridViewTextBoxColumn11.HeaderText = "StaffID";
-            this.dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
-            // 
-            // label35
-            // 
-            this.label35.AutoSize = true;
-            this.label35.Location = new System.Drawing.Point(528, 290);
-            this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(106, 16);
-            this.label35.TabIndex = 38;
-            this.label35.Text = "All Staff Table";
-            this.label35.Visible = false;
-            // 
-            // label36
-            // 
-            this.label36.AutoSize = true;
-            this.label36.Location = new System.Drawing.Point(430, 21);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(207, 16);
-            this.label36.TabIndex = 39;
-            this.label36.Text = "Staff on Duty and Date Table";
-            this.label36.Visible = false;
+            this.lblCount.AutoSize = true;
+            this.lblCount.Location = new System.Drawing.Point(860, 635);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.Size = new System.Drawing.Size(18, 16);
+            this.lblCount.TabIndex = 40;
+            this.lblCount.Text = "--";
             // 
             // MainBackGround
             // 
@@ -3547,17 +3570,17 @@
             this.groupBoxSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.rotaBindingSource)).EndInit();
             this.tabTimetable.ResumeLayout(false);
             this.tabTimetable.PerformLayout();
             this.PageRota.ResumeLayout(false);
             this.PageRota.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rotaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.week52BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3847,6 +3870,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
         private System.Windows.Forms.Label label35;
         private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label lblCount;
+        private System.Windows.Forms.Label label37;
     }
 }
 
