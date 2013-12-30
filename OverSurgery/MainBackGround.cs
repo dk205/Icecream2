@@ -1001,6 +1001,10 @@ namespace OverSurgery
             groupBoxStaff.Visible = false;
             groupBoxAddStaff.Visible = false;
             groupBoxDeleteStaff.Visible = false;
+           // bindingNavigator1.Visible = false;
+            label35.Visible = true;
+            label36.Visible = true;
+            rotaDataGridView1.Visible = true;
         }
 
         private void bntAddNewStaff_Click(object sender, EventArgs e)
@@ -1010,38 +1014,49 @@ namespace OverSurgery
             groupBoxAddStaff.Visible = true;
             groupBoxDeleteStaff.Visible = false;
 
-            /*txtNewStaffID.Text = "Generated automatically";
-            txtNewSurname.Text = "";
-            txtContactNum.Text = "";
-            txtNewFName.Text = "";
-            //txtNew */
-
+            label35.Visible = false;
+            label36.Visible = false;
+            rotaDataGridView1.Visible = false;
+          
 
 
         }
         private void bntDeleteStaff_Click(object sender, EventArgs e)
         {
+            this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);
+            label35.Visible = false;
+            label36.Visible = false;
+            rotaDataGridView1.Visible = false;
+
             groupBoxSearch.Visible = false;
-            groupBoxStaff.Visible = false;
+            groupBoxStaff.Visible = true;
             groupBoxAddStaff.Visible = false;
             groupBoxDeleteStaff.Visible = true;
         }
-        private void btnSearchStaff_Click(object sender, EventArgs e) ///comment
+        private void btnSearchStaff_Click(object sender, EventArgs e)
         {
+            
             groupBoxSearch.Visible = true;
             groupBoxDeleteStaff.Visible = false;
             groupBoxSearch.Visible = true;
             groupBoxStaff.Visible = false;
             groupBoxAddStaff.Visible = false;
-            
+
+            label35.Visible = false;
+            label36.Visible = false;
+            rotaDataGridView1.Visible = false;
         }
         private void btnShowAllStaff_Click(object sender, EventArgs e)
         {
             groupBoxSearch.Visible = false;
-            groupBoxStaff.Visible = false;
+            groupBoxStaff.Visible = true;
             groupBoxAddStaff.Visible = false;
             groupBoxDeleteStaff.Visible = false;
-                      
+
+            label35.Visible = false;
+            label36.Visible = false;
+            rotaDataGridView1.Visible = false;
+
             this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);   //refresh, or refill the content of the table
         }
  private void txtSearch_Click(object sender, EventArgs e)
@@ -1069,7 +1084,14 @@ namespace OverSurgery
 
 
                 case "First Name":
-
+                    try
+                    {
+                        this.staffTableAdapter.FillByFName(this.overSugerydbaseDataSet.Staff, txtSearchBy.Text);
+                    }
+                    catch (System.Exception ex)
+                    {
+                        System.Windows.Forms.MessageBox.Show(ex.Message);
+                    }
                     break;
 
 
@@ -1099,41 +1121,20 @@ namespace OverSurgery
         }
        
 
- private void btnSerchByID_Click(object sender, EventArgs e)
+        private void btnSerchByID_Click(object sender, EventArgs e)
         {
 
         }
 
        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        
+             
 
         private void btnAddNewStaff_Click(object sender, EventArgs e)
         {
             decimal new_Cnum;
             string newSex, new_Role;
-            /*             
-            staffTableAdapter.RegisterPatient(firstname_txt.Text, lastname_txt.Text, dateofbirth_txt.Text, address_txt.Text, email_txt.Text);
-          
-　
-           
-           
-             */
-            
+                       
             newSex = comboBoxNewSex.SelectedItem.ToString();
             new_Role = comboBoxNewRole.SelectedItem.ToString();
 
@@ -1165,6 +1166,7 @@ namespace OverSurgery
             txtNewCNum.Text = String.Empty;
         }
 
+
         private void btnAddStaffCancel_Click(object sender, EventArgs e)
         {
             txtNewSurname.Text = String.Empty;
@@ -1181,24 +1183,72 @@ namespace OverSurgery
             this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);   //refresh, or refill the content of the table
         }
 
+
+
+
         private void btnRefreshStaffTable_Click(object sender, EventArgs e)
         {
             this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);   //refresh, or refill the content of the table
         }
 
-       
 
-      
 
-     
-      
 
-      
+        private void btnDeleteS_Click(object sender, EventArgs e)
+        {
+            
+            staffTableAdapter.DeleteQuery(Convert.ToInt32(staffIDTextBox.Text), surnameTextBox.Text, first_NameTextBox.Text, sexTextBox.Text, staff_Role_TitleTextBox.Text, contact_NumberTextBox.Text);
 
-       
+
+            this.Validate();
+        
+            
+            this.staffBindingSource.EndEdit();
+            
+            
+            
+            this.staffTableAdapter.Update(this.overSugerydbaseDataSet.Staff);
+            this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);
+            tableAdapterManager.UpdateAll(this.overSugerydbaseDataSet);
+        
+        
+        
+        }
+
+        private void btnEdit_Click(object sender, EventArgs e)
+        {
+            this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);
+            groupBoxSearch.Visible = false;
+            groupBoxDeleteStaff.Visible = false;
+            groupBoxStaff.Visible = true;
+            groupBoxAddStaff.Visible = false; 
+            btnUpdate.Visible = true;
+
+            surnameTextBox.ReadOnly = false;
+            first_NameTextBox.ReadOnly = false;
+            sexTextBox.ReadOnly = false;
+            staff_Role_TitleTextBox.ReadOnly = false;
+            contact_NumberTextBox.ReadOnly = false;
+
+            label35.Visible = false;
+            label36.Visible = false;
+            rotaDataGridView1.Visible = false;
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+        this.Validate();
+        this.staffBindingSource.EndEdit();
+        this.tableAdapterManager.UpdateAll(this.overSugerydbaseDataSet);
+            
+            
+        }
+
         
 
-     
+        }
 
-    }
+     
+      
 }
