@@ -1024,10 +1024,14 @@ namespace OverSurgery
             label35.Visible = false;
             label36.Visible = false;
             rotaDataGridView1.Visible = false;
-          
-
+            comboBoxNewSex.SelectedIndex = 0;
+            comboBoxNewRole.SelectedIndex = 0;
 
         }
+        
+        // Delete Staff button click event handler, When user click the delete staff button, the applicaction hide all irrelevant group box and items
+        // and displays the necessary items on the window.in this case the delete staff group box is shown and the currently selected staff
+        // group box is also shown on the window.
         private void bntDeleteStaff_Click(object sender, EventArgs e)
         {
             this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);
@@ -1040,9 +1044,14 @@ namespace OverSurgery
             groupBoxAddStaff.Visible = false;
             groupBoxDeleteStaff.Visible = true;
         }
+
+
+        // Search Staff button click event handler, When user click the search staff button, 
+        // Relevant irems are left on the window based on the button clicked
+        // in this case seaerch and selected staff group box is shown
         private void btnSearchStaff_Click(object sender, EventArgs e)
+
         {
-            
             groupBoxSearch.Visible = true;
             groupBoxDeleteStaff.Visible = false;
             groupBoxSearch.Visible = true;
@@ -1052,7 +1061,13 @@ namespace OverSurgery
             label35.Visible = false;
             label36.Visible = false;
             rotaDataGridView1.Visible = false;
+            
+            // combobox index is set to 0, to show in the combo box the default text "please select value"
+            comboBoxSearchBy.SelectedIndex = 0;
         }
+
+        // show all staff button click event handler, When user click the show all staff button, 
+        // Relevant items are left on the window based on the button clicked
         private void btnShowAllStaff_Click(object sender, EventArgs e)
         {
             groupBoxSearch.Visible = false;
@@ -1064,93 +1079,103 @@ namespace OverSurgery
             label36.Visible = false;
             rotaDataGridView1.Visible = false;
 
-            this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);   //refresh, or refill the content of the table
+            // this line of code fetch and display the content of the table from the database and displays 
+            // or populate it in the table on the application window 
+            this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);   
         }
         
+        
+        // the search staff section 
         private void txtSearch_Click(object sender, EventArgs e)
         {
-            string SearchByValue = comboBoxSearchBy.SelectedItem.ToString();
+                
+                //check to see if the search text or value is empty or not, if empty displays an error message, else if not empty check if the next value to be selected is empty
+                if (txtSearchBy.Text == "" ) 
+                { MessageBox.Show("You have Not entered any value to search for", "Error: No Value detected");
+                }
 
-            switch (SearchByValue)
-            {
+                //check to see if the search criteria is choosen or not, if empty displays an error message, else it check the staff 
+                //table based on the value selected and the search criteria choosen 
+                if (comboBoxSearchBy.SelectedItem.ToString() == "")
+                { MessageBox.Show("You have not selected a search criteria. Please use the drop down box to select a criteria", "Error: No Value Selected"); }
+                else
+                { 
+                
+                    string SearchByValue = comboBoxSearchBy.SelectedItem.ToString();
 
-                case "Staff ID":
-
-                    break;
-
-
-                case "Surname":
-                    try
+                    switch (SearchByValue)
                     {
-                        this.staffTableAdapter.FillBySurname(this.overSugerydbaseDataSet.Staff, txtSearchBy.Text);
-                    }
-                    catch (System.Exception ex)
-                    {
-                        System.Windows.Forms.MessageBox.Show(ex.Message);
-                    }
-                    break;
 
+                        
+                    // search staff table by surname     
+                    case "Surname":
+                        try
+                        {
+                            this.staffTableAdapter.FillBySurname(this.overSugerydbaseDataSet.Staff, txtSearchBy.Text);
+                        }
+                        catch (System.Exception ex)
+                        {
+                            System.Windows.Forms.MessageBox.Show(ex.Message);
+                        }
+                        break;
 
-                case "First Name":
-                    try
-                    {
-                        this.staffTableAdapter.FillByFName(this.overSugerydbaseDataSet.Staff, txtSearchBy.Text);
-                    }
-                    catch (System.Exception ex)
-                    {
-                        System.Windows.Forms.MessageBox.Show(ex.Message);
-                    }
-                    break;
+                    // search staff table by First Name
+                    case "First Name":
+                        try
+                        {
+                            this.staffTableAdapter.FillByFName(this.overSugerydbaseDataSet.Staff, txtSearchBy.Text);
+                        }
+                        catch (System.Exception ex)
+                        {
+                            System.Windows.Forms.MessageBox.Show(ex.Message);
+                        }
+                        break;
 
+                    // search staff table by sex
+                    case "Sex":
+                        try
+                        {
+                            this.staffTableAdapter.FillBySex(this.overSugerydbaseDataSet.Staff, txtSearchBy.Text);
+                        }
+                        catch (System.Exception ex)
+                        {
+                            System.Windows.Forms.MessageBox.Show(ex.Message);
+                        }
 
-                case "Sex":
-                    try
-                    {
-                        this.staffTableAdapter.FillBySex(this.overSugerydbaseDataSet.Staff, txtSearchBy.Text);
-                    }
-                    catch (System.Exception ex)
-                    {
-                        System.Windows.Forms.MessageBox.Show(ex.Message);
-                    }
+                        break;
 
-                    break;
+                    // Default do Nothing. Leave table as it is
+                   default:
 
-
-                case "Role/Title":
-
-
-                    break;
-
-                default:
-
-
-                    break;
+                       break;
+                }
             }
         }
        
-
-        private void btnSerchByID_Click(object sender, EventArgs e)
-        {
-
-        }
-
        
-
-             
-
         private void btnAddNewStaff_Click(object sender, EventArgs e)
         {
             
-            decimal new_Cnum;
-            string newSex, new_Role;
+            string new_Cnum, newSex, new_Role;
                        
-            newSex = comboBoxNewSex.SelectedItem.ToString();
-            new_Role = comboBoxNewRole.SelectedItem.ToString();
-
             try
             {
-                 new_Cnum = Convert.ToDecimal(txtNewCNum.Text);
-                 staffTableAdapter.InsertQueryAddNewStaff(txtNewSurname.Text, txtNewFName.Text, newSex, new_Role, new_Cnum);
+                newSex = comboBoxNewSex.SelectedItem.ToString();
+                new_Role = comboBoxNewRole.SelectedItem.ToString(); 
+                new_Cnum = txtNewCNum.Text;
+                staffTableAdapter.InsertQueryAddNewStaff(txtNewSurname.Text, txtNewFName.Text, newSex, new_Role, new_Cnum);
+
+
+                MessageBox.Show("Success: Staff successfully added to Staff Table", "Success: New Staff Added. ");
+                
+                
+                txtNewSurname.Text = String.Empty;
+                txtNewFName.Text = String.Empty;
+                comboBoxNewSex.SelectedIndex = 0;
+                comboBoxNewRole.SelectedIndex = 0;
+                txtNewCNum.Text = String.Empty;
+
+
             }
             catch (System.Exception ex)
             {
@@ -1200,9 +1225,6 @@ namespace OverSurgery
             this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);   //refresh, or refill the content of the table
         }
 
-
-
-
         private void btnDeleteS_Click(object sender, EventArgs e)
         {
             lblCount.Text = staffBindingSource.Count.ToString();
@@ -1210,18 +1232,10 @@ namespace OverSurgery
 
 
             this.Validate();
-        
-            
             this.staffBindingSource.EndEdit();
-            
-            
-            
             this.staffTableAdapter.Update(this.overSugerydbaseDataSet.Staff);
             this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);
-            tableAdapterManager.UpdateAll(this.overSugerydbaseDataSet);
-        
-        
-        
+      
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
@@ -1259,6 +1273,21 @@ namespace OverSurgery
             lblCount.Text = staffBindingSource.Count.ToString();
         }
 
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBox1.Checked)
+            {
+                bindingNavigator1.Enabled = true;
+
+            }
+            else
+            {
+                bindingNavigator1.Enabled = false;
+            }
+
+        }
+
+      
         
 
         }

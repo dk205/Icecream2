@@ -224,6 +224,14 @@
             this.button9 = new System.Windows.Forms.Button();
             this.tabGPNurse = new System.Windows.Forms.TabPage();
             this.PageGPNurse = new System.Windows.Forms.Panel();
+            this.groupBoxSearch = new System.Windows.Forms.GroupBox();
+            this.txtSearch = new System.Windows.Forms.Button();
+            this.comboBoxSearchBy = new System.Windows.Forms.ComboBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.txtSearchBy = new System.Windows.Forms.TextBox();
+            this.lblCount = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.btnEdit = new System.Windows.Forms.Button();
@@ -276,17 +284,6 @@
             this.bntDeleteStaff = new System.Windows.Forms.Button();
             this.bntAddNewStaff = new System.Windows.Forms.Button();
             this.bntCheckStaffDuty = new System.Windows.Forms.Button();
-            this.groupBoxSearch = new System.Windows.Forms.GroupBox();
-            this.txtSearch = new System.Windows.Forms.Button();
-            this.btnSerchByID = new System.Windows.Forms.Button();
-            this.label32 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.staffBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
-            this.overSugerydbaseDataSet3 = new OverSurgery.OverSugerydbaseDataSet3();
-            this.comboBoxSearchBy = new System.Windows.Forms.ComboBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.txtSearchBy = new System.Windows.Forms.TextBox();
             this.rotaDataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -316,6 +313,8 @@
             this.label63 = new System.Windows.Forms.Label();
             this.label62 = new System.Windows.Forms.Label();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.staffBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.overSugerydbaseDataSet3 = new OverSurgery.OverSugerydbaseDataSet3();
             this.cbStaff = new System.Windows.Forms.ComboBox();
             this.staffBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.overSugerydbaseDataSet2 = new OverSurgery.OverSugerydbaseDataSet2();
@@ -331,8 +330,7 @@
             this.overSugerydbaseDataSet1 = new OverSurgery.OverSugerydbaseDataSet1();
             this.staffTableAdapter1 = new OverSurgery.OverSugerydbaseDataSet2TableAdapters.StaffTableAdapter();
             this.staffTableAdapter2 = new OverSurgery.OverSugerydbaseDataSet3TableAdapters.StaffTableAdapter();
-            this.label37 = new System.Windows.Forms.Label();
-            this.lblCount = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             medNameLabel = new System.Windows.Forms.Label();
             doseLabel = new System.Windows.Forms.Label();
             start_DateLabel = new System.Windows.Forms.Label();
@@ -379,6 +377,7 @@
             this.PageViewPrintTestResults.SuspendLayout();
             this.tabGPNurse.SuspendLayout();
             this.PageGPNurse.SuspendLayout();
+            this.groupBoxSearch.SuspendLayout();
             this.groupBoxDeleteStaff.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
             this.groupBoxAddStaff.SuspendLayout();
@@ -386,14 +385,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.bindingNavigator1)).BeginInit();
             this.bindingNavigator1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaff)).BeginInit();
-            this.groupBoxSearch.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotaBindingSource)).BeginInit();
             this.tabTimetable.SuspendLayout();
             this.PageRota.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.week52BindingSource)).BeginInit();
@@ -2462,6 +2460,8 @@
             // 
             // PageGPNurse
             // 
+            this.PageGPNurse.Controls.Add(this.checkBox1);
+            this.PageGPNurse.Controls.Add(this.groupBoxSearch);
             this.PageGPNurse.Controls.Add(this.lblCount);
             this.PageGPNurse.Controls.Add(this.label37);
             this.PageGPNurse.Controls.Add(this.label36);
@@ -2479,7 +2479,6 @@
             this.PageGPNurse.Controls.Add(this.bntDeleteStaff);
             this.PageGPNurse.Controls.Add(this.bntAddNewStaff);
             this.PageGPNurse.Controls.Add(this.bntCheckStaffDuty);
-            this.PageGPNurse.Controls.Add(this.groupBoxSearch);
             this.PageGPNurse.Controls.Add(this.rotaDataGridView1);
             this.PageGPNurse.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PageGPNurse.Location = new System.Drawing.Point(3, 3);
@@ -2487,6 +2486,90 @@
             this.PageGPNurse.Size = new System.Drawing.Size(966, 653);
             this.PageGPNurse.TabIndex = 0;
             this.PageGPNurse.Paint += new System.Windows.Forms.PaintEventHandler(this.PageGPNurse_Paint);
+            // 
+            // groupBoxSearch
+            // 
+            this.groupBoxSearch.Controls.Add(this.txtSearch);
+            this.groupBoxSearch.Controls.Add(this.comboBoxSearchBy);
+            this.groupBoxSearch.Controls.Add(this.label30);
+            this.groupBoxSearch.Controls.Add(this.label39);
+            this.groupBoxSearch.Controls.Add(this.txtSearchBy);
+            this.groupBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxSearch.Location = new System.Drawing.Point(206, 26);
+            this.groupBoxSearch.Name = "groupBoxSearch";
+            this.groupBoxSearch.Size = new System.Drawing.Size(293, 141);
+            this.groupBoxSearch.TabIndex = 35;
+            this.groupBoxSearch.TabStop = false;
+            this.groupBoxSearch.Text = "Search for Staff";
+            this.groupBoxSearch.Visible = false;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(139, 104);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(115, 23);
+            this.txtSearch.TabIndex = 22;
+            this.txtSearch.Text = "Search";
+            this.txtSearch.UseVisualStyleBackColor = true;
+            this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
+            // 
+            // comboBoxSearchBy
+            // 
+            this.comboBoxSearchBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSearchBy.FormattingEnabled = true;
+            this.comboBoxSearchBy.Items.AddRange(new object[] {
+            "Please Select",
+            "Surname",
+            "First Name",
+            "Role/Title",
+            "Sex"});
+            this.comboBoxSearchBy.Location = new System.Drawing.Point(130, 32);
+            this.comboBoxSearchBy.Name = "comboBoxSearchBy";
+            this.comboBoxSearchBy.Size = new System.Drawing.Size(124, 24);
+            this.comboBoxSearchBy.TabIndex = 13;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(6, 35);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(102, 16);
+            this.label30.TabIndex = 15;
+            this.label30.Text = "Search Staff By:";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(6, 62);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(94, 32);
+            this.label39.TabIndex = 16;
+            this.label39.Text = "Enter Value to \r\nSearch For:";
+            // 
+            // txtSearchBy
+            // 
+            this.txtSearchBy.Location = new System.Drawing.Point(130, 62);
+            this.txtSearchBy.Name = "txtSearchBy";
+            this.txtSearchBy.Size = new System.Drawing.Size(124, 22);
+            this.txtSearchBy.TabIndex = 14;
+            // 
+            // lblCount
+            // 
+            this.lblCount.AutoSize = true;
+            this.lblCount.Location = new System.Drawing.Point(860, 635);
+            this.lblCount.Name = "lblCount";
+            this.lblCount.Size = new System.Drawing.Size(18, 16);
+            this.lblCount.TabIndex = 40;
+            this.lblCount.Text = "--";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(693, 635);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(138, 16);
+            this.label37.TabIndex = 3;
+            this.label37.Text = "Total Staff Count = ";
             // 
             // label36
             // 
@@ -2638,6 +2721,7 @@
             // 
             // comboBoxNewRole
             // 
+            this.comboBoxNewRole.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxNewRole.FormattingEnabled = true;
             this.comboBoxNewRole.Items.AddRange(new object[] {
             "--Select Role/Title--",
@@ -2669,7 +2753,7 @@
             this.btnAddNewStaff.Name = "btnAddNewStaff";
             this.btnAddNewStaff.Size = new System.Drawing.Size(123, 23);
             this.btnAddNewStaff.TabIndex = 26;
-            this.btnAddNewStaff.Text = "Create New Staff";
+            this.btnAddNewStaff.Text = "Add New Staff";
             this.btnAddNewStaff.UseVisualStyleBackColor = true;
             this.btnAddNewStaff.Click += new System.EventHandler(this.btnAddNewStaff_Click);
             // 
@@ -2808,7 +2892,7 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem});
-            this.bindingNavigator1.Location = new System.Drawing.Point(231, 270);
+            this.bindingNavigator1.Location = new System.Drawing.Point(336, 281);
             this.bindingNavigator1.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.bindingNavigator1.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.bindingNavigator1.MoveNextItem = this.bindingNavigatorMoveNextItem;
@@ -3022,115 +3106,6 @@
             this.bntCheckStaffDuty.Text = "Check Staff on Duty";
             this.bntCheckStaffDuty.UseVisualStyleBackColor = true;
             this.bntCheckStaffDuty.Click += new System.EventHandler(this.bntCheckStaffDuty_Click);
-            // 
-            // groupBoxSearch
-            // 
-            this.groupBoxSearch.Controls.Add(this.txtSearch);
-            this.groupBoxSearch.Controls.Add(this.btnSerchByID);
-            this.groupBoxSearch.Controls.Add(this.label32);
-            this.groupBoxSearch.Controls.Add(this.comboBox2);
-            this.groupBoxSearch.Controls.Add(this.comboBoxSearchBy);
-            this.groupBoxSearch.Controls.Add(this.label30);
-            this.groupBoxSearch.Controls.Add(this.label39);
-            this.groupBoxSearch.Controls.Add(this.txtSearchBy);
-            this.groupBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxSearch.Location = new System.Drawing.Point(206, 26);
-            this.groupBoxSearch.Name = "groupBoxSearch";
-            this.groupBoxSearch.Size = new System.Drawing.Size(465, 141);
-            this.groupBoxSearch.TabIndex = 35;
-            this.groupBoxSearch.TabStop = false;
-            this.groupBoxSearch.Text = "Search for Staff";
-            this.groupBoxSearch.Visible = false;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(139, 104);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(115, 23);
-            this.txtSearch.TabIndex = 22;
-            this.txtSearch.Text = "Search";
-            this.txtSearch.UseVisualStyleBackColor = true;
-            this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
-            // 
-            // btnSerchByID
-            // 
-            this.btnSerchByID.Location = new System.Drawing.Point(338, 97);
-            this.btnSerchByID.Name = "btnSerchByID";
-            this.btnSerchByID.Size = new System.Drawing.Size(96, 23);
-            this.btnSerchByID.TabIndex = 21;
-            this.btnSerchByID.Text = "Search By ID";
-            this.btnSerchByID.UseVisualStyleBackColor = true;
-            this.btnSerchByID.Click += new System.EventHandler(this.btnSerchByID_Click);
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Location = new System.Drawing.Point(293, 35);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(153, 16);
-            this.label32.TabIndex = 20;
-            this.label32.Text = "OR:     Search By Staff ID";
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.DataSource = this.staffBindingSource2;
-            this.comboBox2.DisplayMember = "StaffID";
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(338, 55);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(96, 24);
-            this.comboBox2.TabIndex = 17;
-            this.comboBox2.ValueMember = "StaffID";
-            // 
-            // staffBindingSource2
-            // 
-            this.staffBindingSource2.DataMember = "Staff";
-            this.staffBindingSource2.DataSource = this.overSugerydbaseDataSet3;
-            // 
-            // overSugerydbaseDataSet3
-            // 
-            this.overSugerydbaseDataSet3.DataSetName = "OverSugerydbaseDataSet3";
-            this.overSugerydbaseDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // comboBoxSearchBy
-            // 
-            this.comboBoxSearchBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSearchBy.FormattingEnabled = true;
-            this.comboBoxSearchBy.Items.AddRange(new object[] {
-            "Surname",
-            "First Name",
-            "Role/Title",
-            "Sex"});
-            this.comboBoxSearchBy.Location = new System.Drawing.Point(130, 32);
-            this.comboBoxSearchBy.Name = "comboBoxSearchBy";
-            this.comboBoxSearchBy.Size = new System.Drawing.Size(124, 24);
-            this.comboBoxSearchBy.TabIndex = 13;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(6, 35);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(102, 16);
-            this.label30.TabIndex = 15;
-            this.label30.Text = "Search Staff By:";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(6, 62);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(94, 32);
-            this.label39.TabIndex = 16;
-            this.label39.Text = "Enter Value to \r\nSearch For:";
-            // 
-            // txtSearchBy
-            // 
-            this.txtSearchBy.Location = new System.Drawing.Point(130, 62);
-            this.txtSearchBy.Name = "txtSearchBy";
-            this.txtSearchBy.Size = new System.Drawing.Size(124, 22);
-            this.txtSearchBy.TabIndex = 14;
             // 
             // rotaDataGridView1
             // 
@@ -3404,6 +3379,16 @@
             this.dateTimePicker2.CloseUp += new System.EventHandler(this.dateTimePicker2_CloseUp);
             this.dateTimePicker2.LocationChanged += new System.EventHandler(this.dateTimePicker2_CloseUp);
             // 
+            // staffBindingSource2
+            // 
+            this.staffBindingSource2.DataMember = "Staff";
+            this.staffBindingSource2.DataSource = this.overSugerydbaseDataSet3;
+            // 
+            // overSugerydbaseDataSet3
+            // 
+            this.overSugerydbaseDataSet3.DataSetName = "OverSugerydbaseDataSet3";
+            this.overSugerydbaseDataSet3.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // cbStaff
             // 
             this.cbStaff.Location = new System.Drawing.Point(0, 0);
@@ -3484,23 +3469,17 @@
             // 
             this.staffTableAdapter2.ClearBeforeFill = true;
             // 
-            // label37
+            // checkBox1
             // 
-            this.label37.AutoSize = true;
-            this.label37.Location = new System.Drawing.Point(693, 635);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(138, 16);
-            this.label37.TabIndex = 3;
-            this.label37.Text = "Total Staff Count = ";
-            // 
-            // lblCount
-            // 
-            this.lblCount.AutoSize = true;
-            this.lblCount.Location = new System.Drawing.Point(860, 635);
-            this.lblCount.Name = "lblCount";
-            this.lblCount.Size = new System.Drawing.Size(18, 16);
-            this.lblCount.TabIndex = 40;
-            this.lblCount.Text = "--";
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.checkBox1.Location = new System.Drawing.Point(206, 281);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(125, 20);
+            this.checkBox1.TabIndex = 41;
+            this.checkBox1.Text = "Enable Navi Bar";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // MainBackGround
             // 
@@ -3555,6 +3534,8 @@
             this.tabGPNurse.ResumeLayout(false);
             this.PageGPNurse.ResumeLayout(false);
             this.PageGPNurse.PerformLayout();
+            this.groupBoxSearch.ResumeLayout(false);
+            this.groupBoxSearch.PerformLayout();
             this.groupBoxDeleteStaff.ResumeLayout(false);
             this.groupBoxDeleteStaff.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
@@ -3566,10 +3547,6 @@
             this.bindingNavigator1.ResumeLayout(false);
             this.bindingNavigator1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaff)).EndInit();
-            this.groupBoxSearch.ResumeLayout(false);
-            this.groupBoxSearch.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotaBindingSource)).EndInit();
             this.tabTimetable.ResumeLayout(false);
@@ -3577,6 +3554,8 @@
             this.PageRota.ResumeLayout(false);
             this.PageRota.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.week52BindingSource)).EndInit();
@@ -3806,13 +3785,10 @@
         private System.Windows.Forms.BindingSource staffBindingSource2;
         private OverSugerydbaseDataSet3TableAdapters.StaffTableAdapter staffTableAdapter2;
         private System.Windows.Forms.GroupBox groupBoxSearch;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBoxSearchBy;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label39;
         private System.Windows.Forms.TextBox txtSearchBy;
-        private System.Windows.Forms.Button btnSerchByID;
         private System.Windows.Forms.Button txtSearch;
         private System.Windows.Forms.TableLayoutPanel TableAfternoun;
         private System.Windows.Forms.Label label33;
@@ -3872,6 +3848,7 @@
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label lblCount;
         private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.CheckBox checkBox1;
     }
 }
 

@@ -3688,7 +3688,7 @@ SELECT StaffID, Surname, [First Name], Sex, [Staff Role/Title], [Contact Number]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[10];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[9];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
             this._commandCollection[0].CommandText = "SELECT StaffID, Surname, [First Name], Sex, [Staff Role/Title], [Contact Number] " +
@@ -3740,7 +3740,7 @@ SELECT StaffID, Surname, [First Name], Sex, [Staff Role/Title], [Contact Number]
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@First_Name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "First Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sex", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Sex", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Staff Role/Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contact_Number", global::System.Data.SqlDbType.Decimal, 9, global::System.Data.ParameterDirection.Input, 18, 0, "Contact Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[6].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contact_Number", global::System.Data.SqlDbType.NVarChar, 9, global::System.Data.ParameterDirection.Input, 18, 0, "Contact Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._commandCollection[7] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[7].Connection = this.Connection;
             this._commandCollection[7].CommandText = "SELECT StaffID, Surname, [First Name], Sex, [Staff Role/Title], [Contact Number] " +
@@ -3752,23 +3752,6 @@ SELECT StaffID, Surname, [First Name], Sex, [Staff Role/Title], [Contact Number]
             this._commandCollection[8].CommandText = "SELECT * FROM dbo.Staff\r\nWHERE Surname=@Surname";
             this._commandCollection[8].CommandType = global::System.Data.CommandType.Text;
             this._commandCollection[8].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Surname", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9] = new global::System.Data.SqlClient.SqlCommand();
-            this._commandCollection[9].Connection = this.Connection;
-            this._commandCollection[9].CommandText = @"UPDATE [dbo].[Staff] SET [Surname] = @Surname, [First Name] = @First_Name, [Sex] = @Sex, [Staff Role/Title] = @p1, [Contact Number] = @Contact_Number WHERE (([StaffID] = @Original_StaffID) AND ([Surname] = @Original_Surname) AND ([First Name] = @Original_First_Name) AND ([Sex] = @Original_Sex) AND ([Staff Role/Title] = @p2) AND ([Contact Number] = @Original_Contact_Number));
-SELECT StaffID, Surname, [First Name], Sex, [Staff Role/Title], [Contact Number] FROM Staff WHERE (StaffID = @StaffID)";
-            this._commandCollection[9].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Surname", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Surname", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@First_Name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "First Name", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Sex", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Sex", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p1", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Staff Role/Title", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Contact_Number", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Contact Number", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_StaffID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "StaffID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Surname", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Surname", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_First_Name", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "First Name", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Sex", global::System.Data.SqlDbType.NChar, 10, global::System.Data.ParameterDirection.Input, 0, 0, "Sex", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@p2", global::System.Data.SqlDbType.NVarChar, 50, global::System.Data.ParameterDirection.Input, 0, 0, "Staff Role/Title", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Contact_Number", global::System.Data.SqlDbType.NVarChar, 20, global::System.Data.ParameterDirection.Input, 0, 0, "Contact Number", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._commandCollection[9].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@StaffID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "StaffID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4155,56 +4138,8 @@ SELECT StaffID, Surname, [First Name], Sex, [Staff Role/Title], [Contact Number]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, false)]
-        public virtual int InsertQueryAddNewStaff(string Surname, string First_Name, string Sex, string p1, decimal Contact_Number) {
+        public virtual int InsertQueryAddNewStaff(string Surname, string First_Name, string Sex, string p1, string Contact_Number) {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[6];
-            if ((Surname == null)) {
-                throw new global::System.ArgumentNullException("Surname");
-            }
-            else {
-                command.Parameters[0].Value = ((string)(Surname));
-            }
-            if ((First_Name == null)) {
-                throw new global::System.ArgumentNullException("First_Name");
-            }
-            else {
-                command.Parameters[1].Value = ((string)(First_Name));
-            }
-            if ((Sex == null)) {
-                throw new global::System.ArgumentNullException("Sex");
-            }
-            else {
-                command.Parameters[2].Value = ((string)(Sex));
-            }
-            if ((p1 == null)) {
-                throw new global::System.ArgumentNullException("p1");
-            }
-            else {
-                command.Parameters[3].Value = ((string)(p1));
-            }
-            command.Parameters[4].Value = ((decimal)(Contact_Number));
-            global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
-            if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
-                        != global::System.Data.ConnectionState.Open)) {
-                command.Connection.Open();
-            }
-            int returnValue;
-            try {
-                returnValue = command.ExecuteNonQuery();
-            }
-            finally {
-                if ((previousConnectionState == global::System.Data.ConnectionState.Closed)) {
-                    command.Connection.Close();
-                }
-            }
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, false)]
-        public virtual int UpdateQueryX(string Surname, string First_Name, string Sex, string p1, string Contact_Number, int Original_StaffID, string Original_Surname, string Original_First_Name, string Original_Sex, string p2, string Original_Contact_Number, int StaffID) {
-            global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[9];
             if ((Surname == null)) {
                 throw new global::System.ArgumentNullException("Surname");
             }
@@ -4235,38 +4170,6 @@ SELECT StaffID, Surname, [First Name], Sex, [Staff Role/Title], [Contact Number]
             else {
                 command.Parameters[4].Value = ((string)(Contact_Number));
             }
-            command.Parameters[5].Value = ((int)(Original_StaffID));
-            if ((Original_Surname == null)) {
-                throw new global::System.ArgumentNullException("Original_Surname");
-            }
-            else {
-                command.Parameters[6].Value = ((string)(Original_Surname));
-            }
-            if ((Original_First_Name == null)) {
-                throw new global::System.ArgumentNullException("Original_First_Name");
-            }
-            else {
-                command.Parameters[7].Value = ((string)(Original_First_Name));
-            }
-            if ((Original_Sex == null)) {
-                throw new global::System.ArgumentNullException("Original_Sex");
-            }
-            else {
-                command.Parameters[8].Value = ((string)(Original_Sex));
-            }
-            if ((p2 == null)) {
-                throw new global::System.ArgumentNullException("p2");
-            }
-            else {
-                command.Parameters[9].Value = ((string)(p2));
-            }
-            if ((Original_Contact_Number == null)) {
-                throw new global::System.ArgumentNullException("Original_Contact_Number");
-            }
-            else {
-                command.Parameters[10].Value = ((string)(Original_Contact_Number));
-            }
-            command.Parameters[11].Value = ((int)(StaffID));
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
