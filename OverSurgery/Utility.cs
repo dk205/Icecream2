@@ -104,9 +104,13 @@ namespace OverSurgery
                 FieldsOK = false;
 
             }
+            
+            
+            
             DateTime expiryDate = DateTime.Parse(DOB);
-            if ((expiryDate - DateTime.Now).TotalDays < 14)
+            if ((DateTime.Now - expiryDate  ).TotalDays < 14)
             {
+               // MessageBox.Show(String.Format("expiryDate: {0} DateTime.now: {1}  and  (expiryDate - DateTime.Now).TotalDays: {2}", expiryDate.ToShortDateString(), DateTime.Now.ToShortDateString(), (DateTime.Now - expiryDate).TotalDays.ToString()));
                 if (MessageBox.Show("The Date of birth of the Patient is less than 14 days, are you sure?", "Date of Birth too close", MessageBoxButtons.YesNo) == DialogResult.No)
                 {
                     EntryErrorMessage_B.Append("\n The date of birth is less than 14 days.");
@@ -114,7 +118,35 @@ namespace OverSurgery
                 }
             }
 
-            
+            if (!(LandLine == ""))
+            {
+                if (!Regex.IsMatch(LandLine, @"^[0-9 ]+$"))
+                {
+                    EntryErrorMessage_B.Append("\n The LandLine Number can only contain numbers and spaces.");
+                    FieldsOK = false;
+                }
+            }
+
+            if (!(Mobile == ""))
+            {
+                if (!Regex.IsMatch(Mobile, @"^[0-9 ]+$"))
+                {
+                    EntryErrorMessage_B.Append("\n The Mobile Number can only contain numbers and spaces.");
+                    FieldsOK = false;
+                }
+            }
+
+            if (!(Email == ""))
+            {
+                int n = Email.IndexOf("@");
+               // MessageBox.Show(String.Format("n= {0}", n.ToString()));
+                if (n==-1)
+                {
+                    EntryErrorMessage_B.Append("\n The email is invalid, no @ symbol.");
+                    FieldsOK = false;
+                }
+            }
+
 
             if (!FieldsOK)
             {
