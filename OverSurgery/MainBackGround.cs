@@ -576,6 +576,11 @@ namespace OverSurgery
                 this.twoActiveWeeksTableAdapter.RecordBooking(TempStaffID, TempSurname, TempDate, TempSex, TempRole, colx, ActiveUserID);
                 this.TableMorning.Controls.Remove(bt);  //remove the button we pressed
 
+                // Delete all bookings older than today, used to keep the Two active WeeksDatabase small in size.
+                this.twoActiveWeeksTableAdapter.DeleteOldBookings("24/12/2013");// (DateTime.Now.ToShortDateString());    
+                this.rotaTableAdapter.Fill(this.overSugerydbaseDataSet.Rota);
+                MessageBox.Show("hi");
+              
                 // make a label in its place
                 SlotLabelS[rowx, colx] = new Label();
                 SlotLabelS[rowx, colx].Text = "Booked";
@@ -594,6 +599,8 @@ namespace OverSurgery
                 MessageBox.Show(String.Format(" Sorry you already have as booking {0}", count.ToString()));
             }
 
+           
+          
 
             if (TableMorning.Visible == true)
                 TableMorning.Visible = false;
@@ -739,6 +746,7 @@ namespace OverSurgery
                     }
             }
             dateTimePicker2.Focus();
+            
         }
 
 
@@ -932,7 +940,7 @@ namespace OverSurgery
         }
 
 
-    
+  //////////////////////////////////////////////////////////////////////////////////////////  
         //Toms stuff
 
         private void btnMedAdd_Click(object sender, EventArgs e)

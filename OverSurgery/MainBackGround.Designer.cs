@@ -99,14 +99,6 @@
             this.label80 = new System.Windows.Forms.Label();
             this.label81 = new System.Windows.Forms.Label();
             this.label82 = new System.Windows.Forms.Label();
-            this.twoActiveWeeksDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.twoActiveWeeksBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.overSugerydbaseDataSet = new OverSurgery.OverSugerydbaseDataSet();
             this.btnCheckAppointments = new System.Windows.Forms.Button();
@@ -114,6 +106,14 @@
             this.label25 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label24 = new System.Windows.Forms.Label();
+            this.PageSelectedPatient = new System.Windows.Forms.Panel();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.label13 = new System.Windows.Forms.Label();
             this.PageEditPatientDetails = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.btnChangeDetails = new System.Windows.Forms.Button();
@@ -181,14 +181,6 @@
             this.txtNRPatientsName = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.PageSelectedPatient = new System.Windows.Forms.Panel();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.label13 = new System.Windows.Forms.Label();
             this.PageMainScreen = new System.Windows.Forms.Panel();
             this.txtBoxID = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -331,6 +323,14 @@
             this.overSugerydbaseDataSet1 = new OverSurgery.OverSugerydbaseDataSet1();
             this.staffTableAdapter1 = new OverSurgery.OverSugerydbaseDataSet2TableAdapters.StaffTableAdapter();
             this.staffTableAdapter2 = new OverSurgery.OverSugerydbaseDataSet3TableAdapters.StaffTableAdapter();
+            this.twoActiveWeeksDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn16 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             medNameLabel = new System.Windows.Forms.Label();
             doseLabel = new System.Windows.Forms.Label();
             start_DateLabel = new System.Windows.Forms.Label();
@@ -358,9 +358,9 @@
             this.PageMakeAppointment.SuspendLayout();
             this.TableMorning.SuspendLayout();
             this.TableAfternoun.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet)).BeginInit();
+            this.PageSelectedPatient.SuspendLayout();
             this.PageEditPatientDetails.SuspendLayout();
             this.PageViewCancelEditAppointment.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -368,7 +368,6 @@
             this.PageNewRegistration.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).BeginInit();
-            this.PageSelectedPatient.SuspendLayout();
             this.PageMainScreen.SuspendLayout();
             this.PageAddViewExtendMedication.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medicationBindingSource)).BeginInit();
@@ -396,6 +395,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.week52BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // medNameLabel
@@ -607,8 +607,8 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.LightGray;
-            this.splitContainer1.Panel2.Controls.Add(this.PageSelectedPatient);
             this.splitContainer1.Panel2.Controls.Add(this.PageMakeAppointment);
+            this.splitContainer1.Panel2.Controls.Add(this.PageSelectedPatient);
             this.splitContainer1.Panel2.Controls.Add(this.PageEditPatientDetails);
             this.splitContainer1.Panel2.Controls.Add(this.PageViewCancelEditAppointment);
             this.splitContainer1.Panel2.Controls.Add(this.PageNewRegistration);
@@ -668,11 +668,11 @@
             // PageMakeAppointment
             // 
             this.PageMakeAppointment.AutoScroll = true;
+            this.PageMakeAppointment.Controls.Add(this.twoActiveWeeksDataGridView);
             this.PageMakeAppointment.Controls.Add(this.btnAfternoon);
             this.PageMakeAppointment.Controls.Add(this.btnMorning);
             this.PageMakeAppointment.Controls.Add(this.TableMorning);
             this.PageMakeAppointment.Controls.Add(this.TableAfternoun);
-            this.PageMakeAppointment.Controls.Add(this.twoActiveWeeksDataGridView);
             this.PageMakeAppointment.Controls.Add(this.btnCheckAppointments);
             this.PageMakeAppointment.Controls.Add(this.btnBackfromAp);
             this.PageMakeAppointment.Controls.Add(this.label25);
@@ -1301,66 +1301,6 @@
             this.label82.Text = "16:20";
             this.label82.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // twoActiveWeeksDataGridView
-            // 
-            this.twoActiveWeeksDataGridView.AutoGenerateColumns = false;
-            this.twoActiveWeeksDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.twoActiveWeeksDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn16,
-            this.dataGridViewTextBoxColumn22,
-            this.dataGridViewTextBoxColumn28,
-            this.dataGridViewTextBoxColumn29,
-            this.dataGridViewTextBoxColumn30,
-            this.dataGridViewTextBoxColumn31,
-            this.dataGridViewTextBoxColumn32});
-            this.twoActiveWeeksDataGridView.DataSource = this.twoActiveWeeksBindingSource;
-            this.twoActiveWeeksDataGridView.Location = new System.Drawing.Point(659, 18);
-            this.twoActiveWeeksDataGridView.Name = "twoActiveWeeksDataGridView";
-            this.twoActiveWeeksDataGridView.Size = new System.Drawing.Size(287, 141);
-            this.twoActiveWeeksDataGridView.TabIndex = 13;
-            // 
-            // dataGridViewTextBoxColumn16
-            // 
-            this.dataGridViewTextBoxColumn16.DataPropertyName = "StaffID";
-            this.dataGridViewTextBoxColumn16.HeaderText = "StaffID";
-            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
-            // 
-            // dataGridViewTextBoxColumn22
-            // 
-            this.dataGridViewTextBoxColumn22.DataPropertyName = "Surname";
-            this.dataGridViewTextBoxColumn22.HeaderText = "Surname";
-            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
-            // 
-            // dataGridViewTextBoxColumn28
-            // 
-            this.dataGridViewTextBoxColumn28.DataPropertyName = "Date";
-            this.dataGridViewTextBoxColumn28.HeaderText = "Date";
-            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
-            // 
-            // dataGridViewTextBoxColumn29
-            // 
-            this.dataGridViewTextBoxColumn29.DataPropertyName = "Sex";
-            this.dataGridViewTextBoxColumn29.HeaderText = "Sex";
-            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
-            // 
-            // dataGridViewTextBoxColumn30
-            // 
-            this.dataGridViewTextBoxColumn30.DataPropertyName = "Staff Role/Title";
-            this.dataGridViewTextBoxColumn30.HeaderText = "Staff Role/Title";
-            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
-            // 
-            // dataGridViewTextBoxColumn31
-            // 
-            this.dataGridViewTextBoxColumn31.DataPropertyName = "TimeSlot";
-            this.dataGridViewTextBoxColumn31.HeaderText = "TimeSlot";
-            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
-            // 
-            // dataGridViewTextBoxColumn32
-            // 
-            this.dataGridViewTextBoxColumn32.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn32.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
-            // 
             // twoActiveWeeksBindingSource
             // 
             this.twoActiveWeeksBindingSource.DataMember = "TwoActiveWeeks";
@@ -1418,6 +1358,91 @@
             this.label24.Size = new System.Drawing.Size(240, 25);
             this.label24.TabIndex = 0;
             this.label24.Text = "Make an Appointment";
+            // 
+            // PageSelectedPatient
+            // 
+            this.PageSelectedPatient.Controls.Add(this.button6);
+            this.PageSelectedPatient.Controls.Add(this.button5);
+            this.PageSelectedPatient.Controls.Add(this.button4);
+            this.PageSelectedPatient.Controls.Add(this.button3);
+            this.PageSelectedPatient.Controls.Add(this.button2);
+            this.PageSelectedPatient.Controls.Add(this.button1);
+            this.PageSelectedPatient.Controls.Add(this.label13);
+            this.PageSelectedPatient.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PageSelectedPatient.Location = new System.Drawing.Point(0, 0);
+            this.PageSelectedPatient.Name = "PageSelectedPatient";
+            this.PageSelectedPatient.Size = new System.Drawing.Size(966, 600);
+            this.PageSelectedPatient.TabIndex = 6;
+            this.PageSelectedPatient.Visible = false;
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(50, 328);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(211, 35);
+            this.button6.TabIndex = 1;
+            this.button6.Text = "Edit Patient Details";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.goToEditPatient_Click);
+            // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(50, 277);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(211, 35);
+            this.button5.TabIndex = 1;
+            this.button5.Text = "Enter Test Results";
+            this.button5.UseVisualStyleBackColor = true;
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(50, 230);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(211, 35);
+            this.button4.TabIndex = 1;
+            this.button4.Text = "View/Print Test Results";
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(50, 179);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(303, 35);
+            this.button3.TabIndex = 1;
+            this.button3.Text = "Add/View/Extend Medication";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(50, 127);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(303, 35);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "View/Change/ Cancel an Appointment";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(50, 76);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(211, 35);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "Make an Appointment";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(29, 19);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(79, 24);
+            this.label13.TabIndex = 0;
+            this.label13.Text = "Actions";
             // 
             // PageEditPatientDetails
             // 
@@ -2054,91 +2079,6 @@
             this.label5.Size = new System.Drawing.Size(101, 16);
             this.label5.TabIndex = 20;
             this.label5.Text = "Patient Name";
-            // 
-            // PageSelectedPatient
-            // 
-            this.PageSelectedPatient.Controls.Add(this.button6);
-            this.PageSelectedPatient.Controls.Add(this.button5);
-            this.PageSelectedPatient.Controls.Add(this.button4);
-            this.PageSelectedPatient.Controls.Add(this.button3);
-            this.PageSelectedPatient.Controls.Add(this.button2);
-            this.PageSelectedPatient.Controls.Add(this.button1);
-            this.PageSelectedPatient.Controls.Add(this.label13);
-            this.PageSelectedPatient.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PageSelectedPatient.Location = new System.Drawing.Point(0, 0);
-            this.PageSelectedPatient.Name = "PageSelectedPatient";
-            this.PageSelectedPatient.Size = new System.Drawing.Size(966, 600);
-            this.PageSelectedPatient.TabIndex = 6;
-            this.PageSelectedPatient.Visible = false;
-            // 
-            // button6
-            // 
-            this.button6.Location = new System.Drawing.Point(50, 328);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(211, 35);
-            this.button6.TabIndex = 1;
-            this.button6.Text = "Edit Patient Details";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.goToEditPatient_Click);
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(50, 277);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(211, 35);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Enter Test Results";
-            this.button5.UseVisualStyleBackColor = true;
-            // 
-            // button4
-            // 
-            this.button4.Location = new System.Drawing.Point(50, 230);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(211, 35);
-            this.button4.TabIndex = 1;
-            this.button4.Text = "View/Print Test Results";
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(50, 179);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(303, 35);
-            this.button3.TabIndex = 1;
-            this.button3.Text = "Add/View/Extend Medication";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(50, 127);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(303, 35);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "View/Change/ Cancel an Appointment";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(50, 76);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(211, 35);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Make an Appointment";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(29, 19);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(79, 24);
-            this.label13.TabIndex = 0;
-            this.label13.Text = "Actions";
             // 
             // PageMainScreen
             // 
@@ -3390,11 +3330,9 @@
             // 
             this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dateTimePicker2.Location = new System.Drawing.Point(139, 90);
-            this.dateTimePicker2.MinDate = new System.DateTime(2013, 12, 24, 9, 48, 56, 672);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 22);
             this.dateTimePicker2.TabIndex = 1;
-            this.dateTimePicker2.Value = new System.DateTime(2013, 12, 24, 9, 48, 56, 672);
             this.dateTimePicker2.CloseUp += new System.EventHandler(this.dateTimePicker2_CloseUp);
             this.dateTimePicker2.LocationChanged += new System.EventHandler(this.dateTimePicker2_CloseUp);
             // 
@@ -3488,6 +3426,66 @@
             // 
             this.staffTableAdapter2.ClearBeforeFill = true;
             // 
+            // twoActiveWeeksDataGridView
+            // 
+            this.twoActiveWeeksDataGridView.AutoGenerateColumns = false;
+            this.twoActiveWeeksDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.twoActiveWeeksDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn16,
+            this.dataGridViewTextBoxColumn22,
+            this.dataGridViewTextBoxColumn28,
+            this.dataGridViewTextBoxColumn29,
+            this.dataGridViewTextBoxColumn30,
+            this.dataGridViewTextBoxColumn31,
+            this.dataGridViewTextBoxColumn32});
+            this.twoActiveWeeksDataGridView.DataSource = this.twoActiveWeeksBindingSource;
+            this.twoActiveWeeksDataGridView.Location = new System.Drawing.Point(640, 37);
+            this.twoActiveWeeksDataGridView.Name = "twoActiveWeeksDataGridView";
+            this.twoActiveWeeksDataGridView.Size = new System.Drawing.Size(300, 220);
+            this.twoActiveWeeksDataGridView.TabIndex = 9;
+            // 
+            // dataGridViewTextBoxColumn16
+            // 
+            this.dataGridViewTextBoxColumn16.DataPropertyName = "StaffID";
+            this.dataGridViewTextBoxColumn16.HeaderText = "StaffID";
+            this.dataGridViewTextBoxColumn16.Name = "dataGridViewTextBoxColumn16";
+            // 
+            // dataGridViewTextBoxColumn22
+            // 
+            this.dataGridViewTextBoxColumn22.DataPropertyName = "Surname";
+            this.dataGridViewTextBoxColumn22.HeaderText = "Surname";
+            this.dataGridViewTextBoxColumn22.Name = "dataGridViewTextBoxColumn22";
+            // 
+            // dataGridViewTextBoxColumn28
+            // 
+            this.dataGridViewTextBoxColumn28.DataPropertyName = "Date";
+            this.dataGridViewTextBoxColumn28.HeaderText = "Date";
+            this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
+            // 
+            // dataGridViewTextBoxColumn29
+            // 
+            this.dataGridViewTextBoxColumn29.DataPropertyName = "Sex";
+            this.dataGridViewTextBoxColumn29.HeaderText = "Sex";
+            this.dataGridViewTextBoxColumn29.Name = "dataGridViewTextBoxColumn29";
+            // 
+            // dataGridViewTextBoxColumn30
+            // 
+            this.dataGridViewTextBoxColumn30.DataPropertyName = "Staff Role/Title";
+            this.dataGridViewTextBoxColumn30.HeaderText = "Staff Role/Title";
+            this.dataGridViewTextBoxColumn30.Name = "dataGridViewTextBoxColumn30";
+            // 
+            // dataGridViewTextBoxColumn31
+            // 
+            this.dataGridViewTextBoxColumn31.DataPropertyName = "TimeSlot";
+            this.dataGridViewTextBoxColumn31.HeaderText = "TimeSlot";
+            this.dataGridViewTextBoxColumn31.Name = "dataGridViewTextBoxColumn31";
+            // 
+            // dataGridViewTextBoxColumn32
+            // 
+            this.dataGridViewTextBoxColumn32.DataPropertyName = "Id";
+            this.dataGridViewTextBoxColumn32.HeaderText = "Id";
+            this.dataGridViewTextBoxColumn32.Name = "dataGridViewTextBoxColumn32";
+            // 
             // MainBackGround
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -3512,9 +3510,10 @@
             this.TableMorning.PerformLayout();
             this.TableAfternoun.ResumeLayout(false);
             this.TableAfternoun.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet)).EndInit();
+            this.PageSelectedPatient.ResumeLayout(false);
+            this.PageSelectedPatient.PerformLayout();
             this.PageEditPatientDetails.ResumeLayout(false);
             this.PageEditPatientDetails.PerformLayout();
             this.PageViewCancelEditAppointment.ResumeLayout(false);
@@ -3526,8 +3525,6 @@
             this.PageNewRegistration.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).EndInit();
-            this.PageSelectedPatient.ResumeLayout(false);
-            this.PageSelectedPatient.PerformLayout();
             this.PageMainScreen.ResumeLayout(false);
             this.PageMainScreen.PerformLayout();
             this.PageAddViewExtendMedication.ResumeLayout(false);
@@ -3567,6 +3564,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.week52BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksDataGridView)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -3731,14 +3729,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn PatientID;
         private System.Windows.Forms.BindingSource twoActiveWeeksBindingSource;
         private OverSugerydbaseDataSetTableAdapters.TwoActiveWeeksTableAdapter twoActiveWeeksTableAdapter;
-        private System.Windows.Forms.DataGridView twoActiveWeeksDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
         private System.Windows.Forms.ComboBox cbStaff;
         private System.Windows.Forms.GroupBox groupBoxStaff;
         private System.Windows.Forms.TextBox staffIDTextBox;
@@ -3856,6 +3846,14 @@
         private System.Windows.Forms.ComboBox cbNRSex;
         private System.Windows.Forms.TextBox txtNRPC;
         private System.Windows.Forms.DateTimePicker dateTimePickerNR;
+        private System.Windows.Forms.DataGridView twoActiveWeeksDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn16;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn22;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn28;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn29;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn30;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn31;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn32;
     }
 }
 
