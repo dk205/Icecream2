@@ -246,8 +246,13 @@ namespace OverSurgery
         private void button4_Click(object sender, EventArgs e)   //takes you to view the Test Results
         {
             setMeVisible("PageViewPrintTestResults");
+            this.resultsTableAdapter.FillByResPatID(this.overSugerydbaseDataSet.Results, txtActiveUserID.Text);
         }
 
+        private void button5_Click(object sender, EventArgs e)
+        {
+            setMeVisible("PageEnterTestResults");
+        }
 
        
 
@@ -255,6 +260,8 @@ namespace OverSurgery
 
         private void MainBackGround_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'overSugerydbaseDataSet.Results' table. You can move, or remove it, as needed.
+            this.resultsTableAdapter.Fill(this.overSugerydbaseDataSet.Results);
             // TODO: This line of code loads data into the 'overSugerydbaseDataSet3.Staff' table. You can move, or remove it, as needed.
             this.staffTableAdapter2.Fill(this.overSugerydbaseDataSet3.Staff);
             // TODO: This line of code loads data into the 'overSugerydbaseDataSet2.Staff' table. You can move, or remove it, as needed.
@@ -1009,6 +1016,35 @@ namespace OverSurgery
             this.medicationTableAdapter.Update(this.overSugerydbaseDataSet);
         }
 
+
+
+
+        private void btnVResCancel_Click(object sender, EventArgs e)
+        {
+            setMeVisible("PageSelectedPatient");
+        }
+
+        private void btnResCancel_Click(object sender, EventArgs e)
+        {
+            setMeVisible("PageSelectedPatient");
+        }
+
+        private void btnResSave_Click(object sender, EventArgs e)
+        {
+            OverSugerydbaseDataSet.ResultsRow newResultsRow;
+            newResultsRow = overSugerydbaseDataSet.Results.NewResultsRow();
+            newResultsRow.ResDate = txtResDate.Text;
+            newResultsRow.ResType = txtResType.Text;
+            newResultsRow.Results = txtResResults.Text;
+            newResultsRow.ResGP = txtResGP.Text;
+            newResultsRow.ResDetails = txtResDetails.Text;
+            newResultsRow.ResPatientID = txtActiveUserID.Text;
+
+            this.overSugerydbaseDataSet.Results.Rows.Add(newResultsRow);
+
+            this.resultsTableAdapter.Update(this.overSugerydbaseDataSet.Results);
+        }
+
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         ///////////////////////////////////             S T A F F   G P / N U R S E   S E C T I O N         /////////////////////////////////////////////////////////////////// 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1319,9 +1355,7 @@ namespace OverSurgery
                 bindingNavigator1.Enabled = false;
             }
 
-        }
-
-        
+        }   
 
         }
 
