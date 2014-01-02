@@ -408,34 +408,37 @@ namespace OverSurgery
             {
                 case 0:
                     
-                        MessageBox.Show("Selected all staff");
+                        //Selected all staff
                         //make a table  with all doctors that day.
                         
                         StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());
                         break;
                     
                 case 1:
-                    MessageBox.Show("All GP");
+                   //All GP
                     //make a table with only staff role=GP   
-                  StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());
+                    StaffFound = this.rotaTableAdapter.SearchByRoleAndDate("GP", dateTimePicker1.Value.Date.ToString());
             break;
                 case 2:
-                    MessageBox.Show(" selected all Nurses");
+                    // selected all Nurses
                     //make a table with only staff role=Nurse           
-                  StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());
+                  StaffFound = this.rotaTableAdapter.SearchByRoleAndDate("Nurse",dateTimePicker1.Value.Date.ToString());
                     break;
                 case 3:
-                    MessageBox.Show(" selected all male gp");
+                    // selected all male gp
                     //make a table with only staff role=GP nad sex =Male
-                  StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());                    break;
+                    StaffFound = this.rotaTableAdapter.SearchBySexAndRoleAndDate("Male", dateTimePicker1.Value.ToString(),"GP");                  
+                  break;
                 case 4:
-                    MessageBox.Show(" selected all female gp");
+                    // selected all female gp
                     //make a table with only staff role=GP and Sex =Female
+                    StaffFound = this.rotaTableAdapter.SearchBySexAndRoleAndDate("Female", dateTimePicker1.Value.ToString(), "GP");   
                     break;
                 default:
                      MessageBox.Show(" somedoctor");
                     //make a table with the doctors name that date
-                     StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());    
+
+                     StaffFound = this.rotaTableAdapter.SearchRotaByNameAndDate(cbStaff.Text, dateTimePicker1.Value.ToString());
                     break;
             }
 
