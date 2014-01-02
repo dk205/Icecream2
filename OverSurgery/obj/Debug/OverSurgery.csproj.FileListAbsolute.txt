@@ -358,3 +358,15 @@ C:\Users\Ademola\Desktop\newww\OverSurgery\obj\Debug\OverSurgery.LogIn.resources
 C:\Users\Ademola\Desktop\newww\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
 C:\Users\Ademola\Desktop\newww\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
 C:\Users\Ademola\Desktop\newww\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+E:\2nd jan\OverSurgery\bin\Debug\OverSurgery.exe.config
+E:\2nd jan\OverSurgery\obj\Debug\OverSurgery.exe
+E:\2nd jan\OverSurgery\obj\Debug\OverSurgery.pdb
+E:\2nd jan\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+E:\2nd jan\OverSurgery\obj\Debug\OverSurgery.LogIn.resources
+E:\2nd jan\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+E:\2nd jan\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+E:\2nd jan\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+E:\2nd jan\OverSurgery\bin\Debug\OverSugerydbase.mdf
+E:\2nd jan\OverSurgery\bin\Debug\OverSugerydbase_log.ldf
+E:\2nd jan\OverSurgery\bin\Debug\OverSurgery.exe
+E:\2nd jan\OverSurgery\bin\Debug\OverSurgery.pdb

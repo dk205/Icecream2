@@ -100,9 +100,9 @@ namespace OverSurgery
         public void ClearNewRegistrationFields()  // small function to clear the fields in the new registration page.
         {                                          // its used when the registration is canceled and when the new registration is created.
         txtNRPatientsName.Text = String.Empty;
-        txtNRDOB.Text = String.Empty;
-        txtNRPC.Text = String.Empty;
-        txtNRSex.Text = String.Empty;
+       // txtNRDOB.Text = String.Empty;
+        cbNRSex.Text = "Please Select";
+        cbNRSex.Text = String.Empty;
         txtNRAddress1.Text = String.Empty;
         txtNRAddress2.Text = String.Empty;
         txtNRMobile.Text = String.Empty;
@@ -268,9 +268,10 @@ namespace OverSurgery
         {
             OverSurgery.Utility Utilities = new Utility(); //creat a link for the class utility
 
-            if (Utilities.CheckPatientFields(txtNRPatientsName.Text,txtNRDOB.Text,txtNRPC.Text,txtNRAddress1.Text)) //the function in the utility class checks if the 4 main details have been entered.
+            this.patientsTableAdapter.InsertNewRegistration(txtNRPatientsName.Text, dateTimePickerNR.Text, cbNRSex.Text, txtNRPC.Text, txtNRAddress1.Text, txtNRAddress2.Text, txtNRMobile.Text, txtNRLandLine.Text, txtNREmail.Text); //store the data from the textboxes to the database
+            if (Utilities.CheckPatientFields(txtNRPatientsName.Text,  dateTimePickerNR.Text, txtNRPC.Text, txtNRAddress1.Text, txtNRAddress2.Text, txtNREmail.Text, txtNRLandLine.Text, txtNRMobile.Text,cbNRSex.Text)) //the function in the utility class checks if the 4 main details have been entered.
             {
-                this.patientsTableAdapter.InsertNewRegistration(txtNRPatientsName.Text, txtNRDOB.Text, txtNRSex.Text, txtNRPC.Text, txtNRAddress1.Text, txtNRAddress2.Text, txtNRMobile.Text, txtNRLandLine.Text, txtNREmail.Text); //store the data from the textboxes to the database
+                this.patientsTableAdapter.InsertNewRegistration(txtNRPatientsName.Text, dateTimePickerNR.Text, cbNRSex.Text, txtNRPC.Text, txtNRAddress1.Text, txtNRAddress2.Text, txtNRMobile.Text, txtNRLandLine.Text, txtNREmail.Text); //store the data from the textboxes to the database
                 this.patientsTableAdapter.Fill(this.overSugerydbaseDataSet.Patients); //*TEMP this will be removed after testing
 
                 OverSugerydbaseDataSet.PatientsDataTable Monkey = this.patientsTableAdapter.GetActivePatientQuery(); //creates a table with 1 row which is the last row just entered (our active patient)
@@ -297,7 +298,7 @@ namespace OverSurgery
             string testString = txtNRPatientsName.Text;
            
          
-                for (int i = 0; i < testString.Length; i++)
+           /*     for (int i = 0; i < testString.Length; i++)
                 {
                     if (!char.IsLetter(testString[i]))
                     {
@@ -306,39 +307,10 @@ namespace OverSurgery
                         return;
                     }
                 }
-            }
+      */      }
         
 
-        private void CheckIfDate(object sender, EventArgs e) //WIP should only allow letters and add "/" after the first 2 and 4 digits
-        {
-         //   MessageBox.Show("in to work");
-            
-            int CursorPosition = txtNRDOB.SelectionStart;
-         //   MessageBox.Show(String.Format("the position is {0}", CursorPosition)); 
-            string testString = txtNRDOB.Text;
-            StringBuilder strB = new StringBuilder(txtNRDOB.Text);
-
-
-
-
-            if (CursorPosition == 2 || CursorPosition == 5)
-            {
-                strB.Append("/");
-               //strB.Length;
-            }
-       //         CursorPosition = CursorPosition + 1;
-       //     txtNRDOB.SelectionStart = CursorPosition;
-          
-         //   if (!char.IsNumber(strB[CursorPosition-1]))
-         //          strB.Remove(CursorPosition-1,1);
-           
-                //StringBuilder strB = new StringBuilder(testString);
-                
-          //  strB[] = 'D';
-                txtNRDOB.Text =strB.ToString();
-                CursorPosition = CursorPosition + 1;
-                txtNRDOB.SelectionStart = CursorPosition;
-            }
+      
 
         private void CancelReg_Click_1(object sender, EventArgs e) //button event if user decides to cancel the registration.
         {
