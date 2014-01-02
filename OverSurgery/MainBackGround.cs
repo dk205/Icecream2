@@ -239,6 +239,7 @@ namespace OverSurgery
         private void button3_Click(object sender, EventArgs e) //takes you to the make add/extend medication page
         {
             setMeVisible("PageAddViewExtendMedication");
+            this.medicationTableAdapter.FillByPatID(this.overSugerydbaseDataSet.Medication, txtActiveUserID.Text);
         }
 
       
@@ -956,10 +957,20 @@ namespace OverSurgery
 
         private void btnMedAdd_Click(object sender, EventArgs e)
         {
-            DataRow newMedicationRow = overSugerydbaseDataSet.Tables["Medication"].NewRow();
-            overSugerydbaseDataSet.Tables["Medication"].Rows.Add(newMedicationRow);
-            medicationBindingSource.MoveLast();
-            
+
+            OverSugerydbaseDataSet.MedicationRow newMedicationRow;
+            newMedicationRow = overSugerydbaseDataSet.Medication.NewMedicationRow();
+            newMedicationRow.MedName = txtMedName2.Text;
+            newMedicationRow.Dose = txtMedDose2.Text;
+            newMedicationRow.Start_Date = txtMedStart.Text;
+            newMedicationRow.End_Date = txtMedEnd.Text;
+            newMedicationRow.Prescribing_GP = txtMedGP.Text;
+            newMedicationRow.PatientID = txtActiveUserID.Text;
+
+            this.overSugerydbaseDataSet.Medication.Rows.Add(newMedicationRow);
+
+            this.medicationTableAdapter.Update(this.overSugerydbaseDataSet.Medication);
+
         }
 
         private void btnMedSub_Click(object sender, EventArgs e)
@@ -967,12 +978,35 @@ namespace OverSurgery
             this.Validate();
             this.medicationBindingSource.EndEdit();
             this.medicationTableAdapter.Update(this.overSugerydbaseDataSet);
-            /*
-            this.medicationTableAdapter.update //(txtNRPatientsName.Text, txtNRDOB.Text, txtNRSex.Text, txtNRPC.Text, txtNRAddress1.Text, txtNRAddress2.Text, txtNRMobile.Text, txtNRLandLine.Text, txtNREmail.Text); //store the data from the textboxes to the database
-            this.patientsTableAdapter.Fill(this.overSugerydbaseDataSet.Patients); //*TEMP this will be removed after testing
+        }
 
-            OverSugerydbaseDataSet.PatientsDataTable Monkey = this.patientsTableAdapter.GetActivePatientQuery(); //creates a table with 1 row which is the last row just entered (our active patient)
-             */ 
+        private void btnMedCancel_Click_1(object sender, EventArgs e)
+        {
+            setMeVisible("PageSelectedPatient");
+        }
+
+        private void btnMedUP_Click_1(object sender, EventArgs e)
+        {
+            medicationBindingSource.MovePrevious();
+        }
+
+        private void btnMedDown_Click_1(object sender, EventArgs e)
+        {
+            medicationBindingSource.MoveNext();
+        }
+
+        private void btnMedEdit_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.medicationBindingSource.EndEdit();
+            this.medicationTableAdapter.Update(this.overSugerydbaseDataSet);
+        }
+
+        private void btnMedDelete_Click_1(object sender, EventArgs e)
+        {
+            this.Validate();
+            this.medicationBindingSource.RemoveCurrent();
+            this.medicationTableAdapter.Update(this.overSugerydbaseDataSet);
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -1287,7 +1321,6 @@ namespace OverSurgery
 
         }
 
-      
         
 
         }
