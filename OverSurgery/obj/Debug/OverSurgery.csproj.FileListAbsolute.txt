@@ -394,3 +394,5 @@ C:\Users\Cos209\Desktop\2ndJan - Copy\OverSurgery\obj\Debug\OverSurgery.LogIn.re
 C:\Users\Cos209\Desktop\2ndJan - Copy\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
 C:\Users\Cos209\Desktop\2ndJan - Copy\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
 C:\Users\Cos209\Desktop\2ndJan - Copy\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+C:\Users\Cos209\Desktop\2ndJan - Copy\OverSurgery\bin\Debug\Properties\Settings.Designer.cs
+C:\Users\Cos209\Desktop\2ndJan - Copy\OverSurgery\bin\Debug\Properties\Settings.settings

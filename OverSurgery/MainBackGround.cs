@@ -313,7 +313,7 @@ namespace OverSurgery
                 {
                     if (!char.IsLetter(testString[i]))
                     {
-                        MessageBox.Show("A name can contaign only letters");
+                       MessageBox.Show("A name can contaign only letters");
                         txtNRPatientsName.Text = "";
                         return;
                     }
@@ -446,7 +446,7 @@ namespace OverSurgery
                     StaffFound = this.rotaTableAdapter.SearchBySexAndRoleAndDate("Female", dateTimePicker1.Value.ToString(), "GP");   
                     break;
                 default:
-                     MessageBox.Show(" somedoctor");
+                    
                     //make a table with the doctors name that date
 
                      StaffFound = this.rotaTableAdapter.SearchRotaByNameAndDate(cbStaff.Text, dateTimePicker1.Value.ToString());
@@ -516,7 +516,7 @@ namespace OverSurgery
                                catch (Exception bs)
                                {
                                    MessageBox.Show(bs.Message);
-                                   MessageBox.Show(String.Format("in button {0}", c.ToString()));
+                                   //MessageBox.Show(String.Format("in button {0}", c.ToString()));
                                }
 
                        }
@@ -537,7 +537,7 @@ namespace OverSurgery
                            catch (Exception bs)
                            {
                                MessageBox.Show(bs.Message);
-                               MessageBox.Show("in label");
+                              // MessageBox.Show("in label");
                            }
                        }
                    } //end of for c
@@ -590,7 +590,7 @@ namespace OverSurgery
                 // Delete all bookings older than today, used to keep the Two active WeeksDatabase small in size.
                 this.twoActiveWeeksTableAdapter.DeleteOldBookings();// (DateTime.Now.ToShortDateString());    
                 this.rotaTableAdapter.Fill(this.overSugerydbaseDataSet.Rota);
-                MessageBox.Show("hi");
+               
               
                 // make a label in its place
                 SlotLabelS[rowx, colx] = new Label();
@@ -651,15 +651,15 @@ namespace OverSurgery
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("no one here before");
+                    //MessageBox.Show("no one here before");
                     IdExists = false;
                 }
                 if (IdExists)
                 {
 
-                    MessageBox.Show("found someone here already");
+                   // MessageBox.Show("found someone here already");
                     int numberofWorkingStaff = Rotas.Rows.Count;
-                    MessageBox.Show(String.Format(" there are {0} entries found", numberofWorkingStaff));
+                   // MessageBox.Show(String.Format(" there are {0} entries found", numberofWorkingStaff));
                     for (int i = 0; i < numberofWorkingStaff; i++)
                     {
                         var control = Controls.Find("cbStaffMenu" + (i + 1), true).FirstOrDefault();
@@ -716,13 +716,13 @@ namespace OverSurgery
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show(String.Format("{0} is going to be   added to this shift", TempSurname)); //all is good
+                    MessageBox.Show(String.Format("{0} Has been  added to this shift", TempSurname)); //all is good
                     IdExists = false; //so we set the ID exists to false so we can copy
                 }
 
                 if (IdExists) //if the id exists already 
                 {
-                    MessageBox.Show("already added");  //just tell us its added and do nothing
+                   // MessageBox.Show("already added");  //just tell us its added and do nothing
                     if (PreSelectedValue == false)
                     {
                         CB.SelectedIndex = 0;
@@ -735,7 +735,7 @@ namespace OverSurgery
                     if (PreviousName != "Free" && PreviousName != String.Empty) //and  the previous value was not free
                     {
                         this.rotaTableAdapter.DeleteStaffFromRota(PreviousName, TempDate);//delete old entry
-                        MessageBox.Show(" old entry Deleted");
+                        MessageBox.Show(" Old entry Deleted");
                     }
 
                     this.rotaTableAdapter.AddRotaV3(TempStaffID, TempSurname, TempDate, TempSex, TempRole); // store the values
