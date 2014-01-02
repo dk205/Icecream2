@@ -15,6 +15,8 @@ namespace OverSurgery
 {
     public partial class MainBackGround : Form
     {
+
+        
         int ActiveUserID = 0;
         Boolean ChangingAppointment = false;
         Form formParent = null;
@@ -22,11 +24,19 @@ namespace OverSurgery
         {
             formParent = par;
             InitializeComponent();
+            dateTimePicker1.MinDate = DateTime.Now;
+            dateTimePicker1.MaxDate = DateTime.Now.AddDays(17);
+            dateTimePicker2.MinDate = DateTime.Now;
+            dateTimePicker2.MaxDate = DateTime.Now.AddMonths(6);
+            dateTimePickerNR.Value = DateTime.Now;
+            
 
         }
 
         public string PreviousName="Free";
         public bool PreSelectedValue =false;
+
+       
 
         void FillStaffMenu()
         {
@@ -108,7 +118,8 @@ namespace OverSurgery
         txtNRMobile.Text = String.Empty;
         txtNRLandLine.Text = String.Empty;
         txtNREmail.Text = String.Empty;
-         
+
+     
         }
 
         private void button1_Click(object sender, EventArgs e) //this is the LOG OUT BUTTON
@@ -577,7 +588,7 @@ namespace OverSurgery
                 this.TableMorning.Controls.Remove(bt);  //remove the button we pressed
 
                 // Delete all bookings older than today, used to keep the Two active WeeksDatabase small in size.
-                this.twoActiveWeeksTableAdapter.DeleteOldBookings("24/12/2013");// (DateTime.Now.ToShortDateString());    
+                this.twoActiveWeeksTableAdapter.DeleteOldBookings();// (DateTime.Now.ToShortDateString());    
                 this.rotaTableAdapter.Fill(this.overSugerydbaseDataSet.Rota);
                 MessageBox.Show("hi");
               

@@ -6360,9 +6360,8 @@ SELECT MedicationId, MedName, Dose, [Start Date], [End Date], [Prescribing GP], 
             this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ActiveUser", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "Id", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[2].Connection = this.Connection;
-            this._commandCollection[2].CommandText = "DELETE FROM twoActiveWeeks\nWHERE        (Date= @Date) ";
+            this._commandCollection[2].CommandText = "DELETE FROM twoActiveWeeks\nWHERE        (Date < DATEADD(day, -1, GETDATE()))";
             this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
-            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Date", global::System.Data.SqlDbType.Date, 3, global::System.Data.ParameterDirection.Input, 0, 0, "Date", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[3].Connection = this.Connection;
             this._commandCollection[3].CommandText = "SELECT        COUNT(*) AS Expr1\nFROM            TwoActiveWeeks\nWHERE        (Id =" +
@@ -6551,14 +6550,8 @@ SELECT MedicationId, MedName, Dose, [Start Date], [End Date], [Prescribing GP], 
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, false)]
-        public virtual int DeleteOldBookings(string Date) {
+        public virtual int DeleteOldBookings() {
             global::System.Data.SqlClient.SqlCommand command = this.CommandCollection[2];
-            if ((Date == null)) {
-                throw new global::System.ArgumentNullException("Date");
-            }
-            else {
-                command.Parameters[0].Value = ((string)(Date));
-            }
             global::System.Data.ConnectionState previousConnectionState = command.Connection.State;
             if (((command.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
