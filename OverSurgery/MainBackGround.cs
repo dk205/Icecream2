@@ -268,7 +268,7 @@ namespace OverSurgery
         {
             OverSurgery.Utility Utilities = new Utility(); //creat a link for the class utility
 
-            this.patientsTableAdapter.InsertNewRegistration(txtNRPatientsName.Text, dateTimePickerNR.Text, cbNRSex.Text, txtNRPC.Text, txtNRAddress1.Text, txtNRAddress2.Text, txtNRMobile.Text, txtNRLandLine.Text, txtNREmail.Text); //store the data from the textboxes to the database
+           // this.patientsTableAdapter.InsertNewRegistration(txtNRPatientsName.Text, dateTimePickerNR.Text, cbNRSex.Text, txtNRPC.Text, txtNRAddress1.Text, txtNRAddress2.Text, txtNRMobile.Text, txtNRLandLine.Text, txtNREmail.Text); //store the data from the textboxes to the database
             if (Utilities.CheckPatientFields(txtNRPatientsName.Text,  dateTimePickerNR.Text, txtNRPC.Text, txtNRAddress1.Text, txtNRAddress2.Text, txtNREmail.Text, txtNRLandLine.Text, txtNRMobile.Text,cbNRSex.Text)) //the function in the utility class checks if the 4 main details have been entered.
             {
                 this.patientsTableAdapter.InsertNewRegistration(txtNRPatientsName.Text, dateTimePickerNR.Text, cbNRSex.Text, txtNRPC.Text, txtNRAddress1.Text, txtNRAddress2.Text, txtNRMobile.Text, txtNRLandLine.Text, txtNREmail.Text); //store the data from the textboxes to the database
@@ -332,9 +332,15 @@ namespace OverSurgery
 
         private void btnChangeDetails_Click(object sender, EventArgs e)  //replaces the values of the database with the ones entered/altered in the text boxes.  
         {
-            this.patientsTableAdapter.UpdatePatientDetails(tbPatientNameEdit.Text, tbDOBEdit.Text, tbSexEdit.Text, tbPCEdit.Text, tbAddress1Edit.Text, tbAddress2Edit.Text, tbMobileEdit.Text, tbLandLineEdit.Text, tbEmailEdit.Text, Convert.ToInt32(tbIDEdit.Text), Convert.ToInt32(tbIDEdit.Text));
+            //CHECK HERE
 
-            setMeVisible("PageSelectedPatient"); 
+            OverSurgery.Utility Utilities = new Utility(); //creat a link for the class utility
+            if (Utilities.CheckPatientFields(tbPatientNameEdit.Text, tbDOBEdit.Text, tbPCEdit.Text, tbAddress1Edit.Text, tbAddress2Edit.Text, tbEmailEdit.Text, tbLandLineEdit.Text, tbMobileEdit.Text, tbSexEdit.Text))
+            {
+                this.patientsTableAdapter.UpdatePatientDetails(tbPatientNameEdit.Text, tbDOBEdit.Text, tbSexEdit.Text, tbPCEdit.Text, tbAddress1Edit.Text, tbAddress2Edit.Text, tbMobileEdit.Text, tbLandLineEdit.Text, tbEmailEdit.Text, Convert.ToInt32(tbIDEdit.Text), Convert.ToInt32(tbIDEdit.Text));
+
+                setMeVisible("PageSelectedPatient");
+            }
         }
 
         private void button8_Click(object sender, EventArgs e) //not sure if needed
