@@ -29,6 +29,8 @@ namespace OverSurgery
             dateTimePickerRota.MinDate = DateTime.Now;        //Setting the Rota Calendar so you can set the rota from the current day and no further than 6 months in advance.   
             dateTimePickerRota.MaxDate = DateTime.Now.AddMonths(6);
             dateTimePickerNR.Value = DateTime.Now;
+            dateTimePickerSearchDOB.MaxDate = DateTime.Now;
+            dateTimePickerSearchDOB.Value = DateTime.Now;
             
 
         }
@@ -415,7 +417,7 @@ namespace OverSurgery
                     break;
             }
 
-            Label[,] SlotLabel = new Label[26, 13];
+            Label[,] SlotLabel = new Label[26, 13];  //create dynamically labels and buttons for the timetable
            Button[,] BookButton = new Button[26, 13];
            this.twoActiveWeeksTableAdapter.Fill(this.overSugerydbaseDataSet.TwoActiveWeeks); //******TEMPORARY
            this.rotaTableAdapter.Fill(this.overSugerydbaseDataSet.Rota);           //******TEMPORARY
@@ -449,7 +451,7 @@ namespace OverSurgery
                    for (int c = 0; c < 26; c++)  //13 is max
                    {
                        
-                       if (Appointments[c] == 0)
+                       if (Appointments[c] == 0)  //if there is no appointment in that slot make a booking button else make a label "not available" (n/a)
                        {
                            //Make SlotButton(c,i)
                           
@@ -508,7 +510,7 @@ namespace OverSurgery
 
 
              
-               TableMorning.Visible = true;
+               TableMorning.Visible = true; //start with the morning Table
          
       }  //end of btnCheckAppointments_Click
 
@@ -517,9 +519,9 @@ namespace OverSurgery
         {
             Label[,] SlotLabelS = new Label[13, 13];
             Button bt = sender as Button;
-            var rowx = TableMorning.GetRow(bt);
+            var rowx = TableMorning.GetRow(bt); // get the row and column from where the button was created 
             var colx = TableMorning.GetColumn(bt);
-            Control control = this.Controls.Find("labelStaff" + (rowx - 1), true).FirstOrDefault() as Label;
+            Control control = this.Controls.Find("labelStaff" + (rowx - 1), true).FirstOrDefault() as Label; //get the label that contains the staffs name
 
             //search if the user has already made a booking (max 1 per 2 weeks)
             
@@ -763,17 +765,17 @@ namespace OverSurgery
             btnMorning.Visible = true;
         }
 
-        private void btnCancelAppointment_Click(object sender, EventArgs e)
+        private void btnCancelAppointment_Click(object sender, EventArgs e) //canceling an Appointment
         {
 
-            if (this.twoActiveWeeksTableAdapter.DoubleBooking(Utilities.ActiveUserID) <= 0)
+            if (this.twoActiveWeeksTableAdapter.DoubleBooking(Utilities.ActiveUserID) <= 0) //if no booking made before
             {
                 MessageBox.Show("There is no booking to Cancel");
             }
             else
             {
 
-                if (MessageBox.Show("Are you sure you wish to delete this appointment", "Canceling an Appointment", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show("Are you sure you wish to delete this appointment", "Canceling an Appointment", MessageBoxButtons.YesNo) == DialogResult.Yes)  //get confirmation for deleting
                 {
                     try
                     {
