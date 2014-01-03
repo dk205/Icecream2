@@ -16,7 +16,7 @@ namespace OverSurgery
     public partial class MainBackGround : Form
     {
 
-        
+        OverSurgery.Utility Utilities = new Utility(); //creat a link for the class utility
         int ActiveUserID = 0;
         Boolean ChangingAppointment = false;
         Form formParent = null;
@@ -285,7 +285,7 @@ namespace OverSurgery
        
         private void CreateReg_Click(object sender, EventArgs e)
         {
-            OverSurgery.Utility Utilities = new Utility(); //creat a link for the class utility
+            
 
            // this.patientsTableAdapter.InsertNewRegistration(txtNRPatientsName.Text, dateTimePickerNR.Text, cbNRSex.Text, txtNRPC.Text, txtNRAddress1.Text, txtNRAddress2.Text, txtNRMobile.Text, txtNRLandLine.Text, txtNREmail.Text); //store the data from the textboxes to the database
             if (Utilities.CheckPatientFields(txtNRPatientsName.Text,  dateTimePickerNR.Text, txtNRPC.Text, txtNRAddress1.Text, txtNRAddress2.Text, txtNREmail.Text, txtNRLandLine.Text, txtNRMobile.Text,cbNRSex.Text)) //the function in the utility class checks if the 4 main details have been entered.

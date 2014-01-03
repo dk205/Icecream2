@@ -13,6 +13,30 @@ namespace OverSurgery
 {
     class Utility
     {
+        public int ActiveUserID;
+        public string ActiveUserName;
+
+
+        public int _ActiveUserID
+        {
+            get { return ActiveUserID; }
+            set { ActiveUserID = value; }
+        }
+
+        public string _ActiveUserName
+        {
+            get { return ActiveUserName; }
+            set { ActiveUserName = value; }
+        }
+
+        public void StoreActiveUser(int currentUserID, string currentUserName)
+        {
+
+            ActiveUserID = currentUserID;
+            ActiveUserName = currentUserName;
+        } 
+        
+        
         public void GetActivePatient()   //WIP
         {
 
