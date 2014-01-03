@@ -984,6 +984,11 @@ namespace OverSurgery
         private void btnMedCancel_Click_1(object sender, EventArgs e)
         {
             setMeVisible("PageSelectedPatient");
+            txtMedName2.Clear();
+            txtMedDose2.Clear();
+            txtMedStart.Clear();
+            txtMedEnd.Clear();
+            txtMedGP.Clear();
         }
 
         private void btnMedUP_Click_1(object sender, EventArgs e)
@@ -1005,9 +1010,15 @@ namespace OverSurgery
 
         private void btnMedDelete_Click_1(object sender, EventArgs e)
         {
-            this.Validate();
-            this.medicationBindingSource.RemoveCurrent();
-            this.medicationTableAdapter.Update(this.overSugerydbaseDataSet);
+            if (MessageBox.Show("are you sure", "confirm delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Validate();
+                this.medicationBindingSource.RemoveCurrent();
+                this.medicationTableAdapter.Update(this.overSugerydbaseDataSet);
+            }
+            else
+            {
+            }
         }
 
 
@@ -1021,6 +1032,12 @@ namespace OverSurgery
         private void btnResCancel_Click(object sender, EventArgs e)
         {
             setMeVisible("PageSelectedPatient");
+
+            txtResDate.Clear();
+            txtResType.Clear();
+            txtResResults.Clear();
+            txtResGP.Clear();
+            txtResDetails.Clear();
         }
            
         private void btnResSave_Click(object sender, EventArgs e)
@@ -1049,6 +1066,30 @@ namespace OverSurgery
                 txtResGP.Clear();
                 txtResDetails.Clear();
                     
+            }
+        }
+
+        private void btnResUp_Click(object sender, EventArgs e)
+        {
+            resultsBindingSource.MovePrevious();
+        }
+
+        private void btnResDown_Click(object sender, EventArgs e)
+        {
+            resultsBindingSource.MoveNext();
+        }
+
+        private void btnResDelete_Click(object sender, EventArgs e)
+        {
+            
+            if (MessageBox.Show("are you sure", "confirm delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                this.Validate();
+                this.resultsBindingSource.RemoveCurrent();
+                this.resultsTableAdapter.Update(this.overSugerydbaseDataSet.Results);
+            }
+            else
+            {
             }
         }
 
@@ -1363,6 +1404,8 @@ namespace OverSurgery
             }
 
         }
+
+        
 
       
 

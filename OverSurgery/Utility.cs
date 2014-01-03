@@ -241,6 +241,7 @@ namespace OverSurgery
             }
         }
 
+
         public Boolean CheckMedFields(string Medname, string MedDose, string MedStart, string MedEnd, string MedGP) 
         {
             Boolean medField = true;
@@ -279,6 +280,7 @@ namespace OverSurgery
             }
             return medField;
         }
+
 
         public Boolean checkResFields(string ResDate, string ResType, string ResResults, string ResGP, string ResDetails)
         {
