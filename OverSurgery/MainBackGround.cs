@@ -143,25 +143,26 @@ namespace OverSurgery
 
         private void SearchIDButton_Click(object sender, EventArgs e) //user enters a ID number and presses the search button 
         {
-
-            OverSugerydbaseDataSet.PatientsDataTable IDSearched = this.patientsTableAdapter.SearchByID(Convert.ToInt32(txtBoxID.Text));  //database querry searches for rows containing the id (we know it is only one, if it exists)
-            try //store the values from the sql search 
+            if (Utilities.CheckFieldsSearchByID(txtBoxID.Text))
             {
-                object a = IDSearched.Rows[0]["Patient Name"]; //To get the data you store each value into an object
-                object b = IDSearched.Rows[0]["Id"];
-                setMeVisible("PageSelectedPatient"); // go to the Selected patient page.
-                txtBoxID.Text = string.Empty;   //clear the search id textbox for future use. 
+                OverSugerydbaseDataSet.PatientsDataTable IDSearched = this.patientsTableAdapter.SearchByID(Convert.ToInt32(txtBoxID.Text));  //database querry searches for rows containing the id (we know it is only one, if it exists)
+                try //store the values from the sql search 
+                {
+                    object a = IDSearched.Rows[0]["Patient Name"]; //To get the data you store each value into an object
+                    object b = IDSearched.Rows[0]["Id"];
+                    setMeVisible("PageSelectedPatient"); // go to the Selected patient page.
+                    txtBoxID.Text = string.Empty;   //clear the search id textbox for future use. 
 
-                txtActiveUserName.Text = Convert.ToString(a); //place the id and the name on the area above the option, so you always know the patient you are handeling
-                txtActiveUserID.Text = Convert.ToString(b);
-                btnClearActivePatient.Visible = true;  // now that there is an active patient, make the clear_active_patient button available
-                 Utilities.ActiveUserID = Convert.ToInt32(txtActiveUserID.Text );  //a global variable to store the active patients id.
+                    txtActiveUserName.Text = Convert.ToString(a); //place the id and the name on the area above the option, so you always know the patient you are handeling
+                    txtActiveUserID.Text = Convert.ToString(b);
+                    btnClearActivePatient.Visible = true;  // now that there is an active patient, make the clear_active_patient button available
+                    Utilities.ActiveUserID = Convert.ToInt32(txtActiveUserID.Text);  //a global variable to store the active patients id.
+                }
+                catch (Exception) //if there are no values (caused if the id is not found in the database) catch it
+                {
+                    MessageBox.Show("The Id entered does not belong \n to a registered patient", "Patient not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            catch (Exception) //if there are no values (caused if the id is not found in the database) catch it
-            {
-                MessageBox.Show("The Id entered does not belong \n to a registered patient", "Patient not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-   
          }
 
        
@@ -911,6 +912,36 @@ namespace OverSurgery
         }
 
 
+        private void btnSearchByName_Click(object sender, EventArgs e)
+        {
+            //check fields in utility
+            if (Utilities.CheckFieldsSearchByName(tbSearchName.Text, tbSearchPC.Text))
+            {
+
+                OverSugerydbaseDataSet.PatientsDataTable NameSearched = this.patientsTableAdapter.SearchByName(tbSearchName.Text, tbSearchPC.Text, dateTimePickerSearchDOB.Value.Date.ToShortDateString());  //database querry searches for rows containing the id (we know it is only one, if it exists)
+                try //store the values from the sql search 
+                {
+                    object a = NameSearched.Rows[0]["Patient Name"]; //To get the data you store each value into an object
+                    object b = NameSearched.Rows[0]["Id"];
+                    setMeVisible("PageSelectedPatient"); // go to the Selected patient page.
+                    tbSearchName.Text = string.Empty;//clear the search name, post code textboxes  for future use. 
+                    tbSearchPC.Text = string.Empty;
+
+
+                    txtActiveUserName.Text = Convert.ToString(a); //place the id and the name on the area above the option, so you always know the patient you are handeling
+                    txtActiveUserID.Text = Convert.ToString(b);
+                    btnClearActivePatient.Visible = true;  // now that there is an active patient, make the clear_active_patient button available
+                    Utilities.ActiveUserID = Convert.ToInt32(txtActiveUserID.Text);  //a global variable to store the active patients id.
+                }
+                catch (Exception) //if there are no values (caused if the id is not found in the database) catch it
+                {
+                    MessageBox.Show("The details entered do not belong \n to a registered patient", "Patient not found", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+
+            }
+        }   
+
   //////////////////////////////////////////////////////////////////////////////////////////  
         //Toms stuff
 
@@ -1307,7 +1338,9 @@ namespace OverSurgery
                 bindingNavigator1.Enabled = false;
             }
 
-        }   
+        }
+
+      
 
         }
 

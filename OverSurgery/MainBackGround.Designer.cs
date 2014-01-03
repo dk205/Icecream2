@@ -376,7 +376,7 @@
             this.label89 = new System.Windows.Forms.Label();
             this.btnSearchByName = new System.Windows.Forms.Button();
             this.tbSearchName = new System.Windows.Forms.TextBox();
-            this.tbsearchPC = new System.Windows.Forms.TextBox();
+            this.tbSearchPC = new System.Windows.Forms.TextBox();
             this.dateTimePickerSearchDOB = new System.Windows.Forms.DateTimePicker();
             medNameLabel = new System.Windows.Forms.Label();
             doseLabel = new System.Windows.Forms.Label();
@@ -2785,7 +2785,7 @@
             // PageMainScreen
             // 
             this.PageMainScreen.Controls.Add(this.dateTimePickerSearchDOB);
-            this.PageMainScreen.Controls.Add(this.tbsearchPC);
+            this.PageMainScreen.Controls.Add(this.tbSearchPC);
             this.PageMainScreen.Controls.Add(this.tbSearchName);
             this.PageMainScreen.Controls.Add(this.btnSearchByName);
             this.PageMainScreen.Controls.Add(this.txtBoxID);
@@ -3962,6 +3962,7 @@
             this.btnSearchByName.TabIndex = 5;
             this.btnSearchByName.Text = "Search by Name";
             this.btnSearchByName.UseVisualStyleBackColor = true;
+            this.btnSearchByName.Click += new System.EventHandler(this.btnSearchByName_Click);
             // 
             // tbSearchName
             // 
@@ -3970,12 +3971,12 @@
             this.tbSearchName.Size = new System.Drawing.Size(256, 22);
             this.tbSearchName.TabIndex = 6;
             // 
-            // tbsearchPC
+            // tbSearchPC
             // 
-            this.tbsearchPC.Location = new System.Drawing.Point(156, 458);
-            this.tbsearchPC.Name = "tbsearchPC";
-            this.tbsearchPC.Size = new System.Drawing.Size(100, 22);
-            this.tbsearchPC.TabIndex = 7;
+            this.tbSearchPC.Location = new System.Drawing.Point(156, 458);
+            this.tbSearchPC.Name = "tbSearchPC";
+            this.tbSearchPC.Size = new System.Drawing.Size(100, 22);
+            this.tbSearchPC.TabIndex = 7;
             // 
             // dateTimePickerSearchDOB
             // 
@@ -4389,7 +4390,7 @@
         private System.Windows.Forms.TextBox txtResGP;
         private System.Windows.Forms.TextBox txtResDetails;
         private System.Windows.Forms.DateTimePicker dateTimePickerSearchDOB;
-        private System.Windows.Forms.TextBox tbsearchPC;
+        private System.Windows.Forms.TextBox tbSearchPC;
         private System.Windows.Forms.TextBox tbSearchName;
         private System.Windows.Forms.Button btnSearchByName;
         private System.Windows.Forms.Label label32;

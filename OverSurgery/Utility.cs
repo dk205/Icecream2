@@ -182,5 +182,65 @@ namespace OverSurgery
             return FieldsOK;
         }
 
+
+
+
+        public Boolean CheckFieldsSearchByName(String Patients_Name , String Post_Code ) //check the quality of the name and post code.
+        {
+            Boolean FieldsOK = true;
+            String EntryErrorMessage = "";
+            StringBuilder EntryErrorMessage_B = new StringBuilder();
+
+            if (Patients_Name == "")
+            {
+                EntryErrorMessage_B.Append("\n You must fill in a Name.");
+                FieldsOK = false;
+            }
+            else
+            {
+                if (!(Patients_Name.All(c => Char.IsLetter(c) || Char.IsWhiteSpace(c))))
+                {
+                    EntryErrorMessage_B.Append("\n The Patients Name can only contain letters and spaces.");
+                    FieldsOK = false;
+                }
+            }
+
+            if (!(Post_Code == ""))
+            {
+              
+
+                if (!Regex.IsMatch(Post_Code, @"^[a-zA-Z0-9 ]+$"))
+                {
+                    EntryErrorMessage_B.Append("\n The Post Code can only contain letters and spaces and numbers.");
+                    FieldsOK = false;
+                }
+            }
+
+
+            if (!FieldsOK)
+            {
+                EntryErrorMessage = EntryErrorMessage_B.ToString();
+                MessageBox.Show(String.Format("The following fields need to be amend:  {0}", EntryErrorMessage), "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return FieldsOK;
+        }
+
+
+        public Boolean CheckFieldsSearchByID(string ID)  //check the id entered contains only numbers
+        {
+
+            if (ID.All(c => Char.IsDigit(c)))
+            {
+
+                return true;
+            }
+            else
+            {
+                MessageBox.Show(" The Patients ID can only contain letters");
+                return false;
+            }
+        }
+
+
     }
 }
