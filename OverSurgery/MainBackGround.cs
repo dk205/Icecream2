@@ -88,7 +88,7 @@ namespace OverSurgery
         */
       
         public void setMeVisible(string PanelName)  //this is a small function that is called when I want to move to another pannel
-        {                                           //It hides all existing pannels and then set to visible the panel whose name given in the function. The name must be inside brackets
+        {                                           //It hides all existing pannels and then set to visible the panel whose name given in the function. The name must be inside brackets.
             PageMainScreen.Visible = false;
             PageNewRegistration.Visible = false;
             PageSelectedPatient.Visible = false;
@@ -139,7 +139,7 @@ namespace OverSurgery
 
      
 
-        private void SearchIDButton_Click(object sender, EventArgs e) //user enters a ID number and presses the search 
+        private void SearchIDButton_Click(object sender, EventArgs e) //user enters a ID number and presses the search button 
         {
 
             OverSugerydbaseDataSet.PatientsDataTable IDSearched = this.patientsTableAdapter.SearchByID(Convert.ToInt32(txtBoxID.Text));  //database querry searches for rows containing the id (we know it is only one, if it exists)
@@ -169,7 +169,7 @@ namespace OverSurgery
         private void button1_Click_1(object sender, EventArgs e) //takes you to the make appointment page
         {
             cbStaff.Items.Clear();
-            this.PageMakeAppointment.Controls.Add(this.cbStaff);
+            this.PageMakeAppointment.Controls.Add(this.cbStaff); //create the staff otions combobox dynamically
             this.cbStaff.Cursor = System.Windows.Forms.Cursors.Default;
             this.cbStaff.FormattingEnabled = true;
             this.cbStaff.Location = new System.Drawing.Point(343, 87);
@@ -180,7 +180,7 @@ namespace OverSurgery
               int i = 0;
             
             OverSugerydbaseDataSet.StaffDataTable StaffMenuTable = this.staffTableAdapter.GetData();
-            foreach (OverSugerydbaseDataSet.StaffRow row in StaffMenuTable)
+            foreach (OverSugerydbaseDataSet.StaffRow row in StaffMenuTable)  //add the staff names as options
             {
                
 
@@ -219,7 +219,7 @@ namespace OverSurgery
             this.resultsTableAdapter.FillByResPatID(this.overSugerydbaseDataSet.Results, txtActiveUserID.Text);
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void button5_Click(object sender, EventArgs e)  //takes you to the  page "enterTest Results"
         {
             setMeVisible("PageEnterTestResults");
         }
@@ -257,8 +257,7 @@ namespace OverSurgery
         {
             
 
-           // this.patientsTableAdapter.InsertNewRegistration(txtNRPatientsName.Text, dateTimePickerNR.Text, cbNRSex.Text, txtNRPC.Text, txtNRAddress1.Text, txtNRAddress2.Text, txtNRMobile.Text, txtNRLandLine.Text, txtNREmail.Text); //store the data from the textboxes to the database
-            if (Utilities.CheckPatientFields(txtNRPatientsName.Text,  dateTimePickerNR.Text, txtNRPC.Text, txtNRAddress1.Text, txtNRAddress2.Text, txtNREmail.Text, txtNRLandLine.Text, txtNRMobile.Text,cbNRSex.Text)) //the function in the utility class checks if the 4 main details have been entered.
+            if (Utilities.CheckPatientFields(txtNRPatientsName.Text,  dateTimePickerNR.Text, txtNRPC.Text, txtNRAddress1.Text, txtNRAddress2.Text, txtNREmail.Text, txtNRLandLine.Text, txtNRMobile.Text,cbNRSex.Text)) //the function in the utility class checks if the fields entered are correct returns "true" if all is ok.
             {
                 this.patientsTableAdapter.InsertNewRegistration(txtNRPatientsName.Text, dateTimePickerNR.Text, cbNRSex.Text, txtNRPC.Text, txtNRAddress1.Text, txtNRAddress2.Text, txtNRMobile.Text, txtNRLandLine.Text, txtNREmail.Text); //store the data from the textboxes to the database
                 this.patientsTableAdapter.Fill(this.overSugerydbaseDataSet.Patients); //*TEMP this will be removed after testing
@@ -271,36 +270,18 @@ namespace OverSurgery
                 Utilities.ActiveUserName = Convert.ToString(a); //store the values ActiveUserId and ActiveUserName in the Utility class.
                 Utilities.ActiveUserID = Convert.ToInt32(b);
              
-                txtActiveUserName.Text = Utilities.ActiveUserName;
+                txtActiveUserName.Text = Utilities.ActiveUserName;   //display the active users name and ID
                 txtActiveUserID.Text = Utilities.ActiveUserID.ToString();
                
-                setMeVisible("PageSelectedPatient");
-                btnClearActivePatient.Visible = true;
+                setMeVisible("PageSelectedPatient");  //takes you to the selected patient page
+                btnClearActivePatient.Visible = true;   //show the clear button so we can remove the active patient if we want.
                 
                 ClearNewRegistrationFields();  //clear the fields for next new registration
-
             }
-
-
 
         }
 
-        private void CheckLetterField(object sender, EventArgs e)  //WIP checks if the txtboxPatientName contains only letter *it must also allow spaces.
-        {
-            string testString = txtNRPatientsName.Text;
-           
-         
-           /*     for (int i = 0; i < testString.Length; i++)
-                {
-                    if (!char.IsLetter(testString[i]))
-                    {
-                       MessageBox.Show("A name can contaign only letters");
-                        txtNRPatientsName.Text = "";
-                        return;
-                    }
-                }
-      */      }
-        
+  
 
       
 
@@ -326,16 +307,16 @@ namespace OverSurgery
         {
             //CHECK HERE
 
-            OverSurgery.Utility Utilities = new Utility(); //creat a link for the class utility
-            if (Utilities.CheckPatientFields(tbPatientNameEdit.Text, tbDOBEdit.Text, tbPCEdit.Text, tbAddress1Edit.Text, tbAddress2Edit.Text, tbEmailEdit.Text, tbLandLineEdit.Text, tbMobileEdit.Text, tbSexEdit.Text))
+           // OverSurgery.Utility Utilities = new Utility(); //creat a link for the class utility
+            if (Utilities.CheckPatientFields(tbPatientNameEdit.Text, tbDOBEdit.Text, tbPCEdit.Text, tbAddress1Edit.Text, tbAddress2Edit.Text, tbEmailEdit.Text, tbLandLineEdit.Text, tbMobileEdit.Text, tbSexEdit.Text)) // checks the fields same way as with the new registration
             {
-                this.patientsTableAdapter.UpdatePatientDetails(tbPatientNameEdit.Text, tbDOBEdit.Text, tbSexEdit.Text, tbPCEdit.Text, tbAddress1Edit.Text, tbAddress2Edit.Text, tbMobileEdit.Text, tbLandLineEdit.Text, tbEmailEdit.Text, Convert.ToInt32(tbIDEdit.Text), Convert.ToInt32(tbIDEdit.Text));
+                this.patientsTableAdapter.UpdatePatientDetails(tbPatientNameEdit.Text, tbDOBEdit.Text, tbSexEdit.Text, tbPCEdit.Text, tbAddress1Edit.Text, tbAddress2Edit.Text, tbMobileEdit.Text, tbLandLineEdit.Text, tbEmailEdit.Text, Convert.ToInt32(tbIDEdit.Text), Convert.ToInt32(tbIDEdit.Text)); //store the values
 
                 setMeVisible("PageSelectedPatient");
             }
         }
 
-        private void button8_Click(object sender, EventArgs e) //not sure if needed
+        private void button8_Click(object sender, EventArgs e) //cancel button takes you back to the selected patient page
         {
             setMeVisible("PageSelectedPatient");
         }
