@@ -242,16 +242,16 @@ namespace OverSurgery
         }
 
 
-        public Boolean CheckMedFields(string Medname, string MedDose, string MedStart, string MedEnd, string MedGP) 
+        public Boolean CheckMedFields(string Medname, string MedDose, string MedStart, string MedEnd, string MedGP) //checks all Medication fields have data in before adding them to the database.
         {
-            Boolean medField = true;
+            Boolean medField = true;//if a field has been missed the boolean is set to false and causes a textbox to appaear with the list of forgotten fields
             string MedErrorMsg = "";
             StringBuilder MedErrorMsg2 = new StringBuilder();
 
             if (Medname == "")
             {
                 medField = false;
-                MedErrorMsg2.Append("\n Name");
+                MedErrorMsg2.Append("\n Name");//if empty "Name" is added to the string builder for use with the error message.
             }
             if (MedDose == "")
             {
@@ -273,25 +273,25 @@ namespace OverSurgery
                 medField = false;
                 MedErrorMsg2.Append("\n Prescribing GP");
             }
-            if (!medField)
+            if (!medField)//assembles the error message based on data saved as strings.
             {
                 MedErrorMsg = MedErrorMsg2.ToString();
                 MessageBox.Show(String.Format("Please enter information into the following fields: {0}", MedErrorMsg), "Error", MessageBoxButtons.OK);
             }
-            return medField;
+            return medField;//returns the results
         }
 
 
-        public Boolean checkResFields(string ResDate, string ResType, string ResResults, string ResGP, string ResDetails)
+        public Boolean checkResFields(string ResDate, string ResType, string ResResults, string ResGP, string ResDetails)//checks all data being added to the Test Results table.
         {
-            Boolean resFields = true;
+            Boolean resFields = true;//if false is thrown then a message box is created and the data is not added.
             string ResErrorMsg = "";
             StringBuilder ResErrorMsg2 = new StringBuilder();
 
             if (ResDate == "")
             {
                 resFields = false;
-                ResErrorMsg2.Append("\n Date of the test");
+                ResErrorMsg2.Append("\n Date of the test");//error message is saved as a string and added to the message at the end.
             }
              if (ResType == "")
             {
@@ -313,7 +313,7 @@ namespace OverSurgery
                 resFields = false;
                 ResErrorMsg2.Append("\n Details");
             }
-             if (!resFields)
+             if (!resFields)//assembles the error message based on data saved as strings.
             {
                 ResErrorMsg = ResErrorMsg2.ToString();
                 MessageBox.Show(String.Format("Please enter information into the following fields: {0}", ResErrorMsg), "Error", MessageBoxButtons.OK);

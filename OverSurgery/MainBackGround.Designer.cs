@@ -57,7 +57,6 @@
             System.Windows.Forms.Label resultsLabel;
             System.Windows.Forms.Label resGPLabel;
             System.Windows.Forms.Label resDetailsLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainBackGround));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
@@ -67,6 +66,15 @@
             this.btnClearActivePatient = new System.Windows.Forms.Button();
             this.Label100 = new System.Windows.Forms.Label();
             this.Label200 = new System.Windows.Forms.Label();
+            this.PageViewPrintTestResults = new System.Windows.Forms.Panel();
+            this.btnResDelete = new System.Windows.Forms.Button();
+            this.btnResDown = new System.Windows.Forms.Button();
+            this.btnResUp = new System.Windows.Forms.Button();
+            this.resultsDataGridView = new System.Windows.Forms.DataGridView();
+            this.resultsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.overSugerydbaseDataSet = new OverSurgery.OverSugerydbaseDataSet();
+            this.label27 = new System.Windows.Forms.Label();
+            this.btnVResCancel = new System.Windows.Forms.Button();
             this.PageEnterTestResults = new System.Windows.Forms.Panel();
             this.btnResCancel = new System.Windows.Forms.Button();
             this.btnResSave = new System.Windows.Forms.Button();
@@ -76,6 +84,35 @@
             this.txtResGP = new System.Windows.Forms.TextBox();
             this.txtResDetails = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
+            this.PageAddViewExtendMedication = new System.Windows.Forms.Panel();
+            this.btnMedCancel = new System.Windows.Forms.Button();
+            this.tabControlMed = new System.Windows.Forms.TabControl();
+            this.MedEdit = new System.Windows.Forms.TabPage();
+            this.btnMedDelete = new System.Windows.Forms.Button();
+            this.btnMedEdit = new System.Windows.Forms.Button();
+            this.btnMedDown = new System.Windows.Forms.Button();
+            this.btnMedUP = new System.Windows.Forms.Button();
+            this.start_DateTextBox = new System.Windows.Forms.TextBox();
+            this.medicationBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.patientIDTextBox = new System.Windows.Forms.TextBox();
+            this.prescribing_GPTextBox = new System.Windows.Forms.TextBox();
+            this.medNameTextBox = new System.Windows.Forms.TextBox();
+            this.end_DateTextBox = new System.Windows.Forms.TextBox();
+            this.doseTextBox = new System.Windows.Forms.TextBox();
+            this.MedNew = new System.Windows.Forms.TabPage();
+            this.txtMedGP = new System.Windows.Forms.TextBox();
+            this.txtMedEnd = new System.Windows.Forms.TextBox();
+            this.txtMedStart = new System.Windows.Forms.TextBox();
+            this.txtMedDose2 = new System.Windows.Forms.TextBox();
+            this.txtMedName2 = new System.Windows.Forms.TextBox();
+            this.btnMedAdd = new System.Windows.Forms.Button();
+            this.medicationDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label28 = new System.Windows.Forms.Label();
             this.PageNewRegistration = new System.Windows.Forms.Panel();
             this.labelDemo3 = new System.Windows.Forms.Label();
             this.dateTimePickerNR = new System.Windows.Forms.DateTimePicker();
@@ -93,7 +130,6 @@
             this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.patientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.overSugerydbaseDataSet = new OverSurgery.OverSugerydbaseDataSet();
             this.label41 = new System.Windows.Forms.Label();
             this.CreateReg = new System.Windows.Forms.Button();
             this.CancelReg = new System.Windows.Forms.Button();
@@ -193,47 +229,6 @@
             this.label25 = new System.Windows.Forms.Label();
             this.dateTimePickerAP = new System.Windows.Forms.DateTimePicker();
             this.label24 = new System.Windows.Forms.Label();
-            this.PageViewPrintTestResults = new System.Windows.Forms.Panel();
-            this.resultsDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.resultsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label27 = new System.Windows.Forms.Label();
-            this.btnVResCancel = new System.Windows.Forms.Button();
-            this.PageAddViewExtendMedication = new System.Windows.Forms.Panel();
-            this.btnMedCancel = new System.Windows.Forms.Button();
-            this.tabControlMed = new System.Windows.Forms.TabControl();
-            this.MedEdit = new System.Windows.Forms.TabPage();
-            this.btnMedDelete = new System.Windows.Forms.Button();
-            this.btnMedEdit = new System.Windows.Forms.Button();
-            this.btnMedDown = new System.Windows.Forms.Button();
-            this.btnMedUP = new System.Windows.Forms.Button();
-            this.start_DateTextBox = new System.Windows.Forms.TextBox();
-            this.medicationBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.patientIDTextBox = new System.Windows.Forms.TextBox();
-            this.prescribing_GPTextBox = new System.Windows.Forms.TextBox();
-            this.medNameTextBox = new System.Windows.Forms.TextBox();
-            this.end_DateTextBox = new System.Windows.Forms.TextBox();
-            this.doseTextBox = new System.Windows.Forms.TextBox();
-            this.MedNew = new System.Windows.Forms.TabPage();
-            this.txtMedGP = new System.Windows.Forms.TextBox();
-            this.txtMedEnd = new System.Windows.Forms.TextBox();
-            this.txtMedStart = new System.Windows.Forms.TextBox();
-            this.txtMedDose2 = new System.Windows.Forms.TextBox();
-            this.txtMedName2 = new System.Windows.Forms.TextBox();
-            this.btnMedAdd = new System.Windows.Forms.Button();
-            this.medicationDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label28 = new System.Windows.Forms.Label();
             this.PageEditPatientDetails = new System.Windows.Forms.Panel();
             this.label23 = new System.Windows.Forms.Label();
             this.btnChangeDetails = new System.Windows.Forms.Button();
@@ -379,9 +374,11 @@
             this.twoActiveWeeksTableAdapter = new OverSurgery.OverSugerydbaseDataSetTableAdapters.TwoActiveWeeksTableAdapter();
             this.staffTableAdapter3 = new OverSurgery.OverSugerydbaseDataSet1TableAdapters.StaffTableAdapter();
             this.resultsTableAdapter = new OverSurgery.OverSugerydbaseDataSetTableAdapters.ResultsTableAdapter();
-            this.btnResUp = new System.Windows.Forms.Button();
-            this.btnResDown = new System.Windows.Forms.Button();
-            this.btnResDelete = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             medNameLabel = new System.Windows.Forms.Label();
             doseLabel = new System.Windows.Forms.Label();
             start_DateLabel = new System.Windows.Forms.Label();
@@ -416,11 +413,20 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.PageViewPrintTestResults.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resultsDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resultsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet)).BeginInit();
             this.PageEnterTestResults.SuspendLayout();
+            this.PageAddViewExtendMedication.SuspendLayout();
+            this.tabControlMed.SuspendLayout();
+            this.MedEdit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.medicationBindingSource)).BeginInit();
+            this.MedNew.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.medicationDataGridView)).BeginInit();
             this.PageNewRegistration.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet)).BeginInit();
             this.PageMainScreen.SuspendLayout();
             this.PageSelectedPatient.SuspendLayout();
             this.PageMakeAppointment.SuspendLayout();
@@ -428,15 +434,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksBindingSource)).BeginInit();
             this.TableMorning.SuspendLayout();
             this.TableAfternoun.SuspendLayout();
-            this.PageViewPrintTestResults.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.resultsDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.resultsBindingSource)).BeginInit();
-            this.PageAddViewExtendMedication.SuspendLayout();
-            this.tabControlMed.SuspendLayout();
-            this.MedEdit.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.medicationBindingSource)).BeginInit();
-            this.MedNew.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.medicationDataGridView)).BeginInit();
             this.PageEditPatientDetails.SuspendLayout();
             this.PageViewCancelEditAppointment.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -764,8 +761,8 @@
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.LightGray;
             this.splitContainer1.Panel2.Controls.Add(this.PageViewPrintTestResults);
-            this.splitContainer1.Panel2.Controls.Add(this.PageEnterTestResults);
             this.splitContainer1.Panel2.Controls.Add(this.PageAddViewExtendMedication);
+            this.splitContainer1.Panel2.Controls.Add(this.PageEnterTestResults);
             this.splitContainer1.Panel2.Controls.Add(this.PageNewRegistration);
             this.splitContainer1.Panel2.Controls.Add(this.PageMainScreen);
             this.splitContainer1.Panel2.Controls.Add(this.PageSelectedPatient);
@@ -820,6 +817,97 @@
             this.Label200.Size = new System.Drawing.Size(83, 16);
             this.Label200.TabIndex = 2;
             this.Label200.Text = "Patient ID: ";
+            // 
+            // PageViewPrintTestResults
+            // 
+            this.PageViewPrintTestResults.Controls.Add(this.btnResDelete);
+            this.PageViewPrintTestResults.Controls.Add(this.btnResDown);
+            this.PageViewPrintTestResults.Controls.Add(this.btnResUp);
+            this.PageViewPrintTestResults.Controls.Add(this.resultsDataGridView);
+            this.PageViewPrintTestResults.Controls.Add(this.label27);
+            this.PageViewPrintTestResults.Controls.Add(this.btnVResCancel);
+            this.PageViewPrintTestResults.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PageViewPrintTestResults.Location = new System.Drawing.Point(0, 0);
+            this.PageViewPrintTestResults.Name = "PageViewPrintTestResults";
+            this.PageViewPrintTestResults.Size = new System.Drawing.Size(966, 600);
+            this.PageViewPrintTestResults.TabIndex = 0;
+            this.PageViewPrintTestResults.Visible = false;
+            // 
+            // btnResDelete
+            // 
+            this.btnResDelete.Location = new System.Drawing.Point(764, 358);
+            this.btnResDelete.Name = "btnResDelete";
+            this.btnResDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnResDelete.TabIndex = 6;
+            this.btnResDelete.Text = "Delete";
+            this.btnResDelete.UseVisualStyleBackColor = true;
+            this.btnResDelete.Click += new System.EventHandler(this.btnResDelete_Click);
+            // 
+            // btnResDown
+            // 
+            this.btnResDown.Location = new System.Drawing.Point(50, 387);
+            this.btnResDown.Name = "btnResDown";
+            this.btnResDown.Size = new System.Drawing.Size(75, 23);
+            this.btnResDown.TabIndex = 5;
+            this.btnResDown.Text = "Down";
+            this.btnResDown.UseVisualStyleBackColor = true;
+            this.btnResDown.Click += new System.EventHandler(this.btnResDown_Click);
+            // 
+            // btnResUp
+            // 
+            this.btnResUp.Location = new System.Drawing.Point(50, 359);
+            this.btnResUp.Name = "btnResUp";
+            this.btnResUp.Size = new System.Drawing.Size(75, 23);
+            this.btnResUp.TabIndex = 4;
+            this.btnResUp.Text = "UP";
+            this.btnResUp.UseVisualStyleBackColor = true;
+            this.btnResUp.Click += new System.EventHandler(this.btnResUp_Click);
+            // 
+            // resultsDataGridView
+            // 
+            this.resultsDataGridView.AutoGenerateColumns = false;
+            this.resultsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.resultsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn34,
+            this.dataGridViewTextBoxColumn35,
+            this.dataGridViewTextBoxColumn36,
+            this.dataGridViewTextBoxColumn37,
+            this.dataGridViewTextBoxColumn38});
+            this.resultsDataGridView.DataSource = this.resultsBindingSource;
+            this.resultsDataGridView.Location = new System.Drawing.Point(50, 75);
+            this.resultsDataGridView.Name = "resultsDataGridView";
+            this.resultsDataGridView.Size = new System.Drawing.Size(838, 269);
+            this.resultsDataGridView.TabIndex = 3;
+            // 
+            // resultsBindingSource
+            // 
+            this.resultsBindingSource.DataMember = "Results";
+            this.resultsBindingSource.DataSource = this.overSugerydbaseDataSet;
+            // 
+            // overSugerydbaseDataSet
+            // 
+            this.overSugerydbaseDataSet.DataSetName = "OverSugerydbaseDataSet";
+            this.overSugerydbaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.Location = new System.Drawing.Point(50, 24);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(257, 25);
+            this.label27.TabIndex = 3;
+            this.label27.Text = "View/Print Test Results";
+            // 
+            // btnVResCancel
+            // 
+            this.btnVResCancel.Location = new System.Drawing.Point(826, 555);
+            this.btnVResCancel.Name = "btnVResCancel";
+            this.btnVResCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnVResCancel.TabIndex = 2;
+            this.btnVResCancel.Text = "Cancel";
+            this.btnVResCancel.UseVisualStyleBackColor = true;
+            this.btnVResCancel.Click += new System.EventHandler(this.btnVResCancel_Click);
             // 
             // PageEnterTestResults
             // 
@@ -907,6 +995,299 @@
             this.label14.Size = new System.Drawing.Size(207, 25);
             this.label14.TabIndex = 0;
             this.label14.Text = "Enter Test Results";
+            // 
+            // PageAddViewExtendMedication
+            // 
+            this.PageAddViewExtendMedication.AutoScroll = true;
+            this.PageAddViewExtendMedication.Controls.Add(this.btnMedCancel);
+            this.PageAddViewExtendMedication.Controls.Add(this.tabControlMed);
+            this.PageAddViewExtendMedication.Controls.Add(this.medicationDataGridView);
+            this.PageAddViewExtendMedication.Controls.Add(this.label28);
+            this.PageAddViewExtendMedication.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PageAddViewExtendMedication.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.PageAddViewExtendMedication.Location = new System.Drawing.Point(0, 0);
+            this.PageAddViewExtendMedication.Name = "PageAddViewExtendMedication";
+            this.PageAddViewExtendMedication.Size = new System.Drawing.Size(966, 600);
+            this.PageAddViewExtendMedication.TabIndex = 6;
+            this.PageAddViewExtendMedication.Visible = false;
+            // 
+            // btnMedCancel
+            // 
+            this.btnMedCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMedCancel.Location = new System.Drawing.Point(764, 539);
+            this.btnMedCancel.Name = "btnMedCancel";
+            this.btnMedCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnMedCancel.TabIndex = 20;
+            this.btnMedCancel.Text = "Cancel";
+            this.btnMedCancel.UseVisualStyleBackColor = true;
+            this.btnMedCancel.Click += new System.EventHandler(this.btnMedCancel_Click_1);
+            // 
+            // tabControlMed
+            // 
+            this.tabControlMed.Controls.Add(this.MedEdit);
+            this.tabControlMed.Controls.Add(this.MedNew);
+            this.tabControlMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tabControlMed.Location = new System.Drawing.Point(70, 271);
+            this.tabControlMed.Name = "tabControlMed";
+            this.tabControlMed.SelectedIndex = 0;
+            this.tabControlMed.Size = new System.Drawing.Size(465, 307);
+            this.tabControlMed.TabIndex = 19;
+            // 
+            // MedEdit
+            // 
+            this.MedEdit.Controls.Add(this.btnMedDelete);
+            this.MedEdit.Controls.Add(this.btnMedEdit);
+            this.MedEdit.Controls.Add(this.btnMedDown);
+            this.MedEdit.Controls.Add(this.btnMedUP);
+            this.MedEdit.Controls.Add(this.start_DateTextBox);
+            this.MedEdit.Controls.Add(this.patientIDTextBox);
+            this.MedEdit.Controls.Add(patientIDLabel);
+            this.MedEdit.Controls.Add(medNameLabel);
+            this.MedEdit.Controls.Add(this.prescribing_GPTextBox);
+            this.MedEdit.Controls.Add(this.medNameTextBox);
+            this.MedEdit.Controls.Add(prescribing_GPLabel);
+            this.MedEdit.Controls.Add(doseLabel);
+            this.MedEdit.Controls.Add(this.end_DateTextBox);
+            this.MedEdit.Controls.Add(this.doseTextBox);
+            this.MedEdit.Controls.Add(end_DateLabel);
+            this.MedEdit.Controls.Add(start_DateLabel);
+            this.MedEdit.Location = new System.Drawing.Point(4, 29);
+            this.MedEdit.Name = "MedEdit";
+            this.MedEdit.Padding = new System.Windows.Forms.Padding(3);
+            this.MedEdit.Size = new System.Drawing.Size(457, 274);
+            this.MedEdit.TabIndex = 0;
+            this.MedEdit.Text = "Edit";
+            this.MedEdit.UseVisualStyleBackColor = true;
+            // 
+            // btnMedDelete
+            // 
+            this.btnMedDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMedDelete.Location = new System.Drawing.Point(356, 211);
+            this.btnMedDelete.Name = "btnMedDelete";
+            this.btnMedDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnMedDelete.TabIndex = 20;
+            this.btnMedDelete.Text = "Delete";
+            this.btnMedDelete.UseVisualStyleBackColor = true;
+            this.btnMedDelete.Click += new System.EventHandler(this.btnMedDelete_Click_1);
+            // 
+            // btnMedEdit
+            // 
+            this.btnMedEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMedEdit.Location = new System.Drawing.Point(356, 174);
+            this.btnMedEdit.Name = "btnMedEdit";
+            this.btnMedEdit.Size = new System.Drawing.Size(75, 23);
+            this.btnMedEdit.TabIndex = 19;
+            this.btnMedEdit.Text = "Save";
+            this.btnMedEdit.UseVisualStyleBackColor = true;
+            this.btnMedEdit.Click += new System.EventHandler(this.btnMedEdit_Click_1);
+            // 
+            // btnMedDown
+            // 
+            this.btnMedDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMedDown.Location = new System.Drawing.Point(356, 65);
+            this.btnMedDown.Name = "btnMedDown";
+            this.btnMedDown.Size = new System.Drawing.Size(75, 23);
+            this.btnMedDown.TabIndex = 18;
+            this.btnMedDown.Text = "Down";
+            this.btnMedDown.UseVisualStyleBackColor = true;
+            this.btnMedDown.Click += new System.EventHandler(this.btnMedDown_Click_1);
+            // 
+            // btnMedUP
+            // 
+            this.btnMedUP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMedUP.Location = new System.Drawing.Point(356, 25);
+            this.btnMedUP.Name = "btnMedUP";
+            this.btnMedUP.Size = new System.Drawing.Size(75, 23);
+            this.btnMedUP.TabIndex = 17;
+            this.btnMedUP.Text = "UP";
+            this.btnMedUP.UseVisualStyleBackColor = true;
+            this.btnMedUP.Click += new System.EventHandler(this.btnMedUP_Click_1);
+            // 
+            // start_DateTextBox
+            // 
+            this.start_DateTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicationBindingSource, "Start Date", true));
+            this.start_DateTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.start_DateTextBox.Location = new System.Drawing.Point(201, 97);
+            this.start_DateTextBox.Name = "start_DateTextBox";
+            this.start_DateTextBox.Size = new System.Drawing.Size(100, 22);
+            this.start_DateTextBox.TabIndex = 10;
+            // 
+            // medicationBindingSource
+            // 
+            this.medicationBindingSource.DataMember = "Medication";
+            this.medicationBindingSource.DataSource = this.overSugerydbaseDataSet;
+            // 
+            // patientIDTextBox
+            // 
+            this.patientIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicationBindingSource, "PatientID", true));
+            this.patientIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.patientIDTextBox.Location = new System.Drawing.Point(201, 208);
+            this.patientIDTextBox.Name = "patientIDTextBox";
+            this.patientIDTextBox.Size = new System.Drawing.Size(100, 22);
+            this.patientIDTextBox.TabIndex = 16;
+            // 
+            // prescribing_GPTextBox
+            // 
+            this.prescribing_GPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicationBindingSource, "Prescribing GP", true));
+            this.prescribing_GPTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.prescribing_GPTextBox.Location = new System.Drawing.Point(201, 171);
+            this.prescribing_GPTextBox.Name = "prescribing_GPTextBox";
+            this.prescribing_GPTextBox.Size = new System.Drawing.Size(100, 22);
+            this.prescribing_GPTextBox.TabIndex = 14;
+            // 
+            // medNameTextBox
+            // 
+            this.medNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicationBindingSource, "MedName", true));
+            this.medNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.medNameTextBox.Location = new System.Drawing.Point(201, 23);
+            this.medNameTextBox.Name = "medNameTextBox";
+            this.medNameTextBox.Size = new System.Drawing.Size(100, 22);
+            this.medNameTextBox.TabIndex = 6;
+            // 
+            // end_DateTextBox
+            // 
+            this.end_DateTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicationBindingSource, "End Date", true));
+            this.end_DateTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.end_DateTextBox.Location = new System.Drawing.Point(201, 134);
+            this.end_DateTextBox.Name = "end_DateTextBox";
+            this.end_DateTextBox.Size = new System.Drawing.Size(100, 22);
+            this.end_DateTextBox.TabIndex = 12;
+            // 
+            // doseTextBox
+            // 
+            this.doseTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicationBindingSource, "Dose", true));
+            this.doseTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.doseTextBox.Location = new System.Drawing.Point(201, 60);
+            this.doseTextBox.Name = "doseTextBox";
+            this.doseTextBox.Size = new System.Drawing.Size(100, 22);
+            this.doseTextBox.TabIndex = 8;
+            // 
+            // MedNew
+            // 
+            this.MedNew.Controls.Add(this.txtMedGP);
+            this.MedNew.Controls.Add(this.txtMedEnd);
+            this.MedNew.Controls.Add(this.txtMedStart);
+            this.MedNew.Controls.Add(this.txtMedDose2);
+            this.MedNew.Controls.Add(this.txtMedName2);
+            this.MedNew.Controls.Add(label38);
+            this.MedNew.Controls.Add(label83);
+            this.MedNew.Controls.Add(label84);
+            this.MedNew.Controls.Add(label85);
+            this.MedNew.Controls.Add(label86);
+            this.MedNew.Controls.Add(this.btnMedAdd);
+            this.MedNew.Location = new System.Drawing.Point(4, 29);
+            this.MedNew.Name = "MedNew";
+            this.MedNew.Padding = new System.Windows.Forms.Padding(3);
+            this.MedNew.Size = new System.Drawing.Size(457, 274);
+            this.MedNew.TabIndex = 1;
+            this.MedNew.Text = "New";
+            this.MedNew.UseVisualStyleBackColor = true;
+            // 
+            // txtMedGP
+            // 
+            this.txtMedGP.Location = new System.Drawing.Point(201, 171);
+            this.txtMedGP.Name = "txtMedGP";
+            this.txtMedGP.Size = new System.Drawing.Size(100, 26);
+            this.txtMedGP.TabIndex = 28;
+            // 
+            // txtMedEnd
+            // 
+            this.txtMedEnd.Location = new System.Drawing.Point(201, 134);
+            this.txtMedEnd.Name = "txtMedEnd";
+            this.txtMedEnd.Size = new System.Drawing.Size(100, 26);
+            this.txtMedEnd.TabIndex = 27;
+            // 
+            // txtMedStart
+            // 
+            this.txtMedStart.Location = new System.Drawing.Point(201, 97);
+            this.txtMedStart.Name = "txtMedStart";
+            this.txtMedStart.Size = new System.Drawing.Size(100, 26);
+            this.txtMedStart.TabIndex = 26;
+            // 
+            // txtMedDose2
+            // 
+            this.txtMedDose2.Location = new System.Drawing.Point(201, 60);
+            this.txtMedDose2.Name = "txtMedDose2";
+            this.txtMedDose2.Size = new System.Drawing.Size(100, 26);
+            this.txtMedDose2.TabIndex = 25;
+            // 
+            // txtMedName2
+            // 
+            this.txtMedName2.Location = new System.Drawing.Point(201, 23);
+            this.txtMedName2.Name = "txtMedName2";
+            this.txtMedName2.Size = new System.Drawing.Size(100, 26);
+            this.txtMedName2.TabIndex = 24;
+            // 
+            // btnMedAdd
+            // 
+            this.btnMedAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMedAdd.Location = new System.Drawing.Point(356, 211);
+            this.btnMedAdd.Name = "btnMedAdd";
+            this.btnMedAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnMedAdd.TabIndex = 17;
+            this.btnMedAdd.Text = "Save";
+            this.btnMedAdd.UseVisualStyleBackColor = true;
+            this.btnMedAdd.Click += new System.EventHandler(this.btnMedAdd_Click);
+            // 
+            // medicationDataGridView
+            // 
+            this.medicationDataGridView.AutoGenerateColumns = false;
+            this.medicationDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.medicationDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn23,
+            this.dataGridViewTextBoxColumn24,
+            this.dataGridViewTextBoxColumn25,
+            this.dataGridViewTextBoxColumn26,
+            this.dataGridViewTextBoxColumn27});
+            this.medicationDataGridView.DataSource = this.medicationBindingSource;
+            this.medicationDataGridView.Location = new System.Drawing.Point(33, 55);
+            this.medicationDataGridView.Name = "medicationDataGridView";
+            this.medicationDataGridView.Size = new System.Drawing.Size(836, 184);
+            this.medicationDataGridView.TabIndex = 2;
+            // 
+            // dataGridViewTextBoxColumn23
+            // 
+            this.dataGridViewTextBoxColumn23.DataPropertyName = "MedName";
+            this.dataGridViewTextBoxColumn23.HeaderText = "Name";
+            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
+            this.dataGridViewTextBoxColumn23.Width = 200;
+            // 
+            // dataGridViewTextBoxColumn24
+            // 
+            this.dataGridViewTextBoxColumn24.DataPropertyName = "Dose";
+            this.dataGridViewTextBoxColumn24.HeaderText = "Dose";
+            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
+            this.dataGridViewTextBoxColumn24.Width = 110;
+            // 
+            // dataGridViewTextBoxColumn25
+            // 
+            this.dataGridViewTextBoxColumn25.DataPropertyName = "Start Date";
+            this.dataGridViewTextBoxColumn25.HeaderText = "Start Date";
+            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
+            this.dataGridViewTextBoxColumn25.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn26
+            // 
+            this.dataGridViewTextBoxColumn26.DataPropertyName = "End Date";
+            this.dataGridViewTextBoxColumn26.HeaderText = "End Date";
+            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
+            this.dataGridViewTextBoxColumn26.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn27
+            // 
+            this.dataGridViewTextBoxColumn27.DataPropertyName = "Prescribing GP";
+            this.dataGridViewTextBoxColumn27.HeaderText = "Prescribing GP";
+            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
+            this.dataGridViewTextBoxColumn27.Width = 180;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Location = new System.Drawing.Point(27, 18);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(312, 25);
+            this.label28.TabIndex = 0;
+            this.label28.Text = "Add View Extend Medication";
             // 
             // PageNewRegistration
             // 
@@ -1064,11 +1445,6 @@
             // 
             this.patientsBindingSource.DataMember = "Patients";
             this.patientsBindingSource.DataSource = this.overSugerydbaseDataSet;
-            // 
-            // overSugerydbaseDataSet
-            // 
-            this.overSugerydbaseDataSet.DataSetName = "OverSugerydbaseDataSet";
-            this.overSugerydbaseDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // label41
             // 
@@ -2217,407 +2593,6 @@
             this.label24.Size = new System.Drawing.Size(240, 25);
             this.label24.TabIndex = 0;
             this.label24.Text = "Make an Appointment";
-            // 
-            // PageViewPrintTestResults
-            // 
-            this.PageViewPrintTestResults.Controls.Add(this.btnResDelete);
-            this.PageViewPrintTestResults.Controls.Add(this.btnResDown);
-            this.PageViewPrintTestResults.Controls.Add(this.btnResUp);
-            this.PageViewPrintTestResults.Controls.Add(this.resultsDataGridView);
-            this.PageViewPrintTestResults.Controls.Add(this.label27);
-            this.PageViewPrintTestResults.Controls.Add(this.btnVResCancel);
-            this.PageViewPrintTestResults.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PageViewPrintTestResults.Location = new System.Drawing.Point(0, 0);
-            this.PageViewPrintTestResults.Name = "PageViewPrintTestResults";
-            this.PageViewPrintTestResults.Size = new System.Drawing.Size(966, 600);
-            this.PageViewPrintTestResults.TabIndex = 0;
-            this.PageViewPrintTestResults.Visible = false;
-            // 
-            // resultsDataGridView
-            // 
-            this.resultsDataGridView.AutoGenerateColumns = false;
-            this.resultsDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.resultsDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn33,
-            this.dataGridViewTextBoxColumn34,
-            this.dataGridViewTextBoxColumn35,
-            this.dataGridViewTextBoxColumn36,
-            this.dataGridViewTextBoxColumn37,
-            this.dataGridViewTextBoxColumn38,
-            this.dataGridViewTextBoxColumn39});
-            this.resultsDataGridView.DataSource = this.resultsBindingSource;
-            this.resultsDataGridView.Location = new System.Drawing.Point(50, 75);
-            this.resultsDataGridView.Name = "resultsDataGridView";
-            this.resultsDataGridView.Size = new System.Drawing.Size(764, 269);
-            this.resultsDataGridView.TabIndex = 3;
-            // 
-            // dataGridViewTextBoxColumn33
-            // 
-            this.dataGridViewTextBoxColumn33.DataPropertyName = "Id";
-            this.dataGridViewTextBoxColumn33.HeaderText = "Id";
-            this.dataGridViewTextBoxColumn33.Name = "dataGridViewTextBoxColumn33";
-            // 
-            // dataGridViewTextBoxColumn34
-            // 
-            this.dataGridViewTextBoxColumn34.DataPropertyName = "ResDate";
-            this.dataGridViewTextBoxColumn34.HeaderText = "ResDate";
-            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
-            // 
-            // dataGridViewTextBoxColumn35
-            // 
-            this.dataGridViewTextBoxColumn35.DataPropertyName = "ResType";
-            this.dataGridViewTextBoxColumn35.HeaderText = "ResType";
-            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
-            // 
-            // dataGridViewTextBoxColumn36
-            // 
-            this.dataGridViewTextBoxColumn36.DataPropertyName = "Results";
-            this.dataGridViewTextBoxColumn36.HeaderText = "Results";
-            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
-            // 
-            // dataGridViewTextBoxColumn37
-            // 
-            this.dataGridViewTextBoxColumn37.DataPropertyName = "ResGP";
-            this.dataGridViewTextBoxColumn37.HeaderText = "ResGP";
-            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
-            // 
-            // dataGridViewTextBoxColumn38
-            // 
-            this.dataGridViewTextBoxColumn38.DataPropertyName = "ResDetails";
-            this.dataGridViewTextBoxColumn38.HeaderText = "ResDetails";
-            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
-            // 
-            // dataGridViewTextBoxColumn39
-            // 
-            this.dataGridViewTextBoxColumn39.DataPropertyName = "ResPatientID";
-            this.dataGridViewTextBoxColumn39.HeaderText = "ResPatientID";
-            this.dataGridViewTextBoxColumn39.Name = "dataGridViewTextBoxColumn39";
-            // 
-            // resultsBindingSource
-            // 
-            this.resultsBindingSource.DataMember = "Results";
-            this.resultsBindingSource.DataSource = this.overSugerydbaseDataSet;
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(50, 24);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(257, 25);
-            this.label27.TabIndex = 3;
-            this.label27.Text = "View/Print Test Results";
-            // 
-            // btnVResCancel
-            // 
-            this.btnVResCancel.Location = new System.Drawing.Point(826, 555);
-            this.btnVResCancel.Name = "btnVResCancel";
-            this.btnVResCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnVResCancel.TabIndex = 2;
-            this.btnVResCancel.Text = "Cancel";
-            this.btnVResCancel.UseVisualStyleBackColor = true;
-            this.btnVResCancel.Click += new System.EventHandler(this.btnVResCancel_Click);
-            // 
-            // PageAddViewExtendMedication
-            // 
-            this.PageAddViewExtendMedication.AutoScroll = true;
-            this.PageAddViewExtendMedication.Controls.Add(this.btnMedCancel);
-            this.PageAddViewExtendMedication.Controls.Add(this.tabControlMed);
-            this.PageAddViewExtendMedication.Controls.Add(this.medicationDataGridView);
-            this.PageAddViewExtendMedication.Controls.Add(this.label28);
-            this.PageAddViewExtendMedication.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PageAddViewExtendMedication.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.PageAddViewExtendMedication.Location = new System.Drawing.Point(0, 0);
-            this.PageAddViewExtendMedication.Name = "PageAddViewExtendMedication";
-            this.PageAddViewExtendMedication.Size = new System.Drawing.Size(966, 600);
-            this.PageAddViewExtendMedication.TabIndex = 6;
-            this.PageAddViewExtendMedication.Visible = false;
-            // 
-            // btnMedCancel
-            // 
-            this.btnMedCancel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMedCancel.Location = new System.Drawing.Point(764, 539);
-            this.btnMedCancel.Name = "btnMedCancel";
-            this.btnMedCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnMedCancel.TabIndex = 20;
-            this.btnMedCancel.Text = "Cancel";
-            this.btnMedCancel.UseVisualStyleBackColor = true;
-            this.btnMedCancel.Click += new System.EventHandler(this.btnMedCancel_Click_1);
-            // 
-            // tabControlMed
-            // 
-            this.tabControlMed.Controls.Add(this.MedEdit);
-            this.tabControlMed.Controls.Add(this.MedNew);
-            this.tabControlMed.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tabControlMed.Location = new System.Drawing.Point(70, 271);
-            this.tabControlMed.Name = "tabControlMed";
-            this.tabControlMed.SelectedIndex = 0;
-            this.tabControlMed.Size = new System.Drawing.Size(465, 307);
-            this.tabControlMed.TabIndex = 19;
-            // 
-            // MedEdit
-            // 
-            this.MedEdit.Controls.Add(this.btnMedDelete);
-            this.MedEdit.Controls.Add(this.btnMedEdit);
-            this.MedEdit.Controls.Add(this.btnMedDown);
-            this.MedEdit.Controls.Add(this.btnMedUP);
-            this.MedEdit.Controls.Add(this.start_DateTextBox);
-            this.MedEdit.Controls.Add(this.patientIDTextBox);
-            this.MedEdit.Controls.Add(patientIDLabel);
-            this.MedEdit.Controls.Add(medNameLabel);
-            this.MedEdit.Controls.Add(this.prescribing_GPTextBox);
-            this.MedEdit.Controls.Add(this.medNameTextBox);
-            this.MedEdit.Controls.Add(prescribing_GPLabel);
-            this.MedEdit.Controls.Add(doseLabel);
-            this.MedEdit.Controls.Add(this.end_DateTextBox);
-            this.MedEdit.Controls.Add(this.doseTextBox);
-            this.MedEdit.Controls.Add(end_DateLabel);
-            this.MedEdit.Controls.Add(start_DateLabel);
-            this.MedEdit.Location = new System.Drawing.Point(4, 29);
-            this.MedEdit.Name = "MedEdit";
-            this.MedEdit.Padding = new System.Windows.Forms.Padding(3);
-            this.MedEdit.Size = new System.Drawing.Size(457, 274);
-            this.MedEdit.TabIndex = 0;
-            this.MedEdit.Text = "Edit";
-            this.MedEdit.UseVisualStyleBackColor = true;
-            // 
-            // btnMedDelete
-            // 
-            this.btnMedDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMedDelete.Location = new System.Drawing.Point(356, 211);
-            this.btnMedDelete.Name = "btnMedDelete";
-            this.btnMedDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnMedDelete.TabIndex = 20;
-            this.btnMedDelete.Text = "Delete";
-            this.btnMedDelete.UseVisualStyleBackColor = true;
-            this.btnMedDelete.Click += new System.EventHandler(this.btnMedDelete_Click_1);
-            // 
-            // btnMedEdit
-            // 
-            this.btnMedEdit.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMedEdit.Location = new System.Drawing.Point(356, 174);
-            this.btnMedEdit.Name = "btnMedEdit";
-            this.btnMedEdit.Size = new System.Drawing.Size(75, 23);
-            this.btnMedEdit.TabIndex = 19;
-            this.btnMedEdit.Text = "Save";
-            this.btnMedEdit.UseVisualStyleBackColor = true;
-            this.btnMedEdit.Click += new System.EventHandler(this.btnMedEdit_Click_1);
-            // 
-            // btnMedDown
-            // 
-            this.btnMedDown.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMedDown.Location = new System.Drawing.Point(356, 65);
-            this.btnMedDown.Name = "btnMedDown";
-            this.btnMedDown.Size = new System.Drawing.Size(75, 23);
-            this.btnMedDown.TabIndex = 18;
-            this.btnMedDown.Text = "Down";
-            this.btnMedDown.UseVisualStyleBackColor = true;
-            this.btnMedDown.Click += new System.EventHandler(this.btnMedDown_Click_1);
-            // 
-            // btnMedUP
-            // 
-            this.btnMedUP.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMedUP.Location = new System.Drawing.Point(356, 25);
-            this.btnMedUP.Name = "btnMedUP";
-            this.btnMedUP.Size = new System.Drawing.Size(75, 23);
-            this.btnMedUP.TabIndex = 17;
-            this.btnMedUP.Text = "UP";
-            this.btnMedUP.UseVisualStyleBackColor = true;
-            this.btnMedUP.Click += new System.EventHandler(this.btnMedUP_Click_1);
-            // 
-            // start_DateTextBox
-            // 
-            this.start_DateTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicationBindingSource, "Start Date", true));
-            this.start_DateTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.start_DateTextBox.Location = new System.Drawing.Point(201, 97);
-            this.start_DateTextBox.Name = "start_DateTextBox";
-            this.start_DateTextBox.Size = new System.Drawing.Size(100, 22);
-            this.start_DateTextBox.TabIndex = 10;
-            // 
-            // medicationBindingSource
-            // 
-            this.medicationBindingSource.DataMember = "Medication";
-            this.medicationBindingSource.DataSource = this.overSugerydbaseDataSet;
-            // 
-            // patientIDTextBox
-            // 
-            this.patientIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicationBindingSource, "PatientID", true));
-            this.patientIDTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.patientIDTextBox.Location = new System.Drawing.Point(201, 208);
-            this.patientIDTextBox.Name = "patientIDTextBox";
-            this.patientIDTextBox.Size = new System.Drawing.Size(100, 22);
-            this.patientIDTextBox.TabIndex = 16;
-            // 
-            // prescribing_GPTextBox
-            // 
-            this.prescribing_GPTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicationBindingSource, "Prescribing GP", true));
-            this.prescribing_GPTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.prescribing_GPTextBox.Location = new System.Drawing.Point(201, 171);
-            this.prescribing_GPTextBox.Name = "prescribing_GPTextBox";
-            this.prescribing_GPTextBox.Size = new System.Drawing.Size(100, 22);
-            this.prescribing_GPTextBox.TabIndex = 14;
-            // 
-            // medNameTextBox
-            // 
-            this.medNameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicationBindingSource, "MedName", true));
-            this.medNameTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.medNameTextBox.Location = new System.Drawing.Point(201, 23);
-            this.medNameTextBox.Name = "medNameTextBox";
-            this.medNameTextBox.Size = new System.Drawing.Size(100, 22);
-            this.medNameTextBox.TabIndex = 6;
-            // 
-            // end_DateTextBox
-            // 
-            this.end_DateTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicationBindingSource, "End Date", true));
-            this.end_DateTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.end_DateTextBox.Location = new System.Drawing.Point(201, 134);
-            this.end_DateTextBox.Name = "end_DateTextBox";
-            this.end_DateTextBox.Size = new System.Drawing.Size(100, 22);
-            this.end_DateTextBox.TabIndex = 12;
-            // 
-            // doseTextBox
-            // 
-            this.doseTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicationBindingSource, "Dose", true));
-            this.doseTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doseTextBox.Location = new System.Drawing.Point(201, 60);
-            this.doseTextBox.Name = "doseTextBox";
-            this.doseTextBox.Size = new System.Drawing.Size(100, 22);
-            this.doseTextBox.TabIndex = 8;
-            // 
-            // MedNew
-            // 
-            this.MedNew.Controls.Add(this.txtMedGP);
-            this.MedNew.Controls.Add(this.txtMedEnd);
-            this.MedNew.Controls.Add(this.txtMedStart);
-            this.MedNew.Controls.Add(this.txtMedDose2);
-            this.MedNew.Controls.Add(this.txtMedName2);
-            this.MedNew.Controls.Add(label38);
-            this.MedNew.Controls.Add(label83);
-            this.MedNew.Controls.Add(label84);
-            this.MedNew.Controls.Add(label85);
-            this.MedNew.Controls.Add(label86);
-            this.MedNew.Controls.Add(this.btnMedAdd);
-            this.MedNew.Location = new System.Drawing.Point(4, 29);
-            this.MedNew.Name = "MedNew";
-            this.MedNew.Padding = new System.Windows.Forms.Padding(3);
-            this.MedNew.Size = new System.Drawing.Size(457, 274);
-            this.MedNew.TabIndex = 1;
-            this.MedNew.Text = "New";
-            this.MedNew.UseVisualStyleBackColor = true;
-            // 
-            // txtMedGP
-            // 
-            this.txtMedGP.Location = new System.Drawing.Point(201, 171);
-            this.txtMedGP.Name = "txtMedGP";
-            this.txtMedGP.Size = new System.Drawing.Size(100, 26);
-            this.txtMedGP.TabIndex = 28;
-            // 
-            // txtMedEnd
-            // 
-            this.txtMedEnd.Location = new System.Drawing.Point(201, 134);
-            this.txtMedEnd.Name = "txtMedEnd";
-            this.txtMedEnd.Size = new System.Drawing.Size(100, 26);
-            this.txtMedEnd.TabIndex = 27;
-            // 
-            // txtMedStart
-            // 
-            this.txtMedStart.Location = new System.Drawing.Point(201, 97);
-            this.txtMedStart.Name = "txtMedStart";
-            this.txtMedStart.Size = new System.Drawing.Size(100, 26);
-            this.txtMedStart.TabIndex = 26;
-            // 
-            // txtMedDose2
-            // 
-            this.txtMedDose2.Location = new System.Drawing.Point(201, 60);
-            this.txtMedDose2.Name = "txtMedDose2";
-            this.txtMedDose2.Size = new System.Drawing.Size(100, 26);
-            this.txtMedDose2.TabIndex = 25;
-            // 
-            // txtMedName2
-            // 
-            this.txtMedName2.Location = new System.Drawing.Point(201, 23);
-            this.txtMedName2.Name = "txtMedName2";
-            this.txtMedName2.Size = new System.Drawing.Size(100, 26);
-            this.txtMedName2.TabIndex = 24;
-            // 
-            // btnMedAdd
-            // 
-            this.btnMedAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnMedAdd.Location = new System.Drawing.Point(356, 211);
-            this.btnMedAdd.Name = "btnMedAdd";
-            this.btnMedAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnMedAdd.TabIndex = 17;
-            this.btnMedAdd.Text = "Save";
-            this.btnMedAdd.UseVisualStyleBackColor = true;
-            this.btnMedAdd.Click += new System.EventHandler(this.btnMedAdd_Click);
-            // 
-            // medicationDataGridView
-            // 
-            this.medicationDataGridView.AutoGenerateColumns = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.medicationDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.medicationDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.medicationDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn23,
-            this.dataGridViewTextBoxColumn24,
-            this.dataGridViewTextBoxColumn25,
-            this.dataGridViewTextBoxColumn26,
-            this.dataGridViewTextBoxColumn27});
-            this.medicationDataGridView.DataSource = this.medicationBindingSource;
-            this.medicationDataGridView.Location = new System.Drawing.Point(33, 55);
-            this.medicationDataGridView.Name = "medicationDataGridView";
-            this.medicationDataGridView.Size = new System.Drawing.Size(836, 184);
-            this.medicationDataGridView.TabIndex = 2;
-            // 
-            // dataGridViewTextBoxColumn23
-            // 
-            this.dataGridViewTextBoxColumn23.DataPropertyName = "MedName";
-            this.dataGridViewTextBoxColumn23.HeaderText = "Name";
-            this.dataGridViewTextBoxColumn23.Name = "dataGridViewTextBoxColumn23";
-            this.dataGridViewTextBoxColumn23.Width = 200;
-            // 
-            // dataGridViewTextBoxColumn24
-            // 
-            this.dataGridViewTextBoxColumn24.DataPropertyName = "Dose";
-            this.dataGridViewTextBoxColumn24.HeaderText = "Dose";
-            this.dataGridViewTextBoxColumn24.Name = "dataGridViewTextBoxColumn24";
-            this.dataGridViewTextBoxColumn24.Width = 110;
-            // 
-            // dataGridViewTextBoxColumn25
-            // 
-            this.dataGridViewTextBoxColumn25.DataPropertyName = "Start Date";
-            this.dataGridViewTextBoxColumn25.HeaderText = "Start Date";
-            this.dataGridViewTextBoxColumn25.Name = "dataGridViewTextBoxColumn25";
-            this.dataGridViewTextBoxColumn25.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn26
-            // 
-            this.dataGridViewTextBoxColumn26.DataPropertyName = "End Date";
-            this.dataGridViewTextBoxColumn26.HeaderText = "End Date";
-            this.dataGridViewTextBoxColumn26.Name = "dataGridViewTextBoxColumn26";
-            this.dataGridViewTextBoxColumn26.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn27
-            // 
-            this.dataGridViewTextBoxColumn27.DataPropertyName = "Prescribing GP";
-            this.dataGridViewTextBoxColumn27.HeaderText = "Prescribing GP";
-            this.dataGridViewTextBoxColumn27.Name = "dataGridViewTextBoxColumn27";
-            this.dataGridViewTextBoxColumn27.Width = 180;
-            // 
-            // label28
-            // 
-            this.label28.AutoSize = true;
-            this.label28.Location = new System.Drawing.Point(27, 18);
-            this.label28.Name = "label28";
-            this.label28.Size = new System.Drawing.Size(312, 25);
-            this.label28.TabIndex = 0;
-            this.label28.Text = "Add View Extend Medication";
             // 
             // PageEditPatientDetails
             // 
@@ -4006,35 +3981,40 @@
             // 
             this.resultsTableAdapter.ClearBeforeFill = true;
             // 
-            // btnResUp
+            // dataGridViewTextBoxColumn34
             // 
-            this.btnResUp.Location = new System.Drawing.Point(835, 123);
-            this.btnResUp.Name = "btnResUp";
-            this.btnResUp.Size = new System.Drawing.Size(75, 23);
-            this.btnResUp.TabIndex = 4;
-            this.btnResUp.Text = "UP";
-            this.btnResUp.UseVisualStyleBackColor = true;
-            this.btnResUp.Click += new System.EventHandler(this.btnResUp_Click);
+            this.dataGridViewTextBoxColumn34.DataPropertyName = "ResDate";
+            this.dataGridViewTextBoxColumn34.HeaderText = "Date of Test";
+            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
             // 
-            // btnResDown
+            // dataGridViewTextBoxColumn35
             // 
-            this.btnResDown.Location = new System.Drawing.Point(835, 151);
-            this.btnResDown.Name = "btnResDown";
-            this.btnResDown.Size = new System.Drawing.Size(75, 23);
-            this.btnResDown.TabIndex = 5;
-            this.btnResDown.Text = "Down";
-            this.btnResDown.UseVisualStyleBackColor = true;
-            this.btnResDown.Click += new System.EventHandler(this.btnResDown_Click);
+            this.dataGridViewTextBoxColumn35.DataPropertyName = "ResType";
+            this.dataGridViewTextBoxColumn35.HeaderText = "Type of Test";
+            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            this.dataGridViewTextBoxColumn35.Width = 140;
             // 
-            // btnResDelete
+            // dataGridViewTextBoxColumn36
             // 
-            this.btnResDelete.Location = new System.Drawing.Point(739, 371);
-            this.btnResDelete.Name = "btnResDelete";
-            this.btnResDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnResDelete.TabIndex = 6;
-            this.btnResDelete.Text = "Delete";
-            this.btnResDelete.UseVisualStyleBackColor = true;
-            this.btnResDelete.Click += new System.EventHandler(this.btnResDelete_Click);
+            this.dataGridViewTextBoxColumn36.DataPropertyName = "Results";
+            this.dataGridViewTextBoxColumn36.HeaderText = "Results";
+            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
+            this.dataGridViewTextBoxColumn36.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn37
+            // 
+            this.dataGridViewTextBoxColumn37.DataPropertyName = "ResGP";
+            this.dataGridViewTextBoxColumn37.FillWeight = 150F;
+            this.dataGridViewTextBoxColumn37.HeaderText = "Recommended GP";
+            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
+            this.dataGridViewTextBoxColumn37.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn38
+            // 
+            this.dataGridViewTextBoxColumn38.DataPropertyName = "ResDetails";
+            this.dataGridViewTextBoxColumn38.HeaderText = "Details";
+            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
+            this.dataGridViewTextBoxColumn38.Width = 250;
             // 
             // MainBackGround
             // 
@@ -4054,13 +4034,26 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.PageViewPrintTestResults.ResumeLayout(false);
+            this.PageViewPrintTestResults.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resultsDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.resultsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet)).EndInit();
             this.PageEnterTestResults.ResumeLayout(false);
             this.PageEnterTestResults.PerformLayout();
+            this.PageAddViewExtendMedication.ResumeLayout(false);
+            this.PageAddViewExtendMedication.PerformLayout();
+            this.tabControlMed.ResumeLayout(false);
+            this.MedEdit.ResumeLayout(false);
+            this.MedEdit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.medicationBindingSource)).EndInit();
+            this.MedNew.ResumeLayout(false);
+            this.MedNew.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.medicationDataGridView)).EndInit();
             this.PageNewRegistration.ResumeLayout(false);
             this.PageNewRegistration.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet)).EndInit();
             this.PageMainScreen.ResumeLayout(false);
             this.PageMainScreen.PerformLayout();
             this.PageSelectedPatient.ResumeLayout(false);
@@ -4073,19 +4066,6 @@
             this.TableMorning.PerformLayout();
             this.TableAfternoun.ResumeLayout(false);
             this.TableAfternoun.PerformLayout();
-            this.PageViewPrintTestResults.ResumeLayout(false);
-            this.PageViewPrintTestResults.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.resultsDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.resultsBindingSource)).EndInit();
-            this.PageAddViewExtendMedication.ResumeLayout(false);
-            this.PageAddViewExtendMedication.PerformLayout();
-            this.tabControlMed.ResumeLayout(false);
-            this.MedEdit.ResumeLayout(false);
-            this.MedEdit.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.medicationBindingSource)).EndInit();
-            this.MedNew.ResumeLayout(false);
-            this.MedNew.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.medicationDataGridView)).EndInit();
             this.PageEditPatientDetails.ResumeLayout(false);
             this.PageEditPatientDetails.PerformLayout();
             this.PageViewCancelEditAppointment.ResumeLayout(false);
@@ -4426,13 +4406,6 @@
         private System.Windows.Forms.BindingSource resultsBindingSource;
         private OverSugerydbaseDataSetTableAdapters.ResultsTableAdapter resultsTableAdapter;
         private System.Windows.Forms.DataGridView resultsDataGridView;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn33;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn37;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn38;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn39;
         private System.Windows.Forms.Button btnResCancel;
         private System.Windows.Forms.Button btnResSave;
         private System.Windows.Forms.TextBox txtResDate;
@@ -4451,6 +4424,11 @@
         private System.Windows.Forms.Button btnResDelete;
         private System.Windows.Forms.Button btnResDown;
         private System.Windows.Forms.Button btnResUp;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn34;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn35;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn37;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn38;
     }
 }
 

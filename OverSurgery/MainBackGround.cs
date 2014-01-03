@@ -946,26 +946,26 @@ namespace OverSurgery
         //Toms stuff
 
          
-        private void btnMedAdd_Click(object sender, EventArgs e)
+        private void btnMedAdd_Click(object sender, EventArgs e)//button click to add a new medical record to the table, data is first sent to the utility section to check that all fields are complete.
         {
-            if (Utilities.CheckMedFields(txtMedName2.Text, txtMedDose2.Text, txtMedStart.Text, txtMedEnd.Text,txtMedGP.Text))
+            if (Utilities.CheckMedFields(txtMedName2.Text, txtMedDose2.Text, txtMedStart.Text, txtMedEnd.Text,txtMedGP.Text))//links to the utilities page and sends the data in the stated textboxes to be checked.
             {
             OverSugerydbaseDataSet.MedicationRow newMedicationRow;
             newMedicationRow = overSugerydbaseDataSet.Medication.NewMedicationRow();
-            newMedicationRow.MedName = txtMedName2.Text;
+            newMedicationRow.MedName = txtMedName2.Text;//saves the information in the textboxes as class so that they can then be loaded into the table.
             newMedicationRow.Dose = txtMedDose2.Text;
             newMedicationRow.Start_Date = txtMedStart.Text;
             newMedicationRow.End_Date = txtMedEnd.Text;
             newMedicationRow.Prescribing_GP = txtMedGP.Text;
             newMedicationRow.PatientID = txtActiveUserID.Text;
 
-            this.overSugerydbaseDataSet.Medication.Rows.Add(newMedicationRow);
+            this.overSugerydbaseDataSet.Medication.Rows.Add(newMedicationRow);//adds the new row to the table.
 
-            this.medicationTableAdapter.Update(this.overSugerydbaseDataSet.Medication);
+            this.medicationTableAdapter.Update(this.overSugerydbaseDataSet.Medication);//saves the new row to the database.
 
-            MessageBox.Show("The new medication has been added to the table");
+            MessageBox.Show("The new medication has been added to the table");//displays a textbox confirming the update so the user knows the process was successful.
 
-            txtMedName2.Clear();
+            txtMedName2.Clear();//these clear the textboxes after the data has been saved ready for use again.
             txtMedDose2.Clear();
             txtMedStart.Clear();
             txtMedEnd.Clear();
@@ -974,93 +974,85 @@ namespace OverSurgery
 
         }
 
-        private void btnMedSub_Click(object sender, EventArgs e)
-        {
-            this.Validate();
-            this.medicationBindingSource.EndEdit();
-            this.medicationTableAdapter.Update(this.overSugerydbaseDataSet);
-        }
 
-        private void btnMedCancel_Click_1(object sender, EventArgs e)
+        private void btnMedCancel_Click_1(object sender, EventArgs e)//navigates the user back to the selected patient panel
         {
-            setMeVisible("PageSelectedPatient");
-            txtMedName2.Clear();
+            setMeVisible("PageSelectedPatient");//sets this panel to visible.
+            txtMedName2.Clear();//clears all the textboxes in case something was left half typed.
             txtMedDose2.Clear();
             txtMedStart.Clear();
             txtMedEnd.Clear();
             txtMedGP.Clear();
         }
 
-        private void btnMedUP_Click_1(object sender, EventArgs e)
+        private void btnMedUP_Click_1(object sender, EventArgs e)//on click changes the selected row so it can be edited/deleted.
         {
             medicationBindingSource.MovePrevious();
         }
 
-        private void btnMedDown_Click_1(object sender, EventArgs e)
+        private void btnMedDown_Click_1(object sender, EventArgs e)//on click changes the selected row so it can be edited/deleted.
         {
             medicationBindingSource.MoveNext();
         }
 
-        private void btnMedEdit_Click_1(object sender, EventArgs e)
+        private void btnMedEdit_Click_1(object sender, EventArgs e)//on click the selected row is updated with new information inputted by the user.
         {
             this.Validate();
-            this.medicationBindingSource.EndEdit();
-            this.medicationTableAdapter.Update(this.overSugerydbaseDataSet);
+            this.medicationBindingSource.EndEdit();//locks the table so the changes can be applied
+            this.medicationTableAdapter.Update(this.overSugerydbaseDataSet);//updates the table with the new data
         }
 
-        private void btnMedDelete_Click_1(object sender, EventArgs e)
+        private void btnMedDelete_Click_1(object sender, EventArgs e)//this will delete the selected record
         {
-            if (MessageBox.Show("are you sure", "confirm delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("are you sure", "confirm delete", MessageBoxButtons.YesNo) == DialogResult.Yes)//creates a message box with a yes and no button and is supposed to stop the wrong file from being deleted, based on the users input the record will be removed or not.
             {
                 this.Validate();
-                this.medicationBindingSource.RemoveCurrent();
-                this.medicationTableAdapter.Update(this.overSugerydbaseDataSet);
-            }
-            else
-            {
+                this.medicationBindingSource.RemoveCurrent();//removes the selected record.
+                this.medicationTableAdapter.Update(this.overSugerydbaseDataSet);//this updates the table with the old record removed.
             }
         }
 
 
+        
 
 
-        private void btnVResCancel_Click(object sender, EventArgs e)
+        private void btnVResCancel_Click(object sender, EventArgs e)//navigates to the selected patient panel
         {
             setMeVisible("PageSelectedPatient");
         }
 
-        private void btnResCancel_Click(object sender, EventArgs e)
+        private void btnResCancel_Click(object sender, EventArgs e)//navigates to the selected patient panel and resets the textboxes
         {
             setMeVisible("PageSelectedPatient");
 
-            txtResDate.Clear();
+            txtResDate.Clear();//clears any data in the textbox
             txtResType.Clear();
             txtResResults.Clear();
             txtResGP.Clear();
             txtResDetails.Clear();
         }
            
-        private void btnResSave_Click(object sender, EventArgs e)
+        private void btnResSave_Click(object sender, EventArgs e)//on click the data in the textboxes is applied to a filter in the utilities section that checks that all boxes have an input in.
         {
-            if (Utilities.checkResFields(txtResDate.Text, txtResType.Text, txtResResults.Text, txtResGP.Text, txtResDetails.Text))
+            if (Utilities.checkResFields(txtResDate.Text, txtResType.Text, txtResResults.Text, txtResGP.Text, txtResDetails.Text))//if the filter come back fine then the record will be saved else an error message will be displayed.
             {
             
                 OverSugerydbaseDataSet.ResultsRow newResultsRow;
-            
+
                 newResultsRow = overSugerydbaseDataSet.Results.NewResultsRow();          
-                newResultsRow.ResDate = txtResDate.Text;
+                newResultsRow.ResDate = txtResDate.Text;//saves the data in the textboxes as a class
                 newResultsRow.ResType = txtResType.Text;
                 newResultsRow.Results = txtResResults.Text;
                 newResultsRow.ResGP = txtResGP.Text;
                 newResultsRow.ResDetails = txtResDetails.Text;
                 newResultsRow.ResPatientID = txtActiveUserID.Text;
             
-                this.overSugerydbaseDataSet.Results.Rows.Add(newResultsRow);
+                this.overSugerydbaseDataSet.Results.Rows.Add(newResultsRow);//adds a new row to the table containing the inputed data.
 
-                this.resultsTableAdapter.Update(this.overSugerydbaseDataSet.Results);
+                this.resultsTableAdapter.Update(this.overSugerydbaseDataSet.Results);//saves the new row
 
-                MessageBox.Show("The new results have been added to the table");
-                txtResDate.Clear();
+                MessageBox.Show("The new results have been added to the table");//completion message displayed when the program has successfully saved.
+                txtResDate.Clear();//resets the text boxes
                 txtResType.Clear();
                 txtResResults.Clear();
                 txtResGP.Clear();
@@ -1069,27 +1061,24 @@ namespace OverSurgery
             }
         }
 
-        private void btnResUp_Click(object sender, EventArgs e)
+        private void btnResUp_Click(object sender, EventArgs e)//navigates the results table allowing an individual row to be selected
         {
             resultsBindingSource.MovePrevious();
         }
 
-        private void btnResDown_Click(object sender, EventArgs e)
+        private void btnResDown_Click(object sender, EventArgs e)//navigates the results table allowing an individual row to be selected
         {
             resultsBindingSource.MoveNext();
         }
 
-        private void btnResDelete_Click(object sender, EventArgs e)
+        private void btnResDelete_Click(object sender, EventArgs e)//this will delete a row in the results table based on which is currently selected.
         {
             
-            if (MessageBox.Show("are you sure", "confirm delete", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("are you sure", "confirm delete", MessageBoxButtons.YesNo) == DialogResult.Yes)//final warning before the row is deleted in the form of a text box with a yes and no button. yes continues while no stops the process.
             {
                 this.Validate();
-                this.resultsBindingSource.RemoveCurrent();
-                this.resultsTableAdapter.Update(this.overSugerydbaseDataSet.Results);
-            }
-            else
-            {
+                this.resultsBindingSource.RemoveCurrent();//removes the currently selected
+                this.resultsTableAdapter.Update(this.overSugerydbaseDataSet.Results);//saves the table the old record will have been removed.
             }
         }
 
