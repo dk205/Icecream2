@@ -66,6 +66,21 @@
             this.btnClearActivePatient = new System.Windows.Forms.Button();
             this.Label100 = new System.Windows.Forms.Label();
             this.Label200 = new System.Windows.Forms.Label();
+            this.PageMainScreen = new System.Windows.Forms.Panel();
+            this.dateTimePickerSearchDOB = new System.Windows.Forms.DateTimePicker();
+            this.tbSearchPC = new System.Windows.Forms.TextBox();
+            this.tbSearchName = new System.Windows.Forms.TextBox();
+            this.btnSearchByName = new System.Windows.Forms.Button();
+            this.txtBoxID = new System.Windows.Forms.TextBox();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.ButtonGoToNewRegistration = new System.Windows.Forms.Button();
+            this.label89 = new System.Windows.Forms.Label();
+            this.label88 = new System.Windows.Forms.Label();
+            this.label87 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.ButtonSearchID = new System.Windows.Forms.Button();
             this.PageSelectedPatient = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.button5 = new System.Windows.Forms.Button();
@@ -251,13 +266,6 @@
             this.label34 = new System.Windows.Forms.Label();
             this.buttonBacktoSelectedPatient = new System.Windows.Forms.Button();
             this.label26 = new System.Windows.Forms.Label();
-            this.PageMainScreen = new System.Windows.Forms.Panel();
-            this.txtBoxID = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.ButtonGoToNewRegistration = new System.Windows.Forms.Button();
-            this.label4 = new System.Windows.Forms.Label();
-            this.ButtonSearchID = new System.Windows.Forms.Button();
             this.tabGPNurse = new System.Windows.Forms.TabPage();
             this.PageGPNurse = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
@@ -370,14 +378,6 @@
             this.twoActiveWeeksTableAdapter = new OverSurgery.OverSugerydbaseDataSetTableAdapters.TwoActiveWeeksTableAdapter();
             this.staffTableAdapter3 = new OverSurgery.OverSugerydbaseDataSet1TableAdapters.StaffTableAdapter();
             this.resultsTableAdapter = new OverSurgery.OverSugerydbaseDataSetTableAdapters.ResultsTableAdapter();
-            this.label32 = new System.Windows.Forms.Label();
-            this.label87 = new System.Windows.Forms.Label();
-            this.label88 = new System.Windows.Forms.Label();
-            this.label89 = new System.Windows.Forms.Label();
-            this.btnSearchByName = new System.Windows.Forms.Button();
-            this.tbSearchName = new System.Windows.Forms.TextBox();
-            this.tbSearchPC = new System.Windows.Forms.TextBox();
-            this.dateTimePickerSearchDOB = new System.Windows.Forms.DateTimePicker();
             medNameLabel = new System.Windows.Forms.Label();
             doseLabel = new System.Windows.Forms.Label();
             start_DateLabel = new System.Windows.Forms.Label();
@@ -412,6 +412,7 @@
             this.splitContainer1.Panel1.SuspendLayout();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
+            this.PageMainScreen.SuspendLayout();
             this.PageSelectedPatient.SuspendLayout();
             this.PageMakeAppointment.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.twoActiveWeeksDataGridView)).BeginInit();
@@ -436,7 +437,6 @@
             this.PageViewCancelEditAppointment.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
-            this.PageMainScreen.SuspendLayout();
             this.tabGPNurse.SuspendLayout();
             this.PageGPNurse.SuspendLayout();
             this.groupBoxSearch.SuspendLayout();
@@ -670,25 +670,25 @@
             // resDateLabel
             // 
             resDateLabel.AutoSize = true;
-            resDateLabel.Location = new System.Drawing.Point(160, 123);
+            resDateLabel.Location = new System.Drawing.Point(123, 123);
             resDateLabel.Name = "resDateLabel";
-            resDateLabel.Size = new System.Drawing.Size(77, 16);
+            resDateLabel.Size = new System.Drawing.Size(97, 16);
             resDateLabel.TabIndex = 4;
-            resDateLabel.Text = "Res Date:";
+            resDateLabel.Text = "Date of Test:";
             // 
             // resTypeLabel
             // 
             resTypeLabel.AutoSize = true;
-            resTypeLabel.Location = new System.Drawing.Point(160, 151);
+            resTypeLabel.Location = new System.Drawing.Point(123, 151);
             resTypeLabel.Name = "resTypeLabel";
-            resTypeLabel.Size = new System.Drawing.Size(80, 16);
+            resTypeLabel.Size = new System.Drawing.Size(100, 16);
             resTypeLabel.TabIndex = 6;
-            resTypeLabel.Text = "Res Type:";
+            resTypeLabel.Text = "Type of Test:";
             // 
             // resultsLabel
             // 
             resultsLabel.AutoSize = true;
-            resultsLabel.Location = new System.Drawing.Point(160, 179);
+            resultsLabel.Location = new System.Drawing.Point(123, 179);
             resultsLabel.Name = "resultsLabel";
             resultsLabel.Size = new System.Drawing.Size(64, 16);
             resultsLabel.TabIndex = 8;
@@ -697,20 +697,20 @@
             // resGPLabel
             // 
             resGPLabel.AutoSize = true;
-            resGPLabel.Location = new System.Drawing.Point(160, 207);
+            resGPLabel.Location = new System.Drawing.Point(123, 207);
             resGPLabel.Name = "resGPLabel";
-            resGPLabel.Size = new System.Drawing.Size(65, 16);
+            resGPLabel.Size = new System.Drawing.Size(142, 16);
             resGPLabel.TabIndex = 10;
-            resGPLabel.Text = "Res GP:";
+            resGPLabel.Text = "Recommended GP:";
             // 
             // resDetailsLabel
             // 
             resDetailsLabel.AutoSize = true;
-            resDetailsLabel.Location = new System.Drawing.Point(160, 235);
+            resDetailsLabel.Location = new System.Drawing.Point(123, 235);
             resDetailsLabel.Name = "resDetailsLabel";
-            resDetailsLabel.Size = new System.Drawing.Size(93, 16);
+            resDetailsLabel.Size = new System.Drawing.Size(135, 16);
             resDetailsLabel.TabIndex = 12;
-            resDetailsLabel.Text = "Res Details:";
+            resDetailsLabel.Text = "Additional Details:";
             // 
             // tabControl1
             // 
@@ -759,11 +759,11 @@
             // splitContainer1.Panel2
             // 
             this.splitContainer1.Panel2.BackColor = System.Drawing.Color.LightGray;
+            this.splitContainer1.Panel2.Controls.Add(this.PageEnterTestResults);
+            this.splitContainer1.Panel2.Controls.Add(this.PageNewRegistration);
             this.splitContainer1.Panel2.Controls.Add(this.PageMainScreen);
             this.splitContainer1.Panel2.Controls.Add(this.PageSelectedPatient);
             this.splitContainer1.Panel2.Controls.Add(this.PageMakeAppointment);
-            this.splitContainer1.Panel2.Controls.Add(this.PageNewRegistration);
-            this.splitContainer1.Panel2.Controls.Add(this.PageEnterTestResults);
             this.splitContainer1.Panel2.Controls.Add(this.PageViewPrintTestResults);
             this.splitContainer1.Panel2.Controls.Add(this.PageAddViewExtendMedication);
             this.splitContainer1.Panel2.Controls.Add(this.PageEditPatientDetails);
@@ -816,6 +816,157 @@
             this.Label200.Size = new System.Drawing.Size(83, 16);
             this.Label200.TabIndex = 2;
             this.Label200.Text = "Patient ID: ";
+            // 
+            // PageMainScreen
+            // 
+            this.PageMainScreen.Controls.Add(this.dateTimePickerSearchDOB);
+            this.PageMainScreen.Controls.Add(this.tbSearchPC);
+            this.PageMainScreen.Controls.Add(this.tbSearchName);
+            this.PageMainScreen.Controls.Add(this.btnSearchByName);
+            this.PageMainScreen.Controls.Add(this.txtBoxID);
+            this.PageMainScreen.Controls.Add(this.label32);
+            this.PageMainScreen.Controls.Add(this.label3);
+            this.PageMainScreen.Controls.Add(this.label2);
+            this.PageMainScreen.Controls.Add(this.ButtonGoToNewRegistration);
+            this.PageMainScreen.Controls.Add(this.label89);
+            this.PageMainScreen.Controls.Add(this.label88);
+            this.PageMainScreen.Controls.Add(this.label87);
+            this.PageMainScreen.Controls.Add(this.label4);
+            this.PageMainScreen.Controls.Add(this.ButtonSearchID);
+            this.PageMainScreen.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PageMainScreen.Location = new System.Drawing.Point(0, 0);
+            this.PageMainScreen.Name = "PageMainScreen";
+            this.PageMainScreen.Size = new System.Drawing.Size(966, 600);
+            this.PageMainScreen.TabIndex = 2;
+            // 
+            // dateTimePickerSearchDOB
+            // 
+            this.dateTimePickerSearchDOB.Location = new System.Drawing.Point(156, 409);
+            this.dateTimePickerSearchDOB.Name = "dateTimePickerSearchDOB";
+            this.dateTimePickerSearchDOB.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePickerSearchDOB.TabIndex = 8;
+            // 
+            // tbSearchPC
+            // 
+            this.tbSearchPC.Location = new System.Drawing.Point(156, 458);
+            this.tbSearchPC.Name = "tbSearchPC";
+            this.tbSearchPC.Size = new System.Drawing.Size(100, 22);
+            this.tbSearchPC.TabIndex = 7;
+            // 
+            // tbSearchName
+            // 
+            this.tbSearchName.Location = new System.Drawing.Point(156, 371);
+            this.tbSearchName.Name = "tbSearchName";
+            this.tbSearchName.Size = new System.Drawing.Size(256, 22);
+            this.tbSearchName.TabIndex = 6;
+            // 
+            // btnSearchByName
+            // 
+            this.btnSearchByName.Location = new System.Drawing.Point(404, 433);
+            this.btnSearchByName.Name = "btnSearchByName";
+            this.btnSearchByName.Size = new System.Drawing.Size(87, 46);
+            this.btnSearchByName.TabIndex = 5;
+            this.btnSearchByName.Text = "Search by Name";
+            this.btnSearchByName.UseVisualStyleBackColor = true;
+            this.btnSearchByName.Click += new System.EventHandler(this.btnSearchByName_Click);
+            // 
+            // txtBoxID
+            // 
+            this.txtBoxID.Location = new System.Drawing.Point(125, 176);
+            this.txtBoxID.Name = "txtBoxID";
+            this.txtBoxID.Size = new System.Drawing.Size(147, 22);
+            this.txtBoxID.TabIndex = 4;
+            this.txtBoxID.Text = "1";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label32.Location = new System.Drawing.Point(9, 317);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(235, 24);
+            this.label32.TabIndex = 3;
+            this.label32.Text = "Search Patient By Name";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(9, 117);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(145, 24);
+            this.label3.TabIndex = 3;
+            this.label3.Text = "Search Patient";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(9, 13);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(237, 24);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "New Patient Registration";
+            // 
+            // ButtonGoToNewRegistration
+            // 
+            this.ButtonGoToNewRegistration.Location = new System.Drawing.Point(86, 50);
+            this.ButtonGoToNewRegistration.Name = "ButtonGoToNewRegistration";
+            this.ButtonGoToNewRegistration.Size = new System.Drawing.Size(252, 35);
+            this.ButtonGoToNewRegistration.TabIndex = 2;
+            this.ButtonGoToNewRegistration.Text = "Create New Registration";
+            this.ButtonGoToNewRegistration.UseVisualStyleBackColor = true;
+            this.ButtonGoToNewRegistration.Click += new System.EventHandler(this.NewRegButton_Click);
+            // 
+            // label89
+            // 
+            this.label89.AutoSize = true;
+            this.label89.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label89.Location = new System.Drawing.Point(18, 456);
+            this.label89.Name = "label89";
+            this.label89.Size = new System.Drawing.Size(83, 20);
+            this.label89.TabIndex = 3;
+            this.label89.Text = "Post Code";
+            // 
+            // label88
+            // 
+            this.label88.AutoSize = true;
+            this.label88.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label88.Location = new System.Drawing.Point(18, 411);
+            this.label88.Name = "label88";
+            this.label88.Size = new System.Drawing.Size(102, 20);
+            this.label88.TabIndex = 3;
+            this.label88.Text = "Date Of Birth";
+            // 
+            // label87
+            // 
+            this.label87.AutoSize = true;
+            this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label87.Location = new System.Drawing.Point(18, 368);
+            this.label87.Name = "label87";
+            this.label87.Size = new System.Drawing.Size(113, 20);
+            this.label87.TabIndex = 3;
+            this.label87.Text = "Patients Name";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(9, 178);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(101, 20);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "By patient ID";
+            // 
+            // ButtonSearchID
+            // 
+            this.ButtonSearchID.Location = new System.Drawing.Point(296, 166);
+            this.ButtonSearchID.Name = "ButtonSearchID";
+            this.ButtonSearchID.Size = new System.Drawing.Size(96, 32);
+            this.ButtonSearchID.TabIndex = 0;
+            this.ButtonSearchID.Text = "Search";
+            this.ButtonSearchID.UseVisualStyleBackColor = true;
+            this.ButtonSearchID.Click += new System.EventHandler(this.SearchIDButton_Click);
             // 
             // PageSelectedPatient
             // 
@@ -2782,86 +2933,6 @@
             this.label26.TabIndex = 0;
             this.label26.Text = "View/Change/Cancel  Appointment";
             // 
-            // PageMainScreen
-            // 
-            this.PageMainScreen.Controls.Add(this.dateTimePickerSearchDOB);
-            this.PageMainScreen.Controls.Add(this.tbSearchPC);
-            this.PageMainScreen.Controls.Add(this.tbSearchName);
-            this.PageMainScreen.Controls.Add(this.btnSearchByName);
-            this.PageMainScreen.Controls.Add(this.txtBoxID);
-            this.PageMainScreen.Controls.Add(this.label32);
-            this.PageMainScreen.Controls.Add(this.label3);
-            this.PageMainScreen.Controls.Add(this.label2);
-            this.PageMainScreen.Controls.Add(this.ButtonGoToNewRegistration);
-            this.PageMainScreen.Controls.Add(this.label89);
-            this.PageMainScreen.Controls.Add(this.label88);
-            this.PageMainScreen.Controls.Add(this.label87);
-            this.PageMainScreen.Controls.Add(this.label4);
-            this.PageMainScreen.Controls.Add(this.ButtonSearchID);
-            this.PageMainScreen.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PageMainScreen.Location = new System.Drawing.Point(0, 0);
-            this.PageMainScreen.Name = "PageMainScreen";
-            this.PageMainScreen.Size = new System.Drawing.Size(966, 600);
-            this.PageMainScreen.TabIndex = 2;
-            // 
-            // txtBoxID
-            // 
-            this.txtBoxID.Location = new System.Drawing.Point(125, 176);
-            this.txtBoxID.Name = "txtBoxID";
-            this.txtBoxID.Size = new System.Drawing.Size(147, 22);
-            this.txtBoxID.TabIndex = 4;
-            this.txtBoxID.Text = "1";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(9, 117);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(145, 24);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Search Patient";
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(9, 13);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(237, 24);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "New Patient Registration";
-            // 
-            // ButtonGoToNewRegistration
-            // 
-            this.ButtonGoToNewRegistration.Location = new System.Drawing.Point(86, 50);
-            this.ButtonGoToNewRegistration.Name = "ButtonGoToNewRegistration";
-            this.ButtonGoToNewRegistration.Size = new System.Drawing.Size(252, 35);
-            this.ButtonGoToNewRegistration.TabIndex = 2;
-            this.ButtonGoToNewRegistration.Text = "Create New Registration";
-            this.ButtonGoToNewRegistration.UseVisualStyleBackColor = true;
-            this.ButtonGoToNewRegistration.Click += new System.EventHandler(this.NewRegButton_Click);
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(9, 178);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(101, 20);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "By patient ID";
-            // 
-            // ButtonSearchID
-            // 
-            this.ButtonSearchID.Location = new System.Drawing.Point(296, 166);
-            this.ButtonSearchID.Name = "ButtonSearchID";
-            this.ButtonSearchID.Size = new System.Drawing.Size(96, 32);
-            this.ButtonSearchID.TabIndex = 0;
-            this.ButtonSearchID.Text = "Search";
-            this.ButtonSearchID.UseVisualStyleBackColor = true;
-            this.ButtonSearchID.Click += new System.EventHandler(this.SearchIDButton_Click);
-            // 
             // tabGPNurse
             // 
             this.tabGPNurse.Controls.Add(this.PageGPNurse);
@@ -3914,77 +3985,6 @@
             // 
             this.resultsTableAdapter.ClearBeforeFill = true;
             // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(9, 317);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(235, 24);
-            this.label32.TabIndex = 3;
-            this.label32.Text = "Search Patient By Name";
-            // 
-            // label87
-            // 
-            this.label87.AutoSize = true;
-            this.label87.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label87.Location = new System.Drawing.Point(18, 368);
-            this.label87.Name = "label87";
-            this.label87.Size = new System.Drawing.Size(113, 20);
-            this.label87.TabIndex = 3;
-            this.label87.Text = "Patients Name";
-            // 
-            // label88
-            // 
-            this.label88.AutoSize = true;
-            this.label88.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label88.Location = new System.Drawing.Point(18, 411);
-            this.label88.Name = "label88";
-            this.label88.Size = new System.Drawing.Size(102, 20);
-            this.label88.TabIndex = 3;
-            this.label88.Text = "Date Of Birth";
-            // 
-            // label89
-            // 
-            this.label89.AutoSize = true;
-            this.label89.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label89.Location = new System.Drawing.Point(18, 456);
-            this.label89.Name = "label89";
-            this.label89.Size = new System.Drawing.Size(83, 20);
-            this.label89.TabIndex = 3;
-            this.label89.Text = "Post Code";
-            // 
-            // btnSearchByName
-            // 
-            this.btnSearchByName.Location = new System.Drawing.Point(404, 433);
-            this.btnSearchByName.Name = "btnSearchByName";
-            this.btnSearchByName.Size = new System.Drawing.Size(87, 46);
-            this.btnSearchByName.TabIndex = 5;
-            this.btnSearchByName.Text = "Search by Name";
-            this.btnSearchByName.UseVisualStyleBackColor = true;
-            this.btnSearchByName.Click += new System.EventHandler(this.btnSearchByName_Click);
-            // 
-            // tbSearchName
-            // 
-            this.tbSearchName.Location = new System.Drawing.Point(156, 371);
-            this.tbSearchName.Name = "tbSearchName";
-            this.tbSearchName.Size = new System.Drawing.Size(256, 22);
-            this.tbSearchName.TabIndex = 6;
-            // 
-            // tbSearchPC
-            // 
-            this.tbSearchPC.Location = new System.Drawing.Point(156, 458);
-            this.tbSearchPC.Name = "tbSearchPC";
-            this.tbSearchPC.Size = new System.Drawing.Size(100, 22);
-            this.tbSearchPC.TabIndex = 7;
-            // 
-            // dateTimePickerSearchDOB
-            // 
-            this.dateTimePickerSearchDOB.Location = new System.Drawing.Point(156, 409);
-            this.dateTimePickerSearchDOB.Name = "dateTimePickerSearchDOB";
-            this.dateTimePickerSearchDOB.Size = new System.Drawing.Size(200, 22);
-            this.dateTimePickerSearchDOB.TabIndex = 8;
-            // 
             // MainBackGround
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -4003,6 +4003,8 @@
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
             this.splitContainer1.ResumeLayout(false);
+            this.PageMainScreen.ResumeLayout(false);
+            this.PageMainScreen.PerformLayout();
             this.PageSelectedPatient.ResumeLayout(false);
             this.PageSelectedPatient.PerformLayout();
             this.PageMakeAppointment.ResumeLayout(false);
@@ -4040,8 +4042,6 @@
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
             this.tableLayoutPanel2.PerformLayout();
-            this.PageMainScreen.ResumeLayout(false);
-            this.PageMainScreen.PerformLayout();
             this.tabGPNurse.ResumeLayout(false);
             this.PageGPNurse.ResumeLayout(false);
             this.PageGPNurse.PerformLayout();

@@ -945,9 +945,11 @@ namespace OverSurgery
   //////////////////////////////////////////////////////////////////////////////////////////  
         //Toms stuff
 
+         
         private void btnMedAdd_Click(object sender, EventArgs e)
         {
-
+            if (Utilities.CheckMedFields(txtMedName2.Text, txtMedDose2.Text, txtMedStart.Text, txtMedEnd.Text,txtMedGP.Text))
+            {
             OverSugerydbaseDataSet.MedicationRow newMedicationRow;
             newMedicationRow = overSugerydbaseDataSet.Medication.NewMedicationRow();
             newMedicationRow.MedName = txtMedName2.Text;
@@ -960,6 +962,15 @@ namespace OverSurgery
             this.overSugerydbaseDataSet.Medication.Rows.Add(newMedicationRow);
 
             this.medicationTableAdapter.Update(this.overSugerydbaseDataSet.Medication);
+
+            MessageBox.Show("The new medication has been added to the table");
+
+            txtMedName2.Clear();
+            txtMedDose2.Clear();
+            txtMedStart.Clear();
+            txtMedEnd.Clear();
+            txtMedGP.Clear();
+            }
 
         }
 
@@ -1011,21 +1022,34 @@ namespace OverSurgery
         {
             setMeVisible("PageSelectedPatient");
         }
-
+           
         private void btnResSave_Click(object sender, EventArgs e)
         {
-            OverSugerydbaseDataSet.ResultsRow newResultsRow;
-            newResultsRow = overSugerydbaseDataSet.Results.NewResultsRow();
-            newResultsRow.ResDate = txtResDate.Text;
-            newResultsRow.ResType = txtResType.Text;
-            newResultsRow.Results = txtResResults.Text;
-            newResultsRow.ResGP = txtResGP.Text;
-            newResultsRow.ResDetails = txtResDetails.Text;
-            newResultsRow.ResPatientID = txtActiveUserID.Text;
+            if (Utilities.checkResFields(txtResDate.Text, txtResType.Text, txtResResults.Text, txtResGP.Text, txtResDetails.Text))
+            {
+            
+                OverSugerydbaseDataSet.ResultsRow newResultsRow;
+            
+                newResultsRow = overSugerydbaseDataSet.Results.NewResultsRow();          
+                newResultsRow.ResDate = txtResDate.Text;
+                newResultsRow.ResType = txtResType.Text;
+                newResultsRow.Results = txtResResults.Text;
+                newResultsRow.ResGP = txtResGP.Text;
+                newResultsRow.ResDetails = txtResDetails.Text;
+                newResultsRow.ResPatientID = txtActiveUserID.Text;
+            
+                this.overSugerydbaseDataSet.Results.Rows.Add(newResultsRow);
 
-            this.overSugerydbaseDataSet.Results.Rows.Add(newResultsRow);
+                this.resultsTableAdapter.Update(this.overSugerydbaseDataSet.Results);
 
-            this.resultsTableAdapter.Update(this.overSugerydbaseDataSet.Results);
+                MessageBox.Show("The new results have been added to the table");
+                txtResDate.Clear();
+                txtResType.Clear();
+                txtResResults.Clear();
+                txtResGP.Clear();
+                txtResDetails.Clear();
+                    
+            }
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////

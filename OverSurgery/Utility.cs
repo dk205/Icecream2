@@ -241,6 +241,83 @@ namespace OverSurgery
             }
         }
 
+        public Boolean CheckMedFields(string Medname, string MedDose, string MedStart, string MedEnd, string MedGP) 
+        {
+            Boolean medField = true;
+            string MedErrorMsg = "";
+            StringBuilder MedErrorMsg2 = new StringBuilder();
 
+            if (Medname == "")
+            {
+                medField = false;
+                MedErrorMsg2.Append("\n Name");
+            }
+            if (MedDose == "")
+            {
+                medField = false;
+                MedErrorMsg2.Append("\n Dose");
+            }
+            if (MedStart == "")
+            {
+                medField = false;
+                MedErrorMsg2.Append("\n Start Date");
+            }
+            if (MedEnd == "")
+            {
+                medField = false;
+                MedErrorMsg2.Append("\n End Date");
+            }
+            if (MedGP == "")
+            {
+                medField = false;
+                MedErrorMsg2.Append("\n Prescribing GP");
+            }
+            if (!medField)
+            {
+                MedErrorMsg = MedErrorMsg2.ToString();
+                MessageBox.Show(String.Format("Please enter information into the following fields: {0}", MedErrorMsg), "Error", MessageBoxButtons.OK);
+            }
+            return medField;
+        }
+
+        public Boolean checkResFields(string ResDate, string ResType, string ResResults, string ResGP, string ResDetails)
+        {
+            Boolean resFields = true;
+            string ResErrorMsg = "";
+            StringBuilder ResErrorMsg2 = new StringBuilder();
+
+            if (ResDate == "")
+            {
+                resFields = false;
+                ResErrorMsg2.Append("\n Date of the test");
+            }
+             if (ResType == "")
+            {
+                resFields = false;
+                ResErrorMsg2.Append("\n Type of test");
+            }
+             if (ResResults == "")
+            {
+                resFields = false;
+                ResErrorMsg2.Append("\n Results of the test");
+            }
+             if (ResGP == "")
+            {
+                resFields = false;
+                ResErrorMsg2.Append("\n Recommended GP");
+            }
+             if (ResDetails == "")
+            {
+                resFields = false;
+                ResErrorMsg2.Append("\n Details");
+            }
+             if (!resFields)
+            {
+                ResErrorMsg = ResErrorMsg2.ToString();
+                MessageBox.Show(String.Format("Please enter information into the following fields: {0}", ResErrorMsg), "Error", MessageBoxButtons.OK);
+            }
+             return resFields;
+        }
+        
     }
 }

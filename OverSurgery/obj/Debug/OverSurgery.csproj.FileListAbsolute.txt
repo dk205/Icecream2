@@ -438,3 +438,17 @@ C:\Users\Cos209\Desktop\3333rdJan\OverSurgery\obj\Debug\OverSurgery.LogIn.resour
 C:\Users\Cos209\Desktop\3333rdJan\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
 C:\Users\Cos209\Desktop\3333rdJan\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
 C:\Users\Cos209\Desktop\3333rdJan\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+C:\Users\User\Documents\Work\year 2\software engineering\gitProgramNew\OverSurgery\bin\Debug\OverSurgery.exe.config
+C:\Users\User\Documents\Work\year 2\software engineering\gitProgramNew\OverSurgery\obj\Debug\OverSurgery.exe
+C:\Users\User\Documents\Work\year 2\software engineering\gitProgramNew\OverSurgery\obj\Debug\OverSurgery.pdb
+C:\Users\User\Documents\Work\year 2\software engineering\gitProgramNew\OverSurgery\bin\Debug\OverSugerydbase.mdf
+C:\Users\User\Documents\Work\year 2\software engineering\gitProgramNew\OverSurgery\bin\Debug\OverSugerydbase_log.ldf
+C:\Users\User\Documents\Work\year 2\software engineering\gitProgramNew\OverSurgery\bin\Debug\Properties\Settings.Designer.cs
+C:\Users\User\Documents\Work\year 2\software engineering\gitProgramNew\OverSurgery\bin\Debug\Properties\Settings.settings
+C:\Users\User\Documents\Work\year 2\software engineering\gitProgramNew\OverSurgery\bin\Debug\OverSurgery.exe
+C:\Users\User\Documents\Work\year 2\software engineering\gitProgramNew\OverSurgery\bin\Debug\OverSurgery.pdb
+C:\Users\User\Documents\Work\year 2\software engineering\gitProgramNew\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+C:\Users\User\Documents\Work\year 2\software engineering\gitProgramNew\OverSurgery\obj\Debug\OverSurgery.LogIn.resources
+C:\Users\User\Documents\Work\year 2\software engineering\gitProgramNew\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+C:\Users\User\Documents\Work\year 2\software engineering\gitProgramNew\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+C:\Users\User\Documents\Work\year 2\software engineering\gitProgramNew\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
