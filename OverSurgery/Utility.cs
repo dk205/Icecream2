@@ -39,7 +39,9 @@ namespace OverSurgery
         
         public void GetActivePatient()   //WIP
         {
-
+            Form formParent = null;
+            OverSurgery.MainBackGround GUI =new MainBackGround(formParent);
+            
 
 
         }

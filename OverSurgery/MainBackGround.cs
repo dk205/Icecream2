@@ -16,29 +16,29 @@ namespace OverSurgery
     public partial class MainBackGround : Form
     {
 
-        OverSurgery.Utility Utilities = new Utility(); //creat a link for the class utility
-        int ActiveUserID = 0;
+        OverSurgery.Utility Utilities = new Utility(); //create a link for the class utility
+      
         Boolean ChangingAppointment = false;
         Form formParent = null;
         public MainBackGround(Form par)
         {
             formParent = par;
             InitializeComponent();
-            dateTimePicker1.MinDate = DateTime.Now;
-            dateTimePicker1.MaxDate = DateTime.Now.AddDays(17);
-            dateTimePicker2.MinDate = DateTime.Now;
-            dateTimePicker2.MaxDate = DateTime.Now.AddMonths(6);
+            dateTimePickerAP.MinDate = DateTime.Now;         //Setting the Appointments Calendar so you can book days older than the current day and no further the 2 weeks in advance.  
+            dateTimePickerAP.MaxDate = DateTime.Now.AddDays(17);
+            dateTimePickerRota.MinDate = DateTime.Now;        //Setting the Rota Calendar so you can set the rota from the current day and no further than 6 months in advance.   
+            dateTimePickerRota.MaxDate = DateTime.Now.AddMonths(6);
             dateTimePickerNR.Value = DateTime.Now;
             
 
         }
 
-        public string PreviousName="Free";
+        public string PreviousName="Free";  //Variables used for the first initiation of the comboboxes in the Timetable Tab
         public bool PreSelectedValue =false;
 
        
 
-        void FillStaffMenu()
+        void FillStaffMenu() // this function loads all the Staff Names into  the 5 combo boxes in the Timetable Tab 
         {
             int i = 1;
             
@@ -68,14 +68,13 @@ namespace OverSurgery
         }
 
 
-        void DestroyMenus()
+        void DestroyMenus() // destroys the comboboxes in the timetable Tab.
         {
             cbStaffMenu1.Items.Clear();
             cbStaffMenu2.Items.Clear();
             cbStaffMenu3.Items.Clear();
             cbStaffMenu4.Items.Clear();
             cbStaffMenu5.Items.Clear();
-
         }
 /*
         private LogIn logIn;
@@ -109,15 +108,15 @@ namespace OverSurgery
         
         public void ClearNewRegistrationFields()  // small function to clear the fields in the new registration page.
         {                                          // its used when the registration is canceled and when the new registration is created.
-        txtNRPatientsName.Text = String.Empty;
-       // txtNRDOB.Text = String.Empty;
+            txtNRPatientsName.Text = String.Empty;
         cbNRSex.Text = "Please Select";
-        cbNRSex.Text = String.Empty;
+        txtNRPC.Text = String.Empty;
         txtNRAddress1.Text = String.Empty;
         txtNRAddress2.Text = String.Empty;
         txtNRMobile.Text = String.Empty;
         txtNRLandLine.Text = String.Empty;
         txtNREmail.Text = String.Empty;
+        dateTimePickerNR.Value = DateTime.Now;
 
      
         }
@@ -128,36 +127,7 @@ namespace OverSurgery
 
         }
 
-     /*   private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)  
-        {
-
-        }
-
-        private void splitContainer1_Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void label3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label5_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox3_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void NewRegistrationPage_Paint(object sender, PaintEventArgs e)
-        {
-
-       }
-*/
+    
         private void NewRegButton_Click(object sender, EventArgs e) //go to the new registration page
         {
 
@@ -183,7 +153,7 @@ namespace OverSurgery
                 txtActiveUserName.Text = Convert.ToString(a); //place the id and the name on the area above the option, so you always know the patient you are handeling
                 txtActiveUserID.Text = Convert.ToString(b);
                 btnClearActivePatient.Visible = true;  // now that there is an active patient, make the clear_active_patient button available
-                 ActiveUserID = Convert.ToInt32(txtActiveUserID.Text );  //a global variable to store the active patients id.
+                 Utilities.ActiveUserID = Convert.ToInt32(txtActiveUserID.Text );  //a global variable to store the active patients id.
             }
             catch (Exception) //if there are no values (caused if the id is not found in the database) catch it
             {
@@ -293,14 +263,17 @@ namespace OverSurgery
                 this.patientsTableAdapter.InsertNewRegistration(txtNRPatientsName.Text, dateTimePickerNR.Text, cbNRSex.Text, txtNRPC.Text, txtNRAddress1.Text, txtNRAddress2.Text, txtNRMobile.Text, txtNRLandLine.Text, txtNREmail.Text); //store the data from the textboxes to the database
                 this.patientsTableAdapter.Fill(this.overSugerydbaseDataSet.Patients); //*TEMP this will be removed after testing
 
-                OverSugerydbaseDataSet.PatientsDataTable Monkey = this.patientsTableAdapter.GetActivePatientQuery(); //creates a table with 1 row which is the last row just entered (our active patient)
+                OverSugerydbaseDataSet.PatientsDataTable LastRegistration = this.patientsTableAdapter.GetActivePatientQuery(); //creates a table with 1 row which is the last row just entered (our active patient)
                 
                 //code to view and store the active patient, it will becaume a  function cause it is used in the search id.
-                object a= Monkey.Rows[0]["Patient Name"];
-                object b = Monkey.Rows[0]["Id"];
-                txtActiveUserName.Text = Convert.ToString(a);
-                txtActiveUserID.Text = Convert.ToString(b);
-                ActiveUserID = Convert.ToInt32(b);
+                object a= LastRegistration.Rows[0]["Patient Name"];
+                object b = LastRegistration.Rows[0]["Id"];
+                Utilities.ActiveUserName = Convert.ToString(a); //store the values ActiveUserId and ActiveUserName in the Utility class.
+                Utilities.ActiveUserID = Convert.ToInt32(b);
+             
+                txtActiveUserName.Text = Utilities.ActiveUserName;
+                txtActiveUserID.Text = Utilities.ActiveUserID.ToString();
+               
                 setMeVisible("PageSelectedPatient");
                 btnClearActivePatient.Visible = true;
                 
@@ -345,7 +318,7 @@ namespace OverSurgery
             txtActiveUserID.Text = " ";    //clear the two fields above the otions
             txtActiveUserName.Text = " ";
             ChangingAppointment = false;
-            ActiveUserID = 0;
+            Utilities.ActiveUserID = 0;
             btnClearActivePatient.Visible = false; //hide the button
         }
 
@@ -370,7 +343,7 @@ namespace OverSurgery
         private void goToEditPatient_Click(object sender, EventArgs e) //takes you to edit patient details
         {                                                              //and displays the Patients current details in textboxes
             setMeVisible("PageEditPatientDetails");
-            OverSugerydbaseDataSet.PatientsDataTable IDSearched = this.patientsTableAdapter.SearchByID(ActiveUserID); //store the row of our active patient into the ActiveID table
+            OverSugerydbaseDataSet.PatientsDataTable IDSearched = this.patientsTableAdapter.SearchByID(Utilities.ActiveUserID); //store the row of our active patient into the ActiveID table
 
             object EditID = IDSearched.Rows[0]["Id"];  //extract each columns first row into a object
             object EditName = IDSearched.Rows[0]["Patient Name"];
@@ -430,34 +403,34 @@ namespace OverSurgery
                         //Selected all staff
                         //make a table  with all doctors that day.
                         
-                        StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker1.Value.Date.ToString());
+                        StaffFound = this.rotaTableAdapter.SearchStaffByDate(dateTimePickerAP.Value.Date.ToString());
                         break;
                     
                 case 1:
                    //All GP
                     //make a table with only staff role=GP   
-                    StaffFound = this.rotaTableAdapter.SearchByRoleAndDate("GP", dateTimePicker1.Value.Date.ToString());
+                    StaffFound = this.rotaTableAdapter.SearchByRoleAndDate("GP", dateTimePickerAP.Value.Date.ToString());
             break;
                 case 2:
                     // selected all Nurses
                     //make a table with only staff role=Nurse           
-                  StaffFound = this.rotaTableAdapter.SearchByRoleAndDate("Nurse",dateTimePicker1.Value.Date.ToString());
+                  StaffFound = this.rotaTableAdapter.SearchByRoleAndDate("Nurse",dateTimePickerAP.Value.Date.ToString());
                     break;
                 case 3:
                     // selected all male gp
                     //make a table with only staff role=GP nad sex =Male
-                    StaffFound = this.rotaTableAdapter.SearchBySexAndRoleAndDate("Male", dateTimePicker1.Value.ToString(),"GP");                  
+                    StaffFound = this.rotaTableAdapter.SearchBySexAndRoleAndDate("Male", dateTimePickerAP.Value.ToString(),"GP");                  
                   break;
                 case 4:
                     // selected all female gp
                     //make a table with only staff role=GP and Sex =Female
-                    StaffFound = this.rotaTableAdapter.SearchBySexAndRoleAndDate("Female", dateTimePicker1.Value.ToString(), "GP");   
+                    StaffFound = this.rotaTableAdapter.SearchBySexAndRoleAndDate("Female", dateTimePickerAP.Value.ToString(), "GP");   
                     break;
                 default:
                     
                     //make a table with the doctors name that date
 
-                     StaffFound = this.rotaTableAdapter.SearchRotaByNameAndDate(cbStaff.Text, dateTimePicker1.Value.ToString());
+                     StaffFound = this.rotaTableAdapter.SearchRotaByNameAndDate(cbStaff.Text, dateTimePickerAP.Value.ToString());
                     break;
             }
 
@@ -481,7 +454,7 @@ namespace OverSurgery
                     Amorphos.Text = row.Surname;
     
                    //search the two active weeks for that name and date
-                   OverSugerydbaseDataSet.TwoActiveWeeksDataTable IDandSlots = this.twoActiveWeeksTableAdapter.SearchTwoActiveWeeksByIDandDate(row.StaffID, dateTimePicker1.Value.Date.ToString());
+                   OverSugerydbaseDataSet.TwoActiveWeeksDataTable IDandSlots = this.twoActiveWeeksTableAdapter.SearchTwoActiveWeeksByIDandDate(row.StaffID, dateTimePickerAP.Value.Date.ToString());
                    //make new int array int[] Appointments= new int[13]
                     int[] Appointments= new int[26];
                    //int c=0;
@@ -570,13 +543,13 @@ namespace OverSurgery
             //search if the user has already made a booking (max 1 per 2 weeks)
             
 
-            Int32 count = (Int32)this.twoActiveWeeksTableAdapter.DoubleBooking(ActiveUserID);
-            if ((Int32)this.twoActiveWeeksTableAdapter.DoubleBooking(ActiveUserID) == 0 || ChangingAppointment == true)
+            Int32 count = (Int32)this.twoActiveWeeksTableAdapter.DoubleBooking(Utilities.ActiveUserID);
+            if ((Int32)this.twoActiveWeeksTableAdapter.DoubleBooking(Utilities.ActiveUserID) == 0 || ChangingAppointment == true)
             {
 
                 //remove previous booking
                 if (ChangingAppointment == true)
-                    this.twoActiveWeeksTableAdapter.DeleteBooking(ActiveUserID);
+                    this.twoActiveWeeksTableAdapter.DeleteBooking(Utilities.ActiveUserID);
 
                 MessageBox.Show("Your booking has been recorded.");
 
@@ -590,9 +563,9 @@ namespace OverSurgery
                 string TempSex = Convert.ToString(c);  //store the Sex
                 object d = StaffInfo.Rows[0]["Staff Role/Title"];
                 string TempRole = Convert.ToString(d);  //store the Surname
-                string TempDate = dateTimePicker1.Value.Date.ToString();
+                string TempDate = dateTimePickerRota.Value.Date.ToString();
 
-                this.twoActiveWeeksTableAdapter.RecordBooking(TempStaffID, TempSurname, TempDate, TempSex, TempRole, colx, ActiveUserID);
+                this.twoActiveWeeksTableAdapter.RecordBooking(TempStaffID, TempSurname, TempDate, TempSex, TempRole, colx, Utilities.ActiveUserID);
                 this.TableMorning.Controls.Remove(bt);  //remove the button we pressed
 
                 // Delete all bookings older than today, used to keep the Two active WeeksDatabase small in size.
@@ -642,14 +615,14 @@ namespace OverSurgery
             cbStaffMenu5.Enabled = true;
 
             Boolean IdExists = true;
-            if (dateTimePicker2.Value.DayOfWeek == DayOfWeek.Saturday || dateTimePicker2.Value.DayOfWeek == DayOfWeek.Sunday)  //do not allow weekeneds to be selected
+            if (dateTimePickerRota.Value.DayOfWeek == DayOfWeek.Saturday || dateTimePickerRota.Value.DayOfWeek == DayOfWeek.Sunday)  //do not allow weekeneds to be selected
                 MessageBox.Show("Apologies you can not book on weekends.");
             else
             {
 
-                tbBadBox.Text = dateTimePicker2.Value.DayOfWeek.ToString() + " " + dateTimePicker2.Value.Date.ToShortDateString();   //diplay the date
+                tbBadBox.Text = dateTimePickerRota.Value.DayOfWeek.ToString() + " " + dateTimePickerRota.Value.Date.ToShortDateString();   //diplay the date
                 //search for staff already working that week
-                OverSugerydbaseDataSet.RotaDataTable Rotas = this.rotaTableAdapter.SearchStaffByDate(dateTimePicker2.Value.Date.ToString());
+                OverSugerydbaseDataSet.RotaDataTable Rotas = this.rotaTableAdapter.SearchStaffByDate(dateTimePickerRota.Value.Date.ToString());
                 DestroyMenus();
                 FillStaffMenu();       //fill the drop down menus
                 try
@@ -700,7 +673,7 @@ namespace OverSurgery
             if (CB.Text != "Free") //current entry a name
             {
 
-                this.rotaTableAdapter.DeleteStaffFromRota(PreviousName, dateTimePicker2.Value.Date.ToString()); //delete old entry
+                this.rotaTableAdapter.DeleteStaffFromRota(PreviousName, dateTimePickerRota.Value.Date.ToString()); //delete old entry
                 OverSugerydbaseDataSet.StaffDataTable StaffSearched = this.staffTableAdapter.SearchStaffbySurname(CB.Text);  // cbStaffMenu1 Search to find the
                 // selected staff's other details
 
@@ -712,11 +685,11 @@ namespace OverSurgery
                 string TempSex = Convert.ToString(c);  //store the Sex
                 object d = StaffSearched.Rows[0]["Staff Role/Title"];
                 string TempRole = Convert.ToString(d);  //store the Surname
-                string TempDate = dateTimePicker2.Value.Date.ToString();   //store the date
+                string TempDate = dateTimePickerRota.Value.Date.ToString();   //store the date
 
 
                 //create a table from the rota that contaigns the same name and date. It means we have a dublicate entry and we do not want to copy it.
-                OverSugerydbaseDataSet.RotaDataTable Rotas = this.rotaTableAdapter.SearchbyIDandDate(TempStaffID, dateTimePicker2.Value.Date.ToString());
+                OverSugerydbaseDataSet.RotaDataTable Rotas = this.rotaTableAdapter.SearchbyIDandDate(TempStaffID, dateTimePickerRota.Value.Date.ToString());
                 try
                 {
                     object t = Rotas.Rows[0]["StaffID"]; //If the table does not exist (the we are good to copy the entry) then it will create an error
@@ -757,14 +730,14 @@ namespace OverSurgery
                 if (PreviousName != "Free" && PreviousName != String.Empty)
                     try
                     {
-                        this.rotaTableAdapter.DeleteStaffFromRota(PreviousName, dateTimePicker2.Value.Date.ToString());  //delete old entry
+                        this.rotaTableAdapter.DeleteStaffFromRota(PreviousName, dateTimePickerRota.Value.Date.ToString());  //delete old entry
                     }
                     catch (Exception gg)
                     {
                         MessageBox.Show(gg.Message, "message");
                     }
             }
-            dateTimePicker2.Focus();
+            dateTimePickerRota.Focus();
             
         }
 
@@ -781,7 +754,7 @@ namespace OverSurgery
             TabControl Tab = sender as TabControl;
             if (tabControl1.SelectedTab.ToString() == "TabPage: {Timetable}")
             {
-                dateTimePicker2.Location = new Point(139, 91);
+                dateTimePickerRota.Location = new Point(139, 91);
             }
 
         }
@@ -807,16 +780,12 @@ namespace OverSurgery
             TableAfternoun.Visible = true;
             btnAfternoon.Visible = false;
             btnMorning.Visible = true;
-
-
-            // panelMorningAppointments.Visible = false;
-            //panelAfternounAppointments.Visible = true;
         }
 
         private void btnCancelAppointment_Click(object sender, EventArgs e)
         {
 
-            if (this.twoActiveWeeksTableAdapter.DoubleBooking(ActiveUserID) <= 0)
+            if (this.twoActiveWeeksTableAdapter.DoubleBooking(Utilities.ActiveUserID) <= 0)
             {
                 MessageBox.Show("There is no booking to Cancel");
             }
@@ -827,7 +796,7 @@ namespace OverSurgery
                 {
                     try
                     {
-                        this.twoActiveWeeksTableAdapter.DeleteBooking(ActiveUserID);
+                        this.twoActiveWeeksTableAdapter.DeleteBooking(Utilities.ActiveUserID);
                         MessageBox.Show("Your Booking has been Deleted");
                         labelAppointmentDetails.Text = String.Empty;
                         labelAppointmentDetails.Text = "No booking has been made";
@@ -849,9 +818,9 @@ namespace OverSurgery
 
         private void Fill_Appointment_Label(object sender, EventArgs e)
         {
-            if (this.twoActiveWeeksTableAdapter.DoubleBooking(ActiveUserID) > 0)
+            if (this.twoActiveWeeksTableAdapter.DoubleBooking(Utilities.ActiveUserID) > 0)
             {
-                OverSugerydbaseDataSet.TwoActiveWeeksDataTable StaffSearched = this.twoActiveWeeksTableAdapter.SearchbyId(ActiveUserID);
+                OverSugerydbaseDataSet.TwoActiveWeeksDataTable StaffSearched = this.twoActiveWeeksTableAdapter.SearchbyId(Utilities.ActiveUserID);
                 // selected staff's other details
 
                 String Time;
