@@ -71,19 +71,15 @@
             this.btnResDown = new System.Windows.Forms.Button();
             this.btnResUp = new System.Windows.Forms.Button();
             this.resultsDataGridView = new System.Windows.Forms.DataGridView();
+            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.resultsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.overSugerydbaseDataSet = new OverSurgery.OverSugerydbaseDataSet();
             this.label27 = new System.Windows.Forms.Label();
             this.btnVResCancel = new System.Windows.Forms.Button();
-            this.PageEnterTestResults = new System.Windows.Forms.Panel();
-            this.btnResCancel = new System.Windows.Forms.Button();
-            this.btnResSave = new System.Windows.Forms.Button();
-            this.txtResDate = new System.Windows.Forms.TextBox();
-            this.txtResType = new System.Windows.Forms.TextBox();
-            this.txtResResults = new System.Windows.Forms.TextBox();
-            this.txtResGP = new System.Windows.Forms.TextBox();
-            this.txtResDetails = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.PageAddViewExtendMedication = new System.Windows.Forms.Panel();
             this.btnMedCancel = new System.Windows.Forms.Button();
             this.tabControlMed = new System.Windows.Forms.TabControl();
@@ -113,6 +109,15 @@
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label28 = new System.Windows.Forms.Label();
+            this.PageEnterTestResults = new System.Windows.Forms.Panel();
+            this.btnResCancel = new System.Windows.Forms.Button();
+            this.btnResSave = new System.Windows.Forms.Button();
+            this.txtResDate = new System.Windows.Forms.TextBox();
+            this.txtResType = new System.Windows.Forms.TextBox();
+            this.txtResResults = new System.Windows.Forms.TextBox();
+            this.txtResGP = new System.Windows.Forms.TextBox();
+            this.txtResDetails = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
             this.PageNewRegistration = new System.Windows.Forms.Panel();
             this.labelDemo3 = new System.Windows.Forms.Label();
             this.dateTimePickerNR = new System.Windows.Forms.DateTimePicker();
@@ -265,12 +270,6 @@
             this.tabGPNurse = new System.Windows.Forms.TabPage();
             this.PageGPNurse = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.groupBoxSearch = new System.Windows.Forms.GroupBox();
-            this.txtSearch = new System.Windows.Forms.Button();
-            this.comboBoxSearchBy = new System.Windows.Forms.ComboBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.label39 = new System.Windows.Forms.Label();
-            this.txtSearchBy = new System.Windows.Forms.TextBox();
             this.lblCount = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
@@ -293,6 +292,7 @@
             this.btnAddStaffCancel = new System.Windows.Forms.Button();
             this.btnRefreshStaffTable = new System.Windows.Forms.Button();
             this.groupBoxStaff = new System.Windows.Forms.GroupBox();
+            this.btnEnableEdit = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.staffIDTextBox = new System.Windows.Forms.TextBox();
             this.surnameTextBox = new System.Windows.Forms.TextBox();
@@ -332,6 +332,12 @@
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.rotaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.groupBoxSearch = new System.Windows.Forms.GroupBox();
+            this.txtSearch = new System.Windows.Forms.Button();
+            this.comboBoxSearchBy = new System.Windows.Forms.ComboBox();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.txtSearchBy = new System.Windows.Forms.TextBox();
             this.tabTimetable = new System.Windows.Forms.TabPage();
             this.PageRota = new System.Windows.Forms.Panel();
             this.labelDemo2 = new System.Windows.Forms.Label();
@@ -374,11 +380,7 @@
             this.twoActiveWeeksTableAdapter = new OverSurgery.OverSugerydbaseDataSetTableAdapters.TwoActiveWeeksTableAdapter();
             this.staffTableAdapter3 = new OverSurgery.OverSugerydbaseDataSet1TableAdapters.StaffTableAdapter();
             this.resultsTableAdapter = new OverSurgery.OverSugerydbaseDataSetTableAdapters.ResultsTableAdapter();
-            this.dataGridViewTextBoxColumn34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             medNameLabel = new System.Windows.Forms.Label();
             doseLabel = new System.Windows.Forms.Label();
             start_DateLabel = new System.Windows.Forms.Label();
@@ -417,13 +419,13 @@
             ((System.ComponentModel.ISupportInitialize)(this.resultsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet)).BeginInit();
-            this.PageEnterTestResults.SuspendLayout();
             this.PageAddViewExtendMedication.SuspendLayout();
             this.tabControlMed.SuspendLayout();
             this.MedEdit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medicationBindingSource)).BeginInit();
             this.MedNew.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medicationDataGridView)).BeginInit();
+            this.PageEnterTestResults.SuspendLayout();
             this.PageNewRegistration.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientsDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.patientsBindingSource)).BeginInit();
@@ -440,7 +442,6 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.tabGPNurse.SuspendLayout();
             this.PageGPNurse.SuspendLayout();
-            this.groupBoxSearch.SuspendLayout();
             this.groupBoxDeleteStaff.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).BeginInit();
             this.groupBoxAddStaff.SuspendLayout();
@@ -450,6 +451,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaff)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotaBindingSource)).BeginInit();
+            this.groupBoxSearch.SuspendLayout();
             this.tabTimetable.SuspendLayout();
             this.PageRota.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView)).BeginInit();
@@ -879,6 +881,41 @@
             this.resultsDataGridView.Size = new System.Drawing.Size(838, 269);
             this.resultsDataGridView.TabIndex = 3;
             // 
+            // dataGridViewTextBoxColumn34
+            // 
+            this.dataGridViewTextBoxColumn34.DataPropertyName = "ResDate";
+            this.dataGridViewTextBoxColumn34.HeaderText = "Date of Test";
+            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
+            // 
+            // dataGridViewTextBoxColumn35
+            // 
+            this.dataGridViewTextBoxColumn35.DataPropertyName = "ResType";
+            this.dataGridViewTextBoxColumn35.HeaderText = "Type of Test";
+            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
+            this.dataGridViewTextBoxColumn35.Width = 140;
+            // 
+            // dataGridViewTextBoxColumn36
+            // 
+            this.dataGridViewTextBoxColumn36.DataPropertyName = "Results";
+            this.dataGridViewTextBoxColumn36.HeaderText = "Results";
+            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
+            this.dataGridViewTextBoxColumn36.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn37
+            // 
+            this.dataGridViewTextBoxColumn37.DataPropertyName = "ResGP";
+            this.dataGridViewTextBoxColumn37.FillWeight = 150F;
+            this.dataGridViewTextBoxColumn37.HeaderText = "Recommended GP";
+            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
+            this.dataGridViewTextBoxColumn37.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn38
+            // 
+            this.dataGridViewTextBoxColumn38.DataPropertyName = "ResDetails";
+            this.dataGridViewTextBoxColumn38.HeaderText = "Details";
+            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
+            this.dataGridViewTextBoxColumn38.Width = 250;
+            // 
             // resultsBindingSource
             // 
             this.resultsBindingSource.DataMember = "Results";
@@ -908,93 +945,6 @@
             this.btnVResCancel.Text = "Cancel";
             this.btnVResCancel.UseVisualStyleBackColor = true;
             this.btnVResCancel.Click += new System.EventHandler(this.btnVResCancel_Click);
-            // 
-            // PageEnterTestResults
-            // 
-            this.PageEnterTestResults.Controls.Add(this.btnResCancel);
-            this.PageEnterTestResults.Controls.Add(this.btnResSave);
-            this.PageEnterTestResults.Controls.Add(resDateLabel);
-            this.PageEnterTestResults.Controls.Add(this.txtResDate);
-            this.PageEnterTestResults.Controls.Add(resTypeLabel);
-            this.PageEnterTestResults.Controls.Add(this.txtResType);
-            this.PageEnterTestResults.Controls.Add(resultsLabel);
-            this.PageEnterTestResults.Controls.Add(this.txtResResults);
-            this.PageEnterTestResults.Controls.Add(resGPLabel);
-            this.PageEnterTestResults.Controls.Add(this.txtResGP);
-            this.PageEnterTestResults.Controls.Add(resDetailsLabel);
-            this.PageEnterTestResults.Controls.Add(this.txtResDetails);
-            this.PageEnterTestResults.Controls.Add(this.label14);
-            this.PageEnterTestResults.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PageEnterTestResults.Location = new System.Drawing.Point(0, 0);
-            this.PageEnterTestResults.Name = "PageEnterTestResults";
-            this.PageEnterTestResults.Size = new System.Drawing.Size(966, 600);
-            this.PageEnterTestResults.TabIndex = 2;
-            this.PageEnterTestResults.Visible = false;
-            // 
-            // btnResCancel
-            // 
-            this.btnResCancel.Location = new System.Drawing.Point(786, 526);
-            this.btnResCancel.Name = "btnResCancel";
-            this.btnResCancel.Size = new System.Drawing.Size(75, 23);
-            this.btnResCancel.TabIndex = 15;
-            this.btnResCancel.Text = "Cancel";
-            this.btnResCancel.UseVisualStyleBackColor = true;
-            this.btnResCancel.Click += new System.EventHandler(this.btnResCancel_Click);
-            // 
-            // btnResSave
-            // 
-            this.btnResSave.Location = new System.Drawing.Point(469, 283);
-            this.btnResSave.Name = "btnResSave";
-            this.btnResSave.Size = new System.Drawing.Size(75, 23);
-            this.btnResSave.TabIndex = 14;
-            this.btnResSave.Text = "Save";
-            this.btnResSave.UseVisualStyleBackColor = true;
-            this.btnResSave.Click += new System.EventHandler(this.btnResSave_Click);
-            // 
-            // txtResDate
-            // 
-            this.txtResDate.Location = new System.Drawing.Point(277, 120);
-            this.txtResDate.Name = "txtResDate";
-            this.txtResDate.Size = new System.Drawing.Size(182, 22);
-            this.txtResDate.TabIndex = 5;
-            // 
-            // txtResType
-            // 
-            this.txtResType.Location = new System.Drawing.Point(277, 148);
-            this.txtResType.Name = "txtResType";
-            this.txtResType.Size = new System.Drawing.Size(182, 22);
-            this.txtResType.TabIndex = 7;
-            // 
-            // txtResResults
-            // 
-            this.txtResResults.Location = new System.Drawing.Point(277, 176);
-            this.txtResResults.Name = "txtResResults";
-            this.txtResResults.Size = new System.Drawing.Size(182, 22);
-            this.txtResResults.TabIndex = 9;
-            // 
-            // txtResGP
-            // 
-            this.txtResGP.Location = new System.Drawing.Point(277, 204);
-            this.txtResGP.Name = "txtResGP";
-            this.txtResGP.Size = new System.Drawing.Size(182, 22);
-            this.txtResGP.TabIndex = 11;
-            // 
-            // txtResDetails
-            // 
-            this.txtResDetails.Location = new System.Drawing.Point(277, 232);
-            this.txtResDetails.Name = "txtResDetails";
-            this.txtResDetails.Size = new System.Drawing.Size(182, 22);
-            this.txtResDetails.TabIndex = 13;
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(27, 18);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(207, 25);
-            this.label14.TabIndex = 0;
-            this.label14.Text = "Enter Test Results";
             // 
             // PageAddViewExtendMedication
             // 
@@ -1288,6 +1238,93 @@
             this.label28.Size = new System.Drawing.Size(312, 25);
             this.label28.TabIndex = 0;
             this.label28.Text = "Add View Extend Medication";
+            // 
+            // PageEnterTestResults
+            // 
+            this.PageEnterTestResults.Controls.Add(this.btnResCancel);
+            this.PageEnterTestResults.Controls.Add(this.btnResSave);
+            this.PageEnterTestResults.Controls.Add(resDateLabel);
+            this.PageEnterTestResults.Controls.Add(this.txtResDate);
+            this.PageEnterTestResults.Controls.Add(resTypeLabel);
+            this.PageEnterTestResults.Controls.Add(this.txtResType);
+            this.PageEnterTestResults.Controls.Add(resultsLabel);
+            this.PageEnterTestResults.Controls.Add(this.txtResResults);
+            this.PageEnterTestResults.Controls.Add(resGPLabel);
+            this.PageEnterTestResults.Controls.Add(this.txtResGP);
+            this.PageEnterTestResults.Controls.Add(resDetailsLabel);
+            this.PageEnterTestResults.Controls.Add(this.txtResDetails);
+            this.PageEnterTestResults.Controls.Add(this.label14);
+            this.PageEnterTestResults.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.PageEnterTestResults.Location = new System.Drawing.Point(0, 0);
+            this.PageEnterTestResults.Name = "PageEnterTestResults";
+            this.PageEnterTestResults.Size = new System.Drawing.Size(966, 600);
+            this.PageEnterTestResults.TabIndex = 2;
+            this.PageEnterTestResults.Visible = false;
+            // 
+            // btnResCancel
+            // 
+            this.btnResCancel.Location = new System.Drawing.Point(786, 526);
+            this.btnResCancel.Name = "btnResCancel";
+            this.btnResCancel.Size = new System.Drawing.Size(75, 23);
+            this.btnResCancel.TabIndex = 15;
+            this.btnResCancel.Text = "Cancel";
+            this.btnResCancel.UseVisualStyleBackColor = true;
+            this.btnResCancel.Click += new System.EventHandler(this.btnResCancel_Click);
+            // 
+            // btnResSave
+            // 
+            this.btnResSave.Location = new System.Drawing.Point(469, 283);
+            this.btnResSave.Name = "btnResSave";
+            this.btnResSave.Size = new System.Drawing.Size(75, 23);
+            this.btnResSave.TabIndex = 14;
+            this.btnResSave.Text = "Save";
+            this.btnResSave.UseVisualStyleBackColor = true;
+            this.btnResSave.Click += new System.EventHandler(this.btnResSave_Click);
+            // 
+            // txtResDate
+            // 
+            this.txtResDate.Location = new System.Drawing.Point(277, 120);
+            this.txtResDate.Name = "txtResDate";
+            this.txtResDate.Size = new System.Drawing.Size(182, 22);
+            this.txtResDate.TabIndex = 5;
+            // 
+            // txtResType
+            // 
+            this.txtResType.Location = new System.Drawing.Point(277, 148);
+            this.txtResType.Name = "txtResType";
+            this.txtResType.Size = new System.Drawing.Size(182, 22);
+            this.txtResType.TabIndex = 7;
+            // 
+            // txtResResults
+            // 
+            this.txtResResults.Location = new System.Drawing.Point(277, 176);
+            this.txtResResults.Name = "txtResResults";
+            this.txtResResults.Size = new System.Drawing.Size(182, 22);
+            this.txtResResults.TabIndex = 9;
+            // 
+            // txtResGP
+            // 
+            this.txtResGP.Location = new System.Drawing.Point(277, 204);
+            this.txtResGP.Name = "txtResGP";
+            this.txtResGP.Size = new System.Drawing.Size(182, 22);
+            this.txtResGP.TabIndex = 11;
+            // 
+            // txtResDetails
+            // 
+            this.txtResDetails.Location = new System.Drawing.Point(277, 232);
+            this.txtResDetails.Name = "txtResDetails";
+            this.txtResDetails.Size = new System.Drawing.Size(182, 22);
+            this.txtResDetails.TabIndex = 13;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(27, 18);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(207, 25);
+            this.label14.TabIndex = 0;
+            this.label14.Text = "Enter Test Results";
             // 
             // PageNewRegistration
             // 
@@ -2943,7 +2980,6 @@
             // PageGPNurse
             // 
             this.PageGPNurse.Controls.Add(this.checkBox1);
-            this.PageGPNurse.Controls.Add(this.groupBoxSearch);
             this.PageGPNurse.Controls.Add(this.lblCount);
             this.PageGPNurse.Controls.Add(this.label37);
             this.PageGPNurse.Controls.Add(this.label36);
@@ -2962,12 +2998,12 @@
             this.PageGPNurse.Controls.Add(this.bntAddNewStaff);
             this.PageGPNurse.Controls.Add(this.bntCheckStaffDuty);
             this.PageGPNurse.Controls.Add(this.rotaDataGridView1);
+            this.PageGPNurse.Controls.Add(this.groupBoxSearch);
             this.PageGPNurse.Dock = System.Windows.Forms.DockStyle.Fill;
             this.PageGPNurse.Location = new System.Drawing.Point(3, 3);
             this.PageGPNurse.Name = "PageGPNurse";
             this.PageGPNurse.Size = new System.Drawing.Size(966, 653);
             this.PageGPNurse.TabIndex = 0;
-            this.PageGPNurse.Paint += new System.Windows.Forms.PaintEventHandler(this.PageGPNurse_Paint);
             // 
             // checkBox1
             // 
@@ -2980,72 +3016,6 @@
             this.checkBox1.Text = "Enable Navi Bar";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // groupBoxSearch
-            // 
-            this.groupBoxSearch.Controls.Add(this.txtSearch);
-            this.groupBoxSearch.Controls.Add(this.comboBoxSearchBy);
-            this.groupBoxSearch.Controls.Add(this.label30);
-            this.groupBoxSearch.Controls.Add(this.label39);
-            this.groupBoxSearch.Controls.Add(this.txtSearchBy);
-            this.groupBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBoxSearch.Location = new System.Drawing.Point(206, 26);
-            this.groupBoxSearch.Name = "groupBoxSearch";
-            this.groupBoxSearch.Size = new System.Drawing.Size(293, 141);
-            this.groupBoxSearch.TabIndex = 35;
-            this.groupBoxSearch.TabStop = false;
-            this.groupBoxSearch.Text = "Search for Staff";
-            this.groupBoxSearch.Visible = false;
-            // 
-            // txtSearch
-            // 
-            this.txtSearch.Location = new System.Drawing.Point(139, 104);
-            this.txtSearch.Name = "txtSearch";
-            this.txtSearch.Size = new System.Drawing.Size(115, 23);
-            this.txtSearch.TabIndex = 22;
-            this.txtSearch.Text = "Search";
-            this.txtSearch.UseVisualStyleBackColor = true;
-            this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
-            // 
-            // comboBoxSearchBy
-            // 
-            this.comboBoxSearchBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBoxSearchBy.FormattingEnabled = true;
-            this.comboBoxSearchBy.Items.AddRange(new object[] {
-            "Please Select",
-            "Surname",
-            "First Name",
-            "Role/Title",
-            "Sex"});
-            this.comboBoxSearchBy.Location = new System.Drawing.Point(130, 32);
-            this.comboBoxSearchBy.Name = "comboBoxSearchBy";
-            this.comboBoxSearchBy.Size = new System.Drawing.Size(124, 24);
-            this.comboBoxSearchBy.TabIndex = 13;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Location = new System.Drawing.Point(6, 35);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(102, 16);
-            this.label30.TabIndex = 15;
-            this.label30.Text = "Search Staff By:";
-            // 
-            // label39
-            // 
-            this.label39.AutoSize = true;
-            this.label39.Location = new System.Drawing.Point(6, 62);
-            this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(94, 32);
-            this.label39.TabIndex = 16;
-            this.label39.Text = "Enter Value to \r\nSearch For:";
-            // 
-            // txtSearchBy
-            // 
-            this.txtSearchBy.Location = new System.Drawing.Point(130, 62);
-            this.txtSearchBy.Name = "txtSearchBy";
-            this.txtSearchBy.Size = new System.Drawing.Size(124, 22);
-            this.txtSearchBy.TabIndex = 14;
             // 
             // lblCount
             // 
@@ -3275,6 +3245,7 @@
             // 
             // groupBoxStaff
             // 
+            this.groupBoxStaff.Controls.Add(this.btnEnableEdit);
             this.groupBoxStaff.Controls.Add(this.btnUpdate);
             this.groupBoxStaff.Controls.Add(staffIDLabel);
             this.groupBoxStaff.Controls.Add(this.staffIDTextBox);
@@ -3297,13 +3268,26 @@
             this.groupBoxStaff.Text = "Selected Staff Detail Information";
             this.groupBoxStaff.Visible = false;
             // 
+            // btnEnableEdit
+            // 
+            this.btnEnableEdit.Enabled = false;
+            this.btnEnableEdit.Location = new System.Drawing.Point(102, 206);
+            this.btnEnableEdit.Name = "btnEnableEdit";
+            this.btnEnableEdit.Size = new System.Drawing.Size(88, 23);
+            this.btnEnableEdit.TabIndex = 43;
+            this.btnEnableEdit.Text = "Enable Edit";
+            this.btnEnableEdit.UseVisualStyleBackColor = true;
+            this.btnEnableEdit.Visible = false;
+            this.btnEnableEdit.Click += new System.EventHandler(this.btnEnableEdit_Click);
+            // 
             // btnUpdate
             // 
-            this.btnUpdate.Location = new System.Drawing.Point(113, 208);
+            this.btnUpdate.Enabled = false;
+            this.btnUpdate.Location = new System.Drawing.Point(205, 206);
             this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(141, 23);
+            this.btnUpdate.Size = new System.Drawing.Size(88, 23);
             this.btnUpdate.TabIndex = 42;
-            this.btnUpdate.Text = "Save to Database";
+            this.btnUpdate.Text = "Update";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Visible = false;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
@@ -3311,60 +3295,60 @@
             // staffIDTextBox
             // 
             this.staffIDTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.staffBindingSource, "StaffID", true));
-            this.staffIDTextBox.Location = new System.Drawing.Point(154, 35);
+            this.staffIDTextBox.Location = new System.Drawing.Point(158, 35);
             this.staffIDTextBox.Name = "staffIDTextBox";
             this.staffIDTextBox.ReadOnly = true;
-            this.staffIDTextBox.Size = new System.Drawing.Size(100, 22);
+            this.staffIDTextBox.Size = new System.Drawing.Size(134, 22);
             this.staffIDTextBox.TabIndex = 31;
             // 
             // surnameTextBox
             // 
-            this.surnameTextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.surnameTextBox.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.surnameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.staffBindingSource, "Surname", true));
-            this.surnameTextBox.Location = new System.Drawing.Point(154, 63);
+            this.surnameTextBox.Location = new System.Drawing.Point(158, 63);
             this.surnameTextBox.Name = "surnameTextBox";
             this.surnameTextBox.ReadOnly = true;
-            this.surnameTextBox.Size = new System.Drawing.Size(100, 22);
+            this.surnameTextBox.Size = new System.Drawing.Size(134, 22);
             this.surnameTextBox.TabIndex = 33;
             // 
             // first_NameTextBox
             // 
-            this.first_NameTextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.first_NameTextBox.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.first_NameTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.staffBindingSource, "First Name", true));
-            this.first_NameTextBox.Location = new System.Drawing.Point(154, 91);
+            this.first_NameTextBox.Location = new System.Drawing.Point(158, 91);
             this.first_NameTextBox.Name = "first_NameTextBox";
             this.first_NameTextBox.ReadOnly = true;
-            this.first_NameTextBox.Size = new System.Drawing.Size(100, 22);
+            this.first_NameTextBox.Size = new System.Drawing.Size(134, 22);
             this.first_NameTextBox.TabIndex = 35;
             // 
             // sexTextBox
             // 
-            this.sexTextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.sexTextBox.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(233)))), ((int)(((byte)(233)))));
             this.sexTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.staffBindingSource, "Sex", true));
-            this.sexTextBox.Location = new System.Drawing.Point(154, 119);
+            this.sexTextBox.Location = new System.Drawing.Point(158, 119);
             this.sexTextBox.Name = "sexTextBox";
             this.sexTextBox.ReadOnly = true;
-            this.sexTextBox.Size = new System.Drawing.Size(100, 22);
+            this.sexTextBox.Size = new System.Drawing.Size(134, 22);
             this.sexTextBox.TabIndex = 37;
             // 
             // staff_Role_TitleTextBox
             // 
-            this.staff_Role_TitleTextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.staff_Role_TitleTextBox.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.staff_Role_TitleTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.staffBindingSource, "Staff Role/Title", true));
-            this.staff_Role_TitleTextBox.Location = new System.Drawing.Point(154, 147);
+            this.staff_Role_TitleTextBox.Location = new System.Drawing.Point(158, 147);
             this.staff_Role_TitleTextBox.Name = "staff_Role_TitleTextBox";
             this.staff_Role_TitleTextBox.ReadOnly = true;
-            this.staff_Role_TitleTextBox.Size = new System.Drawing.Size(100, 22);
+            this.staff_Role_TitleTextBox.Size = new System.Drawing.Size(134, 22);
             this.staff_Role_TitleTextBox.TabIndex = 39;
             // 
             // contact_NumberTextBox
             // 
-            this.contact_NumberTextBox.BackColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.contact_NumberTextBox.BackColor = System.Drawing.SystemColors.ButtonFace;
             this.contact_NumberTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.staffBindingSource, "Contact Number", true));
-            this.contact_NumberTextBox.Location = new System.Drawing.Point(154, 175);
+            this.contact_NumberTextBox.Location = new System.Drawing.Point(158, 175);
             this.contact_NumberTextBox.Name = "contact_NumberTextBox";
             this.contact_NumberTextBox.ReadOnly = true;
-            this.contact_NumberTextBox.Size = new System.Drawing.Size(100, 22);
+            this.contact_NumberTextBox.Size = new System.Drawing.Size(134, 22);
             this.contact_NumberTextBox.TabIndex = 41;
             // 
             // bindingNavigator1
@@ -3374,6 +3358,7 @@
             this.bindingNavigator1.CountItem = this.bindingNavigatorCountItem;
             this.bindingNavigator1.DeleteItem = this.bindingNavigatorDeleteItem;
             this.bindingNavigator1.Dock = System.Windows.Forms.DockStyle.None;
+            this.bindingNavigator1.Enabled = false;
             this.bindingNavigator1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
             this.bindingNavigatorMovePreviousItem,
@@ -3652,6 +3637,71 @@
             // 
             this.rotaBindingSource.DataMember = "Rota";
             this.rotaBindingSource.DataSource = this.overSugerydbaseDataSet;
+            // 
+            // groupBoxSearch
+            // 
+            this.groupBoxSearch.Controls.Add(this.txtSearch);
+            this.groupBoxSearch.Controls.Add(this.comboBoxSearchBy);
+            this.groupBoxSearch.Controls.Add(this.label30);
+            this.groupBoxSearch.Controls.Add(this.label39);
+            this.groupBoxSearch.Controls.Add(this.txtSearchBy);
+            this.groupBoxSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.groupBoxSearch.Location = new System.Drawing.Point(206, 26);
+            this.groupBoxSearch.Name = "groupBoxSearch";
+            this.groupBoxSearch.Size = new System.Drawing.Size(293, 141);
+            this.groupBoxSearch.TabIndex = 35;
+            this.groupBoxSearch.TabStop = false;
+            this.groupBoxSearch.Text = "Search for Staff";
+            this.groupBoxSearch.Visible = false;
+            // 
+            // txtSearch
+            // 
+            this.txtSearch.Location = new System.Drawing.Point(139, 104);
+            this.txtSearch.Name = "txtSearch";
+            this.txtSearch.Size = new System.Drawing.Size(115, 23);
+            this.txtSearch.TabIndex = 22;
+            this.txtSearch.Text = "Search";
+            this.txtSearch.UseVisualStyleBackColor = true;
+            this.txtSearch.Click += new System.EventHandler(this.txtSearch_Click);
+            // 
+            // comboBoxSearchBy
+            // 
+            this.comboBoxSearchBy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBoxSearchBy.FormattingEnabled = true;
+            this.comboBoxSearchBy.Items.AddRange(new object[] {
+            "Please Select",
+            "Surname",
+            "First Name",
+            "Sex"});
+            this.comboBoxSearchBy.Location = new System.Drawing.Point(130, 32);
+            this.comboBoxSearchBy.Name = "comboBoxSearchBy";
+            this.comboBoxSearchBy.Size = new System.Drawing.Size(124, 24);
+            this.comboBoxSearchBy.TabIndex = 13;
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Location = new System.Drawing.Point(6, 35);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(102, 16);
+            this.label30.TabIndex = 15;
+            this.label30.Text = "Search Staff By:";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(6, 62);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(94, 32);
+            this.label39.TabIndex = 16;
+            this.label39.Text = "Enter Value to \r\nSearch For:";
+            // 
+            // txtSearchBy
+            // 
+            this.txtSearchBy.Location = new System.Drawing.Point(130, 62);
+            this.txtSearchBy.Name = "txtSearchBy";
+            this.txtSearchBy.Size = new System.Drawing.Size(124, 22);
+            this.txtSearchBy.TabIndex = 14;
             // 
             // tabTimetable
             // 
@@ -3981,40 +4031,9 @@
             // 
             this.resultsTableAdapter.ClearBeforeFill = true;
             // 
-            // dataGridViewTextBoxColumn34
+            // timer1
             // 
-            this.dataGridViewTextBoxColumn34.DataPropertyName = "ResDate";
-            this.dataGridViewTextBoxColumn34.HeaderText = "Date of Test";
-            this.dataGridViewTextBoxColumn34.Name = "dataGridViewTextBoxColumn34";
-            // 
-            // dataGridViewTextBoxColumn35
-            // 
-            this.dataGridViewTextBoxColumn35.DataPropertyName = "ResType";
-            this.dataGridViewTextBoxColumn35.HeaderText = "Type of Test";
-            this.dataGridViewTextBoxColumn35.Name = "dataGridViewTextBoxColumn35";
-            this.dataGridViewTextBoxColumn35.Width = 140;
-            // 
-            // dataGridViewTextBoxColumn36
-            // 
-            this.dataGridViewTextBoxColumn36.DataPropertyName = "Results";
-            this.dataGridViewTextBoxColumn36.HeaderText = "Results";
-            this.dataGridViewTextBoxColumn36.Name = "dataGridViewTextBoxColumn36";
-            this.dataGridViewTextBoxColumn36.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn37
-            // 
-            this.dataGridViewTextBoxColumn37.DataPropertyName = "ResGP";
-            this.dataGridViewTextBoxColumn37.FillWeight = 150F;
-            this.dataGridViewTextBoxColumn37.HeaderText = "Recommended GP";
-            this.dataGridViewTextBoxColumn37.Name = "dataGridViewTextBoxColumn37";
-            this.dataGridViewTextBoxColumn37.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn38
-            // 
-            this.dataGridViewTextBoxColumn38.DataPropertyName = "ResDetails";
-            this.dataGridViewTextBoxColumn38.HeaderText = "Details";
-            this.dataGridViewTextBoxColumn38.Name = "dataGridViewTextBoxColumn38";
-            this.dataGridViewTextBoxColumn38.Width = 250;
+            this.timer1.Interval = 1300;
             // 
             // MainBackGround
             // 
@@ -4039,8 +4058,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.resultsDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.resultsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.overSugerydbaseDataSet)).EndInit();
-            this.PageEnterTestResults.ResumeLayout(false);
-            this.PageEnterTestResults.PerformLayout();
             this.PageAddViewExtendMedication.ResumeLayout(false);
             this.PageAddViewExtendMedication.PerformLayout();
             this.tabControlMed.ResumeLayout(false);
@@ -4050,6 +4067,8 @@
             this.MedNew.ResumeLayout(false);
             this.MedNew.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medicationDataGridView)).EndInit();
+            this.PageEnterTestResults.ResumeLayout(false);
+            this.PageEnterTestResults.PerformLayout();
             this.PageNewRegistration.ResumeLayout(false);
             this.PageNewRegistration.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.patientsDataGridView)).EndInit();
@@ -4076,8 +4095,6 @@
             this.tabGPNurse.ResumeLayout(false);
             this.PageGPNurse.ResumeLayout(false);
             this.PageGPNurse.PerformLayout();
-            this.groupBoxSearch.ResumeLayout(false);
-            this.groupBoxSearch.PerformLayout();
             this.groupBoxDeleteStaff.ResumeLayout(false);
             this.groupBoxDeleteStaff.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.staffBindingSource)).EndInit();
@@ -4091,6 +4108,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStaff)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotaDataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.rotaBindingSource)).EndInit();
+            this.groupBoxSearch.ResumeLayout(false);
+            this.groupBoxSearch.PerformLayout();
             this.tabTimetable.ResumeLayout(false);
             this.tabTimetable.PerformLayout();
             this.PageRota.ResumeLayout(false);
@@ -4429,6 +4448,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn36;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn37;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn38;
+        private System.Windows.Forms.Button btnEnableEdit;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 

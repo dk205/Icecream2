@@ -20,6 +20,7 @@ namespace OverSurgery
       
         Boolean ChangingAppointment = false;
         Form formParent = null;
+        
         public MainBackGround(Form par)
         {
             formParent = par;
@@ -252,6 +253,8 @@ namespace OverSurgery
             this.patientsTableAdapter.Fill(this.overSugerydbaseDataSet.Patients);
             // TODO: This line of code loads data into the 'overSugerydbaseDataSet.Staff' table. You can move, or remove it, as needed.
             this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);
+
+           
 
         }
 
@@ -1083,7 +1086,7 @@ namespace OverSurgery
         }
 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-        ///////////////////////////////////             S T A F F   G P / N U R S E   S E C T I O N         /////////////////////////////////////////////////////////////////// 
+        ///////////////////////////////////             S T A F F   G P / N U R S E   S E C T I O N         /////////////////////////////////////////////////// 
         ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
         
         
@@ -1108,7 +1111,8 @@ namespace OverSurgery
             groupBoxStaff.Visible = false;
             groupBoxAddStaff.Visible = false;
             groupBoxDeleteStaff.Visible = false;
-           
+            btnUpdate.Visible = false;
+            btnEnableEdit.Visible = false;
            //label35 and label 36 show heading for ROTA table and All staff table respectively 
             label35.Visible = true;
             label36.Visible = true;
@@ -1126,7 +1130,8 @@ namespace OverSurgery
             groupBoxStaff.Visible = false;
             groupBoxAddStaff.Visible = true;
             groupBoxDeleteStaff.Visible = false;
-
+            btnUpdate.Visible = false;
+            btnEnableEdit.Visible = false;
             // set the rota Datagrid table to be invisible as it is not relevant in this case
             label35.Visible = false;
             label36.Visible = false;
@@ -1145,6 +1150,10 @@ namespace OverSurgery
             label35.Visible = false;
             label36.Visible = false;
             rotaDataGridView1.Visible = false;
+            btnUpdate.Visible = false;
+            btnEnableEdit.Visible = false;
+            btnUpdate.Visible = false;
+            btnEnableEdit.Visible = false;
 
             groupBoxSearch.Visible = false;
             groupBoxStaff.Visible = true;
@@ -1181,6 +1190,9 @@ namespace OverSurgery
             groupBoxStaff.Visible = true;
             groupBoxAddStaff.Visible = false;
             groupBoxDeleteStaff.Visible = false;
+            btnUpdate.Visible = false;
+            btnEnableEdit.Visible = false;
+
 
             label35.Visible = false;
             label36.Visible = false;
@@ -1255,43 +1267,65 @@ namespace OverSurgery
                    default:
 
                        break;
-                }
-            }
+                }// closing switch statement braces
+            } //closing if braces
         }
        
        
         private void btnAddNewStaff_Click(object sender, EventArgs e)
         {
+                // putting all fields entered by user into a list so as to be able to check/validate all required field if they are empty or not
+                var newStaffFieldList = new List<string> {txtNewSurname.Text, txtNewFName.Text,
+                comboBoxNewSex.SelectedItem.ToString(), comboBoxNewRole.SelectedItem.ToString(),
+                txtNewCNum.Text};
+
+
+                // testing to created newStaffFieldList list if any of the field is empty 
+                if (newStaffFieldList.Any(s => s == ""))
+                {
+                    
+                    // if empty display error message and return for user to complete the entry 
+                    MessageBox.Show("Error: One or more of the Values are empty, please type in all the relevant Staff Information to create/add a new Staff.",
+                        "ERROR: Empty field found! ", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                else
+                {
+                  // if field is not empty, then perform the process of storing new information into table
+                  // try and catch statement used in order to control any error from the table/database
+                              try
+                              {
+                                    // insert new entry into database
+                                    staffTableAdapter.InsertQueryAddNewStaff(txtNewSurname.Text, txtNewFName.Text, comboBoxNewSex.SelectedItem.ToString(),
+                                    comboBoxNewRole.SelectedItem.ToString(), txtNewCNum.Text);
+                  
+                                    
+                                    //refresh the table datagrid to reflect the newly added record (staff)
+                                    this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);
+
+                                    //Display message for user to show and acknowledge new staff has been successfully created and added to table
+                                    MessageBox.Show("Success: Staff successfully added to Staff Table", "Success: New Staff Added. ");
+                    
+                                    // Clears the text box of information that has just been added to the table and 
+                                    // thereby making the form ready for the next Staff to be added (if any)
+                                    txtNewSurname.Text = String.Empty;
+                                    txtNewFName.Text = String.Empty;
+                                    comboBoxNewSex.SelectedIndex = 0;
+                                    comboBoxNewRole.SelectedIndex = 0;
+                                    txtNewCNum.Text = String.Empty;
+                              }
+                              catch (System.Exception ex)
+                              {
+                                  // if there is an error, display error message to user rather than hanging the program
+                                  System.Windows.Forms.MessageBox.Show(ex.Message);
+                              }
+              
+              
+              }  //end of else for if structure
+                
             
-            string new_Cnum, newSex, new_Role;
-                       
-            try
-            {
-                newSex = comboBoxNewSex.SelectedItem.ToString();
-                new_Role = comboBoxNewRole.SelectedItem.ToString(); 
-                new_Cnum = txtNewCNum.Text;
-                staffTableAdapter.InsertQueryAddNewStaff(txtNewSurname.Text, txtNewFName.Text, newSex, new_Role, new_Cnum);
-
-
-                MessageBox.Show("Success: Staff successfully added to Staff Table", "Success: New Staff Added. ");
-                
-                
-                txtNewSurname.Text = String.Empty;
-                txtNewFName.Text = String.Empty;
-                comboBoxNewSex.SelectedIndex = 0;
-                comboBoxNewRole.SelectedIndex = 0;
-                txtNewCNum.Text = String.Empty;
-
-
-            }
-            catch (System.Exception ex)
-            {
-                System.Windows.Forms.MessageBox.Show(ex.Message);
-            }
-           
             this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);
 
-            //saving the new row to the database
+            //updating all opened table and dataset
             this.staffTableAdapter.Update(this.overSugerydbaseDataSet.Staff);
             overSugerydbaseDataSet.Staff.AcceptChanges();
             overSugerydbaseDataSet.Staff.GetChanges();
@@ -1300,6 +1334,9 @@ namespace OverSurgery
 
         private void btnReset_Click(object sender, EventArgs e)
         {
+            
+            //simply clear all text and value box or set values to default 
+            // thereby allowing user to start again with text/value input
             txtNewSurname.Text = String.Empty;
             txtNewFName.Text = String.Empty;
             comboBoxNewSex.SelectedIndex = 0;
@@ -1310,12 +1347,14 @@ namespace OverSurgery
 
         private void btnAddStaffCancel_Click(object sender, EventArgs e)
         {
+            // cancels the add new staff operation clearing the text field
             txtNewSurname.Text = String.Empty;
             txtNewFName.Text = String.Empty;
             comboBoxNewSex.SelectedIndex = 0;
             comboBoxNewRole.SelectedIndex = 0;
             txtNewCNum.Text = String.Empty;
 
+            // and return display to default menue or staff view
             groupBoxSearch.Visible = false;
             groupBoxStaff.Visible = false;
             groupBoxAddStaff.Visible = false;
@@ -1324,62 +1363,78 @@ namespace OverSurgery
             this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);   //refresh, or refill the content of the table
         }
 
-
-
-
         private void btnRefreshStaffTable_Click(object sender, EventArgs e)
         {
             this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);   //refresh, or refill the content of the table
         }
 
+        // control event when user chooses to delete a selected staff
         private void btnDeleteS_Click(object sender, EventArgs e)
         {
-            lblCount.Text = staffBindingSource.Count.ToString();
-            staffTableAdapter.DeleteQuery(Convert.ToInt32(staffIDTextBox.Text), surnameTextBox.Text, first_NameTextBox.Text, sexTextBox.Text, staff_Role_TitleTextBox.Text, contact_NumberTextBox.Text);
+            
+            // USer is asked if they really want to delete selected staff: 
+            switch (MessageBox.Show("Are you sure you want to delete Staff: " + surnameTextBox.Text + " " + first_NameTextBox.Text + " From the Staff Table.",
+                            "CAUTION: DELETING STAFF! ", MessageBoxButtons.YesNo, MessageBoxIcon.Question))
+            {
+                // if user selected yes to continue with delete, the selected Staff is deleted 
+                case DialogResult.Yes:
+                    staffTableAdapter.DeleteQuery(Convert.ToInt32(staffIDTextBox.Text), surnameTextBox.Text, first_NameTextBox.Text, sexTextBox.Text,
+                    staff_Role_TitleTextBox.Text, contact_NumberTextBox.Text);
+                    break;
 
 
+                //user selected no on confirmation to delete, execution return to displaying Staff Table 
+                case DialogResult.No:
+                    
+                // do if user click no on the delete confirmation window
+                    break;
+            }
+            
+            
+           
+
+            // save and update all table
             this.Validate();
             this.staffBindingSource.EndEdit();
             this.staffTableAdapter.Update(this.overSugerydbaseDataSet.Staff);
             this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);
       
+            //redisplay the staff count at the bottom of the screen to reflect the delete operation if user decides to delete a staff
+            lblCount.Text = staffBindingSource.Count.ToString();
+
         }
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+            // when edit staff button is clicked, the window is formatted to show appropriate options to edit staff
+
             this.staffTableAdapter.Fill(this.overSugerydbaseDataSet.Staff);
             groupBoxSearch.Visible = false;
             groupBoxDeleteStaff.Visible = false;
             groupBoxStaff.Visible = true;
             groupBoxAddStaff.Visible = false; 
             btnUpdate.Visible = true;
-
-            surnameTextBox.ReadOnly = false;
-            first_NameTextBox.ReadOnly = false;
-            sexTextBox.ReadOnly = false;
-            staff_Role_TitleTextBox.ReadOnly = false;
-            contact_NumberTextBox.ReadOnly = false;
-
+            btnEnableEdit.Visible = true;
+           
+            // lebales and buttons appearance and properties adjusted accordingly
             label35.Visible = false;
             label36.Visible = false;
+            // rotaDatagridView hidden as it is not of use at this time
             rotaDataGridView1.Visible = false;
-
+            btnUpdate.Enabled = false;
+            //  button to enable edit of staff detail is enabled as it was previous disabled on program execution
+            btnEnableEdit.Enabled = true;
         }
 
-        private void btnUpdate_Click(object sender, EventArgs e)
-        {
-        this.Validate();
-        this.staffBindingSource.EndEdit();
-        this.tableAdapterManager.UpdateAll(this.overSugerydbaseDataSet);
-
-        lblCount.Text = staffBindingSource.Count.ToString();
-        }
+       
 
         private void PageGPNurse_Paint(object sender, PaintEventArgs e)
         {
             lblCount.Text = staffBindingSource.Count.ToString();
         }
 
+        
+        // click event control for when the check box next to the navigation bar is clicked to enable and disable the navigation bar
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
             if (checkBox1.Checked)
@@ -1394,7 +1449,93 @@ namespace OverSurgery
 
         }
 
+
+        //  staff detail text box is enabled for editing, it was previously set to read-only before 
+        private void btnEnableEdit_Click(object sender, EventArgs e)
+        {
+            surnameTextBox.ReadOnly = false;
+            first_NameTextBox.ReadOnly = false;
+            sexTextBox.ReadOnly = false;
+            staff_Role_TitleTextBox.ReadOnly = false;
+            contact_NumberTextBox.ReadOnly = false;
+
+
+            // text box color are set to change here to reflect the text box property change from read only to enabled for edit
+            surnameTextBox.BackColor =  System.Drawing.Color.White;
+            first_NameTextBox.BackColor = System.Drawing.Color.White;
+            sexTextBox.BackColor = System.Drawing.Color.White;
+            staff_Role_TitleTextBox.BackColor = System.Drawing.Color.White;
+            contact_NumberTextBox.BackColor = System.Drawing.Color.White;
+            btnEnableEdit.Enabled = false;
+            btnUpdate.Enabled = true;
+        }
+        // controls when user clicks update to save the edited details to the table. edited detail overwrites old detail
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            surnameTextBox.ReadOnly = true;
+            first_NameTextBox.ReadOnly = true;
+            sexTextBox.ReadOnly = true;
+            staff_Role_TitleTextBox.ReadOnly = true;
+            contact_NumberTextBox.ReadOnly = true;
+            
+            
+            
+            this.Validate();
+            this.staffBindingSource.EndEdit();
+            this.tableAdapterManager.UpdateAll(this.overSugerydbaseDataSet);
+            btnUpdate.Enabled = false;
+
+            // set the textbox color values back to the read only color
+            surnameTextBox.BackColor = System.Drawing.Color.FromArgb(233,233,233);
+            first_NameTextBox.BackColor = System.Drawing.Color.FromArgb(233, 233, 233);
+            sexTextBox.BackColor = System.Drawing.Color.FromArgb(233, 233, 233);
+            staff_Role_TitleTextBox.BackColor = System.Drawing.Color.FromArgb(233, 233, 233);
+            contact_NumberTextBox.BackColor = System.Drawing.Color.FromArgb(233, 233, 233);
+            btnEnableEdit.Enabled = true;
+
+             
+             AutoClosingMessageBox.Show("Staff Informtion Updated", "UPDATE COMPLETE. ", 2000);
+            lblCount.Text = staffBindingSource.Count.ToString();
+            
+        }
+
         
+        // Reference: 
+        // 
+        /// <summary>
+        /// Dmitry G, www.stackoverflow.com. CLose a messagebox after several seconds. Available at: <dhttp://stackoverflow.com/questions/14522540/close-a-messagebox-after-several-seconds> 
+        // Posted on Jan 25 '13 at 13:41, [accessed at] 3/01/2014
+        /// </summary>
+        public class AutoClosingMessageBox
+        {
+            System.Threading.Timer _timeoutTimer;
+            string _caption;
+            AutoClosingMessageBox(string text, string caption, int timeout)
+            {
+                _caption = caption;
+                _timeoutTimer = new System.Threading.Timer(OnTimerElapsed,
+                    null, timeout, System.Threading.Timeout.Infinite);
+                MessageBox.Show(text, caption);
+            }
+            public static void Show(string text, string caption, int timeout)
+            {
+                new AutoClosingMessageBox(text, caption, timeout);
+            }
+            void OnTimerElapsed(object state)
+            {
+                IntPtr mbWnd = FindWindow(null, _caption);
+                if (mbWnd != IntPtr.Zero)
+                    SendMessage(mbWnd, WM_CLOSE, IntPtr.Zero, IntPtr.Zero);
+                _timeoutTimer.Dispose();
+            }
+            
+            const int WM_CLOSE = 0x0010;
+            [System.Runtime.InteropServices.DllImport("user32.dll", SetLastError = true)]
+            static extern IntPtr FindWindow(string lpClassName, string lpWindowName);
+            [System.Runtime.InteropServices.DllImport("user32.dll", CharSet = System.Runtime.InteropServices.CharSet.Auto)]
+            static extern IntPtr SendMessage(IntPtr hWnd, UInt32 Msg, IntPtr wParam, IntPtr lParam);
+           
+        }
 
       
 

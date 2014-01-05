@@ -452,3 +452,17 @@ C:\Users\User\Documents\Work\year 2\software engineering\gitProgramNew\OverSurge
 C:\Users\User\Documents\Work\year 2\software engineering\gitProgramNew\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
 C:\Users\User\Documents\Work\year 2\software engineering\gitProgramNew\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
 C:\Users\User\Documents\Work\year 2\software engineering\gitProgramNew\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
+C:\Users\Ademola\Desktop\kkk\OverSurgery\bin\Debug\OverSurgery.exe.config
+C:\Users\Ademola\Desktop\kkk\OverSurgery\obj\Debug\OverSurgery.exe
+C:\Users\Ademola\Desktop\kkk\OverSurgery\obj\Debug\OverSurgery.pdb
+C:\Users\Ademola\Desktop\kkk\OverSurgery\bin\Debug\OverSugerydbase.mdf
+C:\Users\Ademola\Desktop\kkk\OverSurgery\bin\Debug\OverSugerydbase_log.ldf
+C:\Users\Ademola\Desktop\kkk\OverSurgery\bin\Debug\Properties\Settings.Designer.cs
+C:\Users\Ademola\Desktop\kkk\OverSurgery\bin\Debug\Properties\Settings.settings
+C:\Users\Ademola\Desktop\kkk\OverSurgery\bin\Debug\OverSurgery.exe
+C:\Users\Ademola\Desktop\kkk\OverSurgery\bin\Debug\OverSurgery.pdb
+C:\Users\Ademola\Desktop\kkk\OverSurgery\obj\Debug\OverSurgery.csprojResolveAssemblyReference.cache
+C:\Users\Ademola\Desktop\kkk\OverSurgery\obj\Debug\OverSurgery.LogIn.resources
+C:\Users\Ademola\Desktop\kkk\OverSurgery\obj\Debug\OverSurgery.MainBackGround.resources
+C:\Users\Ademola\Desktop\kkk\OverSurgery\obj\Debug\OverSurgery.Properties.Resources.resources
+C:\Users\Ademola\Desktop\kkk\OverSurgery\obj\Debug\OverSurgery.csproj.GenerateResource.Cache
