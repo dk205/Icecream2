@@ -228,15 +228,22 @@ namespace OverSurgery
 
         public Boolean CheckFieldsSearchByID(string ID)  //check the id entered contains only numbers
         {
-
-            if (ID.All(c => Char.IsDigit(c)))
+            if (!(ID == ""))
             {
+                if (ID.All(c => Char.IsDigit(c)))
+                {
 
-                return true;
+                    return true;
+                }
+                else
+                {
+                    MessageBox.Show(" The Patients ID can only contain letters");
+                    return false;
+                }
             }
             else
             {
-                MessageBox.Show(" The Patients ID can only contain letters");
+                MessageBox.Show("Please Enter the patients ID");
                 return false;
             }
         }

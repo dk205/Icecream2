@@ -71,7 +71,7 @@ namespace OverSurgery
         }
 
 
-        void DestroyMenus() // destroys the comboboxes in the timetable Tab.
+        void DestroyMenus() // CLEARS the comboboxes in the timetable Tab.
         {
             cbStaffMenu1.Items.Clear();
             cbStaffMenu2.Items.Clear();
@@ -436,9 +436,13 @@ namespace OverSurgery
                {
                   
                    //create the names in the labels
-                   Label Amorphos = this.Controls.Find("labelStaff" + i, true).FirstOrDefault() as Label ;
-                    Amorphos.Refresh();
-                    Amorphos.Text = row.Surname;
+                   Label MorningStaffLabels = this.Controls.Find("labelStaff" + i, true).FirstOrDefault() as Label ;
+                   MorningStaffLabels.Refresh();
+                   MorningStaffLabels.Text = row.Surname;
+
+                   Label AfternoonStaffLabels = this.Controls.Find("labelStaff" + (i+5), true).FirstOrDefault() as Label;
+                   AfternoonStaffLabels.Refresh();
+                   AfternoonStaffLabels.Text = row.Surname;
     
                    //search the two active weeks for that name and date
                    OverSugerydbaseDataSet.TwoActiveWeeksDataTable IDandSlots = this.twoActiveWeeksTableAdapter.SearchTwoActiveWeeksByIDandDate(row.StaffID, dateTimePickerAP.Value.Date.ToString());
